@@ -1,28 +1,28 @@
 import crypto from "node:crypto";
 import express, { type Request, type Response } from "express";
-import type { AuthenticatedRequest } from "../../../src/types/index.js";
+import type { AuthenticatedRequest } from "../../../../src/types/index.js";
 import type {
   AutomationDefinition,
   Step,
   Trigger,
-} from "../../../src/types/automations.js";
-import { AUTOMATION_DEFINITION_VERSION } from "../../../src/types/automations.js";
-import { PermissionManager } from "../../../src/backend/utils/permission-manager.js";
-import { AuthManager } from "../../../src/backend/utils/auth-manager.js";
-import { databaseLogger } from "../../../src/backend/utils/logger.js";
+} from "../../../../src/types/automations.js";
+import { AUTOMATION_DEFINITION_VERSION } from "../../../../src/types/automations.js";
+import { PermissionManager } from "../../../../src/backend/utils/permission-manager.js";
+import { AuthManager } from "../../../../src/backend/utils/auth-manager.js";
+import { databaseLogger } from "../../../../src/backend/utils/logger.js";
 import {
   getAuditUsername,
   getRequestMeta,
   logAudit,
-} from "../../../src/backend/utils/audit-logger.js";
-import { createCurrentAutomationRepository } from "../../../src/backend/database/repositories/factory.js";
-import type { AutomationRow } from "../../../src/backend/database/repositories/automation-repository.js";
+} from "../../../../src/backend/utils/audit-logger.js";
+import { createCurrentAutomationRepository } from "../../../../src/backend/database/repositories/factory.js";
+import type { AutomationRow } from "../../../../src/backend/database/repositories/automation-repository.js";
 import { AutomationEngine } from "./engine.js";
 import { computeNextDueAt, isValidCron, isValidTimezone } from "./cron.js";
 import {
   registerAutomationsRouter,
   unregisterAutomationsRouter,
-} from "../../../src/backend/database/routes/automation-dispatch.js";
+} from "../../../../src/backend/database/routes/automation-dispatch.js";
 
 export const router = express.Router();
 
