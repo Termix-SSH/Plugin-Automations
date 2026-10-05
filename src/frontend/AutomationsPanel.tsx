@@ -2,7 +2,6 @@ import { useCallback, useEffect, useState } from "react";
 import { invokeAction, useTranslation } from "@termix/plugin-sdk/frontend";
 import { toast } from "sonner";
 import {
-  ArrowLeft,
   Copy,
   FlaskConical,
   Loader2,
@@ -11,7 +10,15 @@ import {
   Trash2,
   Workflow,
 } from "lucide-react";
-import { Badge, Button, getBasePath } from "@termix/plugin-sdk/ui";
+import {
+  Badge,
+  Button,
+  EmptyState,
+  InlineView,
+  PanelSearch,
+  getBasePath,
+  useConfirm,
+} from "@termix/plugin-sdk/ui";
 import {
   useAutomationsApi,
   type AutomationRow,
@@ -60,14 +67,10 @@ function timeAgo(iso: string | null, t: Translate): string {
   return t(`${base}.days`, { count: Math.floor(hr / 24) });
 }
 
-export function AutomationsPanel({
-  active = true,
-  onEditingChange,
-}: {
-  active?: boolean;
-  onEditingChange?: (editing: boolean) => void;
-}) {
+export function AutomationsPanel({ active = true }: { active?: boolean }) {
   const { t } = useTranslation();
+  const confirm = useConfirm();
+  const [query, setQuery] = useState("");
   const api = useAutomationsApi();
   const base = "newUi.sidebar.automations";
 
@@ -123,16 +126,6 @@ export function AutomationsPanel({
   useEffect(() => {
     if (active && tab === "runs") void loadRuns();
   }, [active, tab, loadRuns]);
-
-  // Widens the sidebar while the editor is open, and releases it again on the
-  // way out or when the user switches to another rail destination.
-  useEffect(() => {
-    if (active) onEditingChange?.(editorOpen);
-  }, [active, editorOpen, onEditingChange]);
-
-  useEffect(() => {
-    return () => onEditingChange?.(false);
-  }, [onEditingChange]);
 
   function closeEditor() {
     setWebhookToken(null);
@@ -201,7 +194,11 @@ export function AutomationsPanel({
   }
 
   async function remove(row: AutomationRow) {
-    if (!confirm(t(`${base}.deleteConfirm`))) return;
+    const ok = await confirm({
+      title: t(`${base}.deleteConfirm`),
+      confirmLabel: t("common.delete"),
+    });
+    if (!ok) return;
     try {
       await api.remove(row.id);
       toast.success(t(`${base}.deleted`));
@@ -237,63 +234,24 @@ export function AutomationsPanel({
 
   // Editing takes over the whole panel and widens the sidebar, the same way the
   // host manager does, rather than opening a dialog over the app.
-  if (editorOpen) {
-    const webhookUrl = webhookToken
-      ? `${window.location.origin}${getBasePath()}/plugin-api/automations/webhook/${webhookToken}`
-      : "";
+  const webhookUrl = webhookToken
+    ? `${window.location.origin}${getBasePath()}/plugin-api/automations/webhook/${webhookToken}`
+    : "";
 
-    return (
-      <div className="flex flex-col h-full min-h-0">
-        <button
-          onClick={closeEditor}
-          className="flex items-center gap-2 px-3 py-2 text-xs text-muted-foreground hover:text-foreground hover:bg-muted/40 transition-colors border-b border-border/50 shrink-0"
-        >
-          <ArrowLeft className="size-3.5 shrink-0" />
-          <span>{t(`${base}.backToAutomations`)}</span>
-          {editingId !== null && (
-            <span
-              className="ml-auto font-semibold text-foreground truncate max-w-[200px]"
-              title={draft.name}
-            >
-              {draft.name}
-            </span>
-          )}
-        </button>
-
-        <div className="flex-1 min-h-0 overflow-y-auto p-3">
-          {webhookToken ? (
-            <div className="space-y-2">
-              <p className="text-sm">{t(`${base}.webhookTokenTitle`)}</p>
-              <p className="text-xs text-muted-foreground">
-                {t(`${base}.webhookTokenDescription`)}
-              </p>
-              <div className="flex gap-2">
-                <code className="flex-1 p-2 bg-muted text-xs break-all">
-                  {webhookUrl}
-                </code>
-                <Button
-                  size="sm"
-                  variant="outline"
-                  className="rounded-none border-border shrink-0"
-                  onClick={() => {
-                    navigator.clipboard?.writeText(webhookUrl);
-                    toast.success(t(`${base}.copied`));
-                  }}
-                >
-                  <Copy size={14} />
-                </Button>
-              </div>
-            </div>
-          ) : (
-            <AutomationEditor
-              draft={draft}
-              options={options}
-              onChange={setDraft}
-            />
-          )}
-        </div>
-
-        <div className="flex items-center gap-2 p-3 border-t border-border shrink-0">
+  const editorView = (
+    <InlineView
+      open={editorOpen}
+      onOpenChange={(open) => {
+        if (!open) closeEditor();
+      }}
+      title={
+        editingId !== null && draft.name
+          ? draft.name
+          : t(`${base}.createAutomation`)
+      }
+      icon={<Workflow className="size-4" />}
+      footer={
+        <>
           {webhookToken ? (
             <Button
               variant="outline"
@@ -324,13 +282,46 @@ export function AutomationsPanel({
               </Button>
             </>
           )}
+        </>
+      }
+    >
+      {webhookToken ? (
+        <div className="space-y-2">
+          <p className="text-sm">{t(`${base}.webhookTokenTitle`)}</p>
+          <p className="text-xs text-muted-foreground">
+            {t(`${base}.webhookTokenDescription`)}
+          </p>
+          <div className="flex gap-2">
+            <code className="flex-1 p-2 bg-muted text-xs break-all">
+              {webhookUrl}
+            </code>
+            <Button
+              size="sm"
+              variant="outline"
+              className="rounded-none border-border shrink-0"
+              onClick={() => {
+                navigator.clipboard?.writeText(webhookUrl);
+                toast.success(t(`${base}.copied`));
+              }}
+            >
+              <Copy size={14} />
+            </Button>
+          </div>
         </div>
-      </div>
-    );
-  }
+      ) : (
+        <AutomationEditor draft={draft} options={options} onChange={setDraft} />
+      )}
+    </InlineView>
+  );
+
+  const q = query.trim().toLowerCase();
+  const shownAutomations = q
+    ? automations.filter((row) => row.name.toLowerCase().includes(q))
+    : automations;
 
   return (
     <div className="flex flex-col h-full">
+      {editorView}
       <div className="flex items-center gap-1 p-2 border-b border-border">
         {(["automations", "runs"] as PanelTab[]).map((key) => (
           <Button
@@ -389,14 +380,26 @@ export function AutomationsPanel({
               </div>
             )}
 
+            {automations.length > 0 && (
+              <PanelSearch
+                value={query}
+                onChange={setQuery}
+                placeholder={t(`${base}.search`)}
+                fill
+                className="mb-2"
+              />
+            )}
+
             {!loading && automations.length === 0 && (
-              <p className="text-xs text-muted-foreground p-2">
-                {t(`${base}.empty`)}
-              </p>
+              <EmptyState icon={Workflow} title={t(`${base}.empty`)} />
+            )}
+
+            {automations.length > 0 && shownAutomations.length === 0 && (
+              <EmptyState icon={Workflow} title={t(`${base}.noMatches`)} />
             )}
 
             <div className="space-y-1">
-              {automations.map((row) => (
+              {shownAutomations.map((row) => (
                 <div
                   key={row.id}
                   className="border border-border p-2.5 hover:bg-muted/40"

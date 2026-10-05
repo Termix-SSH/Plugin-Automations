@@ -12,10 +12,10 @@ import { HostMaintenance, MaintenanceBadge } from "./HostMaintenance";
 
 const VIEW_ID = "automations";
 
-function Panel({ active, setEditing }: PanelProps) {
+function Panel({ active }: PanelProps) {
   return (
     <div className="flex-1 min-h-0 overflow-y-auto">
-      <AutomationsPanel active={active} onEditingChange={setEditing} />
+      <AutomationsPanel active={active} />
     </div>
   );
 }

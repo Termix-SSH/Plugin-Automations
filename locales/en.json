@@ -161,7 +161,9 @@
           "minutes": "{{count}}m ago",
           "hours": "{{count}}h ago",
           "days": "{{count}}d ago"
-        }
+        },
+        "search": "Search automations",
+        "noMatches": "No automations match your search"
       }
     }
   },
@@ -221,5 +223,8 @@
         }
       }
     }
+  },
+  "common": {
+    "delete": "Delete"
   }
 }
