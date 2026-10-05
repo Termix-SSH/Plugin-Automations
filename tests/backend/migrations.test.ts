@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it } from "vitest";
-import { createTestDb, type TestDb } from "@termix/plugin-sdk/testing";
+import { createTestDb, type TestDb } from "@termix-ssh/plugin-sdk/testing";
 import { NOTIFICATION_CHANNELS_DDL, pluginDir } from "./helpers";
 
 // The six tables as core's SQLite bootstrap created them before 2.9.0, with

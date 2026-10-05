@@ -7,12 +7,12 @@ import {
   createTestDb,
   type MockPluginContext,
   type TestDb,
-} from "@termix/plugin-sdk/testing";
+} from "@termix-ssh/plugin-sdk/testing";
 import type {
   PluginHostSummary,
   PluginNotificationChannel,
-} from "@termix/plugin-sdk/backend";
-import type { PluginManifest } from "@termix/plugin-sdk/manifest";
+} from "@termix-ssh/plugin-sdk/backend";
+import type { PluginManifest } from "@termix-ssh/plugin-sdk/manifest";
 import manifestJson from "../../manifest.json";
 import type { AutomationsAccessV1 } from "../../src/backend/service.js";
 

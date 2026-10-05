@@ -1,4 +1,4 @@
-import type { PluginEvents, PluginLogger } from "@termix/plugin-sdk/backend";
+import type { PluginEvents, PluginLogger } from "@termix-ssh/plugin-sdk/backend";
 import type { AutomationDefinition, HostSelector, Trigger } from "../types.js";
 import type {
   AutomationEngineRow,

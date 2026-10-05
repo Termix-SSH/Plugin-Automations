@@ -3,9 +3,9 @@ import { fireEvent, waitFor, within } from "@testing-library/react";
 import {
   renderWithApp,
   type RenderedPluginApp,
-} from "@termix/plugin-sdk/testing";
-import type { PluginManifest } from "@termix/plugin-sdk/manifest";
-import type { PluginApiClient } from "@termix/plugin-sdk/frontend";
+} from "@termix-ssh/plugin-sdk/testing";
+import type { PluginManifest } from "@termix-ssh/plugin-sdk/manifest";
+import type { PluginApiClient } from "@termix-ssh/plugin-sdk/frontend";
 import * as plugin from "../../src/frontend/index";
 import manifest from "../../manifest.json";
 import locales from "../../locales/en.json";

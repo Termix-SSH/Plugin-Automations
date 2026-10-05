@@ -9,8 +9,8 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@termix/plugin-sdk/ui";
-import { useTranslation } from "@termix/plugin-sdk/frontend";
+} from "@termix-ssh/plugin-sdk/ui";
+import { useTranslation } from "@termix-ssh/plugin-sdk/frontend";
 import { Plus } from "lucide-react";
 import {
   AUTOMATION_DEFINITION_VERSION,

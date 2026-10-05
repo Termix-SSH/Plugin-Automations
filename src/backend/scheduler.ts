@@ -1,4 +1,4 @@
-import type { PluginLogger } from "@termix/plugin-sdk/backend";
+import type { PluginLogger } from "@termix-ssh/plugin-sdk/backend";
 import type { AutomationDefinition } from "../types.js";
 import { computeNextDueAt } from "./cron.js";
 import { hasDwelled, isCoolingDown } from "./conditions.js";

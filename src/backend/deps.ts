@@ -1,4 +1,4 @@
-import type { PluginServices } from "@termix/plugin-sdk/backend";
+import type { PluginServices } from "@termix-ssh/plugin-sdk/backend";
 import type { DockerEventKind } from "../types.js";
 
 /*

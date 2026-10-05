@@ -1,4 +1,4 @@
-import type { PluginSshHost } from "@termix/plugin-sdk/backend";
+import type { PluginSshHost } from "@termix-ssh/plugin-sdk/backend";
 import type { HostSelector } from "../../types.js";
 import type { StepExecutionContext, StepRuntime } from "./types.js";
 

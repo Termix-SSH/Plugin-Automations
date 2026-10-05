@@ -1,5 +1,5 @@
 import { randomUUID } from "node:crypto";
-import type { PluginContext } from "@termix/plugin-sdk/backend";
+import type { PluginContext } from "@termix-ssh/plugin-sdk/backend";
 import type { HostMaintenance } from "../maintenance.js";
 import type { MaintenanceRepository } from "./maintenance-repository.js";
 import {

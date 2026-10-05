@@ -3,7 +3,7 @@ import type {
   PanelProps,
   TabProps,
   TermixApp,
-} from "@termix/plugin-sdk/frontend";
+} from "@termix-ssh/plugin-sdk/frontend";
 import { AutomationsPanel } from "./AutomationsPanel";
 import { createAutomationsApi } from "./automations-api";
 

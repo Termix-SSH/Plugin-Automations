@@ -1,5 +1,5 @@
 import type { Router, Request, Response } from "express";
-import type { PluginContext } from "@termix/plugin-sdk/backend";
+import type { PluginContext } from "@termix-ssh/plugin-sdk/backend";
 import { MaintenanceInputError } from "./maintenance-time.js";
 import type { MaintenanceService } from "./maintenance-service.js";
 

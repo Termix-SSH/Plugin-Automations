@@ -10,7 +10,7 @@ import {
   text,
   timestamp,
   varchar,
-} from "@termix/plugin-sdk/db";
+} from "@termix-ssh/plugin-sdk/db";
 
 /*
  * Adopted from core's automation tables, so column and index names are the

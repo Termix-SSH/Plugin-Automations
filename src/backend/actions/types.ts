@@ -1,4 +1,4 @@
-import type { PluginContext } from "@termix/plugin-sdk/backend";
+import type { PluginContext } from "@termix-ssh/plugin-sdk/backend";
 import type { Step } from "../../types.js";
 import type { Deps } from "../deps.js";
 import type { TemplateContext } from "../template.js";

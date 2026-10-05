@@ -1,6 +1,6 @@
 import crypto from "node:crypto";
 import type { Request, Response, Router } from "express";
-import type { PluginContext } from "@termix/plugin-sdk/backend";
+import type { PluginContext } from "@termix-ssh/plugin-sdk/backend";
 import type { AutomationDefinition } from "../types.js";
 import { computeNextDueAt } from "./cron.js";
 import type { Deps } from "./deps.js";

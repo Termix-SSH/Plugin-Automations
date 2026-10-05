@@ -1,4 +1,4 @@
-import { useTranslation } from "@termix/plugin-sdk/frontend";
+import { useTranslation } from "@termix-ssh/plugin-sdk/frontend";
 import {
   Button,
   Input,
@@ -10,7 +10,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@termix/plugin-sdk/ui";
+} from "@termix-ssh/plugin-sdk/ui";
 import { ChevronDown, ChevronUp, Trash2 } from "lucide-react";
 import type { Step, StepType } from "../../types";
 import { HostSelectorField } from "./HostSelectorField";

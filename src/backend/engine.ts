@@ -1,4 +1,4 @@
-import type { PluginContext } from "@termix/plugin-sdk/backend";
+import type { PluginContext } from "@termix-ssh/plugin-sdk/backend";
 import type { AutomationDefinition, RunStatus, Step } from "../types.js";
 import {
   DEFAULT_MAX_RUN_SECONDS,

@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { createFakeContext } from "@termix/plugin-sdk/testing";
-import type { PluginHostSummary } from "@termix/plugin-sdk/backend";
+import { createFakeContext } from "@termix-ssh/plugin-sdk/testing";
+import type { PluginHostSummary } from "@termix-ssh/plugin-sdk/backend";
 import type { AutomationDefinition, Step } from "../../src/types.js";
 
 /**

@@ -1,4 +1,4 @@
-import { useTranslation } from "@termix/plugin-sdk/frontend";
+import { useTranslation } from "@termix-ssh/plugin-sdk/frontend";
 import {
   Input,
   Label,
@@ -7,7 +7,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@termix/plugin-sdk/ui";
+} from "@termix-ssh/plugin-sdk/ui";
 import type { Trigger, TriggerKind } from "../../types";
 import { HostSelectorField } from "./HostSelectorField";
 import {

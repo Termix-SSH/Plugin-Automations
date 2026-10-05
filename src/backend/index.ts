@@ -1,5 +1,5 @@
 import type { Router } from "express";
-import type { PluginContext } from "@termix/plugin-sdk/backend";
+import type { PluginContext } from "@termix-ssh/plugin-sdk/backend";
 import { createDeps } from "./deps.js";
 import { createDockerWatcher } from "./docker-watcher.js";
 import { AutomationEngine } from "./engine.js";

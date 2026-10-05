@@ -8,8 +8,8 @@ import {
   usePermission,
   useTranslation,
   type PluginHostRecord,
-} from "@termix/plugin-sdk/frontend";
-import { Badge, Button, Input, Label } from "@termix/plugin-sdk/ui";
+} from "@termix-ssh/plugin-sdk/frontend";
+import { Badge, Button, Input, Label } from "@termix-ssh/plugin-sdk/ui";
 import type { MaintenanceStore } from "./maintenance-store";
 import type { Recurrence } from "../maintenance";
 

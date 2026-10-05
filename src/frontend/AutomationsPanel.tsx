@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { invokeAction, useTranslation } from "@termix/plugin-sdk/frontend";
+import { invokeAction, useTranslation } from "@termix-ssh/plugin-sdk/frontend";
 import { toast } from "sonner";
 import {
   Copy,
@@ -18,7 +18,7 @@ import {
   PanelSearch,
   getBasePath,
   useConfirm,
-} from "@termix/plugin-sdk/ui";
+} from "@termix-ssh/plugin-sdk/ui";
 import {
   useAutomationsApi,
   type AutomationRow,

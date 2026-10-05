@@ -1,5 +1,5 @@
 import { and, eq } from "drizzle-orm";
-import type { PluginDatabase } from "@termix/plugin-sdk/backend";
+import type { PluginDatabase } from "@termix-ssh/plugin-sdk/backend";
 import { maintenanceTable } from "./tables.js";
 import { emptyMaintenance, type HostMaintenance } from "../maintenance.js";
 
