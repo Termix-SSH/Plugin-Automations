@@ -125,9 +125,6 @@
         "defaultRoles": ["user"]
       }
     ],
-    "http": {
-      "legacyPaths": ["/automations/webhook"]
-    },
     "uses": ["alerts.openChannels"]
   },
   "locales": "locales",
