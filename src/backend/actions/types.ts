@@ -37,7 +37,7 @@ export interface StepExecutionContext {
   signal?: AbortSignal;
 }
 
-export type StepExecutor<T extends Step = Step> = (
+type StepExecutor<T extends Step = Step> = (
   step: T,
   context: StepExecutionContext,
 ) => Promise<StepResult>;
@@ -51,7 +51,7 @@ export function fail(error: string, output?: string): StepResult {
 }
 
 /** Milliseconds left before the run's overall deadline. */
-export function remainingMs(context: StepExecutionContext): number {
+function remainingMs(context: StepExecutionContext): number {
   return Math.max(context.deadlineAt - Date.now(), 0);
 }
 

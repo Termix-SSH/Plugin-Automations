@@ -6,7 +6,7 @@ import { pluginOf, type Deps, type ProviderKey } from "./deps.js";
  * plugin is off makes the whole automation wait for it, rather than half of
  * it running.
  */
-export function requiredProviders(
+function requiredProviders(
   definition: AutomationDefinition | null | undefined,
 ): ProviderKey[] {
   const needed = new Set<ProviderKey>();

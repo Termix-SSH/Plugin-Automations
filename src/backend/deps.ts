@@ -70,7 +70,7 @@ export interface WakeOnLanV1 {
 }
 
 /** The plugin id behind each service, for "needs <plugin>" messages. */
-export const PROVIDERS = {
+const PROVIDERS = {
   snippets: "snippets.access",
   fleets: "fleets.access",
   tunnels: "tunnels.access",

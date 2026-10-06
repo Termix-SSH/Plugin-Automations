@@ -11,7 +11,7 @@ export interface MaintenancePlan {
   nextStart: string | null;
 }
 
-export interface ActiveMaintenance {
+interface ActiveMaintenance {
   startedAt: string;
   reasons: string[];
   estimatedEnd: string;

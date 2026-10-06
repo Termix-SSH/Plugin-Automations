@@ -50,7 +50,7 @@ const STEP_PROVIDERS: Partial<Record<StepType, keyof AutomationProviders>> = {
 };
 
 /** The plugin id shown in "needs <plugin>", for a provider key. */
-export function providerPlugin(key: keyof AutomationProviders): string {
+function providerPlugin(key: keyof AutomationProviders): string {
   return key === "docker-events" ? "docker" : key;
 }
 

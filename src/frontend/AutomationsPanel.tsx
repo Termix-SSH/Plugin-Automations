@@ -556,5 +556,3 @@ export function AutomationsPanel({ active = true }: { active?: boolean }) {
     </div>
   );
 }
-
-export default AutomationsPanel;

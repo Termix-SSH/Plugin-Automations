@@ -1,4 +1,7 @@
-import type { PluginEvents, PluginLogger } from "@termix-ssh/plugin-sdk/backend";
+import type {
+  PluginEvents,
+  PluginLogger,
+} from "@termix-ssh/plugin-sdk/backend";
 import type { AutomationDefinition, HostSelector, Trigger } from "../types.js";
 import type {
   AutomationEngineRow,
@@ -62,7 +65,7 @@ interface LoadedAutomation {
   definition: AutomationDefinition;
 }
 
-export type Triggers = ReturnType<typeof createTriggers>;
+type Triggers = ReturnType<typeof createTriggers>;
 
 /** Built once per activation. */
 export function createTriggers(

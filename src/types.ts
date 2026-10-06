@@ -49,13 +49,13 @@ export type Operator =
   | "not_contains"
   | "changed";
 
-export type Severity = "info" | "warning" | "critical";
+type Severity = "info" | "warning" | "critical";
 
-export type HostStatusState = "online" | "offline";
-export type HealthCheckState = "failing" | "recovered";
+type HostStatusState = "online" | "offline";
+type HealthCheckState = "failing" | "recovered";
 export type DockerEventKind = "exited" | "started" | "unhealthy" | "restarting";
 
-export type InternalEventKind =
+type InternalEventKind =
   | "user_login"
   | "host_added"
   | "host_deleted"
@@ -116,7 +116,7 @@ export type Trigger =
 export type TriggerKind = Trigger["kind"];
 
 /** A comparison used by `if` steps, evaluated against the run context. */
-export interface Condition {
+interface Condition {
   /** Template string, e.g. "{{steps.check.stdout}}" or "{{trigger.value}}". */
   left: string;
   operator: Operator;
@@ -124,7 +124,7 @@ export interface Condition {
   right?: string;
 }
 
-export type StepErrorPolicy = "stop" | "continue" | "branch";
+type StepErrorPolicy = "stop" | "continue" | "branch";
 
 interface StepBase {
   /** Stable across edits so run history survives reordering. */
@@ -204,7 +204,7 @@ export type RunStatus =
 export type StepStatus =
   "pending" | "running" | "success" | "failed" | "skipped";
 
-export interface Automation {
+interface Automation {
   id: number;
   userId: string;
   name: string;
@@ -220,7 +220,7 @@ export interface Automation {
   updatedAt: string;
 }
 
-export interface AutomationRun {
+interface AutomationRun {
   id: number;
   automationId: number;
   userId: string;
@@ -235,7 +235,7 @@ export interface AutomationRun {
   parentRunId: number | null;
 }
 
-export interface AutomationRunStep {
+interface AutomationRunStep {
   id: number;
   runId: number;
   stepIndex: number;
@@ -252,13 +252,13 @@ export interface AutomationRunStep {
 /** Defaults applied when an automation does not override them. */
 export const DEFAULT_MAX_RUN_SECONDS = 300;
 export const DEFAULT_STEP_TIMEOUT_MS = 60_000;
-export const DEFAULT_COOLDOWN_MINUTES = 15;
+const DEFAULT_COOLDOWN_MINUTES = 15;
 /** Guards run_automation against direct and mutual recursion. */
 export const MAX_AUTOMATION_DEPTH = 5;
 /** Step output beyond this is truncated before it reaches the database. */
 export const MAX_STEP_OUTPUT_BYTES = 32_768;
 
-export const OPERATOR_LABELS: Record<Operator, string> = {
+const OPERATOR_LABELS: Record<Operator, string> = {
   ">": "greater than",
   "<": "less than",
   ">=": "greater than or equal to",
@@ -271,7 +271,7 @@ export const OPERATOR_LABELS: Record<Operator, string> = {
 };
 
 /** Steps that reach outside Termix and are therefore stubbed in a dry run. */
-export const SIDE_EFFECTING_STEP_TYPES: readonly StepType[] = [
+const SIDE_EFFECTING_STEP_TYPES: readonly StepType[] = [
   "notify",
   "http",
   "run_snippet",
@@ -281,6 +281,6 @@ export const SIDE_EFFECTING_STEP_TYPES: readonly StepType[] = [
   "wol",
 ];
 
-export function isSideEffectingStep(type: StepType): boolean {
+function isSideEffectingStep(type: StepType): boolean {
   return SIDE_EFFECTING_STEP_TYPES.includes(type);
 }

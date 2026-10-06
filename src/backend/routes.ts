@@ -21,7 +21,7 @@ function parseId(raw: unknown): number | null {
   return Number.isInteger(id) && id > 0 ? id : null;
 }
 
-export function hashToken(token: string): string {
+function hashToken(token: string): string {
   return crypto.createHash("sha256").update(token).digest("hex");
 }
 
@@ -36,7 +36,7 @@ function timingSafeEqual(a: string, b: string): boolean {
  * The wire shape of an automation: the definition parsed, the webhook token
  * hash blanked, and the plugins it needs that are not running.
  */
-export function serializeAutomation(row: AutomationRow, deps: Deps) {
+function serializeAutomation(row: AutomationRow, deps: Deps) {
   let definition: AutomationDefinition | null = parseDefinition(row.definition);
   if (definition?.trigger?.kind === "webhook") {
     definition = {
