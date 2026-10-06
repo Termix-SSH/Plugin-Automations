@@ -74,11 +74,4 @@ export function activate(app: TermixApp): void {
   // The assistant's @-mentions list automations through this.
   const api = createAutomationsApi(app.api);
   app.registerAction("automations.list", () => api.list());
-
-  app.registerSlotContribution("onboarding.features", {
-    actionId: "automations.feature",
-    titleKey: "onboarding.feature_automations",
-    descriptionKey: "onboarding.feature_automations_desc",
-    icon: Workflow,
-  });
 }
