@@ -9,7 +9,14 @@ import {
   useTranslation,
   type PluginHostRecord,
 } from "@termix-ssh/plugin-sdk/frontend";
-import { Badge, Button, Input, Label } from "@termix-ssh/plugin-sdk/ui";
+import {
+  Badge,
+  Button,
+  Checkbox,
+  Input,
+  Label,
+  Segmented,
+} from "@termix-ssh/plugin-sdk/ui";
 import type { MaintenanceStore } from "./maintenance-store";
 import type { Recurrence } from "../maintenance";
 
@@ -119,9 +126,8 @@ function MaintenanceEditor({
       notifyOverdue: notify,
     });
   }
-  const fieldClass = "h-9 border bg-background px-3 text-sm";
   return (
-    <div className="mx-auto w-full max-w-3xl space-y-6 overflow-auto p-6">
+    <div className="mx-auto w-full max-w-3xl space-y-4 overflow-auto p-3">
       <div>
         <h2 className="text-lg font-semibold">{t("maintenance.title")}</h2>
         <p className="text-sm font-medium">{host.name || host.ip}</p>
@@ -141,7 +147,7 @@ function MaintenanceEditor({
         </p>
       )}
       {state?.active && (
-        <section className="space-y-3 border p-4">
+        <section className="space-y-3 border border-border bg-card p-3 text-xs">
           <Badge>{t("maintenance.active")}</Badge>
           <p className="break-words">{state.active.reasons.join("; ")}</p>
           <p>
@@ -156,8 +162,10 @@ function MaintenanceEditor({
               <div className="space-y-2">
                 <p>{t("maintenance.endConfirm")}</p>
                 <Button
+                  variant="outline"
                   disabled={busy || !store.loaded() || !!store.error()}
                   onClick={() => void mutate({ action: "end" })}
+                  className="border-accent-brand/40 text-accent-brand hover:bg-accent-brand/10 hover:text-accent-brand dark:border-accent-brand/40 dark:bg-transparent dark:hover:bg-accent-brand/10"
                 >
                   {t("maintenance.confirmEnd")}
                 </Button>{" "}
@@ -182,18 +190,21 @@ function MaintenanceEditor({
         </p>
       )}
       {canEdit && (
-        <form onSubmit={submit} className="space-y-4 border p-4">
-          <div className="flex flex-wrap gap-3">
-            <Label htmlFor="maintenance-mode">{t("maintenance.action")}</Label>
-            <select
-              id="maintenance-mode"
-              className={fieldClass}
+        <form
+          onSubmit={submit}
+          className="space-y-4 border border-border bg-card p-3"
+        >
+          <div className="space-y-2">
+            <Label id="maintenance-mode">{t("maintenance.action")}</Label>
+            <Segmented<typeof mode>
               value={mode}
-              onChange={(event) => setMode(event.target.value as typeof mode)}
-            >
-              <option value="start">{t("maintenance.startNow")}</option>
-              <option value="schedule">{t("maintenance.schedule")}</option>
-            </select>
+              onChange={setMode}
+              className="w-full [&>button]:flex-1"
+              options={[
+                { value: "start", label: t("maintenance.startNow") },
+                { value: "schedule", label: t("maintenance.schedule") },
+              ]}
+            />
           </div>
           <div className="space-y-2">
             <Label htmlFor="maintenance-reason">
@@ -222,23 +233,18 @@ function MaintenanceEditor({
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="maintenance-repeat">
-                  {t("maintenance.repeat")}
-                </Label>
-                <select
-                  id="maintenance-repeat"
-                  className={`${fieldClass} w-full`}
+                <Label id="maintenance-repeat">{t("maintenance.repeat")}</Label>
+                <Segmented<Recurrence>
                   value={recurrence}
-                  onChange={(event) =>
-                    setRecurrence(event.target.value as Recurrence)
-                  }
-                >
-                  {(["once", "weekly", "monthly"] as const).map((value) => (
-                    <option key={value} value={value}>
-                      {t(`maintenance.${value}`)}
-                    </option>
-                  ))}
-                </select>
+                  onChange={setRecurrence}
+                  className="w-full [&>button]:flex-1"
+                  options={(["once", "weekly", "monthly"] as const).map(
+                    (value) => ({
+                      value,
+                      label: t(`maintenance.${value}`),
+                    }),
+                  )}
+                />
               </div>
               <p className="text-sm text-muted-foreground sm:col-span-2">
                 {t("maintenance.utcHelp")}
@@ -275,16 +281,17 @@ function MaintenanceEditor({
               />
             </div>
           </div>
-          <label className="flex items-center gap-2 text-sm">
-            <input
-              type="checkbox"
+          <label className="flex cursor-pointer items-center gap-2 text-xs">
+            <Checkbox
               checked={notify}
-              onChange={(event) => setNotify(event.target.checked)}
+              onCheckedChange={(checked) => setNotify(checked === true)}
             />
             {t("maintenance.notify")}
           </label>
           <Button
             type="submit"
+            variant="outline"
+            className="border-accent-brand/40 px-6 text-accent-brand hover:bg-accent-brand/10 hover:text-accent-brand"
             disabled={
               busy ||
               !store.loaded() ||

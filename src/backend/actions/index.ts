@@ -1,6 +1,9 @@
 import type { Client } from "ssh2";
 import { DEFAULT_STEP_TIMEOUT_MS, type Step } from "../../types.js";
-import { execCommand, execElevated } from "@termix-ssh/plugin-sdk/host-commands";
+import {
+  execCommand,
+  execElevated,
+} from "@termix-ssh/plugin-sdk/host-commands";
 import { renderRecord, renderTemplate } from "../template.js";
 import { resolveTargets, type ResolvedTarget } from "./host-targets.js";
 import {

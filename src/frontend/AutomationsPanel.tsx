@@ -2,20 +2,29 @@ import { useCallback, useEffect, useState } from "react";
 import { invokeAction, useTranslation } from "@termix-ssh/plugin-sdk/frontend";
 import { toast } from "sonner";
 import {
+  Bell,
   Copy,
+  ExternalLink,
   FlaskConical,
   Loader2,
   Play,
-  Plus,
   Trash2,
   Workflow,
 } from "lucide-react";
 import {
-  Badge,
+  AddButton,
   Button,
   EmptyState,
+  Facts,
+  FormFooter,
   InlineView,
+  ListBadge,
+  ListRow,
+  ListRowAction,
+  PanelList,
   PanelSearch,
+  TabStrip,
+  type ListRowTone,
   getBasePath,
   useConfirm,
 } from "@termix-ssh/plugin-sdk/ui";
@@ -49,6 +58,23 @@ const STATUS_CLASS: Record<string, string> = {
   running: "text-foreground",
   skipped: "text-muted-foreground",
   cancelled: "text-muted-foreground",
+};
+
+const RUN_TONE: Record<string, ListRowTone> = {
+  success: "success",
+  failed: "destructive",
+  timeout: "destructive",
+  running: "brand",
+};
+
+const RUN_BADGE: Record<
+  string,
+  "muted" | "brand" | "success" | "warning" | "destructive"
+> = {
+  success: "success",
+  failed: "destructive",
+  timeout: "destructive",
+  running: "brand",
 };
 
 type Translate = (key: string, options?: Record<string, unknown>) => string;
@@ -251,38 +277,16 @@ export function AutomationsPanel({ active = true }: { active?: boolean }) {
       }
       icon={<Workflow className="size-4" />}
       footer={
-        <>
-          {webhookToken ? (
-            <Button
-              variant="outline"
-              className="rounded-none ml-auto h-9 px-6 border-accent-brand/40 text-accent-brand hover:bg-accent-brand/10 hover:text-accent-brand"
-              onClick={closeEditor}
-            >
-              {t("common.close")}
-            </Button>
-          ) : (
-            <>
-              <Button
-                variant="outline"
-                className="rounded-none border-border h-9 px-5"
-                onClick={closeEditor}
-              >
-                {t("common.cancel")}
-              </Button>
-              <Button
-                variant="outline"
-                className="rounded-none ml-auto h-9 px-6 border-accent-brand/40 text-accent-brand hover:bg-accent-brand/10 hover:text-accent-brand"
-                disabled={saving}
-                onClick={save}
-              >
-                {saving && (
-                  <Loader2 size={14} className="mr-1.5 animate-spin" />
-                )}
-                {t(`${base}.save`)}
-              </Button>
-            </>
-          )}
-        </>
+        webhookToken ? (
+          <FormFooter onSave={closeEditor} saveLabel={t("common.close")} />
+        ) : (
+          <FormFooter
+            onCancel={closeEditor}
+            onSave={() => void save()}
+            saving={saving}
+            saveLabel={t(`${base}.save`)}
+          />
+        )
       }
     >
       {webhookToken ? (
@@ -296,9 +300,10 @@ export function AutomationsPanel({ active = true }: { active?: boolean }) {
               {webhookUrl}
             </code>
             <Button
-              size="sm"
+              size="icon"
               variant="outline"
-              className="rounded-none border-border shrink-0"
+              className="shrink-0"
+              title={t(`${base}.copied`)}
               onClick={() => {
                 navigator.clipboard?.writeText(webhookUrl);
                 toast.success(t(`${base}.copied`));
@@ -320,239 +325,226 @@ export function AutomationsPanel({ active = true }: { active?: boolean }) {
     : automations;
 
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-col h-full min-h-0">
       {editorView}
-      <div className="flex items-center gap-1 p-2 border-b border-border">
-        {(["automations", "runs"] as PanelTab[]).map((key) => (
-          <Button
-            key={key}
-            variant={tab === key ? "outline" : "ghost"}
-            size="sm"
-            className={`min-w-0 flex-shrink rounded-none h-7 px-2 text-xs ${
-              tab === key
-                ? "border-accent-brand/40 bg-accent-brand/10 text-accent-brand hover:bg-accent-brand/20 hover:text-accent-brand"
-                : ""
-            }`}
-            onClick={() => setTab(key)}
-          >
-            <span className="truncate">
-              {t(
-                `${base}.${key === "automations" ? "tabAutomations" : "tabRuns"}`,
-              )}
-            </span>
-          </Button>
-        ))}
-        <Button
-          variant="ghost"
-          size="sm"
-          className="min-w-0 flex-shrink rounded-none h-7 px-2 text-xs"
-          title={t(`${base}.channelsHint`)}
-          onClick={() => void invokeAction("alerts.openChannels")}
-        >
-          <span className="truncate">{t(`${base}.tabChannels`)}</span>
-        </Button>
-        <a
-          href="https://docs.termix.site/features/automations/overview"
-          target="_blank"
-          rel="noreferrer"
-          className="ml-auto shrink-0 text-[10px] text-accent-brand hover:underline"
-        >
-          {t(`${base}.docsLink`)}
-        </a>
+      <div className="shrink-0 border-b border-border px-1">
+        <TabStrip
+          tabs={[
+            {
+              id: "automations",
+              label: t(`${base}.tabAutomations`),
+              count: automations.length,
+            },
+            { id: "runs", label: t(`${base}.tabRuns`) },
+          ]}
+          activeTab={tab}
+          onTabChange={(id) => setTab(id as PanelTab)}
+          trailing={
+            <>
+              <Button
+                variant="ghost"
+                size="icon-xs"
+                title={t(`${base}.channelsHint`)}
+                aria-label={t(`${base}.tabChannels`)}
+                onClick={() => void invokeAction("alerts.openChannels")}
+              >
+                <Bell />
+              </Button>
+              <Button variant="ghost" size="icon-xs" asChild>
+                <a
+                  href="https://docs.termix.site/features/automations/overview"
+                  target="_blank"
+                  rel="noreferrer"
+                  title={t(`${base}.docsLink`)}
+                  aria-label={t(`${base}.docsLink`)}
+                >
+                  <ExternalLink />
+                </a>
+              </Button>
+            </>
+          }
+        />
       </div>
 
-      <div className="flex-1 overflow-y-auto p-2">
-        {tab === "automations" && (
-          <>
-            <Button
-              size="sm"
-              variant="outline"
-              className="rounded-none w-full mb-2 border-accent-brand/40 text-accent-brand hover:bg-accent-brand/10 hover:text-accent-brand"
+      {tab === "automations" && (
+        <>
+          <div className="flex shrink-0 items-center gap-2 border-b border-border px-3 py-2">
+            <PanelSearch
+              value={query}
+              onChange={setQuery}
+              placeholder={t(`${base}.search`)}
+              fill
+            />
+            <AddButton
+              label={t(`${base}.createAutomation`)}
               onClick={openCreate}
-            >
-              <Plus size={14} className="mr-1" />
-              {t(`${base}.createAutomation`)}
-            </Button>
-
-            {loading && automations.length === 0 && (
-              <div className="flex justify-center p-4">
-                <Loader2 size={16} className="animate-spin" />
-              </div>
-            )}
-
-            {automations.length > 0 && (
-              <PanelSearch
-                value={query}
-                onChange={setQuery}
-                placeholder={t(`${base}.search`)}
-                fill
-                className="mb-2"
-              />
-            )}
-
-            {!loading && automations.length === 0 && (
-              <EmptyState icon={Workflow} title={t(`${base}.empty`)} />
-            )}
-
-            {automations.length > 0 && shownAutomations.length === 0 && (
-              <EmptyState icon={Workflow} title={t(`${base}.noMatches`)} />
-            )}
-
-            <div className="space-y-1">
-              {shownAutomations.map((row) => (
-                <div
-                  key={row.id}
-                  className="border border-border p-2.5 hover:bg-muted/40"
-                >
-                  <div className="flex items-center gap-2">
-                    <Workflow size={14} className="shrink-0" />
-                    <button
-                      className="flex-1 text-left text-sm truncate"
-                      onClick={() => openEdit(row)}
-                    >
-                      {row.name}
-                    </button>
+            />
+          </div>
+          <PanelList
+            empty={
+              loading && automations.length === 0 ? (
+                <div className="flex justify-center p-4">
+                  <Loader2 size={16} className="animate-spin" />
+                </div>
+              ) : (
+                <EmptyState
+                  icon={Workflow}
+                  title={t(
+                    automations.length === 0
+                      ? `${base}.empty`
+                      : `${base}.noMatches`,
+                  )}
+                />
+              )
+            }
+          >
+            {shownAutomations.map((row, index) => (
+              <ListRow
+                key={row.id}
+                stripe={index}
+                tone={
+                  row.missingPlugins?.length
+                    ? "destructive"
+                    : row.enabled
+                      ? "brand"
+                      : "muted"
+                }
+                dimmed={!row.enabled}
+                icon={<Workflow />}
+                title={row.name}
+                onClick={() => openEdit(row)}
+                badges={
+                  <>
                     {!!row.missingPlugins?.length && (
-                      <Badge
-                        variant="outline"
-                        className="text-[10px] border-destructive/50 text-destructive"
-                        title={t(`${base}.needsPluginHint`)}
-                      >
+                      <ListBadge tone="destructive">
                         {t(`${base}.needsPlugin`, {
                           plugin: row.missingPlugins.join(", "),
                         })}
-                      </Badge>
+                      </ListBadge>
                     )}
                     {!row.enabled && (
-                      <Badge variant="outline" className="text-[10px]">
-                        {t(`${base}.offBadge`)}
-                      </Badge>
+                      <ListBadge>{t(`${base}.offBadge`)}</ListBadge>
                     )}
-                  </div>
-
-                  <div className="flex items-center gap-1 mt-1">
-                    <span className="text-[11px] text-muted-foreground flex-1 flex gap-2.5 min-w-0 overflow-hidden whitespace-nowrap">
-                      {row.definition && (
-                        <span className="truncate">
-                          {t(
-                            `${base}.triggerKinds.${row.definition.trigger.kind}`,
-                          )}
-                        </span>
-                      )}
-                      {row.last_run_status && (
-                        <span className="shrink-0">
-                          {timeAgo(row.last_run_at, t)}
-                        </span>
-                      )}
-                    </span>
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      className="h-6 w-6 rounded-none"
-                      title={t(`${base}.testRun`)}
+                  </>
+                }
+                meta={
+                  <Facts>
+                    {row.definition && (
+                      <span>
+                        {t(
+                          `${base}.triggerKinds.${row.definition.trigger.kind}`,
+                        )}
+                      </span>
+                    )}
+                    {row.last_run_status && (
+                      <span>{timeAgo(row.last_run_at, t)}</span>
+                    )}
+                  </Facts>
+                }
+                actions={
+                  <>
+                    <ListRowAction
+                      label={t(`${base}.testRun`)}
                       onClick={() => run(row, true)}
                     >
-                      <FlaskConical size={12} />
-                    </Button>
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      className="h-6 w-6 rounded-none"
-                      title={t(`${base}.runNow`)}
+                      <FlaskConical />
+                    </ListRowAction>
+                    <ListRowAction
+                      label={t(`${base}.runNow`)}
+                      tone="brand"
                       onClick={() => run(row, false)}
                     >
-                      <Play size={12} />
-                    </Button>
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      className="h-6 w-6 rounded-none"
+                      <Play />
+                    </ListRowAction>
+                    <ListRowAction
+                      label={t("common.delete")}
+                      tone="destructive"
                       onClick={() => remove(row)}
                     >
-                      <Trash2 size={12} />
-                    </Button>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </>
-        )}
+                      <Trash2 />
+                    </ListRowAction>
+                  </>
+                }
+              />
+            ))}
+          </PanelList>
+        </>
+      )}
 
-        {tab === "runs" && (
-          <div className="space-y-1">
-            {runs.length === 0 && (
-              <p className="text-xs text-muted-foreground p-2">
-                {t(`${base}.emptyRuns`)}
-              </p>
-            )}
-            {runs.map((entry) => (
-              <div key={entry.id} className="border border-border">
-                <button
-                  className="w-full text-left p-2.5 hover:bg-muted/40"
-                  onClick={() => toggleRun(entry.id)}
-                >
-                  <div className="flex items-center gap-2">
-                    <span className="text-sm flex-1 truncate">
-                      {entry.automation_name ?? `#${entry.automation_id}`}
-                    </span>
+      {tab === "runs" && (
+        <PanelList
+          empty={<EmptyState icon={Workflow} title={t(`${base}.emptyRuns`)} />}
+        >
+          {runs.map((entry, index) => (
+            <div key={entry.id}>
+              <ListRow
+                stripe={index}
+                tone={RUN_TONE[entry.status] ?? "muted"}
+                selected={expandedRun === entry.id}
+                title={entry.automation_name ?? `#${entry.automation_id}`}
+                onClick={() => toggleRun(entry.id)}
+                badges={
+                  <>
                     {entry.dry_run ? (
-                      <Badge variant="outline" className="text-[10px]">
-                        {t(`${base}.dryRunBadge`)}
-                      </Badge>
+                      <ListBadge>{t(`${base}.dryRunBadge`)}</ListBadge>
                     ) : null}
-                    <span
-                      className={`text-[11px] ${STATUS_CLASS[entry.status] ?? ""}`}
+                    <ListBadge
+                      tone={RUN_BADGE[entry.status] ?? "muted"}
+                      className="ml-auto"
                     >
                       {t(`${base}.statuses.${entry.status}`)}
-                    </span>
-                  </div>
-                  <div className="flex gap-2.5 text-[11px] text-muted-foreground">
+                    </ListBadge>
+                  </>
+                }
+                meta={
+                  <Facts>
                     <span>{timeAgo(entry.started_at, t)}</span>
                     {entry.duration_ms !== null && (
                       <span>{Math.round(entry.duration_ms / 100) / 10}s</span>
                     )}
-                  </div>
-                  {entry.error && (
-                    <div className="text-[11px] text-destructive truncate">
-                      {entry.error}
-                    </div>
-                  )}
-                </button>
-
-                {expandedRun === entry.id && (
-                  <div className="border-t border-border p-2 space-y-1">
-                    {runSteps.map((step) => (
-                      <div key={step.id} className="text-[11px]">
-                        <div className="flex gap-2">
-                          <span className="text-muted-foreground">
-                            {step.step_index + 1}.
-                          </span>
-                          <span className="flex-1">
-                            {t(`${base}.stepTypes.${step.step_type}`, {
-                              defaultValue: step.step_type,
-                            })}
-                          </span>
-                          <span className={STATUS_CLASS[step.status] ?? ""}>
-                            {step.status}
-                          </span>
-                        </div>
-                        {step.output && (
-                          <pre className="mt-1 p-1 bg-muted overflow-x-auto whitespace-pre-wrap break-all text-[10px]">
-                            {step.output}
-                          </pre>
-                        )}
-                        {step.error && (
-                          <div className="text-destructive">{step.error}</div>
-                        )}
-                      </div>
-                    ))}
-                  </div>
+                  </Facts>
+                }
+              >
+                {entry.error && (
+                  <span className="truncate text-[11px] text-destructive">
+                    {entry.error}
+                  </span>
                 )}
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
+              </ListRow>
+
+              {expandedRun === entry.id && (
+                <div className="space-y-1 border-b border-border/40 bg-muted/10 py-2 pl-5 pr-3">
+                  {runSteps.map((step) => (
+                    <div key={step.id} className="text-[11px]">
+                      <div className="flex gap-2">
+                        <span className="text-muted-foreground">
+                          {step.step_index + 1}.
+                        </span>
+                        <span className="flex-1">
+                          {t(`${base}.stepTypes.${step.step_type}`, {
+                            defaultValue: step.step_type,
+                          })}
+                        </span>
+                        <span className={STATUS_CLASS[step.status] ?? ""}>
+                          {step.status}
+                        </span>
+                      </div>
+                      {step.output && (
+                        <pre className="mt-1 overflow-x-auto whitespace-pre-wrap break-all border border-border bg-background p-1.5 text-[10px]">
+                          {step.output}
+                        </pre>
+                      )}
+                      {step.error && (
+                        <div className="text-destructive">{step.error}</div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </PanelList>
+      )}
     </div>
   );
 }

@@ -88,18 +88,14 @@ describe("maintenance UI", () => {
           .hasAttribute("disabled"),
       ).toBe(false),
     );
-    fireEvent.change(view.getByLabelText("Action"), {
-      target: { value: "schedule" },
-    });
+    fireEvent.click(view.getByRole("radio", { name: "Schedule for later" }));
     fireEvent.change(view.getByLabelText("Reason"), {
       target: { value: "Upgrade" },
     });
     fireEvent.change(view.getByLabelText("First start (UTC)"), {
       target: { value: "2027-01-01T12:00" },
     });
-    fireEvent.change(view.getByLabelText("Repeat"), {
-      target: { value: "monthly" },
-    });
+    fireEvent.click(view.getByRole("radio", { name: "Monthly" }));
     fireEvent.click(view.getByRole("button", { name: "Add schedule" }));
     await waitFor(() =>
       expect(api.post).toHaveBeenCalledWith(
