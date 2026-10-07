@@ -17,3 +17,14 @@ npm run format     # format the code with Prettier
 - `automations.edit`: change automations. Admins and users have it by default.
 - `automations.delete`: delete automations. Admins and users have it by default.
 - `automations.run`: run automations by hand. Admins and users have it by default.
+
+## Services
+
+Provides to other plugins:
+
+- `automations.access`: list and run automations
+
+Uses from other plugins:
+
+- `snippets.access` for the run snippet step. Required
+- `fleets.access`, `tunnels.access`, `docker.containers`, `docker.events`, `host-metrics.viewers` and `wake-on-lan.send` for their steps and triggers. Each one is optional

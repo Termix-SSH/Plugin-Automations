@@ -27,19 +27,6 @@ Automations runs steps on your hosts when something happens, like cleaning up a 
 
 <br />
 
-## Services
-
-Provides to other plugins:
-
-- `automations.access`: list and run automations
-
-Uses from other plugins:
-
-- `snippets.access` for the run snippet step. Required
-- `fleets.access`, `tunnels.access`, `docker.containers`, `docker.events`, `host-metrics.viewers` and `wake-on-lan.send` for their steps and triggers. Each one is optional
-
-<br />
-
 ## Sponsors
 
 Interested in a paid placement to support development? Email [mail@termix.site](mailto:mail@termix.site).
