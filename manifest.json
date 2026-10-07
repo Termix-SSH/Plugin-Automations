@@ -2,7 +2,7 @@
   "id": "automations",
   "name": "Automations",
   "version": "1.0.0",
-  "description": "Run steps on your hosts on a schedule or when something happens, like a host going down or a metric crossing a limit.",
+  "description": "Run steps on your hosts on a schedule or when something happens.",
   "author": {
     "name": "Termix"
   },
