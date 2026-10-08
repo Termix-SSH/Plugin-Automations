@@ -10,3 +10,7 @@
 - Run on one host, a fleet or every host
 - Test runs and a history of every run
 - Maintenance windows that pause automations while you work on a host
+
+### Fixed
+
+- A nested automation step can only run automations you own

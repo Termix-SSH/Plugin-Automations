@@ -148,6 +148,12 @@ function validateSteps(steps: Step[], seen: Set<string>): string | null {
     if (step.type === "set_var" && !isNonEmptyString(step.name)) {
       return "Variable steps need a name";
     }
+    if (
+      step.type === "run_automation" &&
+      !(Number.isInteger(step.automationId) && step.automationId > 0)
+    ) {
+      return "Nested automation steps need an automation id";
+    }
   }
   return null;
 }

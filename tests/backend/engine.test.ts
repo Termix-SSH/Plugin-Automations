@@ -409,6 +409,28 @@ describe("AutomationEngine.run", () => {
       expect(String(inner?.error)).toMatch(/already running in this chain/);
     });
 
+    it("refuses to run another user's automation as a nested step", async () => {
+      defineAutomation(
+        [step({ id: "nested", type: "run_automation", automationId: 2 })],
+        { id: 1 },
+      );
+      defineAutomation([step({ id: "victim", type: "notify" })], {
+        id: 2,
+        userId: "user-2",
+      });
+
+      const outcome = await getEngine().run({
+        automationId: 1,
+        triggerType: "manual",
+      });
+
+      const nestedStep = runSteps.find((s) => s.stepId === "nested");
+      expect(nestedStep?.status).toBe("failed");
+      expect(String(nestedStep?.error)).toMatch(/Automation not found/);
+      expect(runSteps.find((s) => s.stepId === "victim")).toBeUndefined();
+      expect(outcome.status).toBe("failed");
+    });
+
     it("refuses to nest deeper than the maximum depth", async () => {
       defineAutomation([step({ id: "a", type: "http" })]);
 

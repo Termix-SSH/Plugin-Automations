@@ -29,6 +29,8 @@ export interface RunRequest {
   parentRunId?: number;
   ancestry?: number[];
   depth?: number;
+  /** Set for nested runs: the child must belong to the same user. */
+  parentUserId?: string;
 }
 
 export interface RunOutcome {
@@ -67,7 +69,11 @@ export class AutomationEngine {
     } catch (err) {
       return { runId: null, status: "failed", error: errorText(err) };
     }
-    if (!automation) {
+    if (
+      !automation ||
+      (request.parentUserId !== undefined &&
+        automation.userId !== request.parentUserId)
+    ) {
       return { runId: null, status: "failed", error: "Automation not found" };
     }
     const owner = automation;
@@ -406,6 +412,7 @@ export class AutomationEngine {
           parentRunId: context.runId,
           ancestry: context.ancestry,
           depth: context.depth + 1,
+          parentUserId: context.userId,
         });
 
         const nestedOk = nested.status === "success";
