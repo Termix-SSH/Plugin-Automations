@@ -8,6 +8,7 @@
   },
   "license": "Apache-2.0",
   "repository": "https://github.com/Termix-SSH/Plugin-Automations",
+  "docs": "https://docs.termix.site/plugins/automations",
   "category": "Infrastructure",
   "icon": "Workflow",
   "features": [
@@ -20,7 +21,7 @@
   ],
   "engine": {
     "termix": ">=26.10.0",
-    "api": "1"
+    "api": "^1.2"
   },
   "capabilities": [
     "hosts:read",

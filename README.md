@@ -14,6 +14,8 @@
 
 Automations runs steps on your hosts when something happens, like cleaning up a disk when it fills or restarting a container when it stops.
 
+Read the [docs](https://docs.termix.site/plugins/automations) to set it up and use it.
+
 <br />
 
 ## Features

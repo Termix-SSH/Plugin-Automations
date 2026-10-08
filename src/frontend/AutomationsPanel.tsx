@@ -44,6 +44,7 @@ import {
   EMPTY_EDITOR_OPTIONS,
   type AutomationEditorOptions,
 } from "./automations/editor-types";
+import { docsUrl } from "./docs";
 
 function getErrorMessage(error: unknown, fallback: string): string {
   return error instanceof Error ? error.message : fallback;
@@ -352,7 +353,7 @@ export function AutomationsPanel({ active = true }: { active?: boolean }) {
               </Button>
               <Button variant="ghost" size="icon-xs" asChild>
                 <a
-                  href="https://docs.termix.site/features/automations/overview"
+                  href={docsUrl()}
                   target="_blank"
                   rel="noreferrer"
                   title={t(`${base}.docsLink`)}
