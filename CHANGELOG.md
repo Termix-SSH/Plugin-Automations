@@ -14,3 +14,4 @@
 ### Fixed
 
 - A nested automation step can only run automations you own
+- Values from triggers, steps and variables can no longer change the shell command they are put in

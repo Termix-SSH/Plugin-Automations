@@ -4,7 +4,12 @@ import {
   execCommand,
   execElevated,
 } from "@termix-ssh/plugin-sdk/host-commands";
-import { renderRecord, renderTemplate } from "../template.js";
+import {
+  bindShellValues,
+  renderRecord,
+  renderShellCommand,
+  renderTemplate,
+} from "../template.js";
 import { resolveTargets, type ResolvedTarget } from "./host-targets.js";
 import {
   fail,
@@ -181,7 +186,7 @@ async function runCommand(
   context: StepExecutionContext,
   runtime: StepRuntime,
 ): Promise<StepResult> {
-  const command = renderTemplate(step.command, context.template);
+  const command = renderShellCommand(step.command, context.template);
   return runOnTargets(step.hostSelector, context, runtime, async (target) => {
     if (context.dryRun) {
       return { output: `Would run on ${target.name}: ${command}` };
@@ -216,10 +221,11 @@ async function runSnippet(
   if (!snippet) return fail("Snippet not found");
   if (snippet.isNote) return fail("Notes cannot be executed on a host");
 
-  // Template values only ever reach the snippet through inputValues, never by
-  // rewriting the snippet body, so automation variables cannot inject snippet
-  // syntax of their own.
-  const inputValues = renderRecord(step.inputValues, context.template) ?? {};
+  // Snippets paste input values straight into their command, so they get
+  // quoted variable references and the values are assigned up front.
+  const { refs: inputValues, prefix } = bindShellValues(
+    renderRecord(step.inputValues, context.template) ?? {},
+  );
 
   return runOnTargets(step.hostSelector, context, runtime, async (target) => {
     const command = await resolveCommand(
@@ -241,7 +247,7 @@ async function runSnippet(
     }
     return execOnHost(
       target.host,
-      command,
+      prefix + command,
       step.elevated,
       context,
       runtime,

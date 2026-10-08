@@ -2,11 +2,10 @@
  * Variable substitution for automation steps.
  *
  * Templates read from the run context: {{host.name}}, {{trigger.value}},
- * {{steps.<stepId>.stdout}}, {{vars.myVar}}. Resolution always produces a
- * plain string and never shell syntax; callers that build a command are
- * responsible for quoting the result (see shellSingleQuote in
- * hosts/metrics/managers/exec-elevated.ts). Nothing here escapes anything,
- * precisely so there is one obvious place where quoting happens.
+ * {{steps.<stepId>.stdout}}, {{vars.myVar}}. renderTemplate gives back plain
+ * text for URLs, bodies and messages. Anything that ends up in a shell goes
+ * through renderShellCommand or bindShellValues instead, which never paste a
+ * value into the command text.
  */
 
 export interface TemplateContext {
@@ -98,4 +97,88 @@ export function redactSecrets(
     output[key] = SECRET_KEY.test(key) ? "***" : value;
   }
   return output;
+}
+
+const SHELL_VAR_PREFIX = "__TMX_";
+
+function shellQuote(value: string): string {
+  return `'${value.replace(/'/g, "'\\''")}'`;
+}
+
+function assignments(values: string[]): string {
+  return values
+    .map((value, i) => `${SHELL_VAR_PREFIX}${i}=${shellQuote(value)}\n`)
+    .join("");
+}
+
+type QuoteState = "none" | "single" | "double";
+
+/** Where a shell would be after reading `text`, starting from `state`. */
+function advanceQuoteState(text: string, state: QuoteState): QuoteState {
+  for (let i = 0; i < text.length; i++) {
+    const ch = text[i];
+    if (state === "single") {
+      if (ch === "'") state = "none";
+    } else if (ch === "\\") {
+      i++;
+    } else if (state === "double") {
+      if (ch === '"') state = "none";
+    } else if (ch === "'") {
+      state = "single";
+    } else if (ch === '"') {
+      state = "double";
+    }
+  }
+  return state;
+}
+
+function shellRef(index: number, state: QuoteState): string {
+  const name = `$${SHELL_VAR_PREFIX}${index}`;
+  if (state === "double") return name;
+  if (state === "single") return `'"${name}"'`;
+  return `"${name}"`;
+}
+
+/**
+ * Renders a command template for a shell. Each resolved token becomes a
+ * variable reference quoted for the spot it sits in (bare, inside double
+ * quotes or inside single quotes) and its value is assigned up front, so a
+ * value like `x; rm -rf /` is always one plain argument.
+ */
+export function renderShellCommand(
+  input: string,
+  context: TemplateContext,
+): string {
+  if (!input || !input.includes("{{")) return input;
+
+  const values: string[] = [];
+  let state: QuoteState = "none";
+  let last = 0;
+  const body = input.replace(TOKEN, (match, path: string, offset: number) => {
+    state = advanceQuoteState(input.slice(last, offset), state);
+    last = offset + match.length;
+    const value = readPath(context, path);
+    if (value === undefined) return match;
+    values.push(stringify(value));
+    return shellRef(values.length - 1, state);
+  });
+  return values.length ? assignments(values) + body : body;
+}
+
+/**
+ * Swaps each value for a quoted variable reference, for callers that hand
+ * values to something else that builds the command (snippets). Prepend the
+ * returned prefix to whatever command comes back.
+ */
+export function bindShellValues(input: Record<string, string>): {
+  refs: Record<string, string>;
+  prefix: string;
+} {
+  const values: string[] = [];
+  const refs: Record<string, string> = {};
+  for (const [key, value] of Object.entries(input)) {
+    values.push(value);
+    refs[key] = `"$${SHELL_VAR_PREFIX}${values.length - 1}"`;
+  }
+  return { refs, prefix: assignments(values) };
 }

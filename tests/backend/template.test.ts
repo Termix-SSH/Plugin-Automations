@@ -1,8 +1,11 @@
+import { execFileSync } from "node:child_process";
 import { describe, expect, it } from "vitest";
 import {
+  bindShellValues,
   hasUnresolvedTokens,
   redactSecrets,
   renderRecord,
+  renderShellCommand,
   renderTemplate,
 } from "../../src/backend/template.js";
 
@@ -94,6 +97,71 @@ describe("redactSecrets", () => {
       token: "***",
       password: "***",
       Accept: "application/json",
+    });
+  });
+});
+
+describe("renderShellCommand", () => {
+  const evil = {
+    trigger: { body: { name: "x; touch /tmp/pwned; echo $(id)" } },
+  };
+
+  it("never puts a value into the command text", () => {
+    const command = renderShellCommand(
+      "echo hello {{trigger.body.name}}",
+      evil,
+    );
+    expect(command).toBe(
+      "__TMX_0='x; touch /tmp/pwned; echo $(id)'\necho hello \"$__TMX_0\"",
+    );
+  });
+
+  it("escapes single quotes in values", () => {
+    const command = renderShellCommand("echo {{vars.v}}", {
+      vars: { v: "it's" },
+    });
+    expect(command).toBe(`__TMX_0='it'\\''s'\necho "$__TMX_0"`);
+  });
+
+  it("quotes the reference for the spot the token sits in", () => {
+    const ctx = { vars: { v: "a b" } };
+    expect(renderShellCommand('echo "x {{vars.v}}"', ctx)).toBe(
+      `__TMX_0='a b'\necho "x $__TMX_0"`,
+    );
+    expect(renderShellCommand("echo 'x {{vars.v}}'", ctx)).toBe(
+      `__TMX_0='a b'\necho 'x '"$__TMX_0"''`,
+    );
+  });
+
+  it("leaves commands without tokens alone", () => {
+    expect(renderShellCommand("uptime", {})).toBe("uptime");
+  });
+
+  it.skipIf(process.platform === "win32")(
+    "keeps the value as data in a real shell",
+    () => {
+      for (const template of [
+        "printf %s {{trigger.body.name}}",
+        'printf %s "{{trigger.body.name}}"',
+      ]) {
+        const out = execFileSync(
+          "sh",
+          ["-c", renderShellCommand(template, evil)],
+          {
+            encoding: "utf8",
+          },
+        );
+        expect(out).toBe("x; touch /tmp/pwned; echo $(id)");
+      }
+    },
+  );
+});
+
+describe("bindShellValues", () => {
+  it("swaps values for quoted references", () => {
+    expect(bindShellValues({ path: "/tmp; rm -rf /" })).toEqual({
+      refs: { path: '"$__TMX_0"' },
+      prefix: "__TMX_0='/tmp; rm -rf /'\n",
     });
   });
 });
