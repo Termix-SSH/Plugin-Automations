@@ -26,6 +26,22 @@ const errorText = (error: unknown) =>
   error instanceof Error ? error.message : String(error);
 
 /**
+ * A timed out command's error repeats the whole command, which for an
+ * elevated run has the sudo password in it. Run history must never show it.
+ */
+export function commandErrorText(
+  error: unknown,
+  sudoPassword?: string,
+): string {
+  let text = errorText(error).replace(
+    /^(Command timeout after \d+ms):[\s\S]*$/,
+    "$1",
+  );
+  if (sudoPassword) text = text.split(sudoPassword).join("[redacted]");
+  return text;
+}
+
+/**
  * One executor per step type.
  *
  * Anything that leaves Termix checks context.dryRun first and reports what it
@@ -446,6 +462,8 @@ async function execOnHost(
     }
     return { error: `Exited with code ${result.code}`, output };
   } catch (error) {
-    return { error: errorText(error) };
+    return {
+      error: commandErrorText(error, host.sudoPassword as string | undefined),
+    };
   }
 }

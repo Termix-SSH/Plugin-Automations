@@ -24,14 +24,10 @@
   "newUi": {
     "sidebar": {
       "automations": {
-        "title": "Automations",
         "tabAutomations": "Automations",
         "tabRuns": "Runs",
         "tabChannels": "Channels",
         "createAutomation": "New Automation",
-        "backToAutomations": "Back to Automations",
-        "createTitle": "New Automation",
-        "editTitle": "Edit Automation",
         "empty": "No automations yet. Create one to react to a metric, a schedule, or an event.",
         "emptyRuns": "No runs yet.",
         "channelsHint": "Channels are set up in Alerts",
@@ -39,8 +35,6 @@
         "nameLabel": "Name",
         "namePlaceholder": "e.g., Clean up /data when it fills",
         "nameRequired": "Name is required",
-        "descriptionLabel": "Description",
-        "descriptionPlaceholder": "Optional description",
         "enabledLabel": "Enabled",
         "concurrencyLabel": "If it is already running",
         "concurrencyHint": "What to do when this is triggered again before the last run has finished.",
@@ -56,8 +50,6 @@
         "deleteConfirm": "Delete this automation? Its run history is deleted too.",
         "runNow": "Run now",
         "testRun": "Test run",
-        "testRunHint": "Runs every step but does not touch anything outside Termix.",
-        "runStarted": "Run started",
         "runFinished": "Run finished: {{status}}",
         "trigger": "Trigger",
         "steps": "Steps",
@@ -68,16 +60,9 @@
         "noSteps": "No steps yet. Add one to say what should happen.",
         "webhookTokenTitle": "Webhook URL",
         "webhookTokenDescription": "This is shown once. Save it now, it cannot be retrieved later.",
-        "copy": "Copy",
         "copied": "Copied",
         "viewJson": "JSON",
         "viewBuilder": "Builder",
-        "viewGraph": "Graph",
-        "lastRun": "Last run",
-        "never": "Never",
-        "duration": "{{seconds}}s",
-        "stepOutput": "Output",
-        "stepError": "Error",
         "dryRunBadge": "Test run",
         "hostSelector": {
           "trigger": "Triggering host",
@@ -118,10 +103,7 @@
         },
         "fields": {
           "host": "Host",
-          "metric": "Metric",
           "mount": "Mount point",
-          "operator": "Is",
-          "value": "Value",
           "forSeconds": "Sustained for (seconds)",
           "cooldown": "Cooldown (minutes)",
           "cron": "Cron expression",
@@ -131,8 +113,6 @@
           "timezoneHint": "Cron times are read in this zone. Does not apply to interval schedules.",
           "container": "Container",
           "command": "Command",
-          "url": "URL",
-          "method": "Method",
           "body": "Body",
           "channels": "Also send to",
           "title": "Title",
@@ -146,14 +126,14 @@
           "elevated": "Run with sudo",
           "onError": "If this fails",
           "allowPrivateNetwork": "Allow local network addresses",
-          "allowPrivateNetworkHint": "Needed for a self-hosted service on your LAN. Off by default to prevent requests to internal addresses."
+          "allowPrivateNetworkHint": "Needed for a self-hosted service on your LAN. Off by default to prevent requests to internal addresses.",
+          "interface": "Interface"
         },
         "onError": {
           "stop": "Stop the run",
           "continue": "Carry on"
         },
         "needsPlugin": "Needs {{plugin}}",
-        "needsPluginHint": "This automation is skipped until the feature it needs is available again.",
         "offBadge": "Off",
         "docsLink": "View docs",
         "ago": {

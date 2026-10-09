@@ -124,7 +124,11 @@ export function createScheduler(deps: SchedulerDeps) {
           },
           triggerHostId: Number.isFinite(hostId) ? hostId : undefined,
         })
-        .catch(() => undefined);
+        .catch((error: unknown) =>
+          log.warn(
+            `Automation ${automation.id} failed to start: ${errorText(error)}`,
+          ),
+        );
     }
   }
 
