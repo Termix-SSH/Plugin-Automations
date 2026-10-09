@@ -1,5 +1,8 @@
+import fs from "node:fs";
+import path from "node:path";
 import { afterEach, describe, expect, it } from "vitest";
 import { createTestDb, type TestDb } from "@termix-ssh/plugin-sdk/testing";
+import { findUnownedTableWrites } from "@termix-ssh/plugin-sdk/ddl";
 import { NOTIFICATION_CHANNELS_DDL, pluginDir } from "./helpers";
 
 // The six tables as core's SQLite bootstrap created them before 2.9.0, with
@@ -255,5 +258,24 @@ describe("adopting the automation tables", () => {
     expect(count(db, "p_automations_host_maintenance")).toBe(1);
     db.sqlite.prepare("DELETE FROM users WHERE id = 'alice'").run();
     expect(count(db, "p_automations_host_maintenance")).toBe(0);
+  });
+});
+
+describe("mysql migrations", () => {
+  it("widen definitions, trigger context and step output past the 64KB TEXT cap", () => {
+    const sql = fs.readFileSync(
+      path.join(pluginDir, "migrations", "mysql", "0005_mysql_long_text.sql"),
+      "utf8",
+    );
+    expect(sql).toContain(
+      "ALTER TABLE `p_automations_automations` MODIFY COLUMN `definition` longtext NOT NULL;",
+    );
+    expect(sql).toContain(
+      "ALTER TABLE `p_automations_runs` MODIFY COLUMN `trigger_context` longtext;",
+    );
+    expect(sql).toContain(
+      "ALTER TABLE `p_automations_run_steps` MODIFY COLUMN `output` longtext;",
+    );
+    expect(findUnownedTableWrites("automations", sql)).toEqual([]);
   });
 });

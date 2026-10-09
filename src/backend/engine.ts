@@ -502,7 +502,12 @@ function truncate(output: string | undefined): {
     return { text: output, truncated: false };
   }
   return {
-    text: output.slice(0, MAX_STEP_OUTPUT_BYTES) + "\n... (truncated)",
+    // Cut by bytes, not characters, so multi-byte output stays under the cap.
+    text:
+      Buffer.from(output, "utf8")
+        .subarray(0, MAX_STEP_OUTPUT_BYTES)
+        .toString("utf8")
+        .replace(/�$/, "") + "\n... (truncated)",
     truncated: true,
   };
 }

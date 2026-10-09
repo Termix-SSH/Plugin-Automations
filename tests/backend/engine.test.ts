@@ -609,6 +609,24 @@ describe("AutomationEngine.run", () => {
     expect(String(runSteps[0].output)).toMatch(/truncated/);
   });
 
+  it("cuts multi-byte output by bytes", async () => {
+    defineAutomation([step({ id: "a", type: "run_command" })]);
+    executeStep.mockResolvedValueOnce({
+      success: true,
+      output: "é".repeat(40_000),
+    });
+
+    await getEngine().run({
+      automationId: 1,
+      triggerType: "manual",
+    });
+
+    const output = String(runSteps[0].output);
+    expect(runSteps[0].truncated).toBe(true);
+    expect(Buffer.byteLength(output)).toBeLessThan(32_768 + 50);
+    expect(output).not.toContain("�");
+  });
+
   it("stops once the run deadline has passed", async () => {
     defineAutomation(
       [step({ id: "a", type: "run_command" }), step({ id: "b", type: "http" })],
