@@ -143,7 +143,9 @@
           "days": "{{count}}d ago"
         },
         "search": "Search automations",
-        "noMatches": "No automations match your search"
+        "noMatches": "No automations match your search",
+        "settingsTitle": "Automation settings",
+        "settingsDisplayTitle": "Display"
       }
     }
   },
@@ -202,5 +204,11 @@
   },
   "common": {
     "delete": "Delete"
+  },
+  "settings": {
+    "alwaysShowActions": {
+      "label": "Always show buttons",
+      "description": "Keep the test, run and delete buttons under each automation visible. Turn off to show them only on hover."
+    }
   }
 }

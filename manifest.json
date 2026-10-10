@@ -134,7 +134,18 @@
         "defaultRoles": ["user"]
       }
     ],
-    "uses": ["alerts.openChannels"]
+    "uses": ["alerts.openChannels"],
+    "settings": {
+      "user": [
+        {
+          "key": "alwaysShowActions",
+          "type": "boolean",
+          "labelKey": "settings.alwaysShowActions.label",
+          "descriptionKey": "settings.alwaysShowActions.description",
+          "default": false
+        }
+      ]
+    }
   },
   "locales": "locales",
   "platforms": ["linux", "win32", "darwin"],
