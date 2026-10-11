@@ -93,17 +93,13 @@
         "id": "automations",
         "titleKey": "nav.automations",
         "icon": "Workflow",
-        "openFrom": [
-          "rail"
-        ]
+        "openFrom": ["rail"]
       },
       {
         "id": "host_maintenance",
         "titleKey": "maintenance.title",
         "icon": "Wrench",
-        "openFrom": [
-          "host-context-menu"
-        ]
+        "openFrom": ["host-context-menu"]
       }
     ],
     "permissions": [
@@ -111,46 +107,34 @@
         "name": "view",
         "titleKey": "permissions.view.title",
         "descriptionKey": "permissions.view.description",
-        "defaultRoles": [
-          "user"
-        ]
+        "defaultRoles": ["user"]
       },
       {
         "name": "create",
         "titleKey": "permissions.create.title",
         "descriptionKey": "permissions.create.description",
-        "defaultRoles": [
-          "user"
-        ]
+        "defaultRoles": ["user"]
       },
       {
         "name": "edit",
         "titleKey": "permissions.edit.title",
         "descriptionKey": "permissions.edit.description",
-        "defaultRoles": [
-          "user"
-        ]
+        "defaultRoles": ["user"]
       },
       {
         "name": "delete",
         "titleKey": "permissions.delete.title",
         "descriptionKey": "permissions.delete.description",
-        "defaultRoles": [
-          "user"
-        ]
+        "defaultRoles": ["user"]
       },
       {
         "name": "run",
         "titleKey": "permissions.run.title",
         "descriptionKey": "permissions.run.description",
-        "defaultRoles": [
-          "user"
-        ]
+        "defaultRoles": ["user"]
       }
     ],
-    "uses": [
-      "alerts.openChannels"
-    ],
+    "uses": ["alerts.openChannels"],
     "settings": {
       "user": [
         {
@@ -164,11 +148,7 @@
     }
   },
   "locales": "locales",
-  "platforms": [
-    "linux",
-    "win32",
-    "darwin"
-  ],
+  "platforms": ["linux", "win32", "darwin"],
   "dependencies": {
     "snippets": "^1.0.0"
   },
