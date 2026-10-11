@@ -1,0 +1,213 @@
+{
+  "permissions": {
+    "view": {
+      "title": "Lihat automasi",
+      "description": "Lihat automasi dan sejarahnya."
+    },
+    "create": {
+      "title": "Cipta automasi",
+      "description": "Tambah automasi baharu."
+    },
+    "edit": {
+      "title": "Sunting automasi",
+      "description": "Ubah automasi sedia ada."
+    },
+    "delete": {
+      "title": "Padam automasi",
+      "description": "Buang automasi."
+    },
+    "run": {
+      "title": "Jalankan automasi",
+      "description": "Picu automasi secara manual."
+    }
+  },
+  "newUi": {
+    "sidebar": {
+      "automations": {
+        "tabAutomations": "Automasi",
+        "tabRuns": "Jalankan",
+        "tabChannels": "Saluran",
+        "createAutomation": "Automasi Baharu",
+        "empty": "Belum ada automasi. Cipta satu untuk bertindak balas terhadap metrik, jadual, atau peristiwa.",
+        "emptyRuns": "Belum ada pelaksanaan.",
+        "channelsHint": "Saluran ditetapkan dalam Amaran",
+        "noChannelsHint": "Amaran sentiasa dihantar ke peti masuk anda. Tambah saluran dalam Amaran untuk menghantarnya ke tempat lain juga.",
+        "nameLabel": "Nama",
+        "namePlaceholder": "cth., Bersihkan /data apabila penuh",
+        "nameRequired": "Nama diperlukan",
+        "enabledLabel": "Dibenarkan",
+        "concurrencyLabel": "Jika sedang berjalan",
+        "concurrencyHint": "Apa yang perlu dilakukan apabila ini dipicu semula sebelum pelaksanaan terakhir selesai.",
+        "concurrency": {
+          "skip": "Langkau pelaksanaan baharu",
+          "queue": "Tunggu dan jalankan selepas",
+          "allow": "Jalankan kedua-duanya serentak"
+        },
+        "save": "Simpan",
+        "created": "Automasi dicipta",
+        "updated": "Automasi disimpan",
+        "deleted": "Automasi dipadam",
+        "deleteConfirm": "Padam automasi ini? Sejarah pelaksanaannya juga akan dipadam.",
+        "runNow": "Jalankan sekarang",
+        "testRun": "Jalankan ujian",
+        "runFinished": "Pelaksanaan selesai: {{status}}",
+        "trigger": "Pencetus",
+        "steps": "Langkah",
+        "addStep": "Tambah langkah",
+        "removeStep": "Buang langkah",
+        "moveUp": "Gerakkan ke atas",
+        "moveDown": "Gerakkan ke bawah",
+        "noSteps": "Belum ada langkah. Tambah satu untuk menyatakan apa yang perlu berlaku.",
+        "webhookTokenTitle": "URL Webhook",
+        "webhookTokenDescription": "Ini hanya dipaparkan sekali. Simpan sekarang, ia tidak boleh diperoleh semula kemudian.",
+        "copied": "Disalin",
+        "viewJson": "JSON",
+        "viewBuilder": "Pembina",
+        "dryRunBadge": "Jalankan ujian",
+        "hostSelector": {
+          "trigger": "Hos pencetus",
+          "host": "Hos khusus",
+          "fleet": "Armada",
+          "all": "Semua hos"
+        },
+        "triggerKinds": {
+          "metric_threshold": "Ambang metrik",
+          "host_status": "Hos naik atau turun",
+          "health_check": "Perubahan semakan kesihatan",
+          "schedule": "Mengikut jadual",
+          "docker_event": "Peristiwa kontena",
+          "internal_event": "Peristiwa Termix",
+          "webhook": "Webhook masuk"
+        },
+        "stepTypes": {
+          "notify": "Hantar amaran",
+          "http": "Panggil URL",
+          "run_snippet": "Jalankan snippet",
+          "run_command": "Jalankan arahan",
+          "docker": "Kawal bekas",
+          "tunnel": "Kawal terowong",
+          "wol": "Bangunkan hos",
+          "wait": "Tunggu",
+          "set_var": "Tetapkan pembolehubah",
+          "if": "Jika / sebaliknya",
+          "run_automation": "Jalankan automasi lain",
+          "stop": "Henti"
+        },
+        "statuses": {
+          "running": "Sedang berjalan",
+          "success": "Berjaya",
+          "failed": "Gagal",
+          "timeout": "Had masa tamat",
+          "skipped": "Dilangkau",
+          "cancelled": "Dibatalkan"
+        },
+        "fields": {
+          "host": "Hos",
+          "mount": "Titik pemasangan",
+          "forSeconds": "Dipertahankan selama (saat)",
+          "cooldown": "Masa sejuk (minit)",
+          "cron": "Ungkapan Cron",
+          "intervalSeconds": "Setiap (saat)",
+          "timezone": "Zon masa",
+          "timezoneServer": "Masa pelayan",
+          "timezoneHint": "Masa Cron dibaca dalam zon ini. Tidak terpakai untuk jadual selang.",
+          "container": "Bekas",
+          "command": "Arahan",
+          "body": "Badan",
+          "channels": "Hantar juga ke",
+          "title": "Tajuk",
+          "message": "Mesej",
+          "snippet": "Snippet",
+          "seconds": "Saat",
+          "conditionLeftPlaceholder": "Nilai untuk diperiksa",
+          "conditionRightPlaceholder": "Bandingkan dengan",
+          "variableName": "Nama pembolehubah",
+          "variableValue": "Nilai",
+          "elevated": "Jalankan dengan sudo",
+          "onError": "Jika ini gagal",
+          "allowPrivateNetwork": "Benarkan alamat rangkaian tempatan",
+          "allowPrivateNetworkHint": "Diperlukan untuk perkhidmatan hos sendiri di LAN anda. Dimatikan secara lalai untuk menghalang permintaan ke alamat dalaman.",
+          "interface": "Antara muka"
+        },
+        "onError": {
+          "stop": "Hentikan pelaksanaan",
+          "continue": "Teruskan"
+        },
+        "needsPlugin": "Memerlukan {{plugin}}",
+        "offBadge": "Mati",
+        "docsLink": "Lihat dokumentasi",
+        "ago": {
+          "seconds": "{{count}}s lalu",
+          "minutes": "{{count}}m lalu",
+          "hours": "{{count}}j lalu",
+          "days": "{{count}}h lalu"
+        },
+        "search": "Cari automasi",
+        "noMatches": "Tiada automasi sepadan dengan carian anda",
+        "settingsTitle": "Tetapan automasi",
+        "settingsDisplayTitle": "Paparan"
+      }
+    }
+  },
+  "nav": {
+    "automations": "Automasi"
+  },
+  "maintenance": {
+    "title": "Penyelenggaraan",
+    "description": "Jeda status hos, kesihatan, metrik, bekas dan automasi putuskan sambungan terowong semasa kerja sedang berjalan. Pemantauan, pelaksanaan manual dan automasi dijadualkan terus berjalan.",
+    "denied": "Anda tidak mempunyai kebenaran untuk melihat penyelenggaraan.",
+    "sharedReadOnly": "Hos ini dikongsi dengan anda. Hanya pemiliknya yang boleh mengubah penyelenggaraan.",
+    "failed": "Penyelenggaraan tidak dapat dikemas kini.",
+    "active": "Penyelenggaraan aktif",
+    "estimated": "Penyelesaian dianggarkan",
+    "noAutoEnd": "Anggaran ini tidak mengakhiri penyelenggaraan. Akhiri secara eksplisit apabila kerja selesai.",
+    "endConfirm": "Akhiri penyelenggaraan dan sambung semula automasi yang dipicu oleh peristiwa untuk hos ini?",
+    "confirmEnd": "Sahkan akhir",
+    "cancel": "Batal",
+    "end": "Akhiri penyelenggaraan",
+    "action": "Tindakan",
+    "startNow": "Mula sekarang",
+    "schedule": "Jadualkan kemudian",
+    "reason": "Sebab",
+    "startUtc": "Mula pertama (UTC)",
+    "repeat": "Ulang",
+    "once": "Sekali",
+    "weekly": "Mingguan",
+    "monthly": "Bulanan",
+    "utcHelp": "Jadual menggunakan UTC sepanjang tahun. Jadual bulanan akan melangkau bulan yang tidak mempunyai hari yang dipilih. Tingkap yang dirancang tidak boleh bertindih; penyelenggaraan yang melebihi masa akan berterusan merentasi tingkap kemudian.",
+    "duration": "Tempoh anggaran (minit)",
+    "grace": "Tempoh toleransi (minit)",
+    "notify": "Beritahu sekali jika masih luar talian selepas anggaran ditambah tempoh toleransi",
+    "addSchedule": "Tambah jadual",
+    "schedules": "Jadual",
+    "noSchedules": "Tiada jadual penyelenggaraan.",
+    "completed": "Sudah bermula",
+    "minutes_other": "{{count}} minit",
+    "remove": "Buang jadual",
+    "loadFailed": "Tidak dapat menyegarkan status penyelenggaraan. Perubahan dilumpuhkan sehingga ia boleh dimuatkan.",
+    "loading": "Memuatkan status penyelenggaraan…"
+  },
+  "ui": {
+    "sidebar": {
+      "automations": {
+        "options": {
+          "connect": "sambung",
+          "disconnect": "putuskan sambungan",
+          "offline": "luar talian",
+          "online": "dalam talian",
+          "failing": "gagal",
+          "recovered": "pulih"
+        }
+      }
+    }
+  },
+  "common": {
+    "delete": "Padam"
+  },
+  "settings": {
+    "alwaysShowActions": {
+      "label": "Sentiasa tunjukkan butang",
+      "description": "Kekalkan butang uji, jalankan dan padam di bawah setiap automasi kelihatan. Matikan untuk menunjukkannya hanya semasa kursor berada di atasnya."
+    }
+  }
+}

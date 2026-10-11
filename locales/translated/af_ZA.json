@@ -1,115 +1,100 @@
 {
   "permissions": {
     "view": {
-      "title": "Bekyk outomatisasies",
-      "description": "Sien die outomatisasies en hul geskiedenis."
+      "title": "Bekyk outomatiserings",
+      "description": "Sien die outomatiserings en hul geskiedenis."
     },
     "create": {
-      "title": "Skep outomatisasies",
-      "description": "Voeg nuwe outomatisasies by."
+      "title": "Skep outomatiserings",
+      "description": "Voeg nuwe outomatiserings by."
     },
     "edit": {
-      "title": "Wysig outomatisasies",
-      "description": "Verander bestaande outomatisasies."
+      "title": "Redigeer outomatiserings",
+      "description": "Verander bestaande outomatiserings."
     },
     "delete": {
-      "title": "Vee outomatisasies uit",
-      "description": "Verwyder outomatisasies."
+      "title": "Vee outomatiserings uit",
+      "description": "Verwyder outomatiserings."
     },
     "run": {
-      "title": "Voer outomatisasies uit",
-      "description": "Aktiveer 'n outomatisering met die hand."
+      "title": "Voer outomatiserings uit",
+      "description": "Stel 'n outomatisering handmatig in werking."
     }
   },
   "newUi": {
     "sidebar": {
       "automations": {
-        "title": "Outomatisasies",
-        "tabAutomations": "Outomatisasies",
-        "tabRuns": "Loopbane",
+        "tabAutomations": "Outomatiserings",
+        "tabRuns": "Uitvoerings",
         "tabChannels": "Kanale",
-        "createAutomation": "Nuwe Outomatisering",
-        "backToAutomations": "Terug na Outomatisasies",
-        "createTitle": "Nuwe Outomatisering",
-        "editTitle": "Wysig Outomatisering",
-        "empty": "Geen outomatisasies nog nie. Skep een om op 'n maatstaf, 'n skedule of 'n gebeurtenis te reageer.",
-        "emptyRuns": "Geen lopies nog nie.",
-        "channelsHint": "Kanale word in Waarskuwings opgestel",
-        "noChannelsHint": "Die waarskuwing gaan altyd na jou inboks. Voeg kanale by Waarskuwings om dit ook elders te stuur.",
+        "createAutomation": "Nuwe outomatisering",
+        "empty": "Nog geen outomatiserings nie. Skep een om te reageer op 'n meetwaarde, 'n skedule of 'n gebeurtenis.",
+        "emptyRuns": "Nog geen uitvoerings nie.",
+        "channelsHint": "Kanale word in Waarskuwings ingestel",
+        "noChannelsHint": "Die waarskuwing gaan altyd na jou inkassie. Voeg kanale by in Waarskuwings om dit ook elders te stuur.",
         "nameLabel": "Naam",
-        "namePlaceholder": "bv. Maak /data skoon wanneer dit vol is",
-        "nameRequired": "Naam word vereis",
-        "descriptionLabel": "Beskrywing",
-        "descriptionPlaceholder": "Opsionele beskrywing",
+        "namePlaceholder": "bv. Maak /data skoon wanneer dit vol raak",
+        "nameRequired": "Naam is verpligtend",
         "enabledLabel": "Geaktiveer",
-        "concurrencyLabel": "As dit reeds aan die gang is",
-        "concurrencyHint": "Wat om te doen wanneer dit weer geaktiveer word voordat die laaste lopie klaar is.",
+        "concurrencyLabel": "As dit reeds loop",
+        "concurrencyHint": "Wat om te doen wanneer dit weer geaktiveer word voordat die laaste uitvoering klaar is.",
         "concurrency": {
-          "skip": "Slaan die nuwe lopie oor",
-          "queue": "Wag en hardloop agterna",
-          "allow": "Begin albei gelyktydig"
+          "skip": "Slaan die nuwe uitvoering oor",
+          "queue": "Wag en voer daarna uit",
+          "allow": "Voer albei gelyktydig uit"
         },
         "save": "Stoor",
         "created": "Outomatisering geskep",
         "updated": "Outomatisering gestoor",
         "deleted": "Outomatisering uitgevee",
-        "deleteConfirm": "Vee hierdie outomatisering uit? Die loopgeskiedenis daarvan word ook uitgevee.",
-        "runNow": "Hardloop nou",
-        "testRun": "Toetslopie",
-        "testRunHint": "Loop elke stap, maar raak niks buite Termix aan nie.",
-        "runStarted": "Loop het begin",
-        "runFinished": "Loop voltooi: {{status}}",
-        "trigger": "Sneller",
+        "deleteConfirm": "Vee hierdie outomatisering uit? Sy uitvoeringsgeskiedenis word ook uitgevee.",
+        "runNow": "Voer nou uit",
+        "testRun": "Toetsuitvoering",
+        "runFinished": "Uitvoering voltooi: {{status}}",
+        "trigger": "Aanleiding",
         "steps": "Stappe",
         "addStep": "Voeg stap by",
         "removeStep": "Verwyder stap",
         "moveUp": "Beweeg op",
         "moveDown": "Beweeg af",
-        "noSteps": "Geen stappe nog nie. Voeg een by om te sê wat moet gebeur.",
+        "noSteps": "Nog geen stappe nie. Voeg een by om aan te dui wat moet gebeur.",
         "webhookTokenTitle": "Webhook-URL",
-        "webhookTokenDescription": "Dit word een keer gewys. Stoor dit nou, dit kan nie later herwin word nie.",
-        "copy": "Kopieer",
+        "webhookTokenDescription": "Dit word slegs een keer vertoon. Stoor dit nou, dit kan later nie herstel word nie.",
         "copied": "Gekopieer",
         "viewJson": "JSON",
         "viewBuilder": "Bouer",
-        "viewGraph": "Grafiek",
-        "lastRun": "Laaste lopie",
-        "never": "Nooit",
-        "duration": "{{seconds}}s",
-        "stepOutput": "Uitset",
-        "stepError": "Fout",
-        "dryRunBadge": "Toetslopie",
+        "dryRunBadge": "Toetsuitvoering",
         "hostSelector": {
-          "trigger": "Aanvallende gasheer",
+          "trigger": "Aanleidende gasheer",
           "host": "Spesifieke gasheer",
           "fleet": "Vloot",
-          "all": "Alle gashere"
+          "all": "Alle gasheer"
         },
         "triggerKinds": {
-          "metric_threshold": "Metrieke drempel",
+          "metric_threshold": "Meetwaardedrempel",
           "host_status": "Gasheer gaan op of af",
-          "health_check": "Veranderinge in gesondheidstoetse",
-          "schedule": "Op 'n skedule",
-          "docker_event": "Houergebeurtenis",
-          "internal_event": "Termix-geleentheid",
+          "health_check": "Gesondheidskontrole verander",
+          "schedule": "Volgens skedule",
+          "docker_event": "Behuisinggebeurtenis",
+          "internal_event": "Termix-gebeurtenis",
           "webhook": "Inkomende webhook"
         },
         "stepTypes": {
           "notify": "Stuur 'n waarskuwing",
-          "http": "Roep 'n URL op",
-          "run_snippet": "Voer 'n brokkie uit",
+          "http": "Roep 'n URL aan",
+          "run_snippet": "Voer 'n snippet uit",
           "run_command": "Voer 'n opdrag uit",
           "docker": "Beheer 'n houer",
-          "tunnel": "Beheer 'n tonnel",
-          "wol": "Maak 'n gasheer wakker",
+          "tunnel": "Beheer 'n tunnel",
+          "wol": "Weck 'n gasheer",
           "wait": "Wag",
           "set_var": "Stel 'n veranderlike",
-          "if": "Indien / andersins",
-          "run_automation": "Begin nog 'n outomatisering",
+          "if": "As / anders",
+          "run_automation": "Voer 'n ander outomatisering uit",
           "stop": "Stop"
         },
         "statuses": {
-          "running": "Hardloop",
+          "running": "Besig om uit te voer",
           "success": "Sukses",
           "failed": "Misluk",
           "timeout": "Tyd verstryk",
@@ -118,86 +103,81 @@
         },
         "fields": {
           "host": "Gasheer",
-          "metric": "Metrieke",
           "mount": "Monteerpunt",
-          "operator": "Is",
-          "value": "Waarde",
-          "forSeconds": "Aangehou vir (sekondes)",
+          "forSeconds": "Aanhoudend vir (sekondes)",
           "cooldown": "Afkoeltyd (minute)",
           "cron": "Cron-uitdrukking",
           "intervalSeconds": "Elke (sekondes)",
           "timezone": "Tydsone",
-          "timezoneServer": "Bedienertyd",
-          "timezoneHint": "Cron-tye word in hierdie sone gelees. Geld nie vir intervalskedules nie.",
+          "timezoneServer": "Bedienerstyd",
+          "timezoneHint": "Cron-tye word in hierdie sone gelees. Geld nie vir interval-skedules nie.",
           "container": "Houer",
-          "command": "Bevel",
-          "url": "URL",
-          "method": "Metode",
+          "command": "Opdrag",
           "body": "Liggaam",
           "channels": "Stuur ook na",
           "title": "Titel",
           "message": "Boodskap",
-          "snippet": "Brokkie",
+          "snippet": "Snippet",
           "seconds": "Sekondes",
-          "conditionLeftPlaceholder": "Waarde om na te gaan",
-          "conditionRightPlaceholder": "Vergelyk teen",
+          "conditionLeftPlaceholder": "Waarde om te kontroleer",
+          "conditionRightPlaceholder": "Vergelyk teenoor",
           "variableName": "Veranderlike naam",
           "variableValue": "Waarde",
-          "elevated": "Begin met sudo",
+          "elevated": "Voer uit met sudo",
           "onError": "As dit misluk",
           "allowPrivateNetwork": "Laat plaaslike netwerkadresse toe",
-          "allowPrivateNetworkHint": "Nodig vir 'n selfgehoste diens op jou LAN. Standaard afgeskakel om versoeke na interne adresse te voorkom."
+          "allowPrivateNetworkHint": "Nodig vir 'n self-geherbergde diens op jou LAN. Standaard af om versoeke na interne adresse te voorkom.",
+          "interface": "Koppelvlak"
         },
         "onError": {
-          "stop": "Stop die hardloop",
+          "stop": "Stop die uitvoering",
           "continue": "Gaan voort"
         },
         "needsPlugin": "Benodig {{plugin}}",
-        "needsPluginHint": "Hierdie outomatisering word oorgeslaan totdat die funksie wat dit benodig weer beskikbaar is.",
         "offBadge": "Af",
-        "docsLink": "Bekyk dokumente",
+        "docsLink": "Bekyk dokumentasie",
         "ago": {
           "seconds": "{{count}}s gelede",
           "minutes": "{{count}}m gelede",
-          "hours": "{{count}}uur gelede",
-          "days": "{{count}}dae gelede"
-        }
+          "hours": "{{count}}h gelede",
+          "days": "{{count}}d gelede"
+        },
+        "search": "Soek outomatiserings",
+        "noMatches": "Geen outomatiserings stem ooreen met jou soektog nie",
+        "settingsTitle": "Outomatisering-instellings",
+        "settingsDisplayTitle": "Vertoning"
       }
     }
   },
   "nav": {
-    "automations": "Outomatisasies"
-  },
-  "onboarding": {
-    "feature_automations": "Outomatisasies",
-    "feature_automations_desc": "Voer stappe outomaties uit wanneer iets gebeur, en word in kennis gestel."
+    "automations": "Outomatiserings"
   },
   "maintenance": {
     "title": "Onderhoud",
-    "description": "Onderbreek gasheerstatus, gesondheid, metrieke, houer- en tonnel-ontkoppelingsoutomatisasies terwyl werk aan die gang is. Monitering, handmatige lopies en geskeduleerde outomatisasies gaan voort.",
+    "description": "Pouseer gasheerstatus, gesondheid, metrieke, houer en tunnel-ontkoppelings-outomatiserings terwyl werk plaasvind. Monitering, handmatige uitvoerings en geskeduleerde outomatiserings gaan voort.",
     "denied": "Jy het nie toestemming om onderhoud te sien nie.",
-    "sharedReadOnly": "Hierdie gasheer is met jou gedeel. Slegs die eienaar kan die onderhoud verander.",
+    "sharedReadOnly": "Hierdie gasheer is met jou gedeel. Slegs die eienaar kan onderhoud verander.",
     "failed": "Onderhoud kon nie opgedateer word nie.",
     "active": "Onderhoud aktief",
-    "estimated": "Geraamde voltooiing",
+    "estimated": "Geskatte voltooiing",
     "noAutoEnd": "Die skatting beëindig nie onderhoud nie. Beëindig dit eksplisiet wanneer die werk voltooi is.",
-    "endConfirm": "Beëindig onderhoud en hervat gebeurtenis-geaktiveerde outomatisasies vir hierdie gasheer?",
+    "endConfirm": "Beëindig onderhoud en hervat gebeurtenis-aangedrewe outomatiserings vir hierdie gasheer?",
     "confirmEnd": "Bevestig einde",
     "cancel": "Kanselleer",
-    "end": "Einde van onderhoud",
+    "end": "Beëindig onderhoud",
     "action": "Aksie",
     "startNow": "Begin nou",
     "schedule": "Skeduleer vir later",
     "reason": "Rede",
     "startUtc": "Eerste begin (UTC)",
     "repeat": "Herhaal",
-    "once": "Eens",
+    "once": "Een keer",
     "weekly": "Weekliks",
     "monthly": "Maandeliks",
-    "utcHelp": "Skedules gebruik UTC dwarsdeur die jaar. Maandelikse skedules slaan maande oor sonder die gekose dag. Beplande vensters kan nie oorvleuel nie; oorskrydende onderhoud gaan voort oor latere vensters.",
-    "duration": "Geraamde duur (minute)",
-    "grace": "Genadetydperk (minute)",
-    "notify": "Stel een keer in kennis indien steeds vanlyn na die skatting plus grasietydperk",
+    "utcHelp": "Skedules gebruik UTC deur die hele jaar. Maandelikse skedules slaan maande oor sonder die gekose dag. Geplande vensters kan nie oorvleuel nie; onderhoud wat oorloop, gaan voort oor latere vensters.",
+    "duration": "Geskatte duur (minute)",
+    "grace": "Genadeperiode (minute)",
+    "notify": "Stel een keer in kennis as steeds aflyn na die skatting plus genadeperiode",
     "addSchedule": "Voeg skedule by",
     "schedules": "Skedules",
     "noSchedules": "Geen onderhoudskedules nie.",
@@ -205,21 +185,30 @@
     "minutes_one": "{{count}} minuut",
     "minutes_other": "{{count}} minute",
     "remove": "Verwyder skedule",
-    "loadFailed": "Kon nie onderhoudstatus verfris nie. Veranderinge is gedeaktiveer totdat dit gelaai kan word.",
+    "loadFailed": "Kon nie onderhoudstatus vernuwe nie. Veranderings is gedeaktiveer totdat dit gelaai kan word.",
     "loading": "Laai onderhoudstatus…"
   },
   "ui": {
     "sidebar": {
       "automations": {
         "options": {
-          "connect": "connect",
-          "disconnect": "disconnect",
-          "offline": "offline",
-          "online": "online",
-          "failing": "failing",
-          "recovered": "recovered"
+          "connect": "koppel",
+          "disconnect": "ontkoppel",
+          "offline": "aflyn",
+          "online": "aanlyn",
+          "failing": "misluk",
+          "recovered": "herstel"
         }
       }
+    }
+  },
+  "common": {
+    "delete": "Vee uit"
+  },
+  "settings": {
+    "alwaysShowActions": {
+      "label": "Wys altyd knoppies",
+      "description": "Hou die toets, uitvoer en vee uit-knoppies onder elke outomatisering sigbaar. Skakel af om dit slegs by hover te wys."
     }
   }
 }

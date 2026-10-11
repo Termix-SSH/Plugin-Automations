@@ -1,0 +1,215 @@
+{
+  "permissions": {
+    "view": {
+      "title": "Apskatīt automatizācijas",
+      "description": "Apskatīt automatizācijas un to vēsturi."
+    },
+    "create": {
+      "title": "Izveidot automatizācijas",
+      "description": "Pievienot jaunas automatizācijas."
+    },
+    "edit": {
+      "title": "Rediģēt automatizācijas",
+      "description": "Mainīt esošās automatizācijas."
+    },
+    "delete": {
+      "title": "Dzēst automatizācijas",
+      "description": "Noņemt automatizācijas."
+    },
+    "run": {
+      "title": "Palaist automatizācijas",
+      "description": "Manuāli aktivizēt automatizāciju."
+    }
+  },
+  "newUi": {
+    "sidebar": {
+      "automations": {
+        "tabAutomations": "Automatizācijas",
+        "tabRuns": "Palaišanas",
+        "tabChannels": "Kanāli",
+        "createAutomation": "Jauna automatizācija",
+        "empty": "Vēl nav automatizāciju. Izveidojiet vienu, lai reaģētu uz metriku, grafiku vai notikumu.",
+        "emptyRuns": "Vēl nav palaišanu.",
+        "channelsHint": "Kanāli tiek iestatīti brīdinājumos",
+        "noChannelsHint": "Brīdinājums vienmēr tiek nosūtīts uz jūsu iesūtni. Pievienojiet kanālus brīdinājumos, lai to nosūtītu arī citur.",
+        "nameLabel": "Nosaukums",
+        "namePlaceholder": "piem., Notīrīt /data, kad tas piepildās",
+        "nameRequired": "Nosaukums ir obligāts",
+        "enabledLabel": "Iespējots",
+        "concurrencyLabel": "Ja jau darbojas",
+        "concurrencyHint": "Ko darīt, ja šī tiek aktivizēta vēlreiz, pirms iepriekšējā palaišana ir pabeigta.",
+        "concurrency": {
+          "skip": "Izlaist jauno palaišanu",
+          "queue": "Gaidīt un palaist pēc tam",
+          "allow": "Palaist abas vienlaicīgi"
+        },
+        "save": "Saglabāt",
+        "created": "Automatizācija izveidota",
+        "updated": "Automatizācija saglabāta",
+        "deleted": "Automatizācija dzēsta",
+        "deleteConfirm": "Dzēst šo automatizāciju? Tās palaišanas vēsture tiks dzēsta arī.",
+        "runNow": "Palaist tagad",
+        "testRun": "Testa palaišana",
+        "runFinished": "Palaišana pabeigta: {{status}}",
+        "trigger": "Aktivizētājs",
+        "steps": "Solī",
+        "addStep": "Pievienot soli",
+        "removeStep": "Noņemt soli",
+        "moveUp": "Pārvietot uz augšu",
+        "moveDown": "Pārvietot uz leju",
+        "noSteps": "Vēl nav soļu. Pievienojiet vienu, lai norādītu, kas jādara.",
+        "webhookTokenTitle": "Webhook URL",
+        "webhookTokenDescription": "Tas tiek parādīts tikai vienu reizi. Saglabājiet to tagad, jo vēlāk to nevarēs iegūt.",
+        "copied": "Kopēts",
+        "viewJson": "JSON",
+        "viewBuilder": "Konstruktors",
+        "dryRunBadge": "Testa palaišana",
+        "hostSelector": {
+          "trigger": "Aktivizējošais hosts",
+          "host": "Konkrēts hosts",
+          "fleet": "Flote",
+          "all": "Visi hosti"
+        },
+        "triggerKinds": {
+          "metric_threshold": "Metriku slieksnis",
+          "host_status": "Hosts kļūst pieejams vai nepieejams",
+          "health_check": "Veselības pārbaudes izmaiņas",
+          "schedule": "Pēc grafika",
+          "docker_event": "Konteinera notikums",
+          "internal_event": "Termix notikums",
+          "webhook": "Ienākošais webhook"
+        },
+        "stepTypes": {
+          "notify": "Nosūtīt brīdinājumu",
+          "http": "Aizvietot URL",
+          "run_snippet": "Palaist fragmentu",
+          "run_command": "Palaist komandu",
+          "docker": "Pārvaldīt konteineri",
+          "tunnel": "Pārvaldīt tuneli",
+          "wol": "Pamodināt mezglu",
+          "wait": "Gaidīt",
+          "set_var": "Iestatīt mainīgo",
+          "if": "Ja / citādi",
+          "run_automation": "Palaist citu automatizāciju",
+          "stop": "Apturēt"
+        },
+        "statuses": {
+          "running": "Notiek izpilde",
+          "success": "Veiksmīgi",
+          "failed": "Neizdevās",
+          "timeout": "Laiks beidzās",
+          "skipped": "Izlaists",
+          "cancelled": "Atcelts"
+        },
+        "fields": {
+          "host": "Mezgls",
+          "mount": "Pievienojuma punkts",
+          "forSeconds": "Uzturēts (sekundes)",
+          "cooldown": "Atjaunošanās (minūtes)",
+          "cron": "Cron izteiksme",
+          "intervalSeconds": "Katru (sekundes)",
+          "timezone": "Laika josla",
+          "timezoneServer": "Servera laiks",
+          "timezoneHint": "Cron laiki tiek lasīti šajā joslā. Nepiemērojas intervāla grafikiem.",
+          "container": "Konteiners",
+          "command": "Komanda",
+          "body": "Saturs",
+          "channels": "Arī nosūtīt uz",
+          "title": "Virsraksts",
+          "message": "Ziņa",
+          "snippet": "Fragment",
+          "seconds": "Sekundes",
+          "conditionLeftPlaceholder": "Pārbaudāmā vērtība",
+          "conditionRightPlaceholder": "Salīdzināt ar",
+          "variableName": "Mainīgā nosaukums",
+          "variableValue": "Vērtība",
+          "elevated": "Palaist ar sudo",
+          "onError": "Ja tas neizdodas",
+          "allowPrivateNetwork": "Atļaut lokālā tīkla adreses",
+          "allowPrivateNetworkHint": "Nepieciešams pašhostētai pakalpojumu jūsu LAN. Noklusējuma režīmā izslēgts, lai novērstu pieprasījumus iekšējām adresēm.",
+          "interface": "Saskarne"
+        },
+        "onError": {
+          "stop": "Apturēt izpildi",
+          "continue": "Turpināt"
+        },
+        "needsPlugin": "Nepieciešams {{plugin}}",
+        "offBadge": "Izslēgts",
+        "docsLink": "Apskatīt dokumentāciju",
+        "ago": {
+          "seconds": "pirms {{count}} s",
+          "minutes": "pirms {{count}} m",
+          "hours": "pirms {{count}} h",
+          "days": "pirms {{count}} d"
+        },
+        "search": "Meklēt automatizācijas",
+        "noMatches": "Nav automatizāciju, kas atbilstu jūsu meklējumam",
+        "settingsTitle": "Automatizācijas iestatījumi",
+        "settingsDisplayTitle": "Attēlojums"
+      }
+    }
+  },
+  "nav": {
+    "automations": "Automatizācijas"
+  },
+  "maintenance": {
+    "title": "Apkope",
+    "description": "Pārtrauciet mezgla statusa, veselības, metrikas, konteineru un tunelēšanas atvienošanas automatizācijas, kamēr notiek darbs. Monitorings, manuāla izpilde un plānotās automatizācijas turpinās.",
+    "denied": "Jums nav atļaujas apskatīt apkopi.",
+    "sharedReadOnly": "Šis resursdators ir koplietots ar jums. Tikai tā īpašnieks var mainīt apkopi.",
+    "failed": "Apkopi neizdevās atjaunināt.",
+    "active": "Apkope aktīva",
+    "estimated": "Aptuvenais pabeigšanas laiks",
+    "noAutoEnd": "Aptuvenais laiks nebeidz apkopi. Beidziet to skaidri, kad darbs ir pabeigts.",
+    "endConfirm": "Beigt apkopi un atsākt šī resursdatora notikumu aktivizētās automatizācijas?",
+    "confirmEnd": "Apstiprināt beigas",
+    "cancel": "Atcelt",
+    "end": "Beigt apkopi",
+    "action": "Darbība",
+    "startNow": "Sākt tagad",
+    "schedule": "Ieplānot vēlāk",
+    "reason": "Iemesls",
+    "startUtc": "Pirmā sākuma (UTC)",
+    "repeat": "Atkārtot",
+    "once": "Vienreiz",
+    "weekly": "Katru nedēļu",
+    "monthly": "Katru mēnesi",
+    "utcHelp": "Ieplānojumi visu gadu izmanto UTC. Mēneša ieplānojumi izlaiž mēnešus, kuros nav atlasītā datuma. Plānotie logi nevar pārklāties; pārsniegta apkope turpinās pār vēlākiem logiem.",
+    "duration": "Aptuvenais ilgums (minūtēs)",
+    "grace": "Gaišanas periods (minūtēs)",
+    "notify": "Paziņot vienu reizi, ja pēc aptuvenā laika un gaišanas perioda joprojām ir bezsaistē",
+    "addSchedule": "Pievienot grafiku",
+    "schedules": "Grafiki",
+    "noSchedules": "Nav apkopes grafiku.",
+    "completed": "Jau sākts",
+    "minutes_zero": "0 minūtes",
+    "minutes_one": "{{count}} minūte",
+    "minutes_other": "{{count}} minūtes",
+    "remove": "Noņemt grafiku",
+    "loadFailed": "Neizdevās atsvaidzināt apkopes statusu. Izmaiņas ir atspējotas, līdz tas var tikt ielādēts.",
+    "loading": "Ielādē apkopes statusu…"
+  },
+  "ui": {
+    "sidebar": {
+      "automations": {
+        "options": {
+          "connect": "savienot",
+          "disconnect": "atsavienot",
+          "offline": "bezsaistē",
+          "online": "saistē",
+          "failing": "neveiksmīgs",
+          "recovered": "atjaunots"
+        }
+      }
+    }
+  },
+  "common": {
+    "delete": "Dzēst"
+  },
+  "settings": {
+    "alwaysShowActions": {
+      "label": "Vienmēr rādīt pogas",
+      "description": "Turiet testēšanas, izpildes un dzēšanas pogas zem katras automatizācijas redzamas. Izslēdziet, lai tās rādītu tikai, novietojot peli virs tām."
+    }
+  }
+}

@@ -1,140 +1,120 @@
 {
   "permissions": {
     "view": {
-      "title": "Veure automatitzacions",
-      "description": "Vegeu les automatitzacions i el seu historial."
+      "title": "Veure les automatitzacions",
+      "description": "Veure les automatitzacions i el seu historial."
     },
     "create": {
-      "title": "Crea automatitzacions",
-      "description": "Afegiu noves automatitzacions."
+      "title": "Crear automatitzacions",
+      "description": "Afegir noves automatitzacions."
     },
     "edit": {
-      "title": "Edita automatitzacions",
-      "description": "Canviar les automatitzacions existents."
+      "title": "Editar automatitzacions",
+      "description": "Modificar les automatitzacions existents."
     },
     "delete": {
-      "title": "Suprimeix automatitzacions",
+      "title": "Eliminar automatitzacions",
       "description": "Eliminar automatitzacions."
     },
     "run": {
       "title": "Executar automatitzacions",
-      "description": "Activa una automatització manualment."
+      "description": "Disparar una automatització manualment."
     }
   },
   "newUi": {
     "sidebar": {
       "automations": {
-        "title": "Automatitzacions",
         "tabAutomations": "Automatitzacions",
-        "tabRuns": "Carreres",
+        "tabRuns": "Execucions",
         "tabChannels": "Canals",
         "createAutomation": "Nova automatització",
-        "backToAutomations": "Torna a Automatitzacions",
-        "createTitle": "Nova automatització",
-        "editTitle": "Edita l'automatització",
-        "empty": "Encara no hi ha automatitzacions. Crea'n una per reaccionar a una mètrica, una programació o un esdeveniment.",
-        "emptyRuns": "Encara no hi ha curses.",
+        "empty": "Encara no hi ha automatitzacions. Crea'n una per respondre a una mètrica, un horari o un esdeveniment.",
+        "emptyRuns": "Encara no hi ha execucions.",
         "channelsHint": "Els canals es configuren a Alertes",
-        "noChannelsHint": "L'alerta sempre va a la teva safata d'entrada. Afegeix canals a Alertes per enviar-la també a un altre lloc.",
+        "noChannelsHint": "L'alerta sempre va a la safata d'entrada. Afegeix canals a Alertes per enviar-la també a un altre lloc.",
         "nameLabel": "Nom",
-        "namePlaceholder": "p. ex., Neteja /dades quan s'ompli",
+        "namePlaceholder": "p. ex., Netejar /data quan s'ompli",
         "nameRequired": "El nom és obligatori",
-        "descriptionLabel": "Descripció",
-        "descriptionPlaceholder": "Descripció opcional",
-        "enabledLabel": "Activat",
-        "concurrencyLabel": "Si ja està en funcionament",
-        "concurrencyHint": "Què cal fer quan això es torna a activar abans que s'hagi acabat l'última execució.",
+        "enabledLabel": "Habilitat",
+        "concurrencyLabel": "Si ja s'està executant",
+        "concurrencyHint": "Què fer quan això es dispara de nou abans que l'última execució hagi acabat.",
         "concurrency": {
-          "skip": "Omet la nova cursa",
-          "queue": "Espera i corre darrere",
-          "allow": "Executa tots dos alhora"
+          "skip": "Ometre la nova execució",
+          "queue": "Esperar i executar després",
+          "allow": "Executar-les totes dues alhora"
         },
-        "save": "Desa",
+        "save": "Desar",
         "created": "Automatització creada",
         "updated": "Automatització desada",
-        "deleted": "Automatització suprimida",
-        "deleteConfirm": "Voleu suprimir aquesta automatització? També se n'esborra l'historial d'execucions.",
-        "runNow": "Executa ara",
-        "testRun": "Prova de funcionament",
-        "testRunHint": "Corre cada pas però no toca res fora de Termix.",
-        "runStarted": "Execució iniciada",
-        "runFinished": "Execució acabada: {{status}}",
+        "deleted": "Automatització eliminada",
+        "deleteConfirm": "Eliminar aquesta automatització? L'historial d'execucions també s'eliminarà.",
+        "runNow": "Executar ara",
+        "testRun": "Execució de prova",
+        "runFinished": "Execució finalitzada: {{status}}",
         "trigger": "Disparador",
         "steps": "Passos",
-        "addStep": "Afegeix un pas",
-        "removeStep": "Elimina el pas",
-        "moveUp": "Puja",
-        "moveDown": "Moure cap avall",
-        "noSteps": "Encara no hi ha cap pas. Afegeix-ne un per indicar què hauria de passar.",
+        "addStep": "Afegir pas",
+        "removeStep": "Eliminar pas",
+        "moveUp": "Moure amunt",
+        "moveDown": "Moure avall",
+        "noSteps": "Encara no hi ha passos. Afegeix-ne un per indicar què ha de passar.",
         "webhookTokenTitle": "URL del webhook",
-        "webhookTokenDescription": "Això es mostra una vegada. Desa-ho ara, no es podrà recuperar més tard.",
-        "copy": "Còpia",
+        "webhookTokenDescription": "Això es mostra una sola vegada. Desa-ho ara, ja no es podrà recuperar més tard.",
         "copied": "Copiat",
         "viewJson": "JSON",
         "viewBuilder": "Constructor",
-        "viewGraph": "Gràfic",
-        "lastRun": "Última cursa",
-        "never": "Mai",
-        "duration": "{{seconds}}s",
-        "stepOutput": "Sortida",
-        "stepError": "Error",
-        "dryRunBadge": "Prova de funcionament",
+        "dryRunBadge": "Execució de prova",
         "hostSelector": {
-          "trigger": "Host activador",
+          "trigger": "Amfitrió que dispara",
           "host": "Amfitrió específic",
           "fleet": "Flota",
           "all": "Tots els amfitrions"
         },
         "triggerKinds": {
-          "metric_threshold": "Llindar mètric",
-          "host_status": "L'amfitrió puja o baixa",
-          "health_check": "Canvis en la revisió de salut",
-          "schedule": "En un horari",
-          "docker_event": "Esdeveniment de contenidor",
+          "metric_threshold": "Llindar de mètrica",
+          "host_status": "L'amfitrió s'activa o s'apaga",
+          "health_check": "Canvis en la comprovació de salut",
+          "schedule": "Segons un horari",
+          "docker_event": "Esdeveniment del contenidor",
           "internal_event": "Esdeveniment de Termix",
           "webhook": "Webhook entrant"
         },
         "stepTypes": {
           "notify": "Enviar una alerta",
-          "http": "Crida a una URL",
-          "run_snippet": "Executa un fragment",
-          "run_command": "Executa una ordre",
+          "http": "Cridar una URL",
+          "run_snippet": "Executar un fragment",
+          "run_command": "Executar un comandament",
           "docker": "Controlar un contenidor",
           "tunnel": "Controlar un túnel",
-          "wol": "Despertar un amfitrió",
-          "wait": "Espera",
-          "set_var": "Defineix una variable",
+          "wol": "Encendre un host",
+          "wait": "Esperar",
+          "set_var": "Establir una variable",
           "if": "Si / altrament",
-          "run_automation": "Executa una altra automatització",
-          "stop": "Atura"
+          "run_automation": "Executar una altra automatització",
+          "stop": "Aturar"
         },
         "statuses": {
-          "running": "Córrer",
+          "running": "S'està executant",
           "success": "Èxit",
-          "failed": "Fallat",
-          "timeout": "Temps d'espera esgotat",
-          "skipped": "Omès",
+          "failed": "Ha fallat",
+          "timeout": "Temps esgotat",
+          "skipped": "Omessos",
           "cancelled": "Cancel·lat"
         },
         "fields": {
-          "host": "Amfitrió",
-          "metric": "Mètrica",
+          "host": "Host",
           "mount": "Punt de muntatge",
-          "operator": "És",
-          "value": "Valor",
-          "forSeconds": "Sostingut durant (segons)",
-          "cooldown": "Refredament (minuts)",
-          "cron": "Expressió cron",
+          "forSeconds": "Manteniment durant (segons)",
+          "cooldown": "Període de refrigeració (minuts)",
+          "cron": "Expressió Cron",
           "intervalSeconds": "Cada (segons)",
           "timezone": "Zona horària",
           "timezoneServer": "Hora del servidor",
-          "timezoneHint": "Els temps cron es llegeixen en aquesta zona. No s'aplica a les programacions per intervals.",
+          "timezoneHint": "Les hores Cron es llegeixen en aquesta zona. No s'aplica als programes d'interval.",
           "container": "Contenidor",
           "command": "Comandament",
-          "url": "URL",
-          "method": "Mètode",
           "body": "Cos",
-          "channels": "També envia a",
+          "channels": "Enviar també a",
           "title": "Títol",
           "message": "Missatge",
           "snippet": "Fragment",
@@ -145,81 +125,91 @@
           "variableValue": "Valor",
           "elevated": "Executar amb sudo",
           "onError": "Si això falla",
-          "allowPrivateNetwork": "Permetre adreces de xarxa locals",
-          "allowPrivateNetworkHint": "Necessari per a un servei autoallotjat a la vostra LAN. Desactivat per defecte per evitar sol·licituds a adreces internes."
+          "allowPrivateNetwork": "Permetre adreces de xarxa local",
+          "allowPrivateNetworkHint": "Necessari per a un servei allotjat al vostre LAN. Desactivat per defecte per evitar sol·licituds a adreces internes.",
+          "interface": "Interfície"
         },
         "onError": {
-          "stop": "Atura la cursa",
-          "continue": "Continua"
+          "stop": "Aturar l'execució",
+          "continue": "Continuar"
         },
-        "needsPlugin": "Necessita {{plugin}}",
-        "needsPluginHint": "Aquesta automatització s'omet fins que la funció que necessita torni a estar disponible.",
+        "needsPlugin": "Requereix {{plugin}}",
         "offBadge": "Desactivat",
-        "docsLink": "Veure documents",
+        "docsLink": "Veure la documentació",
         "ago": {
-          "seconds": "Fa {{count}}segons",
-          "minutes": "fa {{count}}minuts",
-          "hours": "fa {{count}}h",
-          "days": "fa {{count}}dies"
-        }
+          "seconds": "Fa {{count}}s",
+          "minutes": "Fa {{count}}m",
+          "hours": "Fa {{count}}h",
+          "days": "Fa {{count}}d"
+        },
+        "search": "Cercar automatitzacions",
+        "noMatches": "Cap automatització coincideix amb la vostra cerca",
+        "settingsTitle": "Configuració d'automatització",
+        "settingsDisplayTitle": "Visualització"
       }
     }
   },
   "nav": {
     "automations": "Automatitzacions"
   },
-  "onboarding": {
-    "feature_automations": "Automatitzacions",
-    "feature_automations_desc": "Executa els passos automàticament quan passi alguna cosa i rep notificacions."
-  },
   "maintenance": {
     "title": "Manteniment",
-    "description": "Pausa les automatitzacions d'estat, salut, mètriques, contenidors i desconnexió de túnels de l'amfitrió mentre la feina està en curs. La supervisió, les execucions manuals i les automatitzacions programades continuen.",
+    "description": "Pausa l'estat de l'host, la salut, les mètriques, els contenidors i les automatitzacions de desconnexió de túnel mentre es realitza la feina. La supervisió, les execucions manuals i les automatitzacions programades continuen.",
     "denied": "No teniu permís per veure el manteniment.",
-    "sharedReadOnly": "Aquest amfitrió s'ha compartit amb tu. Només el seu propietari pot canviar el manteniment.",
-    "failed": "No s'ha pogut actualitzar el manteniment.",
+    "sharedReadOnly": "Aquest amfitrió s'ha compartit amb vosaltres. Només el propietari pot modificar la manteniment.",
+    "failed": "No s'ha pogut actualitzar l'estat de manteniment.",
     "active": "Manteniment actiu",
-    "estimated": "Finalització prevista",
-    "noAutoEnd": "El pressupost no finalitza el manteniment. Finalitzeu-lo explícitament quan la feina s'hagi completat.",
+    "estimated": "Finalització estimada",
+    "noAutoEnd": "L'estimació no finalitza el manteniment. Finalitzeu-lo explícitament quan la feina estigui completa.",
     "endConfirm": "Voleu finalitzar el manteniment i reprendre les automatitzacions activades per esdeveniments per a aquest amfitrió?",
-    "confirmEnd": "Confirma la fi",
-    "cancel": "Cancel·la",
-    "end": "Finalitzar el manteniment",
+    "confirmEnd": "Confirmar finalització",
+    "cancel": "Cancel·lar",
+    "end": "Finalitzar manteniment",
     "action": "Acció",
-    "startNow": "Comença ara",
-    "schedule": "Programa per a més tard",
-    "reason": "Raó",
+    "startNow": "Iniciar ara",
+    "schedule": "Programar per més tard",
+    "reason": "Motiu",
     "startUtc": "Primer inici (UTC)",
     "repeat": "Repetir",
     "once": "Un cop",
-    "weekly": "Setmanal",
-    "monthly": "Mensual",
-    "utcHelp": "Les programacions utilitzen UTC durant tot l'any. Les programacions mensuals salten mesos sense el dia seleccionat. Les finestres planificades no es poden superposar; el manteniment que s'executa de manera excessiva continua a les finestres posteriors.",
+    "weekly": "Setmanalment",
+    "monthly": "Mensualment",
+    "utcHelp": "Els programes utilitzen l'UTC durant tot l'any. Els programes mensuals ometen els mesos que no tenen el dia seleccionat. Les finestres planificades no es poden superposar; el manteniment que s'allarga continua a través de les finestres posteriors.",
     "duration": "Durada estimada (minuts)",
     "grace": "Període de gràcia (minuts)",
-    "notify": "Notifica una vegada si encara estàs fora de línia després de l'estimació més el període de gràcia",
-    "addSchedule": "Afegeix una programació",
-    "schedules": "Horaris",
-    "noSchedules": "Sense programes de manteniment.",
+    "notify": "Notificar una vegada si encara està fora de línia després de l'estimació més el període de gràcia",
+    "addSchedule": "Afegir programa",
+    "schedules": "Programes",
+    "noSchedules": "No hi ha programes de manteniment.",
     "completed": "Ja ha començat",
     "minutes_one": "{{count}} minut",
+    "minutes_many": "{{count}} minuts",
     "minutes_other": "{{count}} minuts",
-    "remove": "Elimina la programació",
-    "loadFailed": "No s'ha pogut actualitzar l'estat del manteniment. Els canvis estan desactivats fins que es pugui carregar.",
-    "loading": "S'està carregant l'estat del manteniment…"
+    "remove": "Eliminar programa",
+    "loadFailed": "No s'ha pogut actualitzar l'estat de manteniment. Els canvis estan desactivats fins que es pugui carregar.",
+    "loading": "Carregant l'estat de manteniment…"
   },
   "ui": {
     "sidebar": {
       "automations": {
         "options": {
-          "connect": "connect",
-          "disconnect": "disconnect",
-          "offline": "offline",
-          "online": "online",
-          "failing": "failing",
-          "recovered": "recovered"
+          "connect": "connectar",
+          "disconnect": "desconnectar",
+          "offline": "fora de línia",
+          "online": "en línia",
+          "failing": "fallant",
+          "recovered": "recuperat"
         }
       }
+    }
+  },
+  "common": {
+    "delete": "Eliminar"
+  },
+  "settings": {
+    "alwaysShowActions": {
+      "label": "Mostrar sempre els botons",
+      "description": "Manté visibles els botons de prova, execució i eliminació sota cada automatització. Desactiveu-lo per mostrar-los només en passar el cursor per sobre."
     }
   }
 }

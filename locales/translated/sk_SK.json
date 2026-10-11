@@ -1,0 +1,216 @@
+{
+  "permissions": {
+    "view": {
+      "title": "Zobraziť automatizácie",
+      "description": "Zobraziť automatizácie a ich históriu."
+    },
+    "create": {
+      "title": "Vytvoriť automatizácie",
+      "description": "Pridať nové automatizácie."
+    },
+    "edit": {
+      "title": "Upraviť automatizácie",
+      "description": "Zmeniť existujúce automatizácie."
+    },
+    "delete": {
+      "title": "Odstrániť automatizácie",
+      "description": "Odstrániť automatizácie."
+    },
+    "run": {
+      "title": "Spustiť automatizácie",
+      "description": "Spustiť automatizáciu manuálne."
+    }
+  },
+  "newUi": {
+    "sidebar": {
+      "automations": {
+        "tabAutomations": "Automatizácie",
+        "tabRuns": "Spustenia",
+        "tabChannels": "Kanály",
+        "createAutomation": "Nová automatizácia",
+        "empty": "Zatiaľ žiadne automatizácie. Vytvorte jednu, aby ste reagovali na metriku, rozvrh alebo udalosť.",
+        "emptyRuns": "Zatiaľ žiadne spustenia.",
+        "channelsHint": "Kanály sa nastavujú v upozorneniach",
+        "noChannelsHint": "Upozornenie sa vždy odosiela do vašej schránky. Pridajte kanály v upozorneniach, aby sa odoslalo aj inde.",
+        "nameLabel": "Názov",
+        "namePlaceholder": "napr. Vyčistiť /data, keď sa zaplní",
+        "nameRequired": "Názov je povinný",
+        "enabledLabel": "Povolené",
+        "concurrencyLabel": "Ak už beží",
+        "concurrencyHint": "Čo sa má stať, keď sa táto automatizácia spustí znova, kým ešte nebolo dokončené posledné spustenie.",
+        "concurrency": {
+          "skip": "Preskočiť nové spustenie",
+          "queue": "Počkať a spustiť neskôr",
+          "allow": "Spustiť obe súčasne"
+        },
+        "save": "Uložiť",
+        "created": "Automatizácia vytvorená",
+        "updated": "Automatizácia uložená",
+        "deleted": "Automatizácia odstránená",
+        "deleteConfirm": "Odstrániť túto automatizáciu? Odstráni sa aj jej história spustení.",
+        "runNow": "Spustiť teraz",
+        "testRun": "Testovacie spustenie",
+        "runFinished": "Spustenie dokončené: {{status}}",
+        "trigger": "Spúšťač",
+        "steps": "Kroky",
+        "addStep": "Pridať krok",
+        "removeStep": "Odstrániť krok",
+        "moveUp": "Posunúť hore",
+        "moveDown": "Posunúť dole",
+        "noSteps": "Zatiaľ žiadne kroky. Pridajte jeden a určte, čo sa má stať.",
+        "webhookTokenTitle": "URL webhooku",
+        "webhookTokenDescription": "Toto sa zobrazí len raz. Uložte si to teraz, neskôr to nebude možné získať.",
+        "copied": "Skopírované",
+        "viewJson": "JSON",
+        "viewBuilder": "Konštruktor",
+        "dryRunBadge": "Testovacie spustenie",
+        "hostSelector": {
+          "trigger": "Spúšťajúci hostiteľ",
+          "host": "Konkrétny hostiteľ",
+          "fleet": "Flotila",
+          "all": "Všetky hostiteľské servery"
+        },
+        "triggerKinds": {
+          "metric_threshold": "Prahová hodnota metriky",
+          "host_status": "Hostiteľ sa zapne alebo vypne",
+          "health_check": "Zmena kontroly stavu",
+          "schedule": "Podľa rozvrhu",
+          "docker_event": "Udalosť kontajnera",
+          "internal_event": "Udalosť Termix",
+          "webhook": "Prichádzajúci webhook"
+        },
+        "stepTypes": {
+          "notify": "Poslať upozornenie",
+          "http": "Volajte URL",
+          "run_snippet": "Spustiť úryvok",
+          "run_command": "Spustiť príkaz",
+          "docker": "Ovládať kontajner",
+          "tunnel": "Ovládať tunel",
+          "wol": "Prebudiť hostiteľa",
+          "wait": "Čakať",
+          "set_var": "Nastaviť premennú",
+          "if": "Ak / inak",
+          "run_automation": "Spustiť inú automatizáciu",
+          "stop": "Zastaviť"
+        },
+        "statuses": {
+          "running": "Beží",
+          "success": "Úspech",
+          "failed": "Zlyhalo",
+          "timeout": "Časový limit vypršal",
+          "skipped": "Preskočené",
+          "cancelled": "Zrušené"
+        },
+        "fields": {
+          "host": "Hostiteľ",
+          "mount": "Bod pripojenia",
+          "forSeconds": "Trvalo (sekundy)",
+          "cooldown": "Chladenie (minúty)",
+          "cron": "Cron výraz",
+          "intervalSeconds": "Každých (sekúnd)",
+          "timezone": "Časové pásmo",
+          "timezoneServer": "Čas servera",
+          "timezoneHint": "Cron časy sa čítajú v tomto pásme. Nepoužíva sa pre intervalové rozvrhy.",
+          "container": "Kontajner",
+          "command": "Príkaz",
+          "body": "Telo",
+          "channels": "Tiež poslať do",
+          "title": "Názov",
+          "message": "Správa",
+          "snippet": "Úryvok",
+          "seconds": "Sekundy",
+          "conditionLeftPlaceholder": "Hodnota na overenie",
+          "conditionRightPlaceholder": "Porovnať s",
+          "variableName": "Názov premennej",
+          "variableValue": "Hodnota",
+          "elevated": "Spustiť s sudo",
+          "onError": "Ak to zlyhá",
+          "allowPrivateNetwork": "Povoliť adresy lokálnej siete",
+          "allowPrivateNetworkHint": "Potrebné pre vlastnú službu vo vašej LAN. Predvolene vypnuté, aby sa zabránilo požiadavkám na interné adresy.",
+          "interface": "Rozhranie"
+        },
+        "onError": {
+          "stop": "Zastaviť spustenie",
+          "continue": "Pokračovať"
+        },
+        "needsPlugin": "Vyžaduje {{plugin}}",
+        "offBadge": "Vypnuté",
+        "docsLink": "Zobraziť dokumentáciu",
+        "ago": {
+          "seconds": "pred {{count}} s",
+          "minutes": "pred {{count}} m",
+          "hours": "pred {{count}} h",
+          "days": "pred {{count}} d"
+        },
+        "search": "Hľadať automatizácie",
+        "noMatches": "Žiadne automatizácie nevyhovujú vášmu vyhľadávaniu",
+        "settingsTitle": "Nastavenia automatizácie",
+        "settingsDisplayTitle": "Zobrazenie"
+      }
+    }
+  },
+  "nav": {
+    "automations": "Automatizácie"
+  },
+  "maintenance": {
+    "title": "Údržba",
+    "description": "Pozastavte automatizácie stavu hostiteľa, zdravia, metrík, kontajnerov a odpojenia tunela počas prebiehajúcich prác. Monitorovanie, manuálne spustenia a plánované automatizácie pokračujú.",
+    "denied": "Nemáte povolenie na zobrazenie údržby.",
+    "sharedReadOnly": "Tento hostiteľ bol s vami zdieľaný. Údržbu môže meniť iba jeho vlastník.",
+    "failed": "Údržbu sa nepodarilo aktualizovať.",
+    "active": "Údržba aktívna",
+    "estimated": "Odhadovaný koniec",
+    "noAutoEnd": "Odhad neukončuje údržbu. Ukončite ju explicitne, keď je práca dokončená.",
+    "endConfirm": "Ukončiť údržbu a obnoviť automatizácie spúšťané udalosťami pre tento hostiteľ?",
+    "confirmEnd": "Potvrdiť ukončenie",
+    "cancel": "Zrušiť",
+    "end": "Ukončiť údržbu",
+    "action": "Akcia",
+    "startNow": "Spustiť teraz",
+    "schedule": "Naplánovať na neskôr",
+    "reason": "Dôvod",
+    "startUtc": "Prvé spustenie (UTC)",
+    "repeat": "Opakovanie",
+    "once": "Jednorazovo",
+    "weekly": "Týždenne",
+    "monthly": "Mesačne",
+    "utcHelp": "Plány používajú po celý rok časové pásmo UTC. Mesačné plány preskakujú mesiace, ktoré nemajú vybraný deň. Naplánované okná sa nemôžu prekrývať; údržba, ktorá presiahne časový limit, pokračuje cez neskoršie okná.",
+    "duration": "Odhadovaná dĺžka (minúty)",
+    "grace": "Milostná lehota (minúty)",
+    "notify": "Upozorniť raz, ak zostane offline po odhadovanom čase plus milostnej lehote",
+    "addSchedule": "Pridať plán",
+    "schedules": "Plány",
+    "noSchedules": "Žiadne plány údržby.",
+    "completed": "Už spustené",
+    "minutes_one": "{{count}} minúta",
+    "minutes_few": "{{count}} minúty",
+    "minutes_many": "{{count}} minút",
+    "minutes_other": "{{count}} minút",
+    "remove": "Odstrániť plán",
+    "loadFailed": "Nepodarilo sa obnoviť stav údržby. Zmeny sú zakázané, kým sa nedá načítať.",
+    "loading": "Načítava sa stav údržby…"
+  },
+  "ui": {
+    "sidebar": {
+      "automations": {
+        "options": {
+          "connect": "pripojiť",
+          "disconnect": "odpojiť",
+          "offline": "offline",
+          "online": "online",
+          "failing": "zlyhávajúce",
+          "recovered": "obnovené"
+        }
+      }
+    }
+  },
+  "common": {
+    "delete": "Odstrániť"
+  },
+  "settings": {
+    "alwaysShowActions": {
+      "label": "Vždy zobrazovať tlačidlá",
+      "description": "Udržujte tlačidlá na testovanie, spúšťanie a odstraňovanie pod každou automatizáciou viditeľné. Vypnutím sa zobrazia iba pri najetí myšou."
+    }
+  }
+}

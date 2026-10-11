@@ -2,224 +2,213 @@
   "permissions": {
     "view": {
       "title": "Otomasyonları görüntüle",
-      "description": "Otomasyonları ve tarihçelerini inceleyin."
+      "description": "Otomasyonları ve geçmişlerini görüntüle."
     },
     "create": {
-      "title": "Otomasyonlar oluşturun",
-      "description": "Yeni otomasyonlar ekleyin."
+      "title": "Otomasyon oluştur",
+      "description": "Yeni otomasyonlar ekle."
     },
     "edit": {
-      "title": "Düzenleme otomasyonları",
-      "description": "Mevcut otomasyonları değiştirin."
+      "title": "Otomasyonları düzenle",
+      "description": "Mevcut otomasyonları değiştir."
     },
     "delete": {
       "title": "Otomasyonları sil",
-      "description": "Otomasyonları kaldırın."
+      "description": "Otomasyonları kaldır."
     },
     "run": {
       "title": "Otomasyonları çalıştır",
-      "description": "Otomasyonu manuel olarak tetikleyin."
+      "description": "Bir otomasyonu elle tetikle."
     }
   },
   "newUi": {
     "sidebar": {
       "automations": {
-        "title": "Otomasyonlar",
         "tabAutomations": "Otomasyonlar",
-        "tabRuns": "Koşular",
+        "tabRuns": "Çalıştırma Geçmişi",
         "tabChannels": "Kanallar",
         "createAutomation": "Yeni Otomasyon",
-        "backToAutomations": "Otomasyonlara geri dön",
-        "createTitle": "Yeni Otomasyon",
-        "editTitle": "Düzenleme Otomasyonu",
-        "empty": "Henüz otomasyon yok. Bir ölçüme, bir programa veya bir olaya tepki verecek bir otomasyon oluşturun.",
-        "emptyRuns": "Henüz hiçbir deneme yapılmadı.",
-        "channelsHint": "Uyarılar bölümünde kanallar oluşturulur.",
-        "noChannelsHint": "Bildirim her zaman gelen kutunuza gönderilir. Bildirimleri başka bir yere de göndermek için Bildirimler bölümüne kanallar ekleyin.",
+        "empty": "Henüz otomasyon yok. Bir metrik, zamanlama veya olaya tepki verecek şekilde bir tane oluşturun.",
+        "emptyRuns": "Henüz çalıştırma yok.",
+        "channelsHint": "Kanallar Uyarılar bölümünde ayarlanır",
+        "noChannelsHint": "Uyarı her zaman gelen kutunuza gider. Başka yerlere de göndermek için Uyarılar bölümünde kanal ekleyin.",
         "nameLabel": "Ad",
-        "namePlaceholder": "Örneğin, /data klasörü dolduğunda temizle.",
+        "namePlaceholder": "ör. /data dolduğunda temizle",
         "nameRequired": "Ad zorunludur",
-        "descriptionLabel": "Açıklama",
-        "descriptionPlaceholder": "İsteğe bağlı açıklama",
         "enabledLabel": "Etkin",
-        "concurrencyLabel": "Eğer zaten çalışıyorsa",
-        "concurrencyHint": "Son çalıştırma tamamlanmadan önce bu durum tekrar tetiklendiğinde ne yapılmalı?",
+        "concurrencyLabel": "Zaten çalışıyorsa",
+        "concurrencyHint": "Önceki çalıştırma tamamlanmadan önce tekrar tetiklendiğinde ne yapılacağı.",
         "concurrency": {
-          "skip": "Yeni sürümü atla",
-          "queue": "Bekle ve sonra koş",
-          "allow": "İkisini birden çalıştırın"
+          "skip": "Yeni çalıştırmayı atla",
+          "queue": "Bekle ve ardından çalıştır",
+          "allow": "İkisini de aynı anda çalıştır"
         },
         "save": "Kaydet",
         "created": "Otomasyon oluşturuldu",
         "updated": "Otomasyon kaydedildi",
         "deleted": "Otomasyon silindi",
-        "deleteConfirm": "Bu otomasyonu silerseniz, çalıştırma geçmişi de silinir.",
+        "deleteConfirm": "Bu otomasyon silinsin mi? Çalıştırma geçmişi de silinecektir.",
         "runNow": "Şimdi çalıştır",
         "testRun": "Test çalıştırması",
-        "testRunHint": "Her adımı çalıştırır ancak Termix dışındaki hiçbir şeye dokunmaz.",
-        "runStarted": "Koşu başladı",
         "runFinished": "Çalıştırma tamamlandı: {{status}}",
         "trigger": "Tetikleyici",
         "steps": "Adımlar",
         "addStep": "Adım ekle",
         "removeStep": "Adımı kaldır",
-        "moveUp": "Yukarı çık",
-        "moveDown": "Aşağıya doğru hareket edin",
-        "noSteps": "Henüz hiçbir adım yok. Ne olması gerektiğini belirtmek için bir adım ekleyin.",
-        "webhookTokenTitle": "Webhook URL",
-        "webhookTokenDescription": "Bu yalnızca bir kez gösterilecektir. Şimdi kaydedin, daha sonra geri alınamaz.",
-        "copy": "Kopyala",
+        "moveUp": "Yukarı taşı",
+        "moveDown": "Aşağı taşı",
+        "noSteps": "Henüz adım yok. Ne olacağını belirlemek için bir tane ekleyin.",
+        "webhookTokenTitle": "Webhook URL'si",
+        "webhookTokenDescription": "Bu yalnızca bir kez gösterilir. Şimdi kaydedin, daha sonra alınamaz.",
         "copied": "Kopyalandı",
         "viewJson": "JSON",
-        "viewBuilder": "İnşaatçı",
-        "viewGraph": "Grafik",
-        "lastRun": "Son koşu",
-        "never": "Hiçbir zaman",
-        "duration": "{{seconds}}s",
-        "stepOutput": "Çıktı",
-        "stepError": "Hata",
+        "viewBuilder": "Oluşturucu",
         "dryRunBadge": "Test çalıştırması",
         "hostSelector": {
-          "trigger": "Tetikleyici sunucu",
-          "host": "Belirli ev sahibi",
+          "trigger": "Tetikleyen sunucu",
+          "host": "Belirli sunucu",
           "fleet": "Filo",
           "all": "Tüm sunucular"
         },
         "triggerKinds": {
-          "metric_threshold": "Metrik eşik",
-          "host_status": "Sunucu yukarı veya aşağı hareket eder.",
-          "health_check": "Sağlık kontrolü değişiklikleri",
-          "schedule": "Bir program dahilinde",
+          "metric_threshold": "Metrik eşiği",
+          "host_status": "Sunucu bağlanır veya bağlantı kesilir",
+          "health_check": "Sağlık kontrolü değişir",
+          "schedule": "Zamanlamaya göre",
           "docker_event": "Konteyner olayı",
-          "internal_event": "Termix etkinliği",
-          "webhook": "Gelen web kancası"
+          "internal_event": "Termix olayı",
+          "webhook": "Gelen webhook"
         },
         "stepTypes": {
           "notify": "Uyarı gönder",
-          "http": "Bir URL'yi çağırın",
-          "run_snippet": "Bir kod parçası çalıştırın.",
+          "http": "Bir URL çağır",
+          "run_snippet": "Bir komut parçası çalıştır",
           "run_command": "Bir komut çalıştır",
-          "docker": "Bir konteyneri kontrol edin.",
-          "tunnel": "Bir tüneli kontrol edin.",
-          "wol": "Bir ev sahibini uyandırın",
-          "wait": "Beklemek",
-          "set_var": "Bir değişken tanımlayın",
-          "if": "Eğer / aksi takdirde",
-          "run_automation": "Başka bir otomasyon çalıştırın",
-          "stop": "Durdurma"
+          "docker": "Bir kapsülü yönet",
+          "tunnel": "Bir tüneli yönet",
+          "wol": "Bir sunucuyu uyan",
+          "wait": "Bekle",
+          "set_var": "Bir değişken ayarla",
+          "if": "Eğer / aksi halde",
+          "run_automation": "Başka bir otomasyonu çalıştır",
+          "stop": "Durdur"
         },
         "statuses": {
           "running": "Çalışıyor",
           "success": "Başarılı",
           "failed": "Başarısız",
-          "timeout": "Süre doldu",
+          "timeout": "Zaman aşımı",
           "skipped": "Atlandı",
           "cancelled": "İptal edildi"
         },
         "fields": {
-          "host": "Ana Bilgisayar",
-          "metric": "Metrik",
-          "mount": "Montaj noktası",
-          "operator": "O",
-          "value": "Değer",
-          "forSeconds": "(Saniye) süreyle sürdürüldü",
+          "host": "Sunucu",
+          "mount": "Bağlama noktası",
+          "forSeconds": "Süre (saniye)",
           "cooldown": "Bekleme süresi (dakika)",
           "cron": "Cron ifadesi",
           "intervalSeconds": "Her (saniye)",
           "timezone": "Saat dilimi",
-          "timezoneServer": "Sunucu zamanı",
-          "timezoneHint": "Cron zamanlama ayarları bu bölgede okunur. Aralıklı zamanlamalar için geçerli değildir.",
-          "container": "Konteyner",
+          "timezoneServer": "Sunucu saati",
+          "timezoneHint": "Cron zamanları bu dilimde okunur. Aralıklı zamanlamalar için geçerli değildir.",
+          "container": "Kapsül",
           "command": "Komut",
-          "url": "URL",
-          "method": "Yöntem",
-          "body": "Vücut",
-          "channels": "Ayrıca şuraya da gönderin:",
+          "body": "Gövde",
+          "channels": "Ayrıca şuraya gönder",
           "title": "Başlık",
           "message": "Mesaj",
-          "snippet": "Alıntı",
-          "seconds": "Saniyeler",
+          "snippet": "Komut parçası",
+          "seconds": "Saniye",
           "conditionLeftPlaceholder": "Kontrol edilecek değer",
-          "conditionRightPlaceholder": "Karşılaştırın",
+          "conditionRightPlaceholder": "Karşılaştırılacak değer",
           "variableName": "Değişken adı",
           "variableValue": "Değer",
           "elevated": "sudo ile çalıştır",
-          "onError": "Eğer bu başarısız olursa",
-          "allowPrivateNetwork": "Yerel ağ adreslerine izin verin.",
-          "allowPrivateNetworkHint": "Yerel ağınızda kendi sunucunuzda barındırdığınız bir hizmet için gereklidir. Dahili adreslere yapılan istekleri engellemek için varsayılan olarak kapalıdır."
+          "onError": "Bu başarısız olursa",
+          "allowPrivateNetwork": "Yerel ağ adreslerine izin ver",
+          "allowPrivateNetworkHint": "Yerel ağınızda barındırılan bir hizmet için gereklidir. İç adreslere istek gönderilmesini önlemek için varsayılan olarak kapalıdır.",
+          "interface": "Arayüz"
         },
         "onError": {
-          "stop": "Koşuyu durdurun",
-          "continue": "Devam edin"
+          "stop": "Çalışmayı durdur",
+          "continue": "Devam et"
         },
-        "needsPlugin": "İhtiyaçlar {{plugin}}",
-        "needsPluginHint": "Bu otomasyon, ihtiyaç duyulan özellik tekrar kullanılabilir hale gelene kadar atlanır.",
+        "needsPlugin": "{{plugin}} eklentisi gerekli",
         "offBadge": "Kapalı",
-        "docsLink": "Belgelere bak",
+        "docsLink": "Dokümantasyonu görüntüle",
         "ago": {
-          "seconds": "{{count}}saniye önce",
-          "minutes": "{{count}} dakika önce",
-          "hours": "{{count}} saat önce",
-          "days": "{{count}} gün önce"
-        }
+          "seconds": "{{count}}s önce",
+          "minutes": "{{count}}d önce",
+          "hours": "{{count}}s önce",
+          "days": "{{count}}g önce"
+        },
+        "search": "Otomasyonları ara",
+        "noMatches": "Aramanızla eşleşen otomasyon bulunamadı",
+        "settingsTitle": "Otomasyon ayarları",
+        "settingsDisplayTitle": "Görünüm"
       }
     }
   },
   "nav": {
     "automations": "Otomasyonlar"
   },
-  "onboarding": {
-    "feature_automations": "Otomasyonlar",
-    "feature_automations_desc": "Bir şey olduğunda adımları otomatik olarak çalıştırın ve bildirim alın."
-  },
   "maintenance": {
     "title": "Bakım",
-    "description": "Çalışma devam ederken sunucu durumu, sağlık, ölçüm, konteyner ve tünel bağlantı kesme otomasyonlarını duraklatın. İzleme, manuel çalıştırmalar ve planlanmış otomasyonlar devam eder.",
-    "denied": "Bakım çalışmalarını görüntüleme izniniz yok.",
-    "sharedReadOnly": "Bu sunucu sizinle paylaşıldı. Bakım değişikliklerini yalnızca sahibi yapabilir.",
-    "failed": "Bakım bilgileri güncellenemedi.",
+    "description": "Çalışmalar devam ederken sunucu durumu, sağlık, metrik, kapsül ve tünel bağlantı kesme otomasyonlarını duraklatın. İzleme, manuel çalıştırmalar ve zamanlanmış otomasyonlar devam eder.",
+    "denied": "Bakım durumunu görüntüleme izniniz yok.",
+    "sharedReadOnly": "Bu ana bilgisayar sizinle paylaşıldı. Bakımı yalnızca sahibi değiştirebilir.",
+    "failed": "Bakım güncellenemedi.",
     "active": "Bakım aktif",
-    "estimated": "Tahmini tamamlanma tarihi",
-    "noAutoEnd": "Tahmin edilen bakım işlemi, bakımın sonunu getirmez. İş tamamlandığında bakım işlemini açıkça sonlandırın.",
-    "endConfirm": "Bu sunucu için bakım işlemlerini sonlandırıp olay tetiklemeli otomasyonları yeniden başlatmak mı istiyorsunuz?",
-    "confirmEnd": "Sonu onaylayın",
+    "estimated": "Tahmini tamamlanma",
+    "noAutoEnd": "Tahmin bakımı sonlandırmaz. İş tamamlandığında açıkça sonlandırın.",
+    "endConfirm": "Bu ana bilgisayar için bakım sonlandırılıp olay tetiklemeli otomasyonlar devam ettirilsin mi?",
+    "confirmEnd": "Sonlandırmayı onayla",
     "cancel": "İptal",
-    "end": "Son bakım",
-    "action": "İşlem",
-    "startNow": "Şimdi başla",
-    "schedule": "Daha sonra için planla",
+    "end": "Bakımı sonlandır",
+    "action": "Eylem",
+    "startNow": "Şimdi başlat",
+    "schedule": "Daha sonra planla",
     "reason": "Sebep",
     "startUtc": "İlk başlangıç (UTC)",
-    "repeat": "Tekrarlamak",
-    "once": "Bir kere",
+    "repeat": "Tekrarla",
+    "once": "Bir kez",
     "weekly": "Haftalık",
     "monthly": "Aylık",
-    "utcHelp": "Planlamalar yıl boyunca UTC saat dilimini kullanır. Aylık planlamalar, seçilen günün olmadığı ayları atlar. Planlanan zaman dilimleri üst üste gelemez; uzadıkça bakım çalışmaları daha sonraki zaman dilimlerinde de devam eder.",
+    "utcHelp": "Planlar yıl boyunca UTC kullanır. Aylık planlar seçilen güne sahip olmayan ayları atlar. Planlanan pencereler çakışamaz; süresi aşan bakım sonraki pencerelere devam eder.",
     "duration": "Tahmini süre (dakika)",
-    "grace": "Bekleme süresi (dakika)",
-    "notify": "Tahmini süre ve ek bekleme süresinden sonra hala çevrimdışıysa bir kez bildirim gönderin.",
-    "addSchedule": "Program ekle",
-    "schedules": "Programlar",
-    "noSchedules": "Bakım programı yok.",
+    "grace": "Gecikme süresi (dakika)",
+    "notify": "Tahmin artı gecikme süresinden sonra hala çevrimdışıysa bir kez bildir",
+    "addSchedule": "Plan ekle",
+    "schedules": "Planlar",
+    "noSchedules": "Bakım planı yok.",
     "completed": "Zaten başladı",
     "minutes_one": "{{count}} dakika",
     "minutes_other": "{{count}} dakika",
-    "remove": "Programı kaldır",
-    "loadFailed": "Bakım durumu yenilenemedi. Yüklenene kadar değişiklikler devre dışı bırakılmıştır.",
+    "remove": "Planı kaldır",
+    "loadFailed": "Bakım durumu yenilenemedi. Yüklenene kadar değişiklikler devre dışı bırakıldı.",
     "loading": "Bakım durumu yükleniyor…"
   },
   "ui": {
     "sidebar": {
       "automations": {
         "options": {
-          "connect": "connect",
-          "disconnect": "disconnect",
-          "offline": "offline",
-          "online": "online",
-          "failing": "failing",
-          "recovered": "recovered"
+          "connect": "bağlan",
+          "disconnect": "bağlantıyı kes",
+          "offline": "çevrimdışı",
+          "online": "çevrimiçi",
+          "failing": "başarısız",
+          "recovered": "kurtarıldı"
         }
       }
+    }
+  },
+  "common": {
+    "delete": "Sil"
+  },
+  "settings": {
+    "alwaysShowActions": {
+      "label": "Düğmeleri her zaman göster",
+      "description": "Her otomasyonun altındaki test, çalıştır ve sil düğmelerini görünür tutun. Yalnızca üzerine gelindiğinde göstermek için kapatın."
     }
   }
 }

@@ -1,0 +1,216 @@
+{
+  "permissions": {
+    "view": {
+      "title": "Peržiūrėti automatizacijas",
+      "description": "Peržiūrėti automatizacijas ir jų istoriją."
+    },
+    "create": {
+      "title": "Kurti automatizacijas",
+      "description": "Sukurti naujas automatizacijas."
+    },
+    "edit": {
+      "title": "Redaguoti automatizacijas",
+      "description": "Keisti esamas automatizacijas."
+    },
+    "delete": {
+      "title": "Ištrinti automatizacijas",
+      "description": "Pašalinti automatizacijas."
+    },
+    "run": {
+      "title": "Vykdyti automatizacijas",
+      "description": "Paleisti automatizaciją rankiniu būdu."
+    }
+  },
+  "newUi": {
+    "sidebar": {
+      "automations": {
+        "tabAutomations": "Automatizacijos",
+        "tabRuns": "Vykdymai",
+        "tabChannels": "Kanalai",
+        "createAutomation": "Nauja automatizacija",
+        "empty": "Dar nėra automatizacijų. Sukurkite vieną, kad reaguotumėte į metriką, grafiką arba įvykį.",
+        "emptyRuns": "Dar nėra vykdymų.",
+        "channelsHint": "Kanalai nustatomi skiltyje „Įspėjimai“",
+        "noChannelsHint": "Įspėjimas visada siunčiamas į jūsų pašto dėžutę. Pridėkite kanalų skiltyje „Įspėjimai“, kad įspėjimas būtų siunčiamas ir kitur.",
+        "nameLabel": "Pavadinimas",
+        "namePlaceholder": "pvz., Išvalyti /data, kai jis užsipildo",
+        "nameRequired": "Pavadinimas yra privalomas",
+        "enabledLabel": "Įjungta",
+        "concurrencyLabel": "Jei jau vykdoma",
+        "concurrencyHint": "Ką daryti, kai ši automatizacija vėl paleidžiama, kol dar nebaigtas paskutinis vykdymas.",
+        "concurrency": {
+          "skip": "Praleisti naują vykdymą",
+          "queue": "Palaukti ir vykdyti vėliau",
+          "allow": "Vykdyti abu vienu metu"
+        },
+        "save": "Išsaugoti",
+        "created": "Automatizacija sukurta",
+        "updated": "Automatizacija išsaugota",
+        "deleted": "Automatizacija ištrinta",
+        "deleteConfirm": "Ištrinti šią automatizaciją? Jos vykdymo istorija taip pat bus ištrinta.",
+        "runNow": "Vykdyti dabar",
+        "testRun": "Bandomasis vykdymas",
+        "runFinished": "Vykdymas baigtas: {{status}}",
+        "trigger": "Paleidimo sąlyga",
+        "steps": "Veiksmai",
+        "addStep": "Pridėti veiksmą",
+        "removeStep": "Pašalinti veiksmą",
+        "moveUp": "Perkelti aukštyn",
+        "moveDown": "Perkelti žemyn",
+        "noSteps": "Dar nėra veiksmų. Pridėkite vieną, kad nurodytumėte, kas turėtų įvykti.",
+        "webhookTokenTitle": "Webhook URL",
+        "webhookTokenDescription": "Tai rodoma tik vieną kartą. Išsaugokite dabar, vėliau jo negalėsite atkurti.",
+        "copied": "Nukopijuota",
+        "viewJson": "JSON",
+        "viewBuilder": "Konfiguratorius",
+        "dryRunBadge": "Bandomasis vykdymas",
+        "hostSelector": {
+          "trigger": "Paleidžiantis hostas",
+          "host": "Konkretus hostas",
+          "fleet": "Flota",
+          "all": "Visi hostai"
+        },
+        "triggerKinds": {
+          "metric_threshold": "Metrikos slenkstis",
+          "host_status": "Hostas prisijungia arba atsijungia",
+          "health_check": "Sveikatos tikrinimo pokyčiai",
+          "schedule": "Pagal grafiką",
+          "docker_event": "Konteinerio įvykis",
+          "internal_event": "Termix įvykis",
+          "webhook": "Gaunamas webhook"
+        },
+        "stepTypes": {
+          "notify": "Siųsti įspėjimą",
+          "http": "Iškvietimo URL",
+          "run_snippet": "Paleisti fragmentą",
+          "run_command": "Paleisti komandą",
+          "docker": "Valdyti konteinerį",
+          "tunnel": "Valdyti tunelį",
+          "wol": "Pabudinti serverį",
+          "wait": "Palaukti",
+          "set_var": "Nustatyti kintamąjį",
+          "if": "Jei / kitaip",
+          "run_automation": "Paleisti kitą automatizaciją",
+          "stop": "Sustabdyti"
+        },
+        "statuses": {
+          "running": "Vykdoma",
+          "success": "Sėkminga",
+          "failed": "Nepavyko",
+          "timeout": "Laiko limitas pasibaigė",
+          "skipped": "Praleista",
+          "cancelled": "Atšaukta"
+        },
+        "fields": {
+          "host": "Serveris",
+          "mount": "Prijungimo taškas",
+          "forSeconds": "Trukmė (sekundėmis)",
+          "cooldown": "Atsistatymo laikas (minutėmis)",
+          "cron": "Cron išraiška",
+          "intervalSeconds": "Kiekvienas (sekundėmis)",
+          "timezone": "Laiko juosta",
+          "timezoneServer": "Serverio laikas",
+          "timezoneHint": "Cron laikas skaičiuojamas pagal šią juostą. Netaikoma intervaliniams grafikams.",
+          "container": "Konteineris",
+          "command": "Komanda",
+          "body": "Turinys",
+          "channels": "Taip pat siųsti į",
+          "title": "Pavadinimas",
+          "message": "Žinutė",
+          "snippet": "Fragmentas",
+          "seconds": "Sekundės",
+          "conditionLeftPlaceholder": "Tikrinama reikšmė",
+          "conditionRightPlaceholder": "Palyginimo reikšmė",
+          "variableName": "Kintamojo pavadinimas",
+          "variableValue": "Reikšmė",
+          "elevated": "Paleisti su sudo",
+          "onError": "Jei nepavyksta",
+          "allowPrivateNetwork": "Leisti vietinio tinklo adresus",
+          "allowPrivateNetworkHint": "Reikia savarankiškai valdomai paslaugai jūsų LAN tinkle. Numatyta išjungta, kad būtų išvengta užklausų į vidinius adresus.",
+          "interface": "Sąsaja"
+        },
+        "onError": {
+          "stop": "Sustabdyti vykdymą",
+          "continue": "Tęsti"
+        },
+        "needsPlugin": "Reikia „{{plugin}}“",
+        "offBadge": "Išjungta",
+        "docsLink": "Peržiūrėti dokumentaciją",
+        "ago": {
+          "seconds": "Prieš {{count}} s",
+          "minutes": "Prieš {{count}} min.",
+          "hours": "Prieš {{count}} val.",
+          "days": "Prieš {{count}} d."
+        },
+        "search": "Ieškoti automatizacijų",
+        "noMatches": "Jokių automatizacijų neatitinka jūsų paieškos",
+        "settingsTitle": "Automatizacijų nustatymai",
+        "settingsDisplayTitle": "Rodinys"
+      }
+    }
+  },
+  "nav": {
+    "automations": "Automatizacijos"
+  },
+  "maintenance": {
+    "title": "Techninė priežiūra",
+    "description": "Pristabdykite serverio būsenos, sveikatos, metrikų, konteinerių ir tunelių atjungimo automatizacijas, kol vyksta darbai. Stebėjimas, rankinis vykdymas ir suplanuotos automatizacijos tęsiasi.",
+    "denied": "Neturite leidimo peržiūrėti techninės priežiūros.",
+    "sharedReadOnly": "Šis serveris buvo su jumis pasidalintas. Tik jo savininkas gali keisti priežiūros nustatymus.",
+    "failed": "Priežiūros būsenos pakeisti nepavyko.",
+    "active": "Priežiūra aktyvi",
+    "estimated": "Numatoma pabaiga",
+    "noAutoEnd": "Numatoma trukmė automatiškai nepabaigia priežiūros. Pabaigkite ją aiškiai, kai darbai bus baigti.",
+    "endConfirm": "Pabaigti priežiūrą ir atnaujinti šio serverio įvykių sukeliamas automatizacijas?",
+    "confirmEnd": "Patvirtinti pabaigą",
+    "cancel": "Atšaukti",
+    "end": "Pabaigti priežiūrą",
+    "action": "Veiksmas",
+    "startNow": "Pradėti dabar",
+    "schedule": "Suplanuoti vėliau",
+    "reason": "Priežastis",
+    "startUtc": "Pirmasis pradžios laikas (UTC)",
+    "repeat": "Kartoti",
+    "once": "Vieną kartą",
+    "weekly": "Kas savaitę",
+    "monthly": "Kas mėnesį",
+    "utcHelp": "Planai visus metus naudoja UTC laiką. Mėnesiniai planai praleidžia mėnesius, kuriuose nėra pasirinktos dienos. Suplanuoti laikotarpiai negali persidengti; viršijant planuotą laiką, priežiūra tęsiasi per vėlesnius laikotarpius.",
+    "duration": "Numatoma trukmė (minutėmis)",
+    "grace": "Malonės laikotarpis (minutėmis)",
+    "notify": "Pranešti vieną kartą, jei po numatytos trukmės ir malonės laikotarpio serveris vis dar yra neprisijungęs",
+    "addSchedule": "Pridėti planą",
+    "schedules": "Planai",
+    "noSchedules": "Nėra priežiūros planų.",
+    "completed": "Jau prasidėjo",
+    "minutes_one": "{{count}} minutė",
+    "minutes_few": "{{count}} minutės",
+    "minutes_many": "{{count}} minučių",
+    "minutes_other": "{{count}} minučių",
+    "remove": "Šalinti planą",
+    "loadFailed": "Priežiūros būsenos atnaujinti nepavyko. Pakeitimai bus išjungti, kol būsena bus įkelta.",
+    "loading": "Įkeliamas priežiūros būsena…"
+  },
+  "ui": {
+    "sidebar": {
+      "automations": {
+        "options": {
+          "connect": "prisijungti",
+          "disconnect": "atsijungti",
+          "offline": "neprisijungęs",
+          "online": "prisijungęs",
+          "failing": "klaidingas",
+          "recovered": "atstatytas"
+        }
+      }
+    }
+  },
+  "common": {
+    "delete": "Šalinti"
+  },
+  "settings": {
+    "alwaysShowActions": {
+      "label": "Visada rodyti mygtukus",
+      "description": "Palikti testavimo, vykdymo ir šalinimo mygtukus po kiekviena automatizacija matomus. Išjunkite, kad jie būtų rodomi tik užvedus pelę."
+    }
+  }
+}

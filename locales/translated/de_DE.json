@@ -2,7 +2,7 @@
   "permissions": {
     "view": {
       "title": "Automatisierungen anzeigen",
-      "description": "Sehen Sie sich die Automatisierungen und deren Verlauf an."
+      "description": "Automatisierungen und deren Verlauf ansehen."
     },
     "create": {
       "title": "Automatisierungen erstellen",
@@ -24,88 +24,73 @@
   "newUi": {
     "sidebar": {
       "automations": {
-        "title": "Automatisierungen",
         "tabAutomations": "Automatisierungen",
-        "tabRuns": "Läufe",
+        "tabRuns": "Ausführungen",
         "tabChannels": "Kanäle",
         "createAutomation": "Neue Automatisierung",
-        "backToAutomations": "Zurück zu Automatisierungen",
-        "createTitle": "Neue Automatisierung",
-        "editTitle": "Automatisierung bearbeiten",
-        "empty": "Noch keine Automatisierungen. Erstellen Sie eine, um auf eine Kennzahl, einen Zeitplan oder ein Ereignis zu reagieren.",
-        "emptyRuns": "Bisher keine Läufe.",
-        "channelsHint": "Kanäle werden in den Benachrichtigungen eingerichtet.",
-        "noChannelsHint": "Die Benachrichtigung wird immer in Ihrem Posteingang angezeigt. Fügen Sie in den Benachrichtigungen Kanäle hinzu, um sie auch an andere Orte zu senden.",
+        "empty": "Noch keine Automatisierungen. Erstelle eine, um auf Metriken, Zeitpläne oder Ereignisse zu reagieren.",
+        "emptyRuns": "Noch keine Ausführungen.",
+        "channelsHint": "Kanäle werden in Alarmen eingerichtet",
+        "noChannelsHint": "Der Alarm wird immer an dein Postfach gesendet. Füge in Alarmen Kanäle hinzu, um ihn auch woanders zu versenden.",
         "nameLabel": "Name",
-        "namePlaceholder": "z.B. das Verzeichnis /data leeren, wenn es voll ist",
+        "namePlaceholder": "z. B. /data bereinigen, wenn es voll ist",
         "nameRequired": "Name ist erforderlich",
-        "descriptionLabel": "Beschreibung",
-        "descriptionPlaceholder": "Optionale Beschreibung",
         "enabledLabel": "Aktiviert",
-        "concurrencyLabel": "Wenn es bereits läuft",
-        "concurrencyHint": "Was ist zu tun, wenn dies erneut ausgelöst wird, bevor der letzte Durchlauf abgeschlossen ist?",
+        "concurrencyLabel": "Wenn sie bereits läuft",
+        "concurrencyHint": "Was tun, wenn dies erneut ausgelöst wird, bevor der letzte Durchlauf beendet ist.",
         "concurrency": {
-          "skip": "Den neuen Lauf überspringen.",
-          "queue": "Warten und dann hinterherlaufen",
-          "allow": "Führe beide gleichzeitig aus"
+          "skip": "Neuen Durchlauf überspringen",
+          "queue": "Warten und danach ausführen",
+          "allow": "Beide gleichzeitig ausführen"
         },
         "save": "Speichern",
         "created": "Automatisierung erstellt",
-        "updated": "Automatisierung gerettet",
+        "updated": "Automatisierung gespeichert",
         "deleted": "Automatisierung gelöscht",
-        "deleteConfirm": "Wenn Sie diese Automatisierung löschen, wird auch ihr Ausführungsverlauf gelöscht.",
-        "runNow": "Jetzt laufen",
-        "testRun": "Probelauf",
-        "testRunHint": "Führt jeden Schritt aus, greift aber auf nichts außerhalb von Termix ein.",
-        "runStarted": "Lauf gestartet",
-        "runFinished": "Lauf beendet: {{status}}",
+        "deleteConfirm": "Diese Automatisierung löschen? Auch der Ausführungsverlauf wird gelöscht.",
+        "runNow": "Jetzt ausführen",
+        "testRun": "Testdurchlauf",
+        "runFinished": "Durchlauf beendet: {{status}}",
         "trigger": "Auslöser",
         "steps": "Schritte",
         "addStep": "Schritt hinzufügen",
         "removeStep": "Schritt entfernen",
-        "moveUp": "Aufsteigen",
-        "moveDown": "Nach unten schieben",
-        "noSteps": "Noch keine Schritte. Füge einen hinzu, um zu beschreiben, was passieren soll.",
+        "moveUp": "Nach oben verschieben",
+        "moveDown": "Nach unten verschieben",
+        "noSteps": "Noch keine Schritte. Füge einen hinzu, um festzulegen, was geschehen soll.",
         "webhookTokenTitle": "Webhook-URL",
-        "webhookTokenDescription": "Dies wird nur einmal angezeigt. Speichern Sie es jetzt, es kann später nicht mehr abgerufen werden.",
-        "copy": "Kopieren",
+        "webhookTokenDescription": "Dies wird nur einmal angezeigt. Speichere es jetzt, da es später nicht wieder abgerufen werden kann.",
         "copied": "Kopiert",
         "viewJson": "JSON",
-        "viewBuilder": "Bauherr",
-        "viewGraph": "Graph",
-        "lastRun": "Letzter Lauf",
-        "never": "Nie",
-        "duration": "{{seconds}}s",
-        "stepOutput": "Ausgabe",
-        "stepError": "Fehler",
-        "dryRunBadge": "Probelauf",
+        "viewBuilder": "Ersteller",
+        "dryRunBadge": "Testdurchlauf",
         "hostSelector": {
-          "trigger": "Auslösender Host",
-          "host": "Spezifischer Wirt",
+          "trigger": "Auslösende Host",
+          "host": "Bestimmter Host",
           "fleet": "Flotte",
           "all": "Alle Hosts"
         },
         "triggerKinds": {
-          "metric_threshold": "Metrischer Schwellenwert",
-          "host_status": "Der Host steigt oder fällt ab",
-          "health_check": "Änderungen bei Gesundheitschecks",
-          "schedule": "Nach einem Zeitplan",
+          "metric_threshold": "Metrikschwelle",
+          "host_status": "Host geht hoch oder runter",
+          "health_check": "Änderung des Health Checks",
+          "schedule": "Nach Zeitplan",
           "docker_event": "Container-Ereignis",
           "internal_event": "Termix-Ereignis",
           "webhook": "Eingehender Webhook"
         },
         "stepTypes": {
-          "notify": "Benachrichtigung senden",
+          "notify": "Alarm senden",
           "http": "URL aufrufen",
-          "run_snippet": "Führe einen Codeausschnitt aus",
-          "run_command": "Führe einen Befehl aus",
-          "docker": "Einen Container steuern",
-          "tunnel": "Einen Tunnel steuern",
-          "wol": "Wecken Sie einen Gastgeber",
+          "run_snippet": "Snippet ausführen",
+          "run_command": "Befehl ausführen",
+          "docker": "Container steuern",
+          "tunnel": "Tunnel steuern",
+          "wol": "Host aufwecken",
           "wait": "Warten",
-          "set_var": "Eine Variable setzen",
-          "if": "Falls / andernfalls",
-          "run_automation": "Führe eine weitere Automatisierung aus",
+          "set_var": "Variable setzen",
+          "if": "Wenn / sonst",
+          "run_automation": "Andere Automatisierung ausführen",
           "stop": "Stoppen"
         },
         "statuses": {
@@ -114,112 +99,116 @@
           "failed": "Fehlgeschlagen",
           "timeout": "Zeitüberschreitung",
           "skipped": "Übersprungen",
-          "cancelled": "Abgesagt"
+          "cancelled": "Abgebrochen"
         },
         "fields": {
           "host": "Host",
-          "metric": "Metrik",
-          "mount": "Montagepunkt",
-          "operator": "Ist",
-          "value": "Wert",
-          "forSeconds": "Anhaltend für (Sekunden)",
+          "mount": "Mount-Punkt",
+          "forSeconds": "Dauer (Sekunden)",
           "cooldown": "Abklingzeit (Minuten)",
           "cron": "Cron-Ausdruck",
           "intervalSeconds": "Alle (Sekunden)",
           "timezone": "Zeitzone",
           "timezoneServer": "Serverzeit",
-          "timezoneHint": "In dieser Zone werden Cron-Zeiten gelesen. Gilt nicht für Intervallpläne.",
+          "timezoneHint": "Cron-Zeiten werden in dieser Zone ausgewertet. Gilt nicht für Intervallpläne.",
           "container": "Container",
           "command": "Befehl",
-          "url": "URL",
-          "method": "Verfahren",
-          "body": "Körper",
-          "channels": "Bitte auch senden an",
+          "body": "Body",
+          "channels": "Auch senden an",
           "title": "Titel",
           "message": "Nachricht",
-          "snippet": "Ausschnitt",
+          "snippet": "Snippet",
           "seconds": "Sekunden",
           "conditionLeftPlaceholder": "Zu prüfender Wert",
-          "conditionRightPlaceholder": "Vergleiche mit",
+          "conditionRightPlaceholder": "Vergleichswert",
           "variableName": "Variablenname",
           "variableValue": "Wert",
           "elevated": "Mit sudo ausführen",
-          "onError": "Wenn das fehlschlägt",
+          "onError": "Bei Fehler",
           "allowPrivateNetwork": "Lokale Netzwerkadressen zulassen",
-          "allowPrivateNetworkHint": "Wird für einen selbstgehosteten Dienst in Ihrem LAN benötigt. Standardmäßig deaktiviert, um Anfragen an interne Adressen zu verhindern."
+          "allowPrivateNetworkHint": "Erforderlich für einen selbst gehosteten Dienst in Ihrem LAN. Standardmäßig deaktiviert, um Anfragen an interne Adressen zu verhindern.",
+          "interface": "Schnittstelle"
         },
         "onError": {
-          "stop": "Stoppt die Flucht!",
-          "continue": "Weiter geht's"
+          "stop": "Ausführung stoppen",
+          "continue": "Fortfahren"
         },
         "needsPlugin": "Benötigt {{plugin}}",
-        "needsPluginHint": "Diese Automatisierung wird übersprungen, bis die benötigte Funktion wieder verfügbar ist.",
         "offBadge": "Aus",
-        "docsLink": "Dokumentation ansehen",
+        "docsLink": "Dokumentation anzeigen",
         "ago": {
-          "seconds": "{{count}}s ago",
-          "minutes": "vor {{count}} Min.",
-          "hours": "vor {{count}} Std.",
-          "days": "vor {{count}} Tagen"
-        }
+          "seconds": "Vor {{count}} s",
+          "minutes": "Vor {{count}} m",
+          "hours": "Vor {{count}} h",
+          "days": "Vor {{count}} d"
+        },
+        "search": "Automatisierungen durchsuchen",
+        "noMatches": "Keine Automatisierungen entsprechen Ihrer Suche",
+        "settingsTitle": "Automatisierungseinstellungen",
+        "settingsDisplayTitle": "Anzeige"
       }
     }
   },
   "nav": {
     "automations": "Automatisierungen"
   },
-  "onboarding": {
-    "feature_automations": "Automatisierungen",
-    "feature_automations_desc": "Schritte automatisch ausführen, wenn etwas passiert, und Benachrichtigungen erhalten."
-  },
   "maintenance": {
-    "title": "Wartung",
-    "description": "Die Automatisierungen für Hoststatus, Integrität, Metriken, Container- und Tunnel-Trennung werden während der laufenden Arbeiten pausiert. Überwachung, manuelle Ausführungen und geplante Automatisierungen werden fortgesetzt.",
-    "denied": "Sie haben keine Berechtigung, Wartungsarbeiten anzuzeigen.",
-    "sharedReadOnly": "Dieser Host wurde Ihnen zur Verfügung gestellt. Nur der Eigentümer kann Wartungsänderungen vornehmen.",
-    "failed": "Die Wartungsarbeiten konnten nicht aktualisiert werden.",
-    "active": "Wartung aktiv",
-    "estimated": "Voraussichtlicher Abschluss",
-    "noAutoEnd": "Die Kostenschätzung beendet die Wartungsarbeiten nicht. Beenden Sie sie explizit, sobald die Arbeiten abgeschlossen sind.",
-    "endConfirm": "Wartungsarbeiten beenden und ereignisgesteuerte Automatisierungen für diesen Host wiederaufnehmen?",
-    "confirmEnd": "Ende bestätigen",
+    "title": "Wartungsmodus",
+    "description": "Host-Status, Gesundheit, Metriken, Container- und Tunnel-Trennungsautomatisierungen während der Wartungsarbeiten pausieren. Überwachung, manuelle Ausführungen und geplante Automatisierungen werden fortgesetzt.",
+    "denied": "Sie haben keine Berechtigung, den Wartungsmodus anzuzeigen.",
+    "sharedReadOnly": "Dieser Host wurde mit Ihnen geteilt. Nur der Besitzer kann den Wartungsmodus ändern.",
+    "failed": "Der Wartungsmodus konnte nicht aktualisiert werden.",
+    "active": "Wartungsmodus aktiv",
+    "estimated": "Geschätzte Fertigstellung",
+    "noAutoEnd": "Die Schätzung beendet den Wartungsmodus nicht. Beenden Sie ihn explizit, wenn die Arbeiten abgeschlossen sind.",
+    "endConfirm": "Wartungsmodus beenden und ereignisgesteuerte Automatisierungen für diesen Host wieder aufnehmen?",
+    "confirmEnd": "Beenden bestätigen",
     "cancel": "Abbrechen",
-    "end": "Wartungsarbeiten beenden",
+    "end": "Wartungsmodus beenden",
     "action": "Aktion",
     "startNow": "Jetzt starten",
-    "schedule": "Termin für später",
+    "schedule": "Für später planen",
     "reason": "Grund",
     "startUtc": "Erster Start (UTC)",
     "repeat": "Wiederholen",
-    "once": "Einmal",
+    "once": "Einmalig",
     "weekly": "Wöchentlich",
     "monthly": "Monatlich",
-    "utcHelp": "Die Zeitpläne verwenden ganzjährig UTC. Monatliche Zeitpläne überspringen Monate ohne den ausgewählten Tag. Geplante Zeiträume dürfen sich nicht überschneiden; Wartungsarbeiten, die über die vereinbarten Zeiträume hinausgehen, werden fortgesetzt.",
+    "utcHelp": "Zeitpläne verwenden das ganze Jahr über UTC. Monatliche Zeitpläne überspringen Monate, die den gewählten Tag nicht haben. Geplante Fenster dürfen sich nicht überschneiden; Wartungen, die länger dauern, erstrecken sich über spätere Fenster hinaus.",
     "duration": "Geschätzte Dauer (Minuten)",
-    "grace": "Kulanzfrist (Minuten)",
-    "notify": "Benachrichtigen Sie uns einmalig, falls Sie nach Ablauf der Schätzung und der Kulanzfrist immer noch offline sind.",
+    "grace": "Gnadenfrist (Minuten)",
+    "notify": "Einmal benachrichtigen, wenn nach Schätzung plus Gnadenfrist immer noch offline",
     "addSchedule": "Zeitplan hinzufügen",
     "schedules": "Zeitpläne",
-    "noSchedules": "Keine Wartungspläne.",
-    "completed": "Bereits begonnen",
+    "noSchedules": "Keine Wartungszeitpläne.",
+    "completed": "Bereits gestartet",
     "minutes_one": "{{count}} Minute",
     "minutes_other": "{{count}} Minuten",
     "remove": "Zeitplan entfernen",
-    "loadFailed": "Der Wartungsstatus konnte nicht aktualisiert werden. Änderungen sind deaktiviert, bis die Daten geladen werden können.",
-    "loading": "Lade Wartungsstatus…"
+    "loadFailed": "Status des Wartungsmodus konnte nicht aktualisiert werden. Änderungen sind deaktiviert, bis er geladen werden kann.",
+    "loading": "Status des Wartungsmodus wird geladen…"
   },
   "ui": {
     "sidebar": {
       "automations": {
         "options": {
-          "connect": "connect",
-          "disconnect": "disconnect",
+          "connect": "verbinden",
+          "disconnect": "trennen",
           "offline": "offline",
           "online": "online",
-          "failing": "failing",
-          "recovered": "recovered"
+          "failing": "fehlerhaft",
+          "recovered": "wiederhergestellt"
         }
       }
+    }
+  },
+  "common": {
+    "delete": "Löschen"
+  },
+  "settings": {
+    "alwaysShowActions": {
+      "label": "Buttons immer anzeigen",
+      "description": "Halten Sie die Buttons zum Testen, Ausführen und Löschen unter jeder Automatisierung sichtbar. Deaktivieren, um sie nur beim Hover anzuzeigen."
     }
   }
 }

@@ -1,0 +1,215 @@
+{
+  "permissions": {
+    "view": {
+      "title": "Pregled automatizacija",
+      "description": "Pregledajte automatizacije i njihovu povijest."
+    },
+    "create": {
+      "title": "Izrada automatizacija",
+      "description": "Dodajte nove automatizacije."
+    },
+    "edit": {
+      "title": "Uređivanje automatizacija",
+      "description": "Promijenite postojeće automatizacije."
+    },
+    "delete": {
+      "title": "Brisanje automatizacija",
+      "description": "Uklonite automatizacije."
+    },
+    "run": {
+      "title": "Pokretanje automatizacija",
+      "description": "Pokrenite automatizaciju ručno."
+    }
+  },
+  "newUi": {
+    "sidebar": {
+      "automations": {
+        "tabAutomations": "Automatizacije",
+        "tabRuns": "Izvršenja",
+        "tabChannels": "Kanali",
+        "createAutomation": "Nova automatizacija",
+        "empty": "Još nema automatizacija. Izradite jednu kako biste reagirali na metrike, raspored ili događaj.",
+        "emptyRuns": "Još nema izvršenja.",
+        "channelsHint": "Kanali se postavljaju u Odjeljku upozorenja",
+        "noChannelsHint": "Upozorenje uvijek stiže u vašu sandučicu. Dodajte kanale u Odjeljku upozorenja kako biste ga poslali i na drugo mjesto.",
+        "nameLabel": "Naziv",
+        "namePlaceholder": "npr. Očisti /data kada se popuni",
+        "nameRequired": "Naziv je obavezan",
+        "enabledLabel": "Omogućeno",
+        "concurrencyLabel": "Ako je već u tijeku",
+        "concurrencyHint": "Što učiniti kada se ovo ponovno aktivira prije nego što se prethodno izvršenje završilo.",
+        "concurrency": {
+          "skip": "Preskoči novo izvršenje",
+          "queue": "Čekaj i pokreni nakon toga",
+          "allow": "Pokreni oba odjednom"
+        },
+        "save": "Spremi",
+        "created": "Automatizacija je izrađena",
+        "updated": "Automatizacija je spremljena",
+        "deleted": "Automatizacija je obrisana",
+        "deleteConfirm": "Obrisati ovu automatizaciju? Njezina povijest izvršenja također će biti obrisana.",
+        "runNow": "Pokreni sada",
+        "testRun": "Testno izvršenje",
+        "runFinished": "Izvršenje završeno: {{status}}",
+        "trigger": "Okidač",
+        "steps": "Koraci",
+        "addStep": "Dodaj korak",
+        "removeStep": "Ukloni korak",
+        "moveUp": "Pomakni gore",
+        "moveDown": "Pomakni dolje",
+        "noSteps": "Još nema koraka. Dodajte jedan kako biste odredili što treba učiniti.",
+        "webhookTokenTitle": "Webhook URL",
+        "webhookTokenDescription": "Ovo se prikazuje samo jednom. Spremite ga sada, kasnije se ne može dohvatiti.",
+        "copied": "Kopirano",
+        "viewJson": "JSON",
+        "viewBuilder": "Konstruktor",
+        "dryRunBadge": "Testno izvršenje",
+        "hostSelector": {
+          "trigger": "Host koji pokreće",
+          "host": "Specifični host",
+          "fleet": "Flota",
+          "all": "Svi hostovi"
+        },
+        "triggerKinds": {
+          "metric_threshold": "Prag metrike",
+          "host_status": "Host je dostupan ili nedostupan",
+          "health_check": "Promjene provjere zdravlja",
+          "schedule": "Prema rasporedu",
+          "docker_event": "Događaj kontejnera",
+          "internal_event": "Termix događaj",
+          "webhook": "Dolazni webhook"
+        },
+        "stepTypes": {
+          "notify": "Pošalji upozorenje",
+          "http": "Pozovi URL",
+          "run_snippet": "Pokreni isječak",
+          "run_command": "Pokreni naredbu",
+          "docker": "Upravljaj kontejnerom",
+          "tunnel": "Upravljaj tunelom",
+          "wol": "Pokreni host",
+          "wait": "Čekaj",
+          "set_var": "Postavi varijablu",
+          "if": "Ako / inače",
+          "run_automation": "Pokreni drugu automatizaciju",
+          "stop": "Zaustavi"
+        },
+        "statuses": {
+          "running": "Pokreće se",
+          "success": "Uspješno",
+          "failed": "Neuspješno",
+          "timeout": "Isteklo vrijeme",
+          "skipped": "Preskočeno",
+          "cancelled": "Otkaženo"
+        },
+        "fields": {
+          "host": "Host",
+          "mount": "Točka montiranja",
+          "forSeconds": "Trajanje (sekunde)",
+          "cooldown": "Vrijeme odmora (minute)",
+          "cron": "Cron izraz",
+          "intervalSeconds": "Svake (sekunde)",
+          "timezone": "Vremenska zona",
+          "timezoneServer": "Vrijeme poslužitelja",
+          "timezoneHint": "Cron vremena se čitaju u ovoj zoni. Ne primjenjuje se na rasporede s intervalima.",
+          "container": "Kontejner",
+          "command": "Naredba",
+          "body": "Sadržaj",
+          "channels": "Također pošalji na",
+          "title": "Naslov",
+          "message": "Poruka",
+          "snippet": "Isječak",
+          "seconds": "Sekunde",
+          "conditionLeftPlaceholder": "Vrijednost za provjeru",
+          "conditionRightPlaceholder": "Usporedi s",
+          "variableName": "Naziv varijable",
+          "variableValue": "Vrijednost",
+          "elevated": "Pokreni s sudo",
+          "onError": "Ako ovo ne uspije",
+          "allowPrivateNetwork": "Dopusti adrese lokalne mreže",
+          "allowPrivateNetworkHint": "Potrebno za uslugu na vašem LAN-u. Isključeno prema zadanim postavkama kako bi se spriječile zahtjeve za interne adrese.",
+          "interface": "Sučelje"
+        },
+        "onError": {
+          "stop": "Zaustavi izvršenje",
+          "continue": "Nastavi"
+        },
+        "needsPlugin": "Potreban je {{plugin}}",
+        "offBadge": "Isključeno",
+        "docsLink": "Pogledaj dokumentaciju",
+        "ago": {
+          "seconds": "prije {{count}}s",
+          "minutes": "prije {{count}}m",
+          "hours": "prije {{count}}h",
+          "days": "prije {{count}}d"
+        },
+        "search": "Pretraži automatizacije",
+        "noMatches": "Nema automatizacija koje odgovaraju vašoj pretrazi",
+        "settingsTitle": "Postavke automatizacije",
+        "settingsDisplayTitle": "Prikaz"
+      }
+    }
+  },
+  "nav": {
+    "automations": "Automatizacije"
+  },
+  "maintenance": {
+    "title": "Održavanje",
+    "description": "Privremeno zaustavi automatizacije statusa hosta, zdravlja, metrika, kontejnera i prekida tunela tijekom rada. Nadziranje, ručno pokretanje i planirane automatizacije nastavljaju raditi.",
+    "denied": "Nemate dopuštenje za pregled održavanja.",
+    "sharedReadOnly": "Ovaj je host s vama podijeljen. Samo njegov vlasnik može promijeniti održavanje.",
+    "failed": "Održavanje se nije moglo ažurirati.",
+    "active": "Održavanje je aktivno",
+    "estimated": "Procijenjeni završetak",
+    "noAutoEnd": "Procjena ne završava održavanje. Eksplicitno ga završite kada je posao gotov.",
+    "endConfirm": "Želite li završiti održavanje i nastaviti automatizacije pokrenute događajima za ovaj host?",
+    "confirmEnd": "Potvrdi završetak",
+    "cancel": "Otkaži",
+    "end": "Završi održavanje",
+    "action": "Akcija",
+    "startNow": "Započni sada",
+    "schedule": "Zakaži za kasnije",
+    "reason": "Razlog",
+    "startUtc": "Prvo pokretanje (UTC)",
+    "repeat": "Ponovi",
+    "once": "Jednom",
+    "weekly": "Tjedno",
+    "monthly": "Mjesečno",
+    "utcHelp": "Rasporedi koriste UTC tijekom cijele godine. Mjesečni rasporedi preskaču mjesece koji nemaju odabrani dan. Planirani prozori se ne mogu preklapati; održavanje koje traje duže nastavlja se kroz kasnije prozore.",
+    "duration": "Procijenjeno trajanje (minute)",
+    "grace": "Razdoblje tolerancije (minute)",
+    "notify": "Obavijesti jednom ako je i dalje offline nakon procjene plus razdoblja tolerancije",
+    "addSchedule": "Dodaj raspored",
+    "schedules": "Rasporedi",
+    "noSchedules": "Nema rasporeda održavanja.",
+    "completed": "Već započeto",
+    "minutes_one": "{{count}} minuta",
+    "minutes_few": "{{count}} minute",
+    "minutes_other": "{{count}} minuta",
+    "remove": "Ukloni raspored",
+    "loadFailed": "Status održavanja se nije mogao osvježiti. Promjene su onemogućene dok se ne može učitati.",
+    "loading": "Učitavanje statusa održavanja…"
+  },
+  "ui": {
+    "sidebar": {
+      "automations": {
+        "options": {
+          "connect": "spoji",
+          "disconnect": "odspoji",
+          "offline": "offline",
+          "online": "online",
+          "failing": "neuspješno",
+          "recovered": "oporavljeno"
+        }
+      }
+    }
+  },
+  "common": {
+    "delete": "Izbriši"
+  },
+  "settings": {
+    "alwaysShowActions": {
+      "label": "Uvijek prikaži gumbe",
+      "description": "Držite gumbe za testiranje, pokretanje i brisanje ispod svake automatizacije vidljivima. Isključite da bi se prikazivali samo pri prelasku mišem."
+    }
+  }
+}

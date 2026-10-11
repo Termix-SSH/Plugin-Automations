@@ -1,225 +1,215 @@
 {
   "permissions": {
     "view": {
-      "title": "Visualizar automações",
-      "description": "Veja as automatizações e o seu histórico."
+      "title": "Ver automações",
+      "description": "Ver as automações e o respetivo histórico."
     },
     "create": {
       "title": "Criar automações",
-      "description": "Adicionar novas automatizações."
+      "description": "Adicionar novas automações."
     },
     "edit": {
       "title": "Editar automações",
-      "description": "Alterar as automatizações existentes."
+      "description": "Alterar automações existentes."
     },
     "delete": {
-      "title": "Apagar automações",
+      "title": "Eliminar automações",
       "description": "Remover automações."
     },
     "run": {
       "title": "Executar automações",
-      "description": "Acione uma automatização manualmente."
+      "description": "Disparar uma automação manualmente."
     }
   },
   "newUi": {
     "sidebar": {
       "automations": {
-        "title": "Automações",
         "tabAutomations": "Automações",
-        "tabRuns": "Corridas",
+        "tabRuns": "Execuções",
         "tabChannels": "Canais",
         "createAutomation": "Nova Automação",
-        "backToAutomations": "Voltar para Automações",
-        "createTitle": "Nova Automação",
-        "editTitle": "Editar Automação",
-        "empty": "Ainda não há automatizações. Crie uma para reagir a uma métrica, a um agendamento ou a um evento.",
-        "emptyRuns": "Ainda não houve qualquer corrida.",
-        "channelsHint": "Os canais são configurados em Alertas.",
-        "noChannelsHint": "O alerta será sempre enviado para a sua caixa de entrada. Adicione canais em Alertas para o enviar também para outros locais.",
+        "empty": "Ainda não há automações. Crie uma para reagir a uma métrica, um agendamento ou um evento.",
+        "emptyRuns": "Ainda não há execuções.",
+        "channelsHint": "Os canais são configurados em Alertas",
+        "noChannelsHint": "O alerta vai sempre para a sua caixa de entrada. Adicione canais em Alertas para também o enviar para outro local.",
         "nameLabel": "Nome",
-        "namePlaceholder": "Por exemplo, limpe a pasta /data quando esta estiver cheia.",
+        "namePlaceholder": "ex., Limpar /data quando estiver cheio",
         "nameRequired": "O nome é obrigatório",
-        "descriptionLabel": "Descrição",
-        "descriptionPlaceholder": "Descrição opcional",
         "enabledLabel": "Ativado",
-        "concurrencyLabel": "Se já estiver em execução",
-        "concurrencyHint": "O que fazer quando este for novamente acionado antes da última execução terminar?",
+        "concurrencyLabel": "Se já estiver a executar",
+        "concurrencyHint": "O que fazer quando isto for disparado novamente antes da última execução ter terminado.",
         "concurrency": {
-          "skip": "Salte a nova corrida",
-          "queue": "Espere e corra atrás.",
-          "allow": "Execute ambos em simultâneo"
+          "skip": "Ignorar a nova execução",
+          "queue": "Aguardar e executar depois",
+          "allow": "Executar ambos ao mesmo tempo"
         },
         "save": "Guardar",
         "created": "Automação criada",
-        "updated": "A automação economizou",
-        "deleted": "Automação excluída",
-        "deleteConfirm": "Apagar esta automação? O histórico de execução da mesma também será eliminado.",
-        "runNow": "Corra agora",
-        "testRun": "Teste de execução",
-        "testRunHint": "Executa cada passo, mas não toca em nada fora do Termix.",
-        "runStarted": "A corrida começou.",
-        "runFinished": "Execução concluída: {{status}}",
+        "updated": "Automação guardada",
+        "deleted": "Automação eliminada",
+        "deleteConfirm": "Eliminar esta automação? O respetivo histórico de execuções também será eliminado.",
+        "runNow": "Executar agora",
+        "testRun": "Execução de teste",
+        "runFinished": "Execução terminada: {{status}}",
         "trigger": "Gatilho",
         "steps": "Passos",
-        "addStep": "Adicionar etapa",
-        "removeStep": "Remover etapa",
-        "moveUp": "Suba",
-        "moveDown": "Desça",
-        "noSteps": "Ainda não há etapas. Adicione uma para descrever o que deve acontecer.",
+        "addStep": "Adicionar passo",
+        "removeStep": "Remover passo",
+        "moveUp": "Mover para cima",
+        "moveDown": "Mover para baixo",
+        "noSteps": "Ainda não há passos. Adicione um para definir o que deve acontecer.",
         "webhookTokenTitle": "URL do Webhook",
-        "webhookTokenDescription": "Esta mensagem será apresentada apenas uma vez. Guarde-a agora, pois não poderá ser recuperada posteriormente.",
-        "copy": "Copiar",
+        "webhookTokenDescription": "Isto é mostrado apenas uma vez. Guarde-o agora, pois não poderá ser recuperado mais tarde.",
         "copied": "Copiado",
         "viewJson": "JSON",
         "viewBuilder": "Construtor",
-        "viewGraph": "Gráfico",
-        "lastRun": "Última corrida",
-        "never": "Nunca",
-        "duration": "{{seconds}}s",
-        "stepOutput": "Saída",
-        "stepError": "Erro",
-        "dryRunBadge": "Teste de execução",
+        "dryRunBadge": "Execução de teste",
         "hostSelector": {
-          "trigger": "Host que desencadeia o ataque",
-          "host": "hospedeiro específico",
+          "trigger": "Host que dispara",
+          "host": "Host específico",
           "fleet": "Frota",
           "all": "Todos os hosts"
         },
         "triggerKinds": {
-          "metric_threshold": "Limiar métrico",
-          "host_status": "O host sobe ou desce.",
+          "metric_threshold": "Limite de métrica",
+          "host_status": "Host fica online ou offline",
           "health_check": "Alterações na verificação de saúde",
-          "schedule": "De acordo com um cronograma",
+          "schedule": "Num agendamento",
           "docker_event": "Evento de contentor",
-          "internal_event": "Evento Termix",
-          "webhook": "Webhook de entrada"
+          "internal_event": "Evento do Termix",
+          "webhook": "Webhook recebido"
         },
         "stepTypes": {
           "notify": "Enviar um alerta",
-          "http": "Chamar um URL",
-          "run_snippet": "Executar um excerto de código",
+          "http": "Chamar uma URL",
+          "run_snippet": "Executar um snippet",
           "run_command": "Executar um comando",
-          "docker": "Controle um contentor",
-          "tunnel": "Controle um túnel",
-          "wol": "Acorde um anfitrião",
-          "wait": "Espera",
-          "set_var": "Defina uma variável",
-          "if": "Se/caso contrário",
-          "run_automation": "Execute outra automatização",
-          "stop": "Stop"
+          "docker": "Controlar um contentor",
+          "tunnel": "Controlar um túnel",
+          "wol": "Despertar um host",
+          "wait": "Aguardar",
+          "set_var": "Definir uma variável",
+          "if": "Se / caso contrário",
+          "run_automation": "Executar outra automação",
+          "stop": "Parar"
         },
         "statuses": {
-          "running": "Em execução",
+          "running": "A executar",
           "success": "Sucesso",
           "failed": "Falhou",
-          "timeout": "Tempo limite excedido",
+          "timeout": "Tempo esgotado",
           "skipped": "Ignorado",
           "cancelled": "Cancelado"
         },
         "fields": {
-          "host": "Servidor",
-          "metric": "Métrica",
+          "host": "Host",
           "mount": "Ponto de montagem",
-          "operator": "É",
-          "value": "Valor",
-          "forSeconds": "Sustentado por (segundos)",
-          "cooldown": "Período de arrefecimento (minutos)",
-          "cron": "Expressão de Cron",
+          "forSeconds": "Manutenção por (segundos)",
+          "cooldown": "Tempo de espera (minutos)",
+          "cron": "Expressão Cron",
           "intervalSeconds": "A cada (segundos)",
           "timezone": "Fuso horário",
           "timezoneServer": "Hora do servidor",
-          "timezoneHint": "Os tempos cron são lidos nesta zona. Não se aplica a agendamentos por intervalo.",
-          "container": "Recipiente",
+          "timezoneHint": "Os horários Cron são lidos neste fuso. Não se aplica a agendamentos por intervalo.",
+          "container": "Contentor",
           "command": "Comando",
-          "url": "URL",
-          "method": "Método",
           "body": "Corpo",
           "channels": "Enviar também para",
           "title": "Título",
           "message": "Mensagem",
-          "snippet": "Trecho",
+          "snippet": "Snippet",
           "seconds": "Segundos",
           "conditionLeftPlaceholder": "Valor a verificar",
-          "conditionRightPlaceholder": "Compare com",
+          "conditionRightPlaceholder": "Comparar com",
           "variableName": "Nome da variável",
           "variableValue": "Valor",
           "elevated": "Executar com sudo",
-          "onError": "Se isso falhar",
+          "onError": "Se falhar",
           "allowPrivateNetwork": "Permitir endereços de rede local",
-          "allowPrivateNetworkHint": "Necessário para um serviço auto-hospedado na sua rede local (LAN). Desativado por defeito para evitar pedidos a endereços internos."
+          "allowPrivateNetworkHint": "Necessário para um serviço auto-hospedado na sua LAN. Desativado por predefinição para evitar pedidos a endereços internos.",
+          "interface": "Interface"
         },
         "onError": {
-          "stop": "Pare a corrida",
+          "stop": "Parar a execução",
           "continue": "Continuar"
         },
-        "needsPlugin": "Necessita de {{plugin}}",
-        "needsPluginHint": "Esta automatização será ignorada até que o recurso necessário esteja novamente disponível.",
-        "offBadge": "Desativado",
-        "docsLink": "Ver docs",
+        "needsPlugin": "Requer {{plugin}}",
+        "offBadge": "Desligado",
+        "docsLink": "Ver documentação",
         "ago": {
-          "seconds": "{{count}}s atrás",
-          "minutes": "há {{count}} min",
-          "hours": "há {{count}} h",
-          "days": "há {{count}} d"
-        }
+          "seconds": "Há {{count}}s",
+          "minutes": "Há {{count}}m",
+          "hours": "Há {{count}}h",
+          "days": "Há {{count}}d"
+        },
+        "search": "Pesquisar automações",
+        "noMatches": "Nenhuma automação corresponde à sua pesquisa",
+        "settingsTitle": "Definições de automação",
+        "settingsDisplayTitle": "Exibição"
       }
     }
   },
   "nav": {
     "automations": "Automações"
   },
-  "onboarding": {
-    "feature_automations": "Automações",
-    "feature_automations_desc": "Execute automaticamente os passos quando algo acontece e receba notificações."
-  },
   "maintenance": {
     "title": "Manutenção",
-    "description": "Faça uma pausa nas automatizações de estado do host, integridade, métricas, contentor e desconexão de túnel enquanto o trabalho estiver em curso. A monitorização, as execuções manuais e as automações agendadas continuam.",
-    "denied": "Não tem permissão para visualizar a manutenção.",
-    "sharedReadOnly": "Este host foi partilhado consigo. Apenas o proprietário pode alterar as definições de manutenção.",
-    "failed": "A atualização de manutenção não pôde ser concluída.",
+    "description": "Pausar automações de estado do host, saúde, métricas, contentores e desconexão de túneis enquanto o trabalho está em curso. A monitorização, execuções manuais e automações agendadas continuam.",
+    "denied": "Não tem permissão para ver a manutenção.",
+    "sharedReadOnly": "Este host foi partilhado consigo. Apenas o proprietário pode alterar a manutenção.",
+    "failed": "Não foi possível atualizar a manutenção.",
     "active": "Manutenção ativa",
-    "estimated": "Conclusão prevista",
-    "noAutoEnd": "O orçamento não encerra a manutenção. Encerre-o explicitamente quando o trabalho estiver concluído.",
-    "endConfirm": "Terminar a manutenção e retomar as automatizações acionadas por eventos para este host?",
-    "confirmEnd": "Confirme o fim",
+    "estimated": "Conclusão estimada",
+    "noAutoEnd": "A estimativa não encerra a manutenção. Encerre-a explicitamente quando o trabalho estiver concluído.",
+    "endConfirm": "Encerrar a manutenção e retomar as automações acionadas por eventos para este host?",
+    "confirmEnd": "Confirmar encerramento",
     "cancel": "Cancelar",
-    "end": "Manutenção final",
+    "end": "Encerrar manutenção",
     "action": "Ação",
-    "startNow": "Comece agora",
-    "schedule": "Agendamento para mais tarde",
-    "reason": "Razão",
-    "startUtc": "Primeiro arranque (UTC)",
+    "startNow": "Iniciar agora",
+    "schedule": "Agendar para mais tarde",
+    "reason": "Motivo",
+    "startUtc": "Primeiro início (UTC)",
     "repeat": "Repetir",
     "once": "Uma vez",
     "weekly": "Semanalmente",
-    "monthly": "Mensal",
-    "utcHelp": "Os horários utilizam o UTC durante todo o ano. Os horários mensais ignoram os meses que não correspondem ao dia selecionado. Os períodos de planeamento não se podem sobrepor; a manutenção que se estende para além do previsto continua nos períodos subsequentes.",
+    "monthly": "Mensalmente",
+    "utcHelp": "Os agendamentos usam UTC durante todo o ano. Os agendamentos mensais ignoram os meses sem o dia selecionado. As janelas planeadas não podem sobrepor-se; a manutenção que excede o tempo continua nas janelas seguintes.",
     "duration": "Duração estimada (minutos)",
     "grace": "Período de tolerância (minutos)",
-    "notify": "Notificar uma única vez se o utilizador ainda estiver offline após o período estimado e de tolerância.",
-    "addSchedule": "Adicionar horário",
-    "schedules": "Horários",
-    "noSchedules": "Sem plano de manutenção.",
-    "completed": "Já começou",
+    "notify": "Notificar uma vez se ainda estiver offline após a estimativa mais o período de tolerância",
+    "addSchedule": "Adicionar agendamento",
+    "schedules": "Agendamentos",
+    "noSchedules": "Sem agendamentos de manutenção.",
+    "completed": "Já iniciado",
     "minutes_one": "{{count}} minuto",
+    "minutes_many": "{{count}} minutos",
     "minutes_other": "{{count}} minutos",
     "remove": "Remover agendamento",
-    "loadFailed": "Não foi possível atualizar o estado de manutenção. As alterações estão desativadas até que o estado seja carregado.",
-    "loading": "A carregar o estado de manutenção…"
+    "loadFailed": "Não foi possível atualizar o estado da manutenção. As alterações estão desativadas até que seja possível carregar.",
+    "loading": "A carregar o estado da manutenção…"
   },
   "ui": {
     "sidebar": {
       "automations": {
         "options": {
-          "connect": "connect",
-          "disconnect": "disconnect",
+          "connect": "ligar",
+          "disconnect": "desligar",
           "offline": "offline",
           "online": "online",
-          "failing": "failing",
-          "recovered": "recovered"
+          "failing": "com falha",
+          "recovered": "recuperado"
         }
       }
+    }
+  },
+  "common": {
+    "delete": "Eliminar"
+  },
+  "settings": {
+    "alwaysShowActions": {
+      "label": "Mostrar sempre os botões",
+      "description": "Manter os botões de teste, execução e eliminação visíveis abaixo de cada automação. Desative para os mostrar apenas ao passar o rato."
     }
   }
 }

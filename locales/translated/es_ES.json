@@ -2,11 +2,11 @@
   "permissions": {
     "view": {
       "title": "Ver automatizaciones",
-      "description": "Consulta las automatizaciones y su historial."
+      "description": "Ver las automatizaciones y su historial."
     },
     "create": {
       "title": "Crear automatizaciones",
-      "description": "Agregar nuevas automatizaciones."
+      "description": "Añadir nuevas automatizaciones."
     },
     "edit": {
       "title": "Editar automatizaciones",
@@ -18,208 +18,198 @@
     },
     "run": {
       "title": "Ejecutar automatizaciones",
-      "description": "Activar una automatización manualmente."
+      "description": "Disparar una automatización manualmente."
     }
   },
   "newUi": {
     "sidebar": {
       "automations": {
-        "title": "Automatizaciones",
         "tabAutomations": "Automatizaciones",
-        "tabRuns": "Corre",
+        "tabRuns": "Ejecuciones",
         "tabChannels": "Canales",
         "createAutomation": "Nueva automatización",
-        "backToAutomations": "Volver a Automatizaciones",
-        "createTitle": "Nueva automatización",
-        "editTitle": "Automatización de edición",
-        "empty": "Aún no hay automatizaciones. Crea una para que reaccione a una métrica, una programación o un evento.",
-        "emptyRuns": "Aún no hay carreras.",
-        "channelsHint": "Los canales se configuran en Alertas.",
-        "noChannelsHint": "La alerta siempre llega a tu bandeja de entrada. Agrega canales en Alertas para enviarla también a otros lugares.",
+        "empty": "Aún no hay automatizaciones. Crea una para reaccionar a una métrica, un horario o un evento.",
+        "emptyRuns": "Aún no hay ejecuciones.",
+        "channelsHint": "Los canales se configuran en Alertas",
+        "noChannelsHint": "La alerta siempre va a tu bandeja de entrada. Añade canales en Alertas para enviarla también a otro lugar.",
         "nameLabel": "Nombre",
-        "namePlaceholder": "Por ejemplo, limpiar /data cuando se llena",
+        "namePlaceholder": "p. ej., Limpiar /data cuando se llene",
         "nameRequired": "El nombre es obligatorio",
-        "descriptionLabel": "Descripción",
-        "descriptionPlaceholder": "Descripción opcional",
-        "enabledLabel": "Activado",
-        "concurrencyLabel": "Si ya está en funcionamiento",
-        "concurrencyHint": "Qué hacer si esto se activa de nuevo antes de que finalice la última ejecución.",
+        "enabledLabel": "Habilitado",
+        "concurrencyLabel": "Si ya se está ejecutando",
+        "concurrencyHint": "Qué hacer cuando se dispara de nuevo antes de que termine la última ejecución.",
         "concurrency": {
-          "skip": "Saltarse la nueva carrera",
-          "queue": "Espera y corre tras",
-          "allow": "Ejecutar ambos a la vez"
+          "skip": "Omitir la nueva ejecución",
+          "queue": "Esperar y ejecutar después",
+          "allow": "Ejecutar ambas a la vez"
         },
         "save": "Guardar",
         "created": "Automatización creada",
         "updated": "Automatización guardada",
         "deleted": "Automatización eliminada",
-        "deleteConfirm": "¿Eliminar esta automatización? Su historial de ejecución también se eliminará.",
-        "runNow": "Corre ahora",
+        "deleteConfirm": "¿Eliminar esta automatización? También se eliminará su historial de ejecuciones.",
+        "runNow": "Ejecutar ahora",
         "testRun": "Ejecución de prueba",
-        "testRunHint": "Ejecuta todos los pasos, pero no toca nada fuera de Termix.",
-        "runStarted": "La carrera ha comenzado.",
         "runFinished": "Ejecución finalizada: {{status}}",
         "trigger": "Disparador",
         "steps": "Pasos",
-        "addStep": "Agregar paso",
+        "addStep": "Añadir paso",
         "removeStep": "Eliminar paso",
-        "moveUp": "Subir",
-        "moveDown": "Baja",
-        "noSteps": "Aún no hay pasos a seguir. Añade uno para indicar qué debería suceder.",
+        "moveUp": "Mover arriba",
+        "moveDown": "Mover abajo",
+        "noSteps": "Aún no hay pasos. Añade uno para indicar qué debe ocurrir.",
         "webhookTokenTitle": "URL del webhook",
-        "webhookTokenDescription": "Esto se muestra una sola vez. Guárdalo ahora, no se podrá recuperar más tarde.",
-        "copy": "Copiar",
+        "webhookTokenDescription": "Esto se muestra una sola vez. Guárdalo ahora, ya no podrá recuperarse más tarde.",
         "copied": "Copiado",
         "viewJson": "JSON",
         "viewBuilder": "Constructor",
-        "viewGraph": "Gráfico",
-        "lastRun": "Última carrera",
-        "never": "Nunca",
-        "duration": "{{seconds}}s",
-        "stepOutput": "Salida",
-        "stepError": "Error",
         "dryRunBadge": "Ejecución de prueba",
         "hostSelector": {
-          "trigger": "Host desencadenante",
-          "host": "Anfitrión específico",
+          "trigger": "Host que dispara",
+          "host": "Host específico",
           "fleet": "Flota",
           "all": "Todos los hosts"
         },
         "triggerKinds": {
-          "metric_threshold": "Umbral métrico",
-          "host_status": "El host sube o baja",
-          "health_check": "Cambios en los chequeos médicos",
+          "metric_threshold": "Umbral de métrica",
+          "host_status": "El host se conecta o desconecta",
+          "health_check": "Cambios en la comprobación de estado",
           "schedule": "Según un horario",
           "docker_event": "Evento de contenedor",
-          "internal_event": "Evento Termix",
+          "internal_event": "Evento de Termix",
           "webhook": "Webhook entrante"
         },
         "stepTypes": {
-          "notify": "Enviar alerta",
+          "notify": "Enviar una alerta",
           "http": "Llamar a una URL",
           "run_snippet": "Ejecutar un fragmento",
           "run_command": "Ejecutar un comando",
           "docker": "Controlar un contenedor",
           "tunnel": "Controlar un túnel",
-          "wol": "Despierta a un anfitrión",
+          "wol": "Encender un host",
           "wait": "Esperar",
           "set_var": "Establecer una variable",
           "if": "Si / de lo contrario",
-          "run_automation": "Ejecuta otra automatización",
-          "stop": "Parada"
+          "run_automation": "Ejecutar otra automatización",
+          "stop": "Detener"
         },
         "statuses": {
           "running": "En ejecución",
           "success": "Éxito",
           "failed": "Fallido",
           "timeout": "Tiempo de espera agotado",
-          "skipped": "Saltado",
+          "skipped": "Omitido",
           "cancelled": "Cancelado"
         },
         "fields": {
           "host": "Host",
-          "metric": "Métrica",
           "mount": "Punto de montaje",
-          "operator": "Es",
-          "value": "Valor",
           "forSeconds": "Mantenido durante (segundos)",
-          "cooldown": "Tiempo de espera (minutos)",
-          "cron": "Expresión cron",
+          "cooldown": "Enfriamiento (minutos)",
+          "cron": "Expresión Cron",
           "intervalSeconds": "Cada (segundos)",
-          "timezone": "Huso horario",
+          "timezone": "Zona horaria",
           "timezoneServer": "Hora del servidor",
-          "timezoneHint": "En esta zona se leen las horas cron. No se aplica a los horarios de intervalo.",
-          "container": "Recipiente",
+          "timezoneHint": "Las horas Cron se leen en esta zona. No se aplica a los horarios por intervalo.",
+          "container": "Contenedor",
           "command": "Comando",
-          "url": "URL",
-          "method": "Método",
           "body": "Cuerpo",
-          "channels": "También enviar a",
+          "channels": "Enviar también a",
           "title": "Título",
           "message": "Mensaje",
-          "snippet": "Retazo",
-          "seconds": "Artículos de segunda clase",
-          "conditionLeftPlaceholder": "Valor a comprobar",
+          "snippet": "Fragmento",
+          "seconds": "Segundos",
+          "conditionLeftPlaceholder": "Valor a verificar",
           "conditionRightPlaceholder": "Comparar con",
-          "variableName": "nombre de la variable",
+          "variableName": "Nombre de la variable",
           "variableValue": "Valor",
           "elevated": "Ejecutar con sudo",
           "onError": "Si esto falla",
           "allowPrivateNetwork": "Permitir direcciones de red local",
-          "allowPrivateNetworkHint": "Necesario para un servicio autohospedado en su LAN. Desactivado por defecto para evitar solicitudes a direcciones internas."
+          "allowPrivateNetworkHint": "Necesario para un servicio autoalojado en tu LAN. Desactivado por defecto para evitar solicitudes a direcciones internas.",
+          "interface": "Interfaz"
         },
         "onError": {
-          "stop": "Detengan la carrera",
+          "stop": "Detener la ejecución",
           "continue": "Continuar"
         },
-        "needsPlugin": "Necesidades {{plugin}}",
-        "needsPluginHint": "Esta automatización se omite hasta que la función que necesita vuelva a estar disponible.",
+        "needsPlugin": "Requiere {{plugin}}",
         "offBadge": "Desactivado",
         "docsLink": "Ver documentación",
         "ago": {
-          "seconds": "{{count}}hace s",
-          "minutes": "hace {{count}}m",
-          "hours": "hace {{count}}h",
-          "days": "hace {{count}}d"
-        }
+          "seconds": "Hace {{count}}s",
+          "minutes": "Hace {{count}}m",
+          "hours": "Hace {{count}}h",
+          "days": "Hace {{count}}d"
+        },
+        "search": "Buscar automatizaciones",
+        "noMatches": "Ninguna automatización coincide con tu búsqueda",
+        "settingsTitle": "Configuración de automatizaciones",
+        "settingsDisplayTitle": "Visualización"
       }
     }
   },
   "nav": {
     "automations": "Automatizaciones"
   },
-  "onboarding": {
-    "feature_automations": "Automatizaciones",
-    "feature_automations_desc": "Ejecuta pasos automáticamente cuando ocurra algo y recibe notificaciones."
-  },
   "maintenance": {
     "title": "Mantenimiento",
-    "description": "Se pausan las automatizaciones de estado del host, salud, métricas, contenedores y desconexión de túneles mientras se realiza el trabajo. La monitorización, las ejecuciones manuales y las automatizaciones programadas continúan.",
+    "description": "Pausa el estado del host, la salud, las métricas, los contenedores y las automatizaciones de desconexión de túneles mientras se realiza el trabajo. El monitoreo, las ejecuciones manuales y las automatizaciones programadas continúan.",
     "denied": "No tienes permiso para ver el mantenimiento.",
-    "sharedReadOnly": "Este servidor se ha compartido contigo. Solo su propietario puede modificar el mantenimiento.",
-    "failed": "No se pudo actualizar el mantenimiento.",
+    "sharedReadOnly": "Este host se ha compartido contigo. Solo su propietario puede modificar el mantenimiento.",
+    "failed": "No se ha podido actualizar el mantenimiento.",
     "active": "Mantenimiento activo",
     "estimated": "Finalización estimada",
-    "noAutoEnd": "El presupuesto no pone fin al mantenimiento. Finalícelo explícitamente cuando el trabajo esté terminado.",
+    "noAutoEnd": "La estimación no finaliza el mantenimiento. Finalízalo explícitamente cuando el trabajo esté completo.",
     "endConfirm": "¿Finalizar el mantenimiento y reanudar las automatizaciones activadas por eventos para este host?",
-    "confirmEnd": "Confirmar fin",
+    "confirmEnd": "Confirmar finalización",
     "cancel": "Cancelar",
-    "end": "Fin del mantenimiento",
+    "end": "Finalizar mantenimiento",
     "action": "Acción",
-    "startNow": "Empieza ahora",
+    "startNow": "Iniciar ahora",
     "schedule": "Programar para más tarde",
-    "reason": "Razón",
+    "reason": "Motivo",
     "startUtc": "Primer inicio (UTC)",
     "repeat": "Repetir",
     "once": "Una vez",
-    "weekly": "Semanalmente",
+    "weekly": "Semanal",
     "monthly": "Mensual",
-    "utcHelp": "Los horarios utilizan UTC durante todo el año. Los horarios mensuales omiten los meses que no incluyen el día seleccionado. Los periodos de mantenimiento planificados no pueden superponerse; el mantenimiento prolongado continúa en los periodos posteriores.",
+    "utcHelp": "Los horarios utilizan UTC durante todo el año. Los horarios mensuales omiten los meses que no tienen el día seleccionado. Las ventanas planificadas no pueden superponerse; si el mantenimiento se prolonga, continúa en las ventanas posteriores.",
     "duration": "Duración estimada (minutos)",
     "grace": "Período de gracia (minutos)",
-    "notify": "Notificar una vez si sigue sin conexión después del período estimado más el período de gracia.",
-    "addSchedule": "Agregar horario",
+    "notify": "Notificar una vez si sigue sin conexión después de la estimación más el período de gracia",
+    "addSchedule": "Añadir horario",
     "schedules": "Horarios",
-    "noSchedules": "Sin programas de mantenimiento.",
-    "completed": "Ya ha comenzado",
+    "noSchedules": "No hay horarios de mantenimiento.",
+    "completed": "Ya iniciado",
     "minutes_one": "{{count}} minuto",
+    "minutes_many": "{{count}} minutos",
     "minutes_other": "{{count}} minutos",
     "remove": "Eliminar horario",
-    "loadFailed": "No se pudo actualizar el estado de mantenimiento. Los cambios están deshabilitados hasta que se puedan cargar.",
-    "loading": "Cargando estado de mantenimiento…"
+    "loadFailed": "No se ha podido actualizar el estado del mantenimiento. Los cambios están desactivados hasta que se pueda cargar.",
+    "loading": "Cargando estado del mantenimiento…"
   },
   "ui": {
     "sidebar": {
       "automations": {
         "options": {
-          "connect": "connect",
-          "disconnect": "disconnect",
-          "offline": "offline",
-          "online": "online",
-          "failing": "failing",
-          "recovered": "recovered"
+          "connect": "conectar",
+          "disconnect": "desconectar",
+          "offline": "sin conexión",
+          "online": "en línea",
+          "failing": "fallando",
+          "recovered": "recuperado"
         }
       }
+    }
+  },
+  "common": {
+    "delete": "Eliminar"
+  },
+  "settings": {
+    "alwaysShowActions": {
+      "label": "Mostrar siempre los botones",
+      "description": "Mantén visibles los botones de probar, ejecutar y eliminar debajo de cada automatización. Desactívalo para mostrarlos solo al pasar el cursor por encima."
     }
   }
 }

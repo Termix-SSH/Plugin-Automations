@@ -2,7 +2,7 @@
   "permissions": {
     "view": {
       "title": "Visa automatiseringar",
-      "description": "Se automatiseringarna och deras historik."
+      "description": "Se automatiseringar och deras historik."
     },
     "create": {
       "title": "Skapa automatiseringar",
@@ -18,208 +18,197 @@
     },
     "run": {
       "title": "Kör automatiseringar",
-      "description": "Utlös en automatisering manuellt."
+      "description": "Starta en automatisering manuellt."
     }
   },
   "newUi": {
     "sidebar": {
       "automations": {
-        "title": "Automatiseringar",
         "tabAutomations": "Automatiseringar",
-        "tabRuns": "Löpningar",
+        "tabRuns": "Exekveringar",
         "tabChannels": "Kanaler",
         "createAutomation": "Ny automatisering",
-        "backToAutomations": "Tillbaka till Automatiseringar",
-        "createTitle": "Ny automatisering",
-        "editTitle": "Redigera automatisering",
-        "empty": "Inga automatiseringar ännu. Skapa en för att reagera på ett mätvärde, ett schema eller en händelse.",
-        "emptyRuns": "Inga löpningar än.",
-        "channelsHint": "Kanaler konfigureras i aviseringar",
-        "noChannelsHint": "Aviseringen skickas alltid till din inkorg. Lägg till kanaler i Aviseringar för att även skicka den någon annanstans.",
+        "empty": "Inga automatiseringar ännu. Skapa en för att reagera på en mätvärde, ett schema eller en händelse.",
+        "emptyRuns": "Inga exekveringar ännu.",
+        "channelsHint": "Kanaler konfigureras i Varningar",
+        "noChannelsHint": "Varningen skickas alltid till din inkorg. Lägg till kanaler i Varningar för att också skicka den någon annanstans.",
         "nameLabel": "Namn",
-        "namePlaceholder": "t.ex. Rensa upp /data när den fylls",
+        "namePlaceholder": "t.ex. Rensa /data när den fylls",
         "nameRequired": "Namn krävs",
-        "descriptionLabel": "Beskrivning",
-        "descriptionPlaceholder": "Valfri beskrivning",
         "enabledLabel": "Aktiverad",
-        "concurrencyLabel": "Om den redan är igång",
-        "concurrencyHint": "Vad man ska göra när detta utlöses igen innan den sista körningen är klar.",
+        "concurrencyLabel": "Om den redan körs",
+        "concurrencyHint": "Vad som ska hända när detta utlöses igen innan förra körningen är klar.",
         "concurrency": {
-          "skip": "Hoppa över den nya körningen",
-          "queue": "Vänta och spring efter",
+          "skip": "Hoppa över ny körning",
+          "queue": "Vänta och kör efter",
           "allow": "Kör båda samtidigt"
         },
         "save": "Spara",
         "created": "Automatisering skapad",
         "updated": "Automatisering sparad",
         "deleted": "Automatisering borttagen",
-        "deleteConfirm": "Vill du ta bort den här automatiseringen? Dess körhistorik raderas också.",
+        "deleteConfirm": "Ta bort denna automatisering? Dess körningshistorik tas också bort.",
         "runNow": "Kör nu",
         "testRun": "Testkörning",
-        "testRunHint": "Kör varje steg men rör ingenting utanför Termix.",
-        "runStarted": "Löpningen har startat",
-        "runFinished": "Körning avslutad: {{status}}",
+        "runFinished": "Körning klar: {{status}}",
         "trigger": "Utlösare",
         "steps": "Steg",
         "addStep": "Lägg till steg",
         "removeStep": "Ta bort steg",
         "moveUp": "Flytta upp",
-        "moveDown": "Flytta nedåt",
+        "moveDown": "Flytta ner",
         "noSteps": "Inga steg ännu. Lägg till ett för att ange vad som ska hända.",
         "webhookTokenTitle": "Webhook-URL",
-        "webhookTokenDescription": "Detta visas en gång. Spara det nu, det kan inte hämtas senare.",
-        "copy": "Kopiera",
+        "webhookTokenDescription": "Detta visas endast en gång. Spara det nu, det kan inte hämtas senare.",
         "copied": "Kopierad",
         "viewJson": "JSON",
-        "viewBuilder": "Byggmästare",
-        "viewGraph": "Graf",
-        "lastRun": "Sista körningen",
-        "never": "Aldrig",
-        "duration": "{{seconds}}s",
-        "stepOutput": "Produktion",
-        "stepError": "Fel",
+        "viewBuilder": "Byggare",
         "dryRunBadge": "Testkörning",
         "hostSelector": {
           "trigger": "Utlösande värd",
           "host": "Specifik värd",
           "fleet": "Flotta",
-          "all": "Alla värdar"
+          "all": "Alla värden"
         },
         "triggerKinds": {
-          "metric_threshold": "Metrisk tröskelvärde",
-          "host_status": "Värden går upp eller ner",
-          "health_check": "Ändringar i hälsokontrollen",
-          "schedule": "Enligt ett schema",
-          "docker_event": "Containerhändelse",
-          "internal_event": "Termix-evenemang",
+          "metric_threshold": "Mätvärdesgräns",
+          "host_status": "Värd startar eller stannar",
+          "health_check": "Ändring i hälsokontroll",
+          "schedule": "Enligt schema",
+          "docker_event": "Behållarehändelse",
+          "internal_event": "Termix-händelse",
           "webhook": "Inkommande webhook"
         },
         "stepTypes": {
-          "notify": "Skicka en avisering",
+          "notify": "Skicka en varning",
           "http": "Anropa en URL",
-          "run_snippet": "Kör ett utdrag",
+          "run_snippet": "Kör ett snippet",
           "run_command": "Kör ett kommando",
           "docker": "Styr en container",
-          "tunnel": "Kontrollera en tunnel",
-          "wol": "Väck en värd",
+          "tunnel": "Styr en tunnel",
+          "wol": "Väck en host",
           "wait": "Vänta",
-          "set_var": "Ställ in en variabel",
+          "set_var": "Sätt en variabel",
           "if": "Om / annars",
-          "run_automation": "Kör en annan automatisering",
-          "stop": "Stopp"
+          "run_automation": "Kör en annan automation",
+          "stop": "Stoppa"
         },
         "statuses": {
-          "running": "Spring",
-          "success": "Framgång",
+          "running": "Kör",
+          "success": "Lyckades",
           "failed": "Misslyckades",
-          "timeout": "Timeout",
-          "skipped": "Hoppade över",
+          "timeout": "Tidsgräns överskriden",
+          "skipped": "Hoppad över",
           "cancelled": "Avbruten"
         },
         "fields": {
-          "host": "Värd",
-          "metric": "Metrisk",
+          "host": "Host",
           "mount": "Monteringspunkt",
-          "operator": "Är",
-          "value": "Värde",
-          "forSeconds": "Uthållen i (sekunder)",
-          "cooldown": "Nedkylningstid (minuter)",
+          "forSeconds": "Upprätthållen i (sekunder)",
+          "cooldown": "Nedkylning (minuter)",
           "cron": "Cron-uttryck",
-          "intervalSeconds": "Varje (sekund)",
+          "intervalSeconds": "Varje (sekunder)",
           "timezone": "Tidszon",
           "timezoneServer": "Servertid",
-          "timezoneHint": "Cron-tider läses i denna zon. Gäller inte för intervallscheman.",
-          "container": "Behållare",
+          "timezoneHint": "Cron-tider läses i denna zon. Gäller inte intervall scheman.",
+          "container": "Container",
           "command": "Kommando",
-          "url": "URL",
-          "method": "Metod",
-          "body": "Kropp",
+          "body": "Brödtext",
           "channels": "Skicka även till",
           "title": "Titel",
           "message": "Meddelande",
-          "snippet": "Utdrag",
+          "snippet": "Snippet",
           "seconds": "Sekunder",
           "conditionLeftPlaceholder": "Värde att kontrollera",
-          "conditionRightPlaceholder": "Jämför mot",
+          "conditionRightPlaceholder": "Jämför med",
           "variableName": "Variabelnamn",
           "variableValue": "Värde",
           "elevated": "Kör med sudo",
           "onError": "Om detta misslyckas",
           "allowPrivateNetwork": "Tillåt lokala nätverksadresser",
-          "allowPrivateNetworkHint": "Behövs för en självhostad tjänst på ditt lokala nätverk. Avstängt som standard för att förhindra förfrågningar till interna adresser."
+          "allowPrivateNetworkHint": "Krävs för en självhostad tjänst på ditt LAN. Avstängt som standard för att förhindra förfrågningar till interna adresser.",
+          "interface": "Gränssnitt"
         },
         "onError": {
-          "stop": "Stoppa löpningen",
-          "continue": "Fortsätta"
+          "stop": "Stoppa körningen",
+          "continue": "Fortsätt"
         },
-        "needsPlugin": "Behöver {{plugin}}",
-        "needsPluginHint": "Denna automatisering hoppas över tills den funktion den behöver är tillgänglig igen.",
+        "needsPlugin": "Kräver {{plugin}}",
         "offBadge": "Av",
-        "docsLink": "Visa dokument",
+        "docsLink": "Visa dokumentation",
         "ago": {
-          "seconds": "{{count}}sekunder sedan",
-          "minutes": "för {{count}}minuter sedan",
-          "hours": "för {{count}}timmar sedan",
-          "days": "för {{count}}dagar sedan"
-        }
+          "seconds": "{{count}}s sedan",
+          "minutes": "{{count}}m sedan",
+          "hours": "{{count}}h sedan",
+          "days": "{{count}}d sedan"
+        },
+        "search": "Sök automationer",
+        "noMatches": "Inga automationer matchar din sökning",
+        "settingsTitle": "Automationinställningar",
+        "settingsDisplayTitle": "Visning"
       }
     }
   },
   "nav": {
-    "automations": "Automatiseringar"
-  },
-  "onboarding": {
-    "feature_automations": "Automatiseringar",
-    "feature_automations_desc": "Kör steg automatiskt när något händer och få aviseringar."
+    "automations": "Automationer"
   },
   "maintenance": {
     "title": "Underhåll",
-    "description": "Pausa automatiseringar för värdstatus, hälsa, mätvärden, container- och tunnelfrånkoppling medan arbetet pågår. Övervakning, manuella körningar och schemalagda automatiseringar fortsätter.",
+    "description": "Pausa automationer för hoststatus, hälsa, metrik, container och tunnelavbrott medan arbete pågår. Övervakning, manuella körningar och schemalagda automationer fortsätter.",
     "denied": "Du har inte behörighet att visa underhåll.",
-    "sharedReadOnly": "Denna värden delades med dig. Endast dess ägare kan ändra underhållet.",
+    "sharedReadOnly": "Den här värdens delades med dig. Endast ägaren kan ändra underhållet.",
     "failed": "Underhållet kunde inte uppdateras.",
     "active": "Underhåll aktivt",
-    "estimated": "Beräknad färdigställande",
-    "noAutoEnd": "Uppskattningen avslutar inte underhållet. Avsluta det uttryckligen när arbetet är slutfört.",
-    "endConfirm": "Vill du avsluta underhållet och återuppta händelseutlösta automatiseringar för den här värden?",
-    "confirmEnd": "Bekräfta slutet",
-    "cancel": "Avboka",
+    "estimated": "Beräknad slutförande",
+    "noAutoEnd": "Tidsuppskattningen avslutar inte underhållet. Avsluta det explicit när arbetet är klart.",
+    "endConfirm": "Avsluta underhållet och återuppta händelsestyrda automatiseringar för den här värden?",
+    "confirmEnd": "Bekräfta avslut",
+    "cancel": "Avbryt",
     "end": "Avsluta underhåll",
-    "action": "Handling",
-    "startNow": "Börja nu",
-    "schedule": "Schema för senare",
-    "reason": "Resonera",
+    "action": "Åtgärd",
+    "startNow": "Starta nu",
+    "schedule": "Schemalägg senare",
+    "reason": "Anledning",
     "startUtc": "Första start (UTC)",
     "repeat": "Upprepa",
     "once": "En gång",
-    "weekly": "Varje vecka",
-    "monthly": "Månatlig",
-    "utcHelp": "Scheman använder UTC under hela året. Månadsscheman hoppar över månader utan vald dag. Planerade fönster kan inte överlappa varandra; underhåll som överskrider schemat fortsätter över senare fönster.",
+    "weekly": "Veckovis",
+    "monthly": "Månadsvis",
+    "utcHelp": "Scheman använder UTC under hela året. Månadsvisa scheman hoppar över månader utan den valda dagen. Planerade tidsfönster får inte överlappa; underhåll som överskrider tiden fortsätter över senare fönster.",
     "duration": "Beräknad varaktighet (minuter)",
-    "grace": "Respitperiod (minuter)",
-    "notify": "Meddela en gång om du fortfarande är offline efter uppskattningen plus respitperioden",
+    "grace": "Nådetid (minuter)",
+    "notify": "Meddela en gång om den fortfarande är offline efter uppskattad tid plus nådetid",
     "addSchedule": "Lägg till schema",
     "schedules": "Scheman",
     "noSchedules": "Inga underhållsscheman.",
-    "completed": "Redan påbörjat",
+    "completed": "Redan startad",
     "minutes_one": "{{count}} minut",
     "minutes_other": "{{count}} minuter",
     "remove": "Ta bort schema",
-    "loadFailed": "Kunde inte uppdatera underhållsstatusen. Ändringar är inaktiverade tills den kan läsas in.",
-    "loading": "Laddar underhållsstatus…"
+    "loadFailed": "Kunde inte uppdatera underhållsstatus. Ändringar är inaktiverade tills statusen kan läsas in.",
+    "loading": "Läser in underhållsstatus…"
   },
   "ui": {
     "sidebar": {
       "automations": {
         "options": {
-          "connect": "connect",
-          "disconnect": "disconnect",
+          "connect": "anslut",
+          "disconnect": "koppla från",
           "offline": "offline",
           "online": "online",
-          "failing": "failing",
-          "recovered": "recovered"
+          "failing": "misslyckas",
+          "recovered": "återhämtad"
         }
       }
+    }
+  },
+  "common": {
+    "delete": "Ta bort"
+  },
+  "settings": {
+    "alwaysShowActions": {
+      "label": "Visa alltid knappar",
+      "description": "Behåll knapparna för test, kör och ta bort under varje automatisering synliga. Stäng av för att endast visa dem vid hovring."
     }
   }
 }

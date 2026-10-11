@@ -1,0 +1,214 @@
+{
+  "permissions": {
+    "view": {
+      "title": "Vaata automatiseeringuid",
+      "description": "Vaata automatiseeringuid ja nende ajalugu."
+    },
+    "create": {
+      "title": "Loo automatiseeringuid",
+      "description": "Lisa uusi automatiseeringuid."
+    },
+    "edit": {
+      "title": "Muuda automatiseeringuid",
+      "description": "Muuda olemasolevaid automatiseeringuid."
+    },
+    "delete": {
+      "title": "Kustuta automatiseeringuid",
+      "description": "Eemalda automatiseeringuid."
+    },
+    "run": {
+      "title": "Käivita automatiseeringuid",
+      "description": "Käivita automatiseering käsil."
+    }
+  },
+  "newUi": {
+    "sidebar": {
+      "automations": {
+        "tabAutomations": "Automatiseeringud",
+        "tabRuns": "Käivitused",
+        "tabChannels": "Kanálid",
+        "createAutomation": "Uus automatiseering",
+        "empty": "Automatiseeringuid pole veel. Loo üks, et reageerida meetrikale, ajakavale või sündmusele.",
+        "emptyRuns": "Käivitusi pole veel.",
+        "channelsHint": "Kanálid seadistatakse hoiatustes",
+        "noChannelsHint": "Hoiatus saadetakse alati sinu postkasti. Lisa kanálid hoiatustes, et saata see ka mujale.",
+        "nameLabel": "Nimi",
+        "namePlaceholder": "nt. Puhasta /data, kui see täitub",
+        "nameRequired": "Nimi on kohustuslik",
+        "enabledLabel": "Lubatud",
+        "concurrencyLabel": "Kui see juba töötab",
+        "concurrencyHint": "Mida teha, kui see käivitub uuesti enne viimase käivituse lõppu.",
+        "concurrency": {
+          "skip": "Jäta uus käivitamine vahele",
+          "queue": "Oota ja käivita pärast",
+          "allow": "Käivita mõlemad korraga"
+        },
+        "save": "Salvesta",
+        "created": "Automatiseering loodud",
+        "updated": "Automatiseering salvestatud",
+        "deleted": "Automatiseering kustutatud",
+        "deleteConfirm": "Kustuta see automatiseering? Selle käivituste ajalugu kustutatakse samuti.",
+        "runNow": "Käivita nüüd",
+        "testRun": "Testkäivitamine",
+        "runFinished": "Käivitamine lõpetatud: {{status}}",
+        "trigger": "Lahendaja",
+        "steps": "Sammud",
+        "addStep": "Lisa samm",
+        "removeStep": "Eemalda samm",
+        "moveUp": "Liiguta üles",
+        "moveDown": "Liiguta alla",
+        "noSteps": "Samme pole veel. Lisa üks, et öelda, mis peaks juhtuma.",
+        "webhookTokenTitle": "Webhooki URL",
+        "webhookTokenDescription": "See kuvatakse ainult üks kord. Salvesta see nüüd, hiljem seda ei saa taastada.",
+        "copied": "Kopeeritud",
+        "viewJson": "JSON",
+        "viewBuilder": "Ehitaja",
+        "dryRunBadge": "Testkäivitamine",
+        "hostSelector": {
+          "trigger": "Lahendaja host",
+          "host": "Kindel host",
+          "fleet": "Flott",
+          "all": "Kõik hostid"
+        },
+        "triggerKinds": {
+          "metric_threshold": "Meetrika lävi",
+          "host_status": "Host läheb üles või alla",
+          "health_check": "Tervisekontrolli muutus",
+          "schedule": "Ajakava järgi",
+          "docker_event": "Konteineri sündmus",
+          "internal_event": "Termixi sündmus",
+          "webhook": "Sissetulev webhook"
+        },
+        "stepTypes": {
+          "notify": "Saada hoiatus",
+          "http": "Kutsu URL-i",
+          "run_snippet": "Käivita koodilõik",
+          "run_command": "Käivita käsk",
+          "docker": "Juhi konteinerit",
+          "tunnel": "Juhi tunnelit",
+          "wol": "Ärata host",
+          "wait": "Oota",
+          "set_var": "Määra muutuja",
+          "if": "Kui / muidu",
+          "run_automation": "Käivita teine automatiseerimine",
+          "stop": "Peata"
+        },
+        "statuses": {
+          "running": "Töötamine",
+          "success": "Õnnestus",
+          "failed": "Ebaõnnestus",
+          "timeout": "Aegumine",
+          "skipped": "Jäetud vahele",
+          "cancelled": "Tühistatud"
+        },
+        "fields": {
+          "host": "Host",
+          "mount": "Haakimispunkt",
+          "forSeconds": "Pidevalt (sekundites)",
+          "cooldown": "Jahtumisaeg (minutites)",
+          "cron": "Croni avaldis",
+          "intervalSeconds": "Iga (sekundiga)",
+          "timezone": "Ajavöönd",
+          "timezoneServer": "Serveri aeg",
+          "timezoneHint": "Croni ajad loetakse selles vööndis. Ei kehti intervallipõhisteks ajakavadeks.",
+          "container": "Konteiner",
+          "command": "Käsk",
+          "body": "Keha",
+          "channels": "Saada ka",
+          "title": "Pealkiri",
+          "message": "Sõnum",
+          "snippet": "Koodilõik",
+          "seconds": "Sekundit",
+          "conditionLeftPlaceholder": "Kontrollitav väärtus",
+          "conditionRightPlaceholder": "Võrdlemise alus",
+          "variableName": "Muutuja nimi",
+          "variableValue": "Väärtus",
+          "elevated": "Käivita sudo-ga",
+          "onError": "Kui see ebaõnnestub",
+          "allowPrivateNetwork": "Luba kohaliku võrgu aadressid",
+          "allowPrivateNetworkHint": "Vajalik oma LAN-is asuva isehostitava teenuse jaoks. Vaikimisi väljas, et vältida päringuid sisemistele aadressidele.",
+          "interface": "Liides"
+        },
+        "onError": {
+          "stop": "Peata käivitamine",
+          "continue": "Jätka"
+        },
+        "needsPlugin": "Nõuab {{plugin}}",
+        "offBadge": "Väljas",
+        "docsLink": "Vaata dokumentatsiooni",
+        "ago": {
+          "seconds": "{{count}}s tagasi",
+          "minutes": "{{count}}m tagasi",
+          "hours": "{{count}}h tagasi",
+          "days": "{{count}}d tagasi"
+        },
+        "search": "Otsi automatiseerimisi",
+        "noMatches": "Ükski automatiseerimine ei vasta otsingule",
+        "settingsTitle": "Automatiseerimise seaded",
+        "settingsDisplayTitle": "Kuvamine"
+      }
+    }
+  },
+  "nav": {
+    "automations": "Automatiseerimised"
+  },
+  "maintenance": {
+    "title": "Hooldus",
+    "description": "Peata töö käigus hosti oleku, tervise, meetrikate, konteinerite ja tunneliühenduse katkemise automatiseerimised. Jälgimine, käsitsi käivitamised ja ajakavandatud automatiseerimised jätkuvad.",
+    "denied": "Sul puudub luba hoolduse vaatamiseks.",
+    "sharedReadOnly": "See host on jagatud sinuga. Ainult selle omanik saab hooldusrežiimi muuta.",
+    "failed": "Hooldusrežiimi ei õnnestunud uuendada.",
+    "active": "Hooldusrežiim on aktiivne",
+    "estimated": "Lõpetamise hinnanguline aeg",
+    "noAutoEnd": "Hinnang ei lõpeta hooldusrežiimi. Lõpeta see selgesõnaliselt, kui töö on valmis.",
+    "endConfirm": "Kas lõpetada hooldusrežiim ja taastada selle hosti sündmuste põhjal käivituvad automatiseerimised?",
+    "confirmEnd": "Kinnita lõpetamine",
+    "cancel": "Tühista",
+    "end": "Lõpeta hooldusrežiim",
+    "action": "Tegevus",
+    "startNow": "Alusta kohe",
+    "schedule": "Planeeri hiljemaks",
+    "reason": "Põhjus",
+    "startUtc": "Esimene käivitamine (UTC)",
+    "repeat": "Kordus",
+    "once": "Ühekordne",
+    "weekly": "Iga nädal",
+    "monthly": "Iga kuu",
+    "utcHelp": "Ajakavad kasutavad kogu aasta vältel UTC-aega. Igakuised ajakavad jätab vahele kuud, mil valitud päev puudub. Planeeritud aknad ei tohi kattuda; hilinenud hooldusrežiim jätkub järgmiste akende peale.",
+    "duration": "Hinnanguline kestus (minutites)",
+    "grace": "Lisaaeg (minutites)",
+    "notify": "Teavita üks kord, kui host on hinnangulise aja ja lisaaega hiljem veel väljaspool võrgu",
+    "addSchedule": "Lisa ajakava",
+    "schedules": "Ajakavad",
+    "noSchedules": "Hooldusrežiimi ajakavaid pole.",
+    "completed": "Juba alanud",
+    "minutes_one": "{{count}} minut",
+    "minutes_other": "{{count}} minutit",
+    "remove": "Eemalda ajakava",
+    "loadFailed": "Hooldusrežiimi olekut ei õnnestunud värskendada. Muudatused on keelatud, kuni olek on laaditud.",
+    "loading": "Laadin hooldusrežiimi olekut…"
+  },
+  "ui": {
+    "sidebar": {
+      "automations": {
+        "options": {
+          "connect": "ühenda",
+          "disconnect": "katkesta ühendus",
+          "offline": "väljaspool võrgu",
+          "online": "võrgus",
+          "failing": "ebaõnnestub",
+          "recovered": "taastunud"
+        }
+      }
+    }
+  },
+  "common": {
+    "delete": "Kustuta"
+  },
+  "settings": {
+    "alwaysShowActions": {
+      "label": "Näita nuppe alati",
+      "description": "Hoia iga automatiseerimise all olevad testimise, käivitamise ja kustutamise nupud nähtaval. Lülita välja, et näidata neid ainult hiirekursori kohal hõljutamisel."
+    }
+  }
+}

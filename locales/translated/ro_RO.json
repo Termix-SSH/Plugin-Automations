@@ -1,15 +1,15 @@
 {
   "permissions": {
     "view": {
-      "title": "Vizualizați automatizările",
-      "description": "Vedeți automatizările și istoricul lor."
+      "title": "Vizualizează automatizările",
+      "description": "Vedeți automatizările și istoricul acestora."
     },
     "create": {
-      "title": "Creați automatizări",
+      "title": "Creează automatizări",
       "description": "Adăugați noi automatizări."
     },
     "edit": {
-      "title": "Editați automatizările",
+      "title": "Editează automatizările",
       "description": "Modificați automatizările existente."
     },
     "delete": {
@@ -17,68 +17,53 @@
       "description": "Eliminați automatizările."
     },
     "run": {
-      "title": "Rulați automatizări",
-      "description": "Declanșează o automatizare manual."
+      "title": "Rulează automatizările",
+      "description": "Declanșați manual o automatizare."
     }
   },
   "newUi": {
     "sidebar": {
       "automations": {
-        "title": "Automatizări",
         "tabAutomations": "Automatizări",
-        "tabRuns": "Aleargă",
+        "tabRuns": "Execuții",
         "tabChannels": "Canale",
         "createAutomation": "Automatizare nouă",
-        "backToAutomations": "Înapoi la Automatizări",
-        "createTitle": "Automatizare nouă",
-        "editTitle": "Editare automatizare",
         "empty": "Încă nu există automatizări. Creați una pentru a reacționa la o metrică, un program sau un eveniment.",
-        "emptyRuns": "Nicio alergare încă.",
-        "channelsHint": "Canalele sunt configurate în Alerte",
-        "noChannelsHint": "Alerta ajunge întotdeauna în căsuța ta poștală. Adaugă canale în Alerte pentru a o trimite și în altă parte.",
+        "emptyRuns": "Încă nu există execuții.",
+        "channelsHint": "Canalele se configurează în Alertă",
+        "noChannelsHint": "Alerta este trimisă întotdeauna în inbox-ul dvs. Adăugați canale în Alertă pentru a o trimite și în altă parte.",
         "nameLabel": "Nume",
-        "namePlaceholder": "De exemplu, curățați /data când se umple",
+        "namePlaceholder": "de ex., Curăță /data când se umple",
         "nameRequired": "Numele este obligatoriu",
-        "descriptionLabel": "Descriere",
-        "descriptionPlaceholder": "Descriere opțională",
         "enabledLabel": "Activat",
-        "concurrencyLabel": "Dacă deja rulează",
-        "concurrencyHint": "Ce trebuie făcut când acest lucru este declanșat din nou înainte de finalizarea ultimei rulări.",
+        "concurrencyLabel": "Dacă rulează deja",
+        "concurrencyHint": "Ce se întâmplă când aceasta este declanșată din nou înainte ca ultima execuție să se fi încheiat.",
         "concurrency": {
-          "skip": "Sari peste noua cursă",
-          "queue": "Așteaptă și aleargă după",
-          "allow": "Rulați ambele simultan"
+          "skip": "Sari peste noua execuție",
+          "queue": "Așteaptă și rulează după",
+          "allow": "Rulează ambele simultan"
         },
-        "save": "Salva",
+        "save": "Salvează",
         "created": "Automatizare creată",
         "updated": "Automatizare salvată",
         "deleted": "Automatizare ștearsă",
-        "deleteConfirm": "Ștergeți această automatizare? Și istoricul execuțiilor sale este șters.",
-        "runNow": "Aleargă acum",
-        "testRun": "Test de funcționare",
-        "testRunHint": "Aleargă la fiecare pas, dar nu atinge nimic din afara Termixului.",
-        "runStarted": "Rularea a început",
-        "runFinished": "Execuția s-a încheiat: {{status}}",
+        "deleteConfirm": "Ștergeți această automatizare? Istoricul execuțiilor va fi, de asemenea, șters.",
+        "runNow": "Rulează acum",
+        "testRun": "Execuție de test",
+        "runFinished": "Execuție finalizată: {{status}}",
         "trigger": "Declanșator",
         "steps": "Pași",
-        "addStep": "Adăugați un pas",
-        "removeStep": "Eliminați pasul",
-        "moveUp": "Mută în sus",
-        "moveDown": "Mută în jos",
+        "addStep": "Adaugă pas",
+        "removeStep": "Elimină pasul",
+        "moveUp": "Mută sus",
+        "moveDown": "Mută jos",
         "noSteps": "Încă nu există pași. Adăugați unul pentru a specifica ce ar trebui să se întâmple.",
-        "webhookTokenTitle": "URL-ul webhook-ului",
-        "webhookTokenDescription": "Aceasta se afișează o singură dată. Salvați-o acum, nu poate fi recuperată ulterior.",
-        "copy": "Copie",
+        "webhookTokenTitle": "URL webhook",
+        "webhookTokenDescription": "Acesta este afișat o singură dată. Salvați-l acum, nu poate fi recuperat ulterior.",
         "copied": "Copiat",
         "viewJson": "JSON",
         "viewBuilder": "Constructor",
-        "viewGraph": "Grafic",
-        "lastRun": "Ultima alergare",
-        "never": "Nu",
-        "duration": "{{seconds}}s",
-        "stepOutput": "Ieșire",
-        "stepError": "Eroare",
-        "dryRunBadge": "Test de funcționare",
+        "dryRunBadge": "Execuție de test",
         "hostSelector": {
           "trigger": "Gazdă declanșatoare",
           "host": "Gazdă specifică",
@@ -86,140 +71,145 @@
           "all": "Toate gazdele"
         },
         "triggerKinds": {
-          "metric_threshold": "Pragul metric",
-          "host_status": "Gazda se activează sau se deconectează",
-          "health_check": "Modificări la verificarea stării de sănătate",
-          "schedule": "Pe un program",
+          "metric_threshold": "Prag de metrică",
+          "host_status": "Gazda devine disponibilă sau indisponibilă",
+          "health_check": "Verificarea stării se modifică",
+          "schedule": "Conform unui program",
           "docker_event": "Eveniment container",
-          "internal_event": "Evenimentul Termix",
-          "webhook": "Webhook de intrare"
+          "internal_event": "Eveniment Termix",
+          "webhook": "Webhook primit"
         },
         "stepTypes": {
-          "notify": "Trimiteți o alertă",
-          "http": "Apelați o adresă URL",
-          "run_snippet": "Executați un fragment",
-          "run_command": "Executați o comandă",
+          "notify": "Trimite o alertă",
+          "http": "Apelare URL",
+          "run_snippet": "Execută un snippet",
+          "run_command": "Execută o comandă",
           "docker": "Controlează un container",
           "tunnel": "Controlează un tunel",
-          "wol": "Trezește o gazdă",
+          "wol": "Trezește un host",
           "wait": "Așteaptă",
-          "set_var": "Setați o variabilă",
+          "set_var": "Setează o variabilă",
           "if": "Dacă / altfel",
-          "run_automation": "Rulați o altă automatizare",
-          "stop": "Stop"
+          "run_automation": "Execută o altă automatizare",
+          "stop": "Oprește"
         },
         "statuses": {
-          "running": "Funcţionare",
+          "running": "În execuție",
           "success": "Succes",
           "failed": "Eșuat",
-          "timeout": "Expirat",
-          "skipped": "Omis",
+          "timeout": "Timp expirat",
+          "skipped": "Sărit",
           "cancelled": "Anulat"
         },
         "fields": {
-          "host": "Gazdă",
-          "metric": "Metric",
+          "host": "Host",
           "mount": "Punct de montare",
-          "operator": "Este",
-          "value": "Valoare",
           "forSeconds": "Menținut timp de (secunde)",
-          "cooldown": "Timp de răcire (minute)",
+          "cooldown": "Răcire (minute)",
           "cron": "Expresie Cron",
           "intervalSeconds": "La fiecare (secunde)",
           "timezone": "Fus orar",
-          "timezoneServer": "Ora serverului",
-          "timezoneHint": "Timpii cron sunt citiți în această zonă. Nu se aplică programărilor cu intervale.",
+          "timezoneServer": "Timpul serverului",
+          "timezoneHint": "Orele Cron sunt citite în acest fus orar. Nu se aplică programelor pe intervale.",
           "container": "Container",
-          "command": "Comanda",
-          "url": "URL-ul",
-          "method": "Metodă",
+          "command": "Comandă",
           "body": "Corp",
-          "channels": "Trimiteți și către",
+          "channels": "Trimite și către",
           "title": "Titlu",
           "message": "Mesaj",
-          "snippet": "Fragment",
+          "snippet": "Snippet",
           "seconds": "Secunde",
           "conditionLeftPlaceholder": "Valoare de verificat",
-          "conditionRightPlaceholder": "Comparați cu",
+          "conditionRightPlaceholder": "Compară cu",
           "variableName": "Nume variabilă",
           "variableValue": "Valoare",
           "elevated": "Execută cu sudo",
-          "onError": "Dacă acest lucru eșuează",
-          "allowPrivateNetwork": "Permiteți adrese de rețea locală",
-          "allowPrivateNetworkHint": "Necesar pentru un serviciu auto-găzduit în rețeaua locală. Dezactivat în mod implicit pentru a preveni solicitările către adrese interne."
+          "onError": "Dacă eșuează",
+          "allowPrivateNetwork": "Permite adresele de rețea locală",
+          "allowPrivateNetworkHint": "Necesar pentru un serviciu self-hosted pe LAN-ul tău. Dezactivat implicit pentru a preveni cererile către adrese interne.",
+          "interface": "Interfață"
         },
         "onError": {
-          "stop": "Oprește alergarea",
+          "stop": "Oprește execuția",
           "continue": "Continuă"
         },
         "needsPlugin": "Necesită {{plugin}}",
-        "needsPluginHint": "Această automatizare este omisă până când funcția de care are nevoie este din nou disponibilă.",
-        "offBadge": "Dezactivat",
-        "docsLink": "Vizualizați documentele",
+        "offBadge": "Oprit",
+        "docsLink": "Vezi documentația",
         "ago": {
-          "seconds": "Acum {{count}}secunde",
-          "minutes": "{{count}}acum câteva minute",
-          "hours": "{{count}}acum o oră",
-          "days": "{{count}}zile în urmă"
-        }
+          "seconds": "acum {{count}}s",
+          "minutes": "acum {{count}}m",
+          "hours": "acum {{count}}h",
+          "days": "acum {{count}}z"
+        },
+        "search": "Caută automatizări",
+        "noMatches": "Nicio automatizare nu corespunde căutării",
+        "settingsTitle": "Setări automatizări",
+        "settingsDisplayTitle": "Afișare"
       }
     }
   },
   "nav": {
     "automations": "Automatizări"
   },
-  "onboarding": {
-    "feature_automations": "Automatizări",
-    "feature_automations_desc": "Execută pașii automat când se întâmplă ceva și primește notificări."
-  },
   "maintenance": {
-    "title": "Întreţinere",
-    "description": "Întrerupeți automatizările privind starea gazdei, sănătatea, metrica, containerul și deconectarea tunelului în timp ce lucrul este în desfășurare. Monitorizarea, rulările manuale și automatizările programate continuă.",
-    "denied": "Nu aveți permisiunea de a vizualiza întreținerea.",
-    "sharedReadOnly": "Această gazdă a fost partajată cu dvs. Numai proprietarul acesteia poate modifica întreținerea.",
-    "failed": "Întreținerea nu a putut fi actualizată.",
-    "active": "Mentenanță activă",
+    "title": "Întreținere",
+    "description": "Pune în pauză automatizările de stare a host-ului, sănătate, metrici, containere și deconectare tuneluri în timp ce se lucrează. Monitorizarea, execuțiile manuale și automatizările programate continuă.",
+    "denied": "Nu ai permisiunea de a vizualiza întreținerea.",
+    "sharedReadOnly": "Acest gazdă a fost partajată cu dumneavoastră. Doar proprietarul său poate modifica întreținerea.",
+    "failed": "Starea de întreținere nu a putut fi actualizată.",
+    "active": "Întreținere activă",
     "estimated": "Finalizare estimată",
-    "noAutoEnd": "Estimarea nu încheie întreținerea. Încheiați-o explicit când lucrarea este finalizată.",
-    "endConfirm": "Încheiați întreținerea și reluați automatizările declanșate de evenimente pentru această gazdă?",
-    "confirmEnd": "Confirmați sfârșitul",
-    "cancel": "Anula",
-    "end": "Sfârșitul întreținerii",
-    "action": "Acţiune",
-    "startNow": "Începeți acum",
-    "schedule": "Programați pentru mai târziu",
+    "noAutoEnd": "Estimarea nu încheie întreținerea. Încheiați-o explicit când lucrările sunt finalizate.",
+    "endConfirm": "Doriți să încheiați întreținerea și să reluați automatizările declanșate de evenimente pentru această gazdă?",
+    "confirmEnd": "Confirmă încheierea",
+    "cancel": "Anulează",
+    "end": "Încheie întreținerea",
+    "action": "Acțiune",
+    "startNow": "Pornește acum",
+    "schedule": "Programează pentru mai târziu",
     "reason": "Motiv",
     "startUtc": "Prima pornire (UTC)",
-    "repeat": "Repeta",
-    "once": "Dată",
+    "repeat": "Repetă",
+    "once": "O singură dată",
     "weekly": "Săptămânal",
     "monthly": "Lunar",
-    "utcHelp": "Programările utilizează UTC pe tot parcursul anului. Programările lunare sar peste luni fără ziua selectată. Ferestrele planificate nu se pot suprapune; întreținerea depășită continuă în ferestrele ulterioare.",
-    "duration": "Durată estimată (minute)",
+    "utcHelp": "Programările folosesc UTC pe tot parcursul anului. Programările lunare omit lunile care nu au ziua selectată. Ferestrele planificate nu se pot suprapune; întreținerea care depășește durata continuă peste ferestrele ulterioare.",
+    "duration": "Durata estimată (minute)",
     "grace": "Perioadă de grație (minute)",
-    "notify": "Notificați o dată dacă sunteți încă offline după estimare plus perioada de grație",
-    "addSchedule": "Adăugați un program",
-    "schedules": "Programe",
-    "noSchedules": "Fără programe de întreținere.",
-    "completed": "Deja început",
+    "notify": "Notifică o singură dată dacă rămâne offline după estimare plus perioada de grație",
+    "addSchedule": "Adaugă programare",
+    "schedules": "Programări",
+    "noSchedules": "Nicio programare de întreținere.",
+    "completed": "Deja începută",
     "minutes_one": "{{count}} minut",
+    "minutes_few": "{{count}} minute",
     "minutes_other": "{{count}} minute",
-    "remove": "Eliminați programul",
-    "loadFailed": "Nu s-a putut actualiza starea de întreținere. Modificările sunt dezactivate până când pot fi încărcate.",
+    "remove": "Șterge programarea",
+    "loadFailed": "Nu s-a putut reîmprospăta starea de întreținere. Modificările sunt dezactivate până când aceasta poate fi încărcată.",
     "loading": "Se încarcă starea de întreținere…"
   },
   "ui": {
     "sidebar": {
       "automations": {
         "options": {
-          "connect": "connect",
-          "disconnect": "disconnect",
+          "connect": "conectare",
+          "disconnect": "deconectare",
           "offline": "offline",
           "online": "online",
-          "failing": "failing",
-          "recovered": "recovered"
+          "failing": "eșec",
+          "recovered": "recuperat"
         }
       }
+    }
+  },
+  "common": {
+    "delete": "Șterge"
+  },
+  "settings": {
+    "alwaysShowActions": {
+      "label": "Afișează mereu butoanele",
+      "description": "Păstrează vizibile butoanele de testare, executare și ștergere sub fiecare automatizare. Dezactivează pentru a le afișa doar la trecerea cu mouse-ul."
     }
   }
 }

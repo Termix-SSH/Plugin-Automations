@@ -1,0 +1,216 @@
+{
+  "permissions": {
+    "view": {
+      "title": "Ogled avtomatizacij",
+      "description": "Prikaz avtomatizacij in njihove zgodovine."
+    },
+    "create": {
+      "title": "Ustvarjanje avtomatizacij",
+      "description": "Dodajanje novih avtomatizacij."
+    },
+    "edit": {
+      "title": "Urejanje avtomatizacij",
+      "description": "Spreminjanje obstoječih avtomatizacij."
+    },
+    "delete": {
+      "title": "Brisanje avtomatizacij",
+      "description": "Odstranjevanje avtomatizacij."
+    },
+    "run": {
+      "title": "Zažene avtomatizacij",
+      "description": "Ročno sproženje avtomatizacije."
+    }
+  },
+  "newUi": {
+    "sidebar": {
+      "automations": {
+        "tabAutomations": "Avtomatizacije",
+        "tabRuns": "Zagoni",
+        "tabChannels": "Kanali",
+        "createAutomation": "Nova avtomatizacija",
+        "empty": "Še ni avtomatizacij. Ustvarite eno, da bi reagirali na metrike, urnik ali dogodek.",
+        "emptyRuns": "Še ni zagonov.",
+        "channelsHint": "Kanali so nastavljeni v opozorilih",
+        "noChannelsHint": "Opozorilo vedno pride v vaš nabiralnik. Dodajte kanale v opozorilih, da ga pošljete tudi drugam.",
+        "nameLabel": "Ime",
+        "namePlaceholder": "npr. Počisti /data, ko se napolni",
+        "nameRequired": "Ime je obvezno",
+        "enabledLabel": "Omogočeno",
+        "concurrencyLabel": "Če že teče",
+        "concurrencyHint": "Kaj storiti, ko se to sproži znova, preden se zadnji zagon konča.",
+        "concurrency": {
+          "skip": "Preskoči nov zagon",
+          "queue": "Počakaj in zaženi kasneje",
+          "allow": "Zaženi oba hkrati"
+        },
+        "save": "Shrani",
+        "created": "Avtomatizacija ustvarjena",
+        "updated": "Avtomatizacija shranjena",
+        "deleted": "Avtomatizacija izbrisana",
+        "deleteConfirm": "Izbrisati to avtomatizacijo? Izbrisana bo tudi zgodovina zagonov.",
+        "runNow": "Zaženi zdaj",
+        "testRun": "Testni zagon",
+        "runFinished": "Zagon končan: {{status}}",
+        "trigger": "Sprožilec",
+        "steps": "Koraki",
+        "addStep": "Dodaj korak",
+        "removeStep": "Odstrani korak",
+        "moveUp": "Premakni gor",
+        "moveDown": "Premakni dol",
+        "noSteps": "Še ni korakov. Dodajte enega, da določite, kaj naj se zgodi.",
+        "webhookTokenTitle": "URL webhooka",
+        "webhookTokenDescription": "To se prikaže le enkrat. Shranite ga zdaj, kasneje ga ne morete pridobiti.",
+        "copied": "Kopirano",
+        "viewJson": "JSON",
+        "viewBuilder": "Graditelj",
+        "dryRunBadge": "Testni zagon",
+        "hostSelector": {
+          "trigger": "Sprožilni gostitelj",
+          "host": "Določen gostitelj",
+          "fleet": "Flota",
+          "all": "Vsi gostitelji"
+        },
+        "triggerKinds": {
+          "metric_threshold": "Prag metrike",
+          "host_status": "Gostitelj se vklopi ali izklopi",
+          "health_check": "Sprememba preverjanja zdravja",
+          "schedule": "Po urniku",
+          "docker_event": "Dogodek v kontejnerju",
+          "internal_event": "Dogodek v Termixu",
+          "webhook": "Dohodni webhook"
+        },
+        "stepTypes": {
+          "notify": "Pošlji opozorilo",
+          "http": "Pokliči URL",
+          "run_snippet": "Zaženi odsek",
+          "run_command": "Zaženi ukaz",
+          "docker": "Upravljaj posode",
+          "tunnel": "Upravljaj tunel",
+          "wol": "Zbudi gostitelja",
+          "wait": "Počakaj",
+          "set_var": "Nastavi spremenljivko",
+          "if": "Če / drugače",
+          "run_automation": "Zaženi drugo avtomatizacijo",
+          "stop": "Ustavi"
+        },
+        "statuses": {
+          "running": "V teku",
+          "success": "Uspešno",
+          "failed": "Neuspešno",
+          "timeout": "Časovna omejitev pretečena",
+          "skipped": "Preskočeno",
+          "cancelled": "Preklicano"
+        },
+        "fields": {
+          "host": "Gostitelj",
+          "mount": "Točka priklopa",
+          "forSeconds": "Trajanje (v sekundah)",
+          "cooldown": "Čas počitka (v minutah)",
+          "cron": "Cron izraz",
+          "intervalSeconds": "Vsakih (sekund)",
+          "timezone": "Časovni pas",
+          "timezoneServer": "Čas strežnika",
+          "timezoneHint": "Cron časi se berejo v tem časovnem pasu. Ne velja za intervalne načrte.",
+          "container": "Posoda",
+          "command": "Ukaz",
+          "body": "Vsebina",
+          "channels": "Pošlji tudi na",
+          "title": "Naslov",
+          "message": "Sporočilo",
+          "snippet": "Odsek",
+          "seconds": "Sekunde",
+          "conditionLeftPlaceholder": "Vrednost za preverjanje",
+          "conditionRightPlaceholder": "Primerjaj z",
+          "variableName": "Ime spremenljivke",
+          "variableValue": "Vrednost",
+          "elevated": "Zaženi z sudo",
+          "onError": "Če to ne uspe",
+          "allowPrivateNetwork": "Dovoli naslove lokalnega omrežja",
+          "allowPrivateNetworkHint": "Potrebno za samostojno gostovano storitev v vašem LAN. Privzeto izklopljeno, da se preprečijo zahteve do notranjih naslovov.",
+          "interface": "Vmesnik"
+        },
+        "onError": {
+          "stop": "Ustavi izvajanje",
+          "continue": "Nadaljuj"
+        },
+        "needsPlugin": "Potrebuje {{plugin}}",
+        "offBadge": "Izklopljeno",
+        "docsLink": "Oglejte si dokumentacijo",
+        "ago": {
+          "seconds": "Pred {{count}} s",
+          "minutes": "Pred {{count}} m",
+          "hours": "Pred {{count}} h",
+          "days": "Pred {{count}} d"
+        },
+        "search": "Išči avtomatizacije",
+        "noMatches": "Ni avtomatizacij, ki bi ustrezale vašemu iskanju",
+        "settingsTitle": "Nastavitve avtomatizacije",
+        "settingsDisplayTitle": "Prikaz"
+      }
+    }
+  },
+  "nav": {
+    "automations": "Avtomatizacije"
+  },
+  "maintenance": {
+    "title": "Vzdrževanje",
+    "description": "Začasno ustavite avtomatizacije za stanje gostitelja, zdravje, metrike, posode in prekinitev tunelov med delom. Spremljanje, ročno izvajanje in načrtovane avtomatizacije se nadaljujejo.",
+    "denied": "Nimate dovoljenja za ogled vzdrževanja.",
+    "sharedReadOnly": "Ta gostitelj je bil z vami skupno uporabljen. Vzdrževanje lahko spremeni le njegov lastnik.",
+    "failed": "Vzdrževanja ni bilo mogoče posodobiti.",
+    "active": "Vzdrževanje je aktivno",
+    "estimated": "Predvideno dokončanje",
+    "noAutoEnd": "Ocena ne konča vzdrževanja. Ko je delo končano, ga končajte izrecno.",
+    "endConfirm": "Končati vzdrževanje in nadaljevati avtomatizacije, sprožene z dogodki, za tega gostitelja?",
+    "confirmEnd": "Potrdi konec",
+    "cancel": "Prekliči",
+    "end": "Končaj vzdrževanje",
+    "action": "Dejanje",
+    "startNow": "Začni zdaj",
+    "schedule": "Načrtuj za kasneje",
+    "reason": "Razlog",
+    "startUtc": "Prvi začetek (UTC)",
+    "repeat": "Ponovi",
+    "once": "Enkrat",
+    "weekly": "Tedensko",
+    "monthly": "Mesečno",
+    "utcHelp": "Načrti uporabljajo časovno cono UTC skozi vse leto. Mesečni načrti preskočijo mesece, ki nimajo izbranega dneva. Načrtovani časovni okni se ne smejo prekrivati; vzdrževanje, ki preseže časovni okvir, se nadaljuje čez kasnejše okna.",
+    "duration": "Predvidena trajanje (minute)",
+    "grace": "Obdobje tolerance (minute)",
+    "notify": "Obvesti enkrat, če je gostitelj še vedno nedosegljiv po oceni in obdobju tolerance",
+    "addSchedule": "Dodaj načrt",
+    "schedules": "Načrti",
+    "noSchedules": "Ni načrtov za vzdrževanje.",
+    "completed": "Že se je začelo",
+    "minutes_one": "{{count}} minuta",
+    "minutes_two": "{{count}} minuti",
+    "minutes_few": "{{count}} minute",
+    "minutes_other": "{{count}} minut",
+    "remove": "Odstrani načrt",
+    "loadFailed": "Stanja vzdrževanja ni bilo mogoče osvežiti. Spremembe so onemogočene, dokler ga ne bo mogoče naložiti.",
+    "loading": "Nalaganje stanja vzdrževanja …"
+  },
+  "ui": {
+    "sidebar": {
+      "automations": {
+        "options": {
+          "connect": "poveži",
+          "disconnect": "prekini povezavo",
+          "offline": "nedosegljiv",
+          "online": "dostopen",
+          "failing": "napaka",
+          "recovered": "obnovljeno"
+        }
+      }
+    }
+  },
+  "common": {
+    "delete": "Izbriši"
+  },
+  "settings": {
+    "alwaysShowActions": {
+      "label": "Vedno prikaži gumbe",
+      "description": "Gumba za preizkus, zagon in brisanje pod vsako avtomatizacijo naj bodo vedno vidni. Če to izklopite, se bodo prikazali le ob drsenju miške."
+    }
+  }
+}

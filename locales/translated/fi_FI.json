@@ -2,7 +2,7 @@
   "permissions": {
     "view": {
       "title": "Näytä automaatiot",
-      "description": "Katso automaatiot ja niiden historia."
+      "description": "Näe automaatiot ja niiden historia."
     },
     "create": {
       "title": "Luo automaatioita",
@@ -13,8 +13,8 @@
       "description": "Muuta olemassa olevia automaatioita."
     },
     "delete": {
-      "title": "Poista automaatiot",
-      "description": "Poista automaatiot."
+      "title": "Poista automaatioita",
+      "description": "Poista automaatioita."
     },
     "run": {
       "title": "Suorita automaatioita",
@@ -24,93 +24,78 @@
   "newUi": {
     "sidebar": {
       "automations": {
-        "title": "Automaatiot",
         "tabAutomations": "Automaatiot",
-        "tabRuns": "Juoksut",
+        "tabRuns": "Suoritukset",
         "tabChannels": "Kanavat",
         "createAutomation": "Uusi automaatio",
-        "backToAutomations": "Takaisin automaatioihin",
-        "createTitle": "Uusi automaatio",
-        "editTitle": "Muokkaa automatisointia",
-        "empty": "Ei vielä automaatioita. Luo sellainen reagoimaan mittariin, aikatauluun tai tapahtumaan.",
-        "emptyRuns": "Ei vielä juoksuja.",
-        "channelsHint": "Kanavat määritetään Hälytykset-kohdassa",
-        "noChannelsHint": "Ilmoitus menee aina postilaatikkoosi. Lisää kanavia Ilmoitukset-kohtaan lähettääksesi sen myös muualle.",
+        "empty": "Ei vielä automaatioita. Luo yksi reagoimaan mittariin, aikatauluun tai tapahtumaan.",
+        "emptyRuns": "Ei vielä suorituksia.",
+        "channelsHint": "Kanavat määritetään Hälytykset-osiosta",
+        "noChannelsHint": "Hälytys lähetetään aina sähköpostiisi. Lisää kanavia Hälytykset-osiosta, jotta se lähetetään myös muualle.",
         "nameLabel": "Nimi",
-        "namePlaceholder": "esim. Siivoa /data, kun se täyttyy",
+        "namePlaceholder": "esim. Tyhjennä /data, kun se täyttyy",
         "nameRequired": "Nimi on pakollinen",
-        "descriptionLabel": "Kuvaus",
-        "descriptionPlaceholder": "Valinnainen kuvaus",
         "enabledLabel": "Käytössä",
         "concurrencyLabel": "Jos se on jo käynnissä",
-        "concurrencyHint": "Mitä tehdä, kun tämä laukeaa uudelleen ennen viimeisen ajon päättymistä.",
+        "concurrencyHint": "Mitä tehdään, kun tämä käynnistyy uudelleen ennen kuin edellinen suoritus on päättynyt.",
         "concurrency": {
-          "skip": "Ohita uusi juoksu",
-          "queue": "Odota ja juokse perässä",
-          "allow": "Suorita molemmat yhtä aikaa"
+          "skip": "Ohita uusi suoritus",
+          "queue": "Odota ja suorita perään",
+          "allow": "Suorita molemmat samanaikaisesti"
         },
-        "save": "Tallentaa",
+        "save": "Tallenna",
         "created": "Automaatio luotu",
         "updated": "Automaatio tallennettu",
         "deleted": "Automaatio poistettu",
         "deleteConfirm": "Poistetaanko tämä automaatio? Myös sen suoritushistoria poistetaan.",
-        "runNow": "Juokse nyt",
-        "testRun": "Koeajo",
-        "testRunHint": "Juoksee jokaisen askeleen, mutta ei koske mihinkään Termixin ulkopuolella.",
-        "runStarted": "Juoksu aloitettu",
-        "runFinished": "Suoritus päättynyt: {{status}}",
-        "trigger": "Laukaista",
-        "steps": "Askeleet",
+        "runNow": "Suorita nyt",
+        "testRun": "Testisuoritus",
+        "runFinished": "Suoritus valmis: {{status}}",
+        "trigger": "Laiputus",
+        "steps": "Vaiheet",
         "addStep": "Lisää vaihe",
         "removeStep": "Poista vaihe",
-        "moveUp": "Siirry ylös",
+        "moveUp": "Siirrä ylös",
         "moveDown": "Siirrä alas",
-        "noSteps": "Ei vielä vaiheita. Lisää yksi, joka kertoo, mitä pitäisi tapahtua.",
-        "webhookTokenTitle": "Webhookin URL-osoite",
-        "webhookTokenDescription": "Tämä näytetään kerran. Tallenna se nyt, sitä ei voi palauttaa myöhemmin.",
-        "copy": "Kopioida",
+        "noSteps": "Ei vielä vaiheita. Lisää yksi määrittämään, mitä tapahtuu.",
+        "webhookTokenTitle": "Webhook-URL",
+        "webhookTokenDescription": "Tämä näytetään vain kerran. Tallenna se nyt, sillä sitä ei voi hakea myöhemmin.",
         "copied": "Kopioitu",
         "viewJson": "JSON",
         "viewBuilder": "Rakentaja",
-        "viewGraph": "Kaavio",
-        "lastRun": "Viimeisin juoksu",
-        "never": "Ei koskaan",
-        "duration": "{{seconds}}s",
-        "stepOutput": "Lähtö",
-        "stepError": "Virhe",
-        "dryRunBadge": "Koeajo",
+        "dryRunBadge": "Testisuoritus",
         "hostSelector": {
           "trigger": "Käynnistävä isäntä",
           "host": "Tietty isäntä",
-          "fleet": "Laivasto",
+          "fleet": "Laajakaista",
           "all": "Kaikki isännät"
         },
         "triggerKinds": {
-          "metric_threshold": "Metrinen kynnysarvo",
-          "host_status": "Isäntä nousee tai laskee",
-          "health_check": "Terveystarkastusten muutokset",
-          "schedule": "Aikataulussa",
-          "docker_event": "Säiliötapahtuma",
+          "metric_threshold": "Mittarin kynnysarvo",
+          "host_status": "Isäntä tulee ylös tai menee alas",
+          "health_check": "Terveystarkastuksen muutos",
+          "schedule": "Aikataulun mukaan",
+          "docker_event": "Säiliön tapahtuma",
           "internal_event": "Termix-tapahtuma",
           "webhook": "Saapuva webhook"
         },
         "stepTypes": {
           "notify": "Lähetä hälytys",
-          "http": "Soita URL-osoitteeseen",
+          "http": "Kutsu URL-osoitetta",
           "run_snippet": "Suorita koodinpätkä",
           "run_command": "Suorita komento",
-          "docker": "Säiliön hallinta",
+          "docker": "Hallitse konttoria",
           "tunnel": "Hallitse tunnelia",
           "wol": "Herätä isäntä",
           "wait": "Odota",
           "set_var": "Aseta muuttuja",
           "if": "Jos / muuten",
           "run_automation": "Suorita toinen automaatio",
-          "stop": "Stop"
+          "stop": "Pysäytä"
         },
         "statuses": {
-          "running": "Juoksu",
-          "success": "Menestys",
+          "running": "Käynnissä",
+          "success": "Onnistui",
           "failed": "Epäonnistui",
           "timeout": "Aikakatkaisu",
           "skipped": "Ohitettu",
@@ -118,86 +103,81 @@
         },
         "fields": {
           "host": "Isäntä",
-          "metric": "Metrinen",
-          "mount": "Kiinnityskohta",
-          "operator": "On",
-          "value": "Arvo",
-          "forSeconds": "Jatkuu (sekuntia)",
-          "cooldown": "Jäähdyttelyaika (minuuttia)",
+          "mount": "Liitänpiste",
+          "forSeconds": "Jatkuvuus (sekunteina)",
+          "cooldown": "Jäähdytysaika (minuutteina)",
           "cron": "Cron-lauseke",
-          "intervalSeconds": "Joka (sekunti)",
+          "intervalSeconds": "Jokainen (sekunteina)",
           "timezone": "Aikavyöhyke",
           "timezoneServer": "Palvelimen aika",
-          "timezoneHint": "Cron-ajat luetaan tällä alueella. Ei koske intervalliaikatauluja.",
-          "container": "Kontti",
+          "timezoneHint": "Cron-ajat lukevat tässä vyöhykkeessä. Ei koske väliaikataulukoita.",
+          "container": "Konttori",
           "command": "Komento",
-          "url": "URL-osoite",
-          "method": "Menetelmä",
-          "body": "Keho",
-          "channels": "Lähetä myös osoitteeseen",
+          "body": "Runko",
+          "channels": "Lähetä myös",
           "title": "Otsikko",
           "message": "Viesti",
-          "snippet": "Katkelma",
-          "seconds": "Sekuntia",
+          "snippet": "Koodinpätkä",
+          "seconds": "Sekunnit",
           "conditionLeftPlaceholder": "Tarkistettava arvo",
-          "conditionRightPlaceholder": "Vertaa",
+          "conditionRightPlaceholder": "Vertaa tähän",
           "variableName": "Muuttujan nimi",
           "variableValue": "Arvo",
-          "elevated": "Suorita sudon avulla",
+          "elevated": "Suorita sudo-käynnistyksellä",
           "onError": "Jos tämä epäonnistuu",
-          "allowPrivateNetwork": "Salli paikallisverkko-osoitteet",
-          "allowPrivateNetworkHint": "Tarvitaan lähiverkossasi itse isännöidylle palvelulle. Oletusarvoisesti pois päältä estääkseen pyynnöt sisäisiin osoitteisiin."
+          "allowPrivateNetwork": "Salli paikallisen verkon osoitteet",
+          "allowPrivateNetworkHint": "Tarvitaan itse isännöidylle palvelulle LAN-verkossasi. Oletuksena pois päältä sisäisten osoitteiden pyyntöjen estämiseksi.",
+          "interface": "Liitäntä"
         },
         "onError": {
-          "stop": "Pysäytä juoksu",
-          "continue": "Jatkaa"
+          "stop": "Pysäytä suoritus",
+          "continue": "Jatka"
         },
-        "needsPlugin": "Tarpeet {{plugin}}",
-        "needsPluginHint": "Tämä automaatio ohitetaan, kunnes sen tarvitsema ominaisuus on taas käytettävissä.",
-        "offBadge": "Pois",
-        "docsLink": "Näytä dokumentit",
+        "needsPlugin": "Vaatii {{plugin}}-liitännäisen",
+        "offBadge": "Pois päältä",
+        "docsLink": "Näytä dokumentaatio",
         "ago": {
           "seconds": "{{count}}s sitten",
-          "minutes": "{{count}}minuuttia sitten",
-          "hours": "{{count}}tuntia sitten",
+          "minutes": "{{count}}m sitten",
+          "hours": "{{count}}h sitten",
           "days": "{{count}}d sitten"
-        }
+        },
+        "search": "Hae automaatioita",
+        "noMatches": "Ei automaatioita, jotka vastaavat hakua",
+        "settingsTitle": "Automaatioasetukset",
+        "settingsDisplayTitle": "Näyttö"
       }
     }
   },
   "nav": {
     "automations": "Automaatiot"
   },
-  "onboarding": {
-    "feature_automations": "Automaatiot",
-    "feature_automations_desc": "Suorita vaiheet automaattisesti, kun jotain tapahtuu, ja saat ilmoituksen."
-  },
   "maintenance": {
-    "title": "Huolto",
-    "description": "Keskeytä isännän tilan, kunnon, mittareiden, säilön ja tunnelin katkaisun automatisoinnit työn ollessa käynnissä. Valvonta, manuaaliset suoritukset ja ajoitetut automatisoinnit jatkuvat.",
-    "denied": "Sinulla ei ole oikeutta tarkastella ylläpitoa.",
-    "sharedReadOnly": "Tämä isäntä jaettiin kanssasi. Vain sen omistaja voi muuttaa ylläpitoa.",
-    "failed": "Ylläpitoa ei voitu päivittää.",
+    "title": "Ylläpito",
+    "description": "Keskeytä isännän tilan, terveyden, metrikoiden, konttorin ja tunnelin katkeamisen automaatiot, kun työt ovat käynnissä. Valvonta, manuaaliset suoritukset ja ajoitetut automaatiot jatkuvat.",
+    "denied": "Sinulla ei ole lupaa nähdä ylläpitoa.",
+    "sharedReadOnly": "Tämä isäntä on jaettu sinulle. Vain sen omistaja voi muuttaa huoltotilaa.",
+    "failed": "Huoltotilaa ei voitu päivittää.",
     "active": "Huolto aktiivinen",
     "estimated": "Arvioitu valmistuminen",
-    "noAutoEnd": "Arvio ei lopeta huoltoa. Lopeta se nimenomaisesti, kun työ on valmis.",
-    "endConfirm": "Lopetetaanko ylläpito ja jatketaanko tapahtumien laukaisemia automaatioita tälle isännälle?",
-    "confirmEnd": "Vahvista loppu",
-    "cancel": "Peruuttaa",
-    "end": "Huoltopäätös",
-    "action": "Toiminta",
+    "noAutoEnd": "Arvio ei pääätä huoltoa. Pääätä se nimenomaisesti, kun työt on suoritettu.",
+    "endConfirm": "Päädetäänkö huolto ja jatketaanko tämän isännän tapahtumapohjaisia automaatioita?",
+    "confirmEnd": "Vahvista lopetus",
+    "cancel": "Peruuta",
+    "end": "Pääytä huolto",
+    "action": "Toiminto",
     "startNow": "Aloita nyt",
-    "schedule": "Aikatauluta myöhemmin",
+    "schedule": "Aikatauluta myöhemmäksi",
     "reason": "Syy",
-    "startUtc": "Ensimmäinen lähtö (UTC)",
-    "repeat": "Toistaa",
+    "startUtc": "Ensimmäinen käynnistys (UTC)",
+    "repeat": "Toisto",
     "once": "Kerran",
     "weekly": "Viikoittain",
     "monthly": "Kuukausittain",
-    "utcHelp": "Aikataulut käyttävät UTC-aikaa ympäri vuoden. Kuukausiaikataulut ohittavat kuukaudet, joilla ei ole valittua päivää. Suunnitellut ikkunat eivät voi olla päällekkäisiä; ylikuormittava huolto jatkuu myöhemmissä ikkuna-ajoissa.",
-    "duration": "Arvioitu kesto (minuutteina)",
-    "grace": "Lisäaika (minuutteina)",
-    "notify": "Ilmoita kerran, jos olet edelleen offline-tilassa arvion ja lisäajan jälkeen",
+    "utcHelp": "Aikataulut käyttävät UTC-aikaa ympäri vuoden. Kuukausiaikataulut ohittavat kuukaudet, joissa ei ole valittua päivää. Suunniteltuja huoltoikkunoita ei saa päällekkäin; ylittynyt huolto jatkuu myöhempien ikkunoiden yli.",
+    "duration": "Arvioitu kesto (minuutteja)",
+    "grace": "Armahdusaika (minuutteja)",
+    "notify": "Ilmoita kerran, jos palvelin on edelleen poissa päältä arvioidun ajan ja armahdusajan jälkeen",
     "addSchedule": "Lisää aikataulu",
     "schedules": "Aikataulut",
     "noSchedules": "Ei huoltoaikatauluja.",
@@ -205,21 +185,30 @@
     "minutes_one": "{{count}} minuutti",
     "minutes_other": "{{count}} minuuttia",
     "remove": "Poista aikataulu",
-    "loadFailed": "Ylläpidon tilaa ei voitu päivittää. Muutokset on poistettu käytöstä, kunnes ne voidaan ladata.",
-    "loading": "Ladataan ylläpitotilaa…"
+    "loadFailed": "Huoltotilan virkistäminen epäonnistui. Muokkaukset on poistettu käytöstä, kunnes tila saadaan ladattua.",
+    "loading": "Ladataan huoltotilaa…"
   },
   "ui": {
     "sidebar": {
       "automations": {
         "options": {
-          "connect": "connect",
-          "disconnect": "disconnect",
-          "offline": "offline",
-          "online": "online",
-          "failing": "failing",
-          "recovered": "recovered"
+          "connect": "yhdistä",
+          "disconnect": "katkaise yhteys",
+          "offline": "poissa päältä",
+          "online": "päällä",
+          "failing": "virheellinen",
+          "recovered": "palautunut"
         }
       }
+    }
+  },
+  "common": {
+    "delete": "Poista"
+  },
+  "settings": {
+    "alwaysShowActions": {
+      "label": "Näytä painikkeet aina",
+      "description": "Pidä testaus-, suoritus- ja poistopainikkeet näkyvissä jokaisen automaation alla. Kytke pois päältä, jos haluat näyttää ne vain hiiren vierityksen aikana."
     }
   }
 }
