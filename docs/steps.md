@@ -60,9 +60,9 @@ When both sides look like numbers they are compared as numbers, so `10` is more 
 
 Each step has an on error setting:
 
-- **Stop** ends the run. The default.
-- **Continue** moves on to the next step.
-- **Branch** follows the otherwise path of the condition around it.
+- Stop ends the run. The default.
+- Continue moves on to the next step.
+- Branch follows the otherwise path of the condition around it.
 
 Each step has a timeout, 60 seconds by default, and the whole run stops after 300 seconds.
 
@@ -70,12 +70,12 @@ Each step has a timeout, 60 seconds by default, and the whole run stops after 30
 
 Restart nginx when it stops, and only tell someone if that didn't fix it:
 
-1. **Run a command** `systemctl is-active nginx` on the triggering host, on error Continue. Id `check`.
-2. **If** `{{steps.check.stdout}}` `!=` `active`
-   - **Run a command** `systemctl restart nginx`, with sudo
-   - **Wait** 10 seconds
-   - **Run a command** `systemctl is-active nginx`. Id `verify`.
-   - **If** `{{steps.verify.stdout}}` `!=` `active`
-     - **Send an alert**: `nginx on {{host.name}} won't come back up`
+1. Run a command `systemctl is-active nginx` on the triggering host, on error Continue. Id `check`.
+2. If `{{steps.check.stdout}}` `!=` `active`
+   - Run a command `systemctl restart nginx`, with sudo
+   - Wait 10 seconds
+   - Run a command `systemctl is-active nginx`. Id `verify`.
+   - If `{{steps.verify.stdout}}` `!=` `active`
+     - Send an alert: `nginx on {{host.name}} won't come back up`
 
 The first step continues on error because a stopped service exits with a non-zero code, which is exactly the case you are looking for.
