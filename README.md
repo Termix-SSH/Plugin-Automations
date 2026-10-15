@@ -6,6 +6,12 @@
 
 <p>Run steps on your hosts on a schedule or when something happens</p>
 
+<!-- VIDEO:START -->
+
+<a href="https://www.youtube.com/watch?v=h5JJJv56U-4"><img src="https://img.shields.io/badge/Watch_the_demo-f59145?style=for-the-badge&logo=youtube&logoColor=white" alt="Watch the demo on YouTube" /></a>
+
+<!-- VIDEO:END -->
+
 </div>
 
 <br />
