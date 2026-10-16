@@ -12,7 +12,7 @@ import {
   SelectValue,
 } from "@termix-ssh/plugin-sdk/ui";
 import { ChevronDown, ChevronUp, Trash2 } from "lucide-react";
-import type { Step, StepType } from "../../types";
+import { DEFAULT_STEP_TIMEOUT_MS, type Step, type StepType } from "../../types";
 import { HostSelectorField } from "./HostSelectorField";
 import {
   missingStepProvider,
@@ -493,6 +493,27 @@ export function StepBlock({
               depth + 1,
             )}
           </div>
+        )}
+
+        {(step.type === "run_command" ||
+          step.type === "run_snippet" ||
+          step.type === "http") && (
+          <Field label={t(`${base}.fields.timeout`)}>
+            <Input
+              type="number"
+              min={1}
+              className="h-8 w-32 rounded-none border-border"
+              placeholder={String(DEFAULT_STEP_TIMEOUT_MS / 1000)}
+              value={step.timeoutMs ? step.timeoutMs / 1000 : ""}
+              onChange={(e) => {
+                const seconds = Number(e.target.value);
+                patch({
+                  timeoutMs:
+                    seconds > 0 ? Math.round(seconds * 1000) : undefined,
+                } as Partial<Step>);
+              }}
+            />
+          </Field>
         )}
 
         {step.type !== "stop" && (

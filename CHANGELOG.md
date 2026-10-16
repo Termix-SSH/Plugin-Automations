@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.0.2
+
+### Added
+
+- Set a timeout per step for commands, snippets and HTTP calls (60 seconds by default)
+
+### Fixed
+
+- A step that timed out with Carry on set left the run marked as successful
+
 ## 1.0.1
 
 ### Changed

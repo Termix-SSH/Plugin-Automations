@@ -125,6 +125,7 @@
           "variableValue": "Value",
           "elevated": "Run with sudo",
           "onError": "If this fails",
+          "timeout": "Timeout (seconds)",
           "allowPrivateNetwork": "Allow local network addresses",
           "allowPrivateNetworkHint": "Needed for a self-hosted service on your LAN. Off by default to prevent requests to internal addresses.",
           "interface": "Interface"

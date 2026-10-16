@@ -357,6 +357,7 @@ export class AutomationEngine {
     halted?: { status: "success" | "failed" };
   }> {
     const repository = this.repository;
+    let timedOut: string | undefined;
 
     for (const step of steps) {
       if (step.enabled === false) continue;
@@ -473,10 +474,12 @@ export class AutomationEngine {
         if (policy === "stop") {
           return { failed: true, error: result.error };
         }
+        // Carrying on past a timeout still fails the run at the end.
+        if (isTimeout(result.error)) timedOut = result.error;
       }
     }
 
-    return { failed: false };
+    return timedOut ? { failed: true, error: timedOut } : { failed: false };
   }
 
   private async waitUntilFree(automationId: number): Promise<void> {
@@ -486,6 +489,10 @@ export class AutomationEngine {
       await new Promise((resolve) => setTimeout(resolve, 250));
     }
   }
+}
+
+function isTimeout(error: string | undefined): boolean {
+  return !!error && /timeout|timed out|deadline exceeded/i.test(error);
 }
 
 function errorText(error: unknown): string {
