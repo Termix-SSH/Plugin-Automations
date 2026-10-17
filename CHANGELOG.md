@@ -6,6 +6,10 @@
 
 - Set a timeout per step for commands, snippets and HTTP calls (60 seconds by default)
 
+### Changed
+
+- The plugin name and description show in your language
+
 ### Fixed
 
 - A step that timed out with Carry on set left the run marked as successful
