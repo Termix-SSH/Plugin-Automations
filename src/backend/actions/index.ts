@@ -10,6 +10,7 @@ import {
   renderShellCommand,
   renderTemplate,
 } from "../template.js";
+import { runAiTask } from "./ai-task.js";
 import { resolveTargets, type ResolvedTarget } from "./host-targets.js";
 import {
   fail,
@@ -68,6 +69,8 @@ export async function executeStep(
       return runTunnel(step, context, runtime);
     case "wol":
       return runWol(step, context, runtime);
+    case "ai_task":
+      return runAiTask(step, context, runtime);
     case "wait":
       return runWait(step, context);
     case "set_var":

@@ -23,6 +23,7 @@ export interface StepRuntime {
 export interface StepExecutionContext {
   userId: string;
   automationId: number;
+  automationName: string;
   runId: number;
   /** Nothing that leaves Termix may actually happen when this is set. */
   dryRun: boolean;

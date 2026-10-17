@@ -4,7 +4,9 @@
 
 ### Added
 
+- `automations.access` `create` takes `concurrencyPolicy` and `maxRunSeconds`, so plugins can create automations with a longer run limit
 - Set a timeout per step for commands, snippets and HTTP calls (60 seconds by default)
+- Ask AI step, which has the AI Assistant look into a problem on your hosts and report back or propose a fix for approval
 
 ### Changed
 

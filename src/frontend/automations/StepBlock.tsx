@@ -27,6 +27,7 @@ const STEP_TYPES: StepType[] = [
   "docker",
   "tunnel",
   "wol",
+  "ai_task",
   "wait",
   "set_var",
   "if",
@@ -408,6 +409,61 @@ export function StepBlock({
           </Field>
         )}
 
+        {step.type === "ai_task" && (
+          <>
+            <Field label={t(`${base}.fields.title`)}>
+              <Input
+                className="h-8 rounded-none border-border"
+                placeholder={t(`${base}.fields.aiTitlePlaceholder`)}
+                value={step.title ?? ""}
+                onChange={(e) =>
+                  patch({ title: e.target.value } as Partial<Step>)
+                }
+              />
+            </Field>
+            <Field label={t(`${base}.fields.runbook`)}>
+              <Textarea
+                className="rounded-none border-border min-h-24"
+                placeholder={t(`${base}.fields.runbookPlaceholder`)}
+                value={step.runbook ?? ""}
+                onChange={(e) =>
+                  patch({ runbook: e.target.value } as Partial<Step>)
+                }
+              />
+            </Field>
+            <Field label={t(`${base}.fields.autonomy`)}>
+              <Select
+                value={step.autonomy ?? "report"}
+                onValueChange={(value) =>
+                  patch({ autonomy: value } as Partial<Step>)
+                }
+              >
+                <SelectTrigger
+                  size="sm"
+                  className="min-w-0 w-full rounded-none border-border"
+                >
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="report">
+                    {t(`${base}.autonomy.report`)}
+                  </SelectItem>
+                  <SelectItem value="propose">
+                    {t(`${base}.autonomy.propose`)}
+                  </SelectItem>
+                </SelectContent>
+              </Select>
+            </Field>
+            <HostSelectorField
+              value={step.hostSelector}
+              options={options}
+              onChange={(hostSelector) =>
+                patch({ hostSelector } as Partial<Step>)
+              }
+            />
+          </>
+        )}
+
         {step.type === "wait" && (
           <Field label={t(`${base}.fields.seconds`)}>
             <Input
@@ -603,6 +659,11 @@ function changeStepType(step: Step, type: StepType): Step {
     case "tunnel":
       next.action = "connect";
       next.tunnelName = "";
+      break;
+    case "ai_task":
+      next.runbook = "";
+      next.autonomy = "report";
+      next.hostSelector = { kind: "trigger" };
       break;
     case "wait":
       next.seconds = 30;

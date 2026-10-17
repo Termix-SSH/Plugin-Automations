@@ -24,6 +24,7 @@ export const EMPTY_EDITOR_OPTIONS: AutomationEditorOptions = {
     "docker-events": false,
     "host-metrics": false,
     "wake-on-lan": false,
+    ai: false,
   },
 };
 
@@ -47,6 +48,7 @@ const STEP_PROVIDERS: Partial<Record<StepType, keyof AutomationProviders>> = {
   docker: "docker",
   tunnel: "tunnels",
   wol: "wake-on-lan",
+  ai_task: "ai",
 };
 
 /** The plugin id shown in "needs <plugin>", for a provider key. */

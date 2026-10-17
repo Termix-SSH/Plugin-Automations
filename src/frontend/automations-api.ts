@@ -88,6 +88,7 @@ export interface AutomationProviders {
   "docker-events": boolean;
   "host-metrics": boolean;
   "wake-on-lan": boolean;
+  ai: boolean;
 }
 
 export interface AutomationEditorOptionsResponse {

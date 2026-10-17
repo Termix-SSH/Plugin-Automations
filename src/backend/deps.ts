@@ -69,6 +69,44 @@ export interface WakeOnLanV1 {
   wake: (hostId: number) => Promise<void>;
 }
 
+/** Input to the AI plugin's ai.tasks service. */
+export interface AiTaskInput {
+  automationId: number;
+  automationRunId: number;
+  presetId?: string;
+  title: string;
+  runbook: string;
+  autonomy: "report" | "propose";
+  /** Already resolved, and limited to hosts the owner can reach. */
+  hostIds: number[];
+  trigger: {
+    kind: string;
+    hostId?: number;
+    summary: string;
+    vars: Record<string, string>;
+  };
+  /** A test run: the AI only reports and sends nothing. */
+  dryRun: boolean;
+  deadlineAt: number;
+  signal?: AbortSignal;
+}
+
+export interface AiTaskResult {
+  status: "reported" | "proposed" | "skipped" | "failed";
+  taskRunId: number | null;
+  summary: string;
+  severity: "info" | "warning" | "critical";
+  vars: Record<string, string>;
+}
+
+/**
+ * Provided by the AI plugin. It investigates as the automation's owner and
+ * returns once it has reported, or proposed a fix that waits for approval.
+ */
+export interface AiTasksV1 {
+  run: (input: AiTaskInput) => Promise<AiTaskResult>;
+}
+
 /** The plugin id behind each service, for "needs <plugin>" messages. */
 const PROVIDERS = {
   snippets: "snippets.access",
@@ -78,6 +116,7 @@ const PROVIDERS = {
   "docker-events": "docker.events",
   "host-metrics": "host-metrics.viewers",
   "wake-on-lan": "wake-on-lan.send",
+  ai: "ai.tasks",
 } as const;
 
 export type ProviderKey = keyof typeof PROVIDERS;
@@ -117,5 +156,6 @@ export function createDeps(services: PluginServices) {
     dockerEvents: () => handle<DockerEventsV1>(PROVIDERS["docker-events"]),
     viewers: () => handle<MetricsViewersV1>(PROVIDERS["host-metrics"]),
     wakeOnLan: () => handle<WakeOnLanV1>(PROVIDERS["wake-on-lan"]),
+    aiTasks: () => handle<AiTasksV1>(PROVIDERS.ai),
   };
 }

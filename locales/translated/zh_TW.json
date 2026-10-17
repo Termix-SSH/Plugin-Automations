@@ -87,6 +87,7 @@
           "docker": "控制容器",
           "tunnel": "控制隧道",
           "wol": "喚醒主機",
+          "ai_task": "詢問 AI",
           "wait": "等待",
           "set_var": "設定變數",
           "if": "條件判斷",
@@ -117,6 +118,10 @@
           "channels": "同時傳送至",
           "title": "標題",
           "message": "訊息",
+          "aiTitlePlaceholder": "自動化名稱和主機",
+          "runbook": "維運手冊",
+          "runbookPlaceholder": "例如：找出是什麼佔滿了磁碟。檢查 Docker 映像檔、journal 日誌和套件管理器快取，並說明哪些可以安全清理。",
+          "autonomy": "AI 可以做什麼",
           "snippet": "程式碼片段",
           "seconds": "秒數",
           "conditionLeftPlaceholder": "要檢查的值",
@@ -132,6 +137,10 @@
         "onError": {
           "stop": "停止執行",
           "continue": "繼續執行"
+        },
+        "autonomy": {
+          "report": "只報告",
+          "propose": "提出修復方案，待核准"
         },
         "needsPlugin": "需要 {{plugin}}",
         "offBadge": "已關閉",

@@ -260,6 +260,7 @@ export class AutomationEngine {
     const context: StepExecutionContext = {
       userId: automation.userId,
       automationId: automation.id,
+      automationName: automation.name,
       runId: run.id,
       dryRun,
       template,

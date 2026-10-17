@@ -79,6 +79,11 @@
       "service": "wake-on-lan.send",
       "versionRange": "^1.0.0",
       "optional": true
+    },
+    {
+      "service": "ai.tasks",
+      "versionRange": "^1.0.0",
+      "optional": true
     }
   ],
   "provides": [
