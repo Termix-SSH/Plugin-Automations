@@ -12,6 +12,7 @@
 
 ### Fixed
 
+- Metric triggers kept their hosts' metrics alive every 15 seconds and filled the audit log; they now check in once a minute
 - A step that timed out with Carry on set left the run marked as successful
 
 ## 1.0.1

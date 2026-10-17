@@ -6,20 +6,29 @@ import type { Deps } from "./deps.js";
  *
  * Host metrics only polls hosts somebody is looking at. Automations register
  * as a viewer through the host-metrics.viewers service, as the automation's
- * owner, and heartbeat every tick so the viewer is not reaped. A heartbeat
- * that comes back false means host-metrics restarted and forgot the viewer,
- * so the next tick registers it again.
+ * owner, and heartbeat once a minute so the viewer is not reaped. A
+ * heartbeat that comes back false means host-metrics restarted and forgot the
+ * viewer, so it is registered again.
  */
+
+/**
+ * host-metrics drops a viewer after two minutes without a heartbeat. Each
+ * heartbeat is audited twice (asUser and the service call), so beating on
+ * every tick filled the audit log for a fleet-wide trigger.
+ */
+export const HEARTBEAT_MS = 60_000;
 
 interface Registered {
   userId: string;
   viewerSessionId: string;
+  beatAt: number;
 }
 
 export function createHeadlessViewers(
   ctx: Pick<PluginContext, "asUser" | "log">,
   deps: Pick<Deps, "viewers">,
   watchedHosts: () => Promise<Map<number, string>>,
+  now: () => number = Date.now,
 ) {
   const registered = new Map<number, Registered>();
 
@@ -59,10 +68,14 @@ export function createHeadlessViewers(
       for (const [hostId, userId] of watched) {
         const existing = registered.get(hostId);
         if (existing) {
+          if (now() - existing.beatAt < HEARTBEAT_MS) continue;
           const alive = await ctx
             .asUser(userId, () => viewers.heartbeat!(existing.viewerSessionId))
             .catch(() => false);
-          if (alive) continue;
+          if (alive) {
+            existing.beatAt = now();
+            continue;
+          }
           registered.delete(hostId);
         }
 
@@ -74,6 +87,7 @@ export function createHeadlessViewers(
             registered.set(hostId, {
               userId,
               viewerSessionId: result.viewerSessionId,
+              beatAt: now(),
             });
             added++;
           }
