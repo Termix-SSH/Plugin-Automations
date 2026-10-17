@@ -25,6 +25,18 @@ describe("renderTemplate", () => {
     expect(renderTemplate("{{vars.target}}", context)).toBe("/var/log");
   });
 
+  it("reads a variable whose name has dots in it", () => {
+    const withDots = {
+      ...context,
+      vars: { "ai.status": "proposed", ai: "plain" },
+    };
+    expect(renderTemplate("{{vars.ai.status}}", withDots)).toBe("proposed");
+    expect(renderTemplate("{{vars.ai}}", withDots)).toBe("plain");
+    expect(renderTemplate("{{vars.ai.missing}}", withDots)).toBe(
+      "{{vars.ai.missing}}",
+    );
+  });
+
   it("tolerates whitespace inside the braces", () => {
     expect(renderTemplate("{{  host.name  }}", context)).toBe("Zeus");
   });

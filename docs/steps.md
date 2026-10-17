@@ -16,6 +16,7 @@ Steps are what an automation does. They run in order, top to bottom.
 | Control a tunnel       | Connects or disconnects a saved tunnel.                                                                                               |
 | Wake a host            | Sends a Wake-on-LAN packet.                                                                                                           |
 | Call a URL             | Sends an HTTP request with a method, headers and body.                                                                                |
+| Ask AI                 | Has the [AI Assistant](/plugins/ai) look into a problem on hosts and report back. See [Ask AI](#ask-ai).                              |
 | Wait                   | Pauses for some seconds, like after a restart.                                                                                        |
 | Set a variable         | Saves a value for later steps, as `{{vars.name}}`.                                                                                    |
 | If / otherwise         | Runs steps when a condition is true, and others when it isn't. Conditions can nest.                                                   |
@@ -23,6 +24,27 @@ Steps are what an automation does. They run in order, top to bottom.
 | Stop                   | Ends the run as a success or a failure.                                                                                               |
 
 Call a URL blocks addresses on your private network by default. Turn on Allow local network addresses for a step that calls something on your LAN, and an admin has to allow the host first.
+
+## Ask AI
+
+Ask AI hands a runbook to the [AI Assistant](/plugins/ai). It looks into the problem on the hosts you pick and writes a report you can open in the assistant.
+
+- Runbook says what to look at and what a good answer looks like, in plain words. It can use templates, like `{{host.name}}`.
+- What the AI may do is Report only, or Propose a fix for approval. A proposed fix waits for someone to approve it in the AI Assistant, so the run doesn't wait for it.
+- Title names the report. It defaults to the automation name and the host.
+
+The AI gets what set the run off, like the metric, its value and the threshold, and your variables. It only reaches hosts you can, and only runs read-only commands while it looks.
+
+When it is done, later steps can use:
+
+| Template                | Gives you                                      |
+| ----------------------- | ---------------------------------------------- |
+| `{{vars.ai.status}}`    | `reported`, `proposed`, `skipped` or `failed`. |
+| `{{vars.ai.severity}}`  | `info`, `warning` or `critical`.               |
+| `{{vars.ai.summary}}`   | A sentence or two on what it found.            |
+| `{{vars.ai.taskRunId}}` | The task's id in the AI Assistant.             |
+
+The AI Assistant can skip a run, like when it is already looking into the same host. The step still succeeds and says why. A test run only reports and sends nothing.
 
 ## Picking hosts
 

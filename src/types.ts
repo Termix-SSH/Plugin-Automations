@@ -177,6 +177,17 @@ export type Step =
       tunnelName: string;
     })
   | (StepBase & { type: "wol"; hostId: number })
+  | (StepBase & {
+      type: "ai_task";
+      /** Plain-language instructions for the AI, rendered as a template. */
+      runbook: string;
+      /** report: investigate and report. propose: also propose a fix for approval. */
+      autonomy: "report" | "propose";
+      hostSelector: HostSelector;
+      /** Set when the step came from one of the AI plugin's presets. */
+      presetId?: string;
+      title?: string;
+    })
   | (StepBase & { type: "wait"; seconds: number })
   | (StepBase & { type: "set_var"; name: string; value: string })
   | (StepBase & {

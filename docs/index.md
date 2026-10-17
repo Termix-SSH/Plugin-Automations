@@ -36,6 +36,7 @@ Automations works on its own for schedules, webhooks, commands and alerts. Other
 | Wake a host                          | [Wake-on-LAN](/plugins/wake-on-lan)   |
 | A fleet as the target                | [Fleets](/plugins/fleets)             |
 | Run a snippet                        | [Snippets](/plugins/snippets)         |
+| Ask AI                               | [AI Assistant](/plugins/ai)           |
 
 The editor only offers what is available. If a plugin an automation needs is turned off later, the automation shows Needs and its runs are skipped until the plugin is back.
 

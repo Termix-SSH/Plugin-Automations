@@ -1,4 +1,9 @@
-import type { AutomationDefinition, Step, Trigger } from "../types.js";
+import type {
+  AutomationDefinition,
+  HostSelector,
+  Step,
+  Trigger,
+} from "../types.js";
 import { AUTOMATION_DEFINITION_VERSION } from "../types.js";
 import { isValidCron, isValidTimezone } from "./cron.js";
 
@@ -20,6 +25,7 @@ const STEP_TYPES = new Set([
   "docker",
   "tunnel",
   "wol",
+  "ai_task",
   "wait",
   "set_var",
   "if",
@@ -38,6 +44,30 @@ const OPERATORS = new Set([
   "not_contains",
   "changed",
 ]);
+
+const AUTONOMY_LEVELS = new Set(["report", "propose"]);
+
+const isId = (value: unknown) => Number.isInteger(value) && Number(value) > 0;
+
+function isValidHostSelector(selector: HostSelector | undefined): boolean {
+  switch (selector?.kind) {
+    case "host":
+      return isId(selector.hostId);
+    case "hosts":
+      return (
+        Array.isArray(selector.hostIds) &&
+        selector.hostIds.length > 0 &&
+        selector.hostIds.every(isId)
+      );
+    case "fleet":
+      return isId(selector.fleetId);
+    case "all":
+    case "trigger":
+      return true;
+    default:
+      return false;
+  }
+}
 
 export function isNonEmptyString(value: unknown): value is string {
   return typeof value === "string" && value.trim().length > 0;
@@ -141,6 +171,15 @@ function validateSteps(steps: Step[], seen: Set<string>): string | null {
     }
     if (step.type === "run_command" && !isNonEmptyString(step.command)) {
       return "Command steps need a command";
+    }
+    if (step.type === "ai_task") {
+      if (!isNonEmptyString(step.runbook)) return "Ask AI steps need a runbook";
+      if (!AUTONOMY_LEVELS.has(step.autonomy)) {
+        return "Ask AI steps need a valid autonomy level";
+      }
+      if (!isValidHostSelector(step.hostSelector)) {
+        return "Ask AI steps need hosts to act on";
+      }
     }
     if (step.type === "wait" && typeof step.seconds !== "number") {
       return "Wait steps need a number of seconds";

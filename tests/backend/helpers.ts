@@ -11,6 +11,7 @@ import {
 import type {
   PluginHostSummary,
   PluginNotificationChannel,
+  PluginSshHost,
 } from "@termix-ssh/plugin-sdk/backend";
 import type { PluginManifest } from "@termix-ssh/plugin-sdk/manifest";
 import manifestJson from "../../manifest.json";
@@ -100,6 +101,7 @@ export async function startServer(
     permissions?: string[];
     services?: Record<string, object>;
     hosts?: PluginHostSummary[];
+    sshHosts?: PluginSshHost[];
     channels?: PluginNotificationChannel[];
     before?: (db: TestDb["sqlite"]) => void;
   } = {},
@@ -135,6 +137,7 @@ export async function startServer(
     router: () => (router = express.Router()),
     permissions: options.permissions ?? ALL_PERMISSIONS,
     hosts: options.hosts ?? [host(1), host(2)],
+    sshHosts: options.sshHosts,
     notificationChannels: channels,
     services: { "snippets.access": fakeSnippets(), ...options.services },
   });
