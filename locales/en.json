@@ -211,5 +211,9 @@
       "label": "Always show buttons",
       "description": "Keep the test, run and delete buttons under each automation visible. Turn off to show them only on hover."
     }
+  },
+  "plugin": {
+    "name": "Automations",
+    "description": "Run steps on your hosts on a schedule or when something happens."
   }
 }
