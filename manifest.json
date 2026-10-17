@@ -43,8 +43,7 @@
     "tunnels": "^1.0.0",
     "docker": "^1.0.0",
     "host-metrics": "^1.0.0",
-    "wake-on-lan": "^1.0.0",
-    "ai": "^1.0.0"
+    "wake-on-lan": "^1.0.0"
   },
   "requires": [
     {
