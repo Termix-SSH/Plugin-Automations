@@ -341,11 +341,9 @@ describe("watchers", () => {
       [1, "alice"],
       [2, "alice"],
     ]);
-    const before = beats;
     await server.mock.runScheduled();
-    // Each tick heartbeats both viewers and registers nothing new.
-    expect(beats).toBeGreaterThan(before);
-    expect((beats - before) % 2).toBe(0);
+    // A tick within the minute neither heartbeats nor registers again.
+    expect(beats).toBe(0);
     expect(registered).toHaveLength(2);
   });
 
