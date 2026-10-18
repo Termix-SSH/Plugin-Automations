@@ -87,6 +87,7 @@
           "docker": "Hallitse konttoria",
           "tunnel": "Hallitse tunnelia",
           "wol": "Herätä isäntä",
+          "ai_task": "Kysy tekoälyltä",
           "wait": "Odota",
           "set_var": "Aseta muuttuja",
           "if": "Jos / muuten",
@@ -117,6 +118,10 @@
           "channels": "Lähetä myös",
           "title": "Otsikko",
           "message": "Viesti",
+          "aiTitlePlaceholder": "Automaation nimi ja isäntä",
+          "runbook": "Toimintakäsikirja",
+          "runbookPlaceholder": "esim. Selvitä, mikä täyttää levyn. Tarkista Docker-kuvat, journal-lokit ja pakettivälimuistit ja kerro, mikä on turvallista siivota.",
+          "autonomy": "Mitä tekoäly saa tehdä",
           "snippet": "Koodinpätkä",
           "seconds": "Sekunnit",
           "conditionLeftPlaceholder": "Tarkistettava arvo",
@@ -125,6 +130,7 @@
           "variableValue": "Arvo",
           "elevated": "Suorita sudo-käynnistyksellä",
           "onError": "Jos tämä epäonnistuu",
+          "timeout": "Aikakatkaisu (sekuntia)",
           "allowPrivateNetwork": "Salli paikallisen verkon osoitteet",
           "allowPrivateNetworkHint": "Tarvitaan itse isännöidylle palvelulle LAN-verkossasi. Oletuksena pois päältä sisäisten osoitteiden pyyntöjen estämiseksi.",
           "interface": "Liitäntä"
@@ -132,6 +138,10 @@
         "onError": {
           "stop": "Pysäytä suoritus",
           "continue": "Jatka"
+        },
+        "autonomy": {
+          "report": "Vain raportointi",
+          "propose": "Ehdota korjausta hyväksyttäväksi"
         },
         "needsPlugin": "Vaatii {{plugin}}-liitännäisen",
         "offBadge": "Pois päältä",
@@ -210,5 +220,9 @@
       "label": "Näytä painikkeet aina",
       "description": "Pidä testaus-, suoritus- ja poistopainikkeet näkyvissä jokaisen automaation alla. Kytke pois päältä, jos haluat näyttää ne vain hiiren vierityksen aikana."
     }
+  },
+  "plugin": {
+    "name": "Automaatiot",
+    "description": "Suorita vaiheita isännissäsi aikataulun mukaan tai kun jotakin tapahtuu."
   }
 }

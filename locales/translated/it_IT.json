@@ -87,6 +87,7 @@
           "docker": "Controlla un container",
           "tunnel": "Controlla un tunnel",
           "wol": "Accendi un host",
+          "ai_task": "Chiedi all'IA",
           "wait": "Attendi",
           "set_var": "Imposta una variabile",
           "if": "Se / altrimenti",
@@ -117,6 +118,10 @@
           "channels": "Invia anche a",
           "title": "Titolo",
           "message": "Messaggio",
+          "aiTitlePlaceholder": "Nome dell'automazione e host",
+          "runbook": "Runbook",
+          "runbookPlaceholder": "es. Scopri cosa sta riempiendo il disco. Esamina le immagini Docker, i log del journal e le cache dei pacchetti, e indica cosa è sicuro eliminare.",
+          "autonomy": "Cosa può fare l'IA",
           "snippet": "Snippet",
           "seconds": "Secondi",
           "conditionLeftPlaceholder": "Valore da verificare",
@@ -125,6 +130,7 @@
           "variableValue": "Valore",
           "elevated": "Esegui con sudo",
           "onError": "Se questo fallisce",
+          "timeout": "Timeout (secondi)",
           "allowPrivateNetwork": "Consenti indirizzi di rete locale",
           "allowPrivateNetworkHint": "Necessario per un servizio self-hosted sulla tua LAN. Disattivato di default per prevenire richieste a indirizzi interni.",
           "interface": "Interfaccia"
@@ -132,6 +138,10 @@
         "onError": {
           "stop": "Ferma l'esecuzione",
           "continue": "Continua"
+        },
+        "autonomy": {
+          "report": "Solo report",
+          "propose": "Proponi una correzione per l'approvazione"
         },
         "needsPlugin": "Richiede {{plugin}}",
         "offBadge": "Off",
@@ -211,5 +221,9 @@
       "label": "Mostra sempre i pulsanti",
       "description": "Mantieni visibili i pulsanti di test, esecuzione ed eliminazione sotto ogni automazione. Disattiva per mostrarli solo al passaggio del mouse."
     }
+  },
+  "plugin": {
+    "name": "Automazioni",
+    "description": "Esegui passaggi sui tuoi host secondo una pianificazione o quando si verifica un evento."
   }
 }

@@ -87,6 +87,7 @@
           "docker": "Controlar um container",
           "tunnel": "Controlar um túnel",
           "wol": "Acordar um host",
+          "ai_task": "Perguntar à IA",
           "wait": "Aguardar",
           "set_var": "Definir uma variável",
           "if": "Se / caso contrário",
@@ -117,6 +118,10 @@
           "channels": "Enviar também para",
           "title": "Título",
           "message": "Mensagem",
+          "aiTitlePlaceholder": "O nome da automação e o host",
+          "runbook": "Playbook",
+          "runbookPlaceholder": "ex.: Descubra o que está enchendo o disco. Verifique as imagens do Docker, os logs do journal e os caches de pacotes, e diga o que é seguro limpar.",
+          "autonomy": "O que a IA pode fazer",
           "snippet": "Snippet",
           "seconds": "Segundos",
           "conditionLeftPlaceholder": "Valor a verificar",
@@ -125,6 +130,7 @@
           "variableValue": "Valor",
           "elevated": "Executar com sudo",
           "onError": "Se falhar",
+          "timeout": "Tempo limite (segundos)",
           "allowPrivateNetwork": "Permitir endereços de rede local",
           "allowPrivateNetworkHint": "Necessário para um serviço auto-hospedado na sua LAN. Desativado por padrão para evitar solicitações a endereços internos.",
           "interface": "Interface"
@@ -132,6 +138,10 @@
         "onError": {
           "stop": "Parar a execução",
           "continue": "Continuar"
+        },
+        "autonomy": {
+          "report": "Apenas relatório",
+          "propose": "Propor uma correção para aprovação"
         },
         "needsPlugin": "Requer {{plugin}}",
         "offBadge": "Desativado",
@@ -211,5 +221,9 @@
       "label": "Sempre mostrar botões",
       "description": "Mantenha os botões de teste, execução e exclusão visíveis abaixo de cada automação. Desative para mostrá-los apenas ao passar o mouse."
     }
+  },
+  "plugin": {
+    "name": "Automações",
+    "description": "Execute etapas nos seus hosts em um agendamento ou quando algo acontecer."
   }
 }

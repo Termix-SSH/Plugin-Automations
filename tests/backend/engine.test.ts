@@ -197,6 +197,26 @@ describe("AutomationEngine.run", () => {
     expect(executeStep).toHaveBeenCalledTimes(2);
   });
 
+  it("still fails the run when a carried-on step timed out", async () => {
+    defineAutomation([
+      step({ id: "a", type: "run_command", onError: "continue" }),
+      step({ id: "b", type: "http" }),
+    ]);
+    executeStep.mockResolvedValueOnce({
+      success: false,
+      error: "Command timeout after 60000ms",
+    });
+
+    const outcome = await getEngine().run({
+      automationId: 1,
+      triggerType: "manual",
+    });
+
+    expect(outcome.status).toBe("failed");
+    expect(outcome.error).toBe("Command timeout after 60000ms");
+    expect(executeStep).toHaveBeenCalledTimes(2);
+  });
+
   it("skips disabled steps", async () => {
     defineAutomation([
       step({ id: "a", type: "run_command", enabled: false }),

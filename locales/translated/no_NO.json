@@ -87,6 +87,7 @@
           "docker": "Styr en beholder",
           "tunnel": "Styr en tunnel",
           "wol": "Vekk en vert",
+          "ai_task": "Spør AI",
           "wait": "Vent",
           "set_var": "Sett en variabel",
           "if": "Hvis / ellers",
@@ -117,6 +118,10 @@
           "channels": "Send også til",
           "title": "Tittel",
           "message": "Melding",
+          "aiTitlePlaceholder": "Automatiseringens navn og vert",
+          "runbook": "Håndbok",
+          "runbookPlaceholder": "f.eks. Finn ut hva som fyller opp disken. Se på Docker-avbildninger, journallogger og pakkebuffer, og si hva som er trygt å rydde opp.",
+          "autonomy": "Hva AI-en kan gjøre",
           "snippet": "Utdrag",
           "seconds": "Sekunder",
           "conditionLeftPlaceholder": "Verdi å sjekke",
@@ -125,6 +130,7 @@
           "variableValue": "Verdi",
           "elevated": "Kjør med sudo",
           "onError": "Hvis dette mislykkes",
+          "timeout": "Tidsavbrudd (sekunder)",
           "allowPrivateNetwork": "Tillat lokale nettverksadresser",
           "allowPrivateNetworkHint": "Påkrevd for en selvhostet tjeneste på ditt LAN. Av som standard for å forhindre forespørsler til interne adresser.",
           "interface": "Grensesnitt"
@@ -132,6 +138,10 @@
         "onError": {
           "stop": "Stopp kjøringen",
           "continue": "Fortsett"
+        },
+        "autonomy": {
+          "report": "Kun rapportering",
+          "propose": "Foreslå en løsning til godkjenning"
         },
         "needsPlugin": "Krever {{plugin}}",
         "offBadge": "Av",
@@ -210,5 +220,9 @@
       "label": "Vis alltid knapper",
       "description": "Hold knappene for test, kjøring og sletting synlige under hver automatisering. Slå av for å vise dem kun ved hover."
     }
+  },
+  "plugin": {
+    "name": "Automatiseringer",
+    "description": "Kjør steg på vertsmaskinene dine etter en tidsplan eller når noe skjer."
   }
 }

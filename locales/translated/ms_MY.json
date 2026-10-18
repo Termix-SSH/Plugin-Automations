@@ -87,6 +87,7 @@
           "docker": "Kawal bekas",
           "tunnel": "Kawal terowong",
           "wol": "Bangunkan hos",
+          "ai_task": "Tanya AI",
           "wait": "Tunggu",
           "set_var": "Tetapkan pembolehubah",
           "if": "Jika / sebaliknya",
@@ -117,6 +118,10 @@
           "channels": "Hantar juga ke",
           "title": "Tajuk",
           "message": "Mesej",
+          "aiTitlePlaceholder": "Nama automasi dan hos",
+          "runbook": "Buku Prosedur",
+          "runbookPlaceholder": "cth., Cari tahu apa yang memenuhi cakera. Lihat imej Docker, log jurnal dan cache pakej, dan nyatakan apa yang selamat untuk dibersihkan.",
+          "autonomy": "Apa yang boleh dilakukan oleh AI",
           "snippet": "Snippet",
           "seconds": "Saat",
           "conditionLeftPlaceholder": "Nilai untuk diperiksa",
@@ -125,6 +130,7 @@
           "variableValue": "Nilai",
           "elevated": "Jalankan dengan sudo",
           "onError": "Jika ini gagal",
+          "timeout": "Had masa (saat)",
           "allowPrivateNetwork": "Benarkan alamat rangkaian tempatan",
           "allowPrivateNetworkHint": "Diperlukan untuk perkhidmatan hos sendiri di LAN anda. Dimatikan secara lalai untuk menghalang permintaan ke alamat dalaman.",
           "interface": "Antara muka"
@@ -132,6 +138,10 @@
         "onError": {
           "stop": "Hentikan pelaksanaan",
           "continue": "Teruskan"
+        },
+        "autonomy": {
+          "report": "Laporan sahaja",
+          "propose": "Cadangkan pembaikan untuk kelulusan"
         },
         "needsPlugin": "Memerlukan {{plugin}}",
         "offBadge": "Mati",
@@ -209,5 +219,9 @@
       "label": "Sentiasa tunjukkan butang",
       "description": "Kekalkan butang uji, jalankan dan padam di bawah setiap automasi kelihatan. Matikan untuk menunjukkannya hanya semasa kursor berada di atasnya."
     }
+  },
+  "plugin": {
+    "name": "Automasi",
+    "description": "Jalankan langkah pada hos anda mengikut jadual atau apabila sesuatu berlaku."
   }
 }

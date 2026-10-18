@@ -87,6 +87,7 @@
           "docker": "Ovládat kontejner",
           "tunnel": "Ovládat tunel",
           "wol": "Probudit hostitele",
+          "ai_task": "Zeptat AI",
           "wait": "Počkat",
           "set_var": "Nastavit proměnnou",
           "if": "Pokud / jinak",
@@ -117,6 +118,10 @@
           "channels": "Zaslat také do",
           "title": "Název",
           "message": "Zpráva",
+          "aiTitlePlaceholder": "Název automatizace a hostitel",
+          "runbook": "Pracovní postup",
+          "runbookPlaceholder": "např. Zjistit, co zaplňuje disk. Podívat se na Docker obrazy, systémové protokoly a mezipaměti balíčků a říct, co je bezpečné vyčistit.",
+          "autonomy": "Co může AI dělat",
           "snippet": "Úryvek",
           "seconds": "Sekundy",
           "conditionLeftPlaceholder": "Hodnota k ověření",
@@ -125,6 +130,7 @@
           "variableValue": "Hodnota",
           "elevated": "Spustit s sudo",
           "onError": "Pokud selže",
+          "timeout": "Časový limit (sekundy)",
           "allowPrivateNetwork": "Povolit adresy místní sítě",
           "allowPrivateNetworkHint": "Potřebné pro vlastní službu ve vaší LAN. Výchozí je vypnuto, aby se předešlo požadavkům na interní adresy.",
           "interface": "Rozhraní"
@@ -132,6 +138,10 @@
         "onError": {
           "stop": "Zastavit běh",
           "continue": "Pokračovat"
+        },
+        "autonomy": {
+          "report": "Pouze hlášení",
+          "propose": "Navrhnout opravu k schválení"
         },
         "needsPlugin": "Vyžaduje {{plugin}}",
         "offBadge": "Vypnuto",
@@ -212,5 +222,9 @@
       "label": "Vždy zobrazovat tlačítka",
       "description": "Nechejte tlačítka test, spustit a smazat pod každou automatizací viditelná. Vypněte, pokud je chcete zobrazovat pouze při najetí myší."
     }
+  },
+  "plugin": {
+    "name": "Automatizace",
+    "description": "Spouštění kroků na vašich hostitelích podle plánu nebo při výskytu události."
   }
 }

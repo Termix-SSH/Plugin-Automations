@@ -87,6 +87,7 @@
           "docker": "Upravljaj posode",
           "tunnel": "Upravljaj tunel",
           "wol": "Zbudi gostitelja",
+          "ai_task": "Vprašaj AI",
           "wait": "Počakaj",
           "set_var": "Nastavi spremenljivko",
           "if": "Če / drugače",
@@ -117,6 +118,10 @@
           "channels": "Pošlji tudi na",
           "title": "Naslov",
           "message": "Sporočilo",
+          "aiTitlePlaceholder": "Ime avtomatizacije in gostitelja",
+          "runbook": "Navodila za postopke",
+          "runbookPlaceholder": "npr. Ugotovi, kaj polni disk. Preglej Docker slike, dnevnike in predpomnilnike paketov ter povej, kaj je varno za čiščenje.",
+          "autonomy": "Kaj sme narediti z AI",
           "snippet": "Odsek",
           "seconds": "Sekunde",
           "conditionLeftPlaceholder": "Vrednost za preverjanje",
@@ -125,6 +130,7 @@
           "variableValue": "Vrednost",
           "elevated": "Zaženi z sudo",
           "onError": "Če to ne uspe",
+          "timeout": "Časovna omejitev (sekunde)",
           "allowPrivateNetwork": "Dovoli naslove lokalnega omrežja",
           "allowPrivateNetworkHint": "Potrebno za samostojno gostovano storitev v vašem LAN. Privzeto izklopljeno, da se preprečijo zahteve do notranjih naslovov.",
           "interface": "Vmesnik"
@@ -132,6 +138,10 @@
         "onError": {
           "stop": "Ustavi izvajanje",
           "continue": "Nadaljuj"
+        },
+        "autonomy": {
+          "report": "Samo poročilo",
+          "propose": "Predlagajte popravilo za odobritev"
         },
         "needsPlugin": "Potrebuje {{plugin}}",
         "offBadge": "Izklopljeno",
@@ -212,5 +222,9 @@
       "label": "Vedno prikaži gumbe",
       "description": "Gumba za preizkus, zagon in brisanje pod vsako avtomatizacijo naj bodo vedno vidni. Če to izklopite, se bodo prikazali le ob drsenju miške."
     }
+  },
+  "plugin": {
+    "name": "Avtomatizacije",
+    "description": "Izvajanje korakov na gostiteljih po urniku ali ob določenem dogodku."
   }
 }

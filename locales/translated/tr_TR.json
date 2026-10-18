@@ -87,6 +87,7 @@
           "docker": "Bir kapsülü yönet",
           "tunnel": "Bir tüneli yönet",
           "wol": "Bir sunucuyu uyan",
+          "ai_task": "Yapay zekaya sor",
           "wait": "Bekle",
           "set_var": "Bir değişken ayarla",
           "if": "Eğer / aksi halde",
@@ -117,6 +118,10 @@
           "channels": "Ayrıca şuraya gönder",
           "title": "Başlık",
           "message": "Mesaj",
+          "aiTitlePlaceholder": "Otomasyon adı ve ana bilgisayar",
+          "runbook": "İş Akışı",
+          "runbookPlaceholder": "Örn. Diski neyin doldurduğunu öğrenin. Docker görüntülerine, günlük kayıtlarına ve paket önbelleklerine bakın ve nelerin güvenle temizlenebileceğini belirtin.",
+          "autonomy": "Yapay zekanın yapabilecekleri",
           "snippet": "Komut parçası",
           "seconds": "Saniye",
           "conditionLeftPlaceholder": "Kontrol edilecek değer",
@@ -125,6 +130,7 @@
           "variableValue": "Değer",
           "elevated": "sudo ile çalıştır",
           "onError": "Bu başarısız olursa",
+          "timeout": "Zaman aşımı (saniye)",
           "allowPrivateNetwork": "Yerel ağ adreslerine izin ver",
           "allowPrivateNetworkHint": "Yerel ağınızda barındırılan bir hizmet için gereklidir. İç adreslere istek gönderilmesini önlemek için varsayılan olarak kapalıdır.",
           "interface": "Arayüz"
@@ -132,6 +138,10 @@
         "onError": {
           "stop": "Çalışmayı durdur",
           "continue": "Devam et"
+        },
+        "autonomy": {
+          "report": "Sadece raporla",
+          "propose": "Onay için bir düzeltme öner"
         },
         "needsPlugin": "{{plugin}} eklentisi gerekli",
         "offBadge": "Kapalı",
@@ -210,5 +220,9 @@
       "label": "Düğmeleri her zaman göster",
       "description": "Her otomasyonun altındaki test, çalıştır ve sil düğmelerini görünür tutun. Yalnızca üzerine gelindiğinde göstermek için kapatın."
     }
+  },
+  "plugin": {
+    "name": "Otomasyonlar",
+    "description": "Ana bilgisayarlarınızda adımları bir zamanlamaya göre veya belirli bir olay gerçekleştiğinde çalıştırın."
   }
 }

@@ -87,6 +87,7 @@
           "docker": "Kontrol container",
           "tunnel": "Kontrol tunnel",
           "wol": "Bangunkan host",
+          "ai_task": "Tanya AI",
           "wait": "Tunggu",
           "set_var": "Atur variabel",
           "if": "Jika / lainnya",
@@ -117,6 +118,10 @@
           "channels": "Juga kirim ke",
           "title": "Judul",
           "message": "Pesan",
+          "aiTitlePlaceholder": "Nama otomatisasi dan host",
+          "runbook": "Buku Prosedur",
+          "runbookPlaceholder": "mis., Cari tahu apa yang memenuhi disk. Periksa gambar Docker, log jurnal, dan cache paket, lalu sebutkan apa yang aman untuk dibersihkan.",
+          "autonomy": "Apa yang dapat dilakukan AI",
           "snippet": "Snippet",
           "seconds": "Detik",
           "conditionLeftPlaceholder": "Nilai untuk diperiksa",
@@ -125,6 +130,7 @@
           "variableValue": "Nilai",
           "elevated": "Jalankan dengan sudo",
           "onError": "Jika ini gagal",
+          "timeout": "Batas waktu (detik)",
           "allowPrivateNetwork": "Izinkan alamat jaringan lokal",
           "allowPrivateNetworkHint": "Diperlukan untuk layanan self-hosted di LAN Anda. Nonaktif secara default untuk mencegah permintaan ke alamat internal.",
           "interface": "Antarmuka"
@@ -132,6 +138,10 @@
         "onError": {
           "stop": "Hentikan eksekusi",
           "continue": "Lanjutkan"
+        },
+        "autonomy": {
+          "report": "Hanya laporan",
+          "propose": "Ajukan perbaikan untuk persetujuan"
         },
         "needsPlugin": "Memerlukan {{plugin}}",
         "offBadge": "Nonaktif",
@@ -209,5 +219,9 @@
       "label": "Selalu tampilkan tombol",
       "description": "Jaga tombol uji, jalankan, dan hapus di bawah setiap otomatisasi tetap terlihat. Matikan untuk menampilkannya hanya saat kursor diarahkan."
     }
+  },
+  "plugin": {
+    "name": "Otomasi",
+    "description": "Jalankan langkah-langkah pada host Anda secara terjadwal atau ketika suatu peristiwa terjadi."
   }
 }

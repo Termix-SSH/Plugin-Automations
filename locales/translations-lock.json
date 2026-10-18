@@ -91,6 +91,7 @@
   "newUi.sidebar.automations.fields.channels": "402d1d43a564",
   "newUi.sidebar.automations.fields.title": "768e0c1c6957",
   "newUi.sidebar.automations.fields.message": "68f4145fee7d",
+  "newUi.sidebar.automations.fields.autonomy": "68867319ce34",
   "newUi.sidebar.automations.fields.snippet": "657d1e134c33",
   "newUi.sidebar.automations.fields.seconds": "5fb1db527825",
   "newUi.sidebar.automations.fields.conditionLeftPlaceholder": "be1413185323",
@@ -99,11 +100,14 @@
   "newUi.sidebar.automations.fields.variableValue": "8dce170de238",
   "newUi.sidebar.automations.fields.elevated": "abb146825c97",
   "newUi.sidebar.automations.fields.onError": "530c66395f37",
+  "newUi.sidebar.automations.fields.timeout": "e4ea98243df8",
   "newUi.sidebar.automations.fields.allowPrivateNetwork": "f54cd596e018",
   "newUi.sidebar.automations.fields.allowPrivateNetworkHint": "800c159eb796",
   "newUi.sidebar.automations.fields.interface": "7b4db7ef1fa2",
   "newUi.sidebar.automations.onError.stop": "83d35853937f",
   "newUi.sidebar.automations.onError.continue": "89a58a1b5750",
+  "newUi.sidebar.automations.autonomy.report": "f08b1e3fa834",
+  "newUi.sidebar.automations.autonomy.propose": "1f8dedce9fd9",
   "newUi.sidebar.automations.needsPlugin": "ffc5ab2088f9",
   "newUi.sidebar.automations.offBadge": "e3de5ab0ca4c",
   "newUi.sidebar.automations.docsLink": "19abc6f6f7fa",
@@ -157,5 +161,6 @@
   "ui.sidebar.automations.options.recovered": "26cf9476bd02",
   "common.delete": "f6fdbe48dc54",
   "settings.alwaysShowActions.label": "1cb1dc18de91",
-  "settings.alwaysShowActions.description": "54c9925c08cd"
+  "settings.alwaysShowActions.description": "54c9925c08cd",
+  "plugin.name": "82542d6d0a0a"
 }

@@ -87,6 +87,7 @@
           "docker": "Valdyti konteinerį",
           "tunnel": "Valdyti tunelį",
           "wol": "Pabudinti serverį",
+          "ai_task": "Klausti AI",
           "wait": "Palaukti",
           "set_var": "Nustatyti kintamąjį",
           "if": "Jei / kitaip",
@@ -117,6 +118,10 @@
           "channels": "Taip pat siųsti į",
           "title": "Pavadinimas",
           "message": "Žinutė",
+          "aiTitlePlaceholder": "Automatizavimo pavadinimas ir serveris",
+          "runbook": "Vykdomojo vadovo",
+          "runbookPlaceholder": "pvz., Išsiaiškinkite, kas užpildo diską. Peržiūrėkite „Docker“ atvaizdus, žurnalo įrašus ir paketų talpyklas, bei nurodykite, ką saugu išvalyti.",
+          "autonomy": "Ką dirbtinis intelektas gali daryti",
           "snippet": "Fragmentas",
           "seconds": "Sekundės",
           "conditionLeftPlaceholder": "Tikrinama reikšmė",
@@ -125,6 +130,7 @@
           "variableValue": "Reikšmė",
           "elevated": "Paleisti su sudo",
           "onError": "Jei nepavyksta",
+          "timeout": "Laiko limitas (sekundės)",
           "allowPrivateNetwork": "Leisti vietinio tinklo adresus",
           "allowPrivateNetworkHint": "Reikia savarankiškai valdomai paslaugai jūsų LAN tinkle. Numatyta išjungta, kad būtų išvengta užklausų į vidinius adresus.",
           "interface": "Sąsaja"
@@ -132,6 +138,10 @@
         "onError": {
           "stop": "Sustabdyti vykdymą",
           "continue": "Tęsti"
+        },
+        "autonomy": {
+          "report": "Tik pranešimas",
+          "propose": "Pasiūlyti pataisymą patvirtinimui"
         },
         "needsPlugin": "Reikia „{{plugin}}“",
         "offBadge": "Išjungta",
@@ -212,5 +222,9 @@
       "label": "Visada rodyti mygtukus",
       "description": "Palikti testavimo, vykdymo ir šalinimo mygtukus po kiekviena automatizacija matomus. Išjunkite, kad jie būtų rodomi tik užvedus pelę."
     }
+  },
+  "plugin": {
+    "name": "Automatizavimai",
+    "description": "Vykdykite veiksmus savo serveriuose pagal grafiką arba įvykus tam tikram įvykiui."
   }
 }

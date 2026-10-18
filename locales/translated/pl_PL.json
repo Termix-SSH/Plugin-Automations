@@ -87,6 +87,7 @@
           "docker": "Zarządzaj kontenerem",
           "tunnel": "Zarządzaj tunelem",
           "wol": "Wybudź hosta",
+          "ai_task": "Zapytaj AI",
           "wait": "Czekaj",
           "set_var": "Ustaw zmienną",
           "if": "Jeśli / w przeciwnym razie",
@@ -117,6 +118,10 @@
           "channels": "Wyślij również do",
           "title": "Tytuł",
           "message": "Wiadomość",
+          "aiTitlePlaceholder": "Nazwa automatyzacji i host",
+          "runbook": "Runbook",
+          "runbookPlaceholder": "np. Sprawdź, co zajmuje miejsce na dysku. Przeanalizuj obrazy Docker, dzienniki systemowe i pamięć podręczną pakietów, a następnie wskaż, co można bezpiecznie usunąć.",
+          "autonomy": "Co może robić AI",
           "snippet": "Fragment",
           "seconds": "Sekundy",
           "conditionLeftPlaceholder": "Wartość do sprawdzenia",
@@ -125,6 +130,7 @@
           "variableValue": "Wartość",
           "elevated": "Uruchom z sudo",
           "onError": "W przypadku błędu",
+          "timeout": "Limit czasu (sekundy)",
           "allowPrivateNetwork": "Zezwól na adresy sieci lokalnej",
           "allowPrivateNetworkHint": "Wymagane dla usługi self-hosted w Twojej sieci LAN. Domyślnie wyłączone, aby zapobiegać żądaniom do adresów wewnętrznych.",
           "interface": "Interfejs"
@@ -132,6 +138,10 @@
         "onError": {
           "stop": "Zatrzymaj wykonanie",
           "continue": "Kontynuuj"
+        },
+        "autonomy": {
+          "report": "Tylko raport",
+          "propose": "Zaproponuj poprawkę do zatwierdzenia"
         },
         "needsPlugin": "Wymaga {{plugin}}",
         "offBadge": "Wyłączone",
@@ -212,5 +222,9 @@
       "label": "Zawsze pokazuj przyciski",
       "description": "Utrzymuj przyciski testu, uruchomienia i usuwania widoczne pod każdą automatyzacją. Wyłącz, aby pokazywać je tylko po najechaniu kursorem."
     }
+  },
+  "plugin": {
+    "name": "Automatyzacje",
+    "description": "Uruchamiaj kroki na swoich hostach według harmonogramu lub w odpowiedzi na zdarzenia."
   }
 }

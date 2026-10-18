@@ -87,6 +87,7 @@
           "docker": "Pārvaldīt konteineri",
           "tunnel": "Pārvaldīt tuneli",
           "wol": "Pamodināt mezglu",
+          "ai_task": "Jautāt AI",
           "wait": "Gaidīt",
           "set_var": "Iestatīt mainīgo",
           "if": "Ja / citādi",
@@ -117,6 +118,10 @@
           "channels": "Arī nosūtīt uz",
           "title": "Virsraksts",
           "message": "Ziņa",
+          "aiTitlePlaceholder": "Automatizācijas nosaukums un resursdators",
+          "runbook": "Darbības grāmata",
+          "runbookPlaceholder": "piem., Uzzināt, kas aizpilda disku. Pārbaudīt Docker attēlus, žurnāla failus un pakotņu kešatmiņu, norādot, ko var droši iztīrīt.",
+          "autonomy": "Ko AI var darīt",
           "snippet": "Fragment",
           "seconds": "Sekundes",
           "conditionLeftPlaceholder": "Pārbaudāmā vērtība",
@@ -125,6 +130,7 @@
           "variableValue": "Vērtība",
           "elevated": "Palaist ar sudo",
           "onError": "Ja tas neizdodas",
+          "timeout": "Laika limits (sekundes)",
           "allowPrivateNetwork": "Atļaut lokālā tīkla adreses",
           "allowPrivateNetworkHint": "Nepieciešams pašhostētai pakalpojumu jūsu LAN. Noklusējuma režīmā izslēgts, lai novērstu pieprasījumus iekšējām adresēm.",
           "interface": "Saskarne"
@@ -132,6 +138,10 @@
         "onError": {
           "stop": "Apturēt izpildi",
           "continue": "Turpināt"
+        },
+        "autonomy": {
+          "report": "Tikai ziņošana",
+          "propose": "Ieteikt labojumu apstiprināšanai"
         },
         "needsPlugin": "Nepieciešams {{plugin}}",
         "offBadge": "Izslēgts",
@@ -211,5 +221,9 @@
       "label": "Vienmēr rādīt pogas",
       "description": "Turiet testēšanas, izpildes un dzēšanas pogas zem katras automatizācijas redzamas. Izslēdziet, lai tās rādītu tikai, novietojot peli virs tām."
     }
+  },
+  "plugin": {
+    "name": "Automatizācijas",
+    "description": "Izpildiet darbības savos serveros pēc grafika vai notikuma iestāšanās."
   }
 }

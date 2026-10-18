@@ -87,6 +87,7 @@
           "docker": "Controlar un contenidor",
           "tunnel": "Controlar un túnel",
           "wol": "Encendre un host",
+          "ai_task": "Demana a la IA",
           "wait": "Esperar",
           "set_var": "Establir una variable",
           "if": "Si / altrament",
@@ -117,6 +118,10 @@
           "channels": "Enviar també a",
           "title": "Títol",
           "message": "Missatge",
+          "aiTitlePlaceholder": "El nom de l'automatització i l'amfitrió",
+          "runbook": "Llibre de procediments",
+          "runbookPlaceholder": "p. ex., Descobreix què està omplint el disc. Examina les imatges de Docker, els registres del journal i les memòries cau de paquets, i indica què es pot netejar amb seguretat.",
+          "autonomy": "Què pot fer la IA",
           "snippet": "Fragment",
           "seconds": "Segons",
           "conditionLeftPlaceholder": "Valor a comprovar",
@@ -125,6 +130,7 @@
           "variableValue": "Valor",
           "elevated": "Executar amb sudo",
           "onError": "Si això falla",
+          "timeout": "Temps d'espera (segons)",
           "allowPrivateNetwork": "Permetre adreces de xarxa local",
           "allowPrivateNetworkHint": "Necessari per a un servei allotjat al vostre LAN. Desactivat per defecte per evitar sol·licituds a adreces internes.",
           "interface": "Interfície"
@@ -132,6 +138,10 @@
         "onError": {
           "stop": "Aturar l'execució",
           "continue": "Continuar"
+        },
+        "autonomy": {
+          "report": "Només informar",
+          "propose": "Proposa una solució per a la seva aprovació"
         },
         "needsPlugin": "Requereix {{plugin}}",
         "offBadge": "Desactivat",
@@ -211,5 +221,9 @@
       "label": "Mostrar sempre els botons",
       "description": "Manté visibles els botons de prova, execució i eliminació sota cada automatització. Desactiveu-lo per mostrar-los només en passar el cursor per sobre."
     }
+  },
+  "plugin": {
+    "name": "Automatitzacions",
+    "description": "Executa passos als teus amfitrions segons un horari o quan es produeixi un esdeveniment."
   }
 }

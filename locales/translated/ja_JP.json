@@ -87,6 +87,7 @@
           "docker": "コンテナを制御する",
           "tunnel": "トンネルを制御する",
           "wol": "ホストを起動する",
+          "ai_task": "AI に質問する",
           "wait": "待機する",
           "set_var": "変数を設定する",
           "if": "条件分岐",
@@ -117,6 +118,10 @@
           "channels": "同時に送信先",
           "title": "タイトル",
           "message": "メッセージ",
+          "aiTitlePlaceholder": "自動化の名前とホスト",
+          "runbook": "ランブック",
+          "runbookPlaceholder": "例: ディスクを占有しているものを特定する。Docker イメージ、ジャーナルログ、パッケージキャッシュを確認し、安全に削除できるものを示す。",
+          "autonomy": "AI が実行できる操作",
           "snippet": "スニペット",
           "seconds": "秒",
           "conditionLeftPlaceholder": "確認する値",
@@ -125,6 +130,7 @@
           "variableValue": "値",
           "elevated": "sudo で実行する",
           "onError": "失敗した場合",
+          "timeout": "タイムアウト（秒）",
           "allowPrivateNetwork": "ローカルネットワークアドレスを許可する",
           "allowPrivateNetworkHint": "LAN 上のセルフホストサービスに必要です。内部アドレスへのリクエストを防ぐため、デフォルトでは無効です。",
           "interface": "インターフェース"
@@ -132,6 +138,10 @@
         "onError": {
           "stop": "実行を停止する",
           "continue": "続行する"
+        },
+        "autonomy": {
+          "report": "レポートのみ",
+          "propose": "承認用の修正を提案"
         },
         "needsPlugin": "{{plugin}} が必要です",
         "offBadge": "オフ",
@@ -209,5 +219,9 @@
       "label": "ボタンを常に表示",
       "description": "各オートメーションの下のテスト、実行、削除ボタンを常に表示します。オフにすると、ホバー時のみ表示されます。"
     }
+  },
+  "plugin": {
+    "name": "自動化",
+    "description": "スケジュール設定や特定のイベント発生時に、ホストでステップを実行します。"
   }
 }

@@ -87,6 +87,7 @@
           "docker": "Điều khiển một container",
           "tunnel": "Điều khiển một tunnel",
           "wol": "Đánh thức một host",
+          "ai_task": "Hỏi AI",
           "wait": "Chờ đợi",
           "set_var": "Đặt một biến",
           "if": "Nếu / ngược lại",
@@ -117,6 +118,10 @@
           "channels": "Đồng thời gửi đến",
           "title": "Tiêu đề",
           "message": "Tin nhắn",
+          "aiTitlePlaceholder": "Tên tự động hóa và máy chủ",
+          "runbook": "Sổ tay vận hành",
+          "runbookPlaceholder": "Ví dụ: Tìm hiểu nguyên nhân khiến ổ đĩa đầy. Kiểm tra hình ảnh Docker, nhật ký journal và bộ nhớ đệm gói, sau đó chỉ ra những gì có thể dọn dẹp an toàn.",
+          "autonomy": "Những gì AI có thể thực hiện",
           "snippet": "Snippet",
           "seconds": "Giây",
           "conditionLeftPlaceholder": "Giá trị cần kiểm tra",
@@ -125,6 +130,7 @@
           "variableValue": "Giá trị",
           "elevated": "Chạy với sudo",
           "onError": "Nếu thất bại",
+          "timeout": "Thời gian chờ (giây)",
           "allowPrivateNetwork": "Cho phép địa chỉ mạng nội bộ",
           "allowPrivateNetworkHint": "Cần thiết cho dịch vụ tự lưu trữ trên mạng LAN của bạn. Tắt mặc định để ngăn các yêu cầu đến địa chỉ nội bộ.",
           "interface": "Giao diện"
@@ -132,6 +138,10 @@
         "onError": {
           "stop": "Dừng quá trình chạy",
           "continue": "Tiếp tục"
+        },
+        "autonomy": {
+          "report": "Chỉ báo cáo",
+          "propose": "Đề xuất giải pháp để phê duyệt"
         },
         "needsPlugin": "Cần {{plugin}}",
         "offBadge": "Tắt",
@@ -209,5 +219,9 @@
       "label": "Luôn hiển thị nút",
       "description": "Giữ các nút kiểm tra, chạy và xóa dưới mỗi tự động hóa luôn hiển thị. Tắt để chỉ hiển thị chúng khi di chuột qua."
     }
+  },
+  "plugin": {
+    "name": "Tự động hóa",
+    "description": "Chạy các bước trên máy chủ của bạn theo lịch trình hoặc khi có sự kiện xảy ra."
   }
 }

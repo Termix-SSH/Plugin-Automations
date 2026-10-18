@@ -87,6 +87,7 @@
           "docker": "Controlar un contenedor",
           "tunnel": "Controlar un túnel",
           "wol": "Encender un host",
+          "ai_task": "Preguntar a la IA",
           "wait": "Esperar",
           "set_var": "Establecer una variable",
           "if": "Si / de lo contrario",
@@ -117,6 +118,10 @@
           "channels": "Enviar también a",
           "title": "Título",
           "message": "Mensaje",
+          "aiTitlePlaceholder": "El nombre de la automatización y el host",
+          "runbook": "Libro de procedimientos",
+          "runbookPlaceholder": "p. ej., Averigua qué está llenando el disco. Examina las imágenes de Docker, los registros del sistema y las cachés de paquetes, e indica qué se puede limpiar con seguridad.",
+          "autonomy": "Qué puede hacer la IA",
           "snippet": "Fragmento",
           "seconds": "Segundos",
           "conditionLeftPlaceholder": "Valor a verificar",
@@ -125,6 +130,7 @@
           "variableValue": "Valor",
           "elevated": "Ejecutar con sudo",
           "onError": "Si esto falla",
+          "timeout": "Tiempo de espera (segundos)",
           "allowPrivateNetwork": "Permitir direcciones de red local",
           "allowPrivateNetworkHint": "Necesario para un servicio autoalojado en tu LAN. Desactivado por defecto para evitar solicitudes a direcciones internas.",
           "interface": "Interfaz"
@@ -132,6 +138,10 @@
         "onError": {
           "stop": "Detener la ejecución",
           "continue": "Continuar"
+        },
+        "autonomy": {
+          "report": "Solo informe",
+          "propose": "Proponer una corrección para su aprobación"
         },
         "needsPlugin": "Requiere {{plugin}}",
         "offBadge": "Desactivado",
@@ -211,5 +221,9 @@
       "label": "Mostrar siempre los botones",
       "description": "Mantén visibles los botones de probar, ejecutar y eliminar debajo de cada automatización. Desactívalo para mostrarlos solo al pasar el cursor por encima."
     }
+  },
+  "plugin": {
+    "name": "Automatizaciones",
+    "description": "Ejecuta pasos en tus hosts según un horario o cuando ocurra un evento."
   }
 }

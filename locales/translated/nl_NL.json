@@ -87,6 +87,7 @@
           "docker": "Container beheren",
           "tunnel": "Tunnel beheren",
           "wol": "Host activeren",
+          "ai_task": "Vraag AI",
           "wait": "Wachten",
           "set_var": "Variabele instellen",
           "if": "Als / anders",
@@ -117,6 +118,10 @@
           "channels": "Ook verzenden naar",
           "title": "Titel",
           "message": "Bericht",
+          "aiTitlePlaceholder": "De automatiseringsnaam en host",
+          "runbook": "Handleiding",
+          "runbookPlaceholder": "bijv. Ontdek wat de schijf vult. Bekijk Docker-images, journaallogboeken en pakketcache, en geef aan wat veilig opgeruimd kan worden.",
+          "autonomy": "Wat de AI mag doen",
           "snippet": "Snippet",
           "seconds": "Seconden",
           "conditionLeftPlaceholder": "Waarde om te controleren",
@@ -125,6 +130,7 @@
           "variableValue": "Waarde",
           "elevated": "Uitvoeren met sudo",
           "onError": "Als dit mislukt",
+          "timeout": "Time-out (seconden)",
           "allowPrivateNetwork": "Lokaal netwerktoestemming",
           "allowPrivateNetworkHint": "Vereist voor een zelfgehoste service op uw LAN. Standaard uitgeschakeld om verzoeken naar interne adressen te voorkomen.",
           "interface": "Interface"
@@ -132,6 +138,10 @@
         "onError": {
           "stop": "Uitvoering stoppen",
           "continue": "Doorgaan"
+        },
+        "autonomy": {
+          "report": "Alleen rapporteren",
+          "propose": "Stel een oplossing voor ter goedkeuring"
         },
         "needsPlugin": "Vereist {{plugin}}",
         "offBadge": "Uit",
@@ -210,5 +220,9 @@
       "label": "Knoppen altijd tonen",
       "description": "Houd de knoppen voor testen, uitvoeren en verwijderen onder elke automatisering zichtbaar. Zet dit uit om ze alleen bij hover te tonen."
     }
+  },
+  "plugin": {
+    "name": "Automatiseringen",
+    "description": "Voer stappen uit op je hosts volgens een schema of wanneer er iets gebeurt."
   }
 }

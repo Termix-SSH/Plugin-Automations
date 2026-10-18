@@ -87,6 +87,7 @@
           "docker": "Control a container",
           "tunnel": "Control a tunnel",
           "wol": "Wake a host",
+          "ai_task": "Ask AI",
           "wait": "Wait",
           "set_var": "Set a variable",
           "if": "If / otherwise",
@@ -117,6 +118,10 @@
           "channels": "Also send to",
           "title": "Title",
           "message": "Message",
+          "aiTitlePlaceholder": "The automation name and host",
+          "runbook": "Runbook",
+          "runbookPlaceholder": "e.g., Find out what is filling the disk. Look at Docker images, journal logs and package caches, and say what is safe to clean up.",
+          "autonomy": "What the AI may do",
           "snippet": "Snippet",
           "seconds": "Seconds",
           "conditionLeftPlaceholder": "Value to check",
@@ -125,6 +130,7 @@
           "variableValue": "Value",
           "elevated": "Run with sudo",
           "onError": "If this fails",
+          "timeout": "Timeout (seconds)",
           "allowPrivateNetwork": "Allow local network addresses",
           "allowPrivateNetworkHint": "Needed for a self-hosted service on your LAN. Off by default to prevent requests to internal addresses.",
           "interface": "Interface"
@@ -132,6 +138,10 @@
         "onError": {
           "stop": "Stop the run",
           "continue": "Carry on"
+        },
+        "autonomy": {
+          "report": "Report only",
+          "propose": "Propose a fix for approval"
         },
         "needsPlugin": "Needs {{plugin}}",
         "offBadge": "Off",
@@ -210,5 +220,9 @@
       "label": "Always show buttons",
       "description": "Keep the test, run and delete buttons under each automation visible. Turn off to show them only on hover."
     }
+  },
+  "plugin": {
+    "name": "Automations",
+    "description": "Run steps on your hosts on a schedule or when something happens."
   }
 }

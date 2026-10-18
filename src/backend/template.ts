@@ -24,14 +24,23 @@ export interface TemplateContext {
 
 const TOKEN = /\{\{\s*([a-zA-Z0-9_.-]+)\s*\}\}/g;
 
+/**
+ * Walks a dotted path. A key that itself has dots in it, like the AI step's
+ * "ai.status" variable, matches as a whole before the path is split further.
+ */
 function readPath(context: TemplateContext, path: string): unknown {
   const parts = path.split(".");
   let current: unknown = context;
 
-  for (const part of parts) {
+  for (let i = 0; i < parts.length; i++) {
     if (current === null || current === undefined) return undefined;
     if (typeof current !== "object") return undefined;
-    current = (current as Record<string, unknown>)[part];
+    const record = current as Record<string, unknown>;
+    const rest = parts.slice(i).join(".");
+    if (i < parts.length - 1 && Object.hasOwn(record, rest)) {
+      return record[rest];
+    }
+    current = record[parts[i]];
   }
   return current;
 }

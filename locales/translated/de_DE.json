@@ -87,6 +87,7 @@
           "docker": "Container steuern",
           "tunnel": "Tunnel steuern",
           "wol": "Host aufwecken",
+          "ai_task": "AI befragen",
           "wait": "Warten",
           "set_var": "Variable setzen",
           "if": "Wenn / sonst",
@@ -117,6 +118,10 @@
           "channels": "Auch senden an",
           "title": "Titel",
           "message": "Nachricht",
+          "aiTitlePlaceholder": "Der Name der Automatisierung und der Host",
+          "runbook": "Runbook",
+          "runbookPlaceholder": "z. B. „Ermittle, was die Festplatte füllt. Untersuche Docker-Images, Journal-Logs und Paket-Caches und gib an, was sicher bereinigt werden kann.“",
+          "autonomy": "Was die KI tun darf",
           "snippet": "Snippet",
           "seconds": "Sekunden",
           "conditionLeftPlaceholder": "Zu prüfender Wert",
@@ -125,6 +130,7 @@
           "variableValue": "Wert",
           "elevated": "Mit sudo ausführen",
           "onError": "Bei Fehler",
+          "timeout": "Zeitlimit (Sekunden)",
           "allowPrivateNetwork": "Lokale Netzwerkadressen zulassen",
           "allowPrivateNetworkHint": "Erforderlich für einen selbst gehosteten Dienst in Ihrem LAN. Standardmäßig deaktiviert, um Anfragen an interne Adressen zu verhindern.",
           "interface": "Schnittstelle"
@@ -132,6 +138,10 @@
         "onError": {
           "stop": "Ausführung stoppen",
           "continue": "Fortfahren"
+        },
+        "autonomy": {
+          "report": "Nur Bericht",
+          "propose": "Lösung zur Genehmigung vorschlagen"
         },
         "needsPlugin": "Benötigt {{plugin}}",
         "offBadge": "Aus",
@@ -210,5 +220,9 @@
       "label": "Buttons immer anzeigen",
       "description": "Halten Sie die Buttons zum Testen, Ausführen und Löschen unter jeder Automatisierung sichtbar. Deaktivieren, um sie nur beim Hover anzuzeigen."
     }
+  },
+  "plugin": {
+    "name": "Automatisierungen",
+    "description": "Führe Schritte auf deinen Hosts nach Zeitplan oder bei bestimmten Ereignissen aus."
   }
 }

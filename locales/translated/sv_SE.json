@@ -87,6 +87,7 @@
           "docker": "Styr en container",
           "tunnel": "Styr en tunnel",
           "wol": "Väck en host",
+          "ai_task": "Fråga AI",
           "wait": "Vänta",
           "set_var": "Sätt en variabel",
           "if": "Om / annars",
@@ -117,6 +118,10 @@
           "channels": "Skicka även till",
           "title": "Titel",
           "message": "Meddelande",
+          "aiTitlePlaceholder": "Automatiseringens namn och värd",
+          "runbook": "Handbok",
+          "runbookPlaceholder": "t.ex. Ta reda på vad som fyller upp disken. Titta på Docker-bilder, journalloggar och paketcacher, och ange vad som är säkert att rensa.",
+          "autonomy": "Vad AI:n får göra",
           "snippet": "Snippet",
           "seconds": "Sekunder",
           "conditionLeftPlaceholder": "Värde att kontrollera",
@@ -125,6 +130,7 @@
           "variableValue": "Värde",
           "elevated": "Kör med sudo",
           "onError": "Om detta misslyckas",
+          "timeout": "Timeout (sekunder)",
           "allowPrivateNetwork": "Tillåt lokala nätverksadresser",
           "allowPrivateNetworkHint": "Krävs för en självhostad tjänst på ditt LAN. Avstängt som standard för att förhindra förfrågningar till interna adresser.",
           "interface": "Gränssnitt"
@@ -132,6 +138,10 @@
         "onError": {
           "stop": "Stoppa körningen",
           "continue": "Fortsätt"
+        },
+        "autonomy": {
+          "report": "Endast rapport",
+          "propose": "Föreslå en åtgärd för godkännande"
         },
         "needsPlugin": "Kräver {{plugin}}",
         "offBadge": "Av",
@@ -210,5 +220,9 @@
       "label": "Visa alltid knappar",
       "description": "Behåll knapparna för test, kör och ta bort under varje automatisering synliga. Stäng av för att endast visa dem vid hovring."
     }
+  },
+  "plugin": {
+    "name": "Automatiseringar",
+    "description": "Kör steg på dina värdar enligt schema eller när något händer."
   }
 }

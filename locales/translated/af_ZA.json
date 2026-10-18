@@ -87,6 +87,7 @@
           "docker": "Beheer 'n houer",
           "tunnel": "Beheer 'n tunnel",
           "wol": "Weck 'n gasheer",
+          "ai_task": "Vrae AI",
           "wait": "Wag",
           "set_var": "Stel 'n veranderlike",
           "if": "As / anders",
@@ -117,6 +118,10 @@
           "channels": "Stuur ook na",
           "title": "Titel",
           "message": "Boodskap",
+          "aiTitlePlaceholder": "Die outvoeringnaam en gasheer",
+          "runbook": "Uitvoeringsgids",
+          "runbookPlaceholder": "bv. Vind uit wat die skyf vul. Kyk na Docker-beelde, joernaallogboeke en pakkasjebewaarplekke, en sê wat veilig is om op te ruim.",
+          "autonomy": "Wat die AI mag doen",
           "snippet": "Snippet",
           "seconds": "Sekondes",
           "conditionLeftPlaceholder": "Waarde om te kontroleer",
@@ -125,6 +130,7 @@
           "variableValue": "Waarde",
           "elevated": "Voer uit met sudo",
           "onError": "As dit misluk",
+          "timeout": "Tydverstryking (sekondes)",
           "allowPrivateNetwork": "Laat plaaslike netwerkadresse toe",
           "allowPrivateNetworkHint": "Nodig vir 'n self-geherbergde diens op jou LAN. Standaard af om versoeke na interne adresse te voorkom.",
           "interface": "Koppelvlak"
@@ -132,6 +138,10 @@
         "onError": {
           "stop": "Stop die uitvoering",
           "continue": "Gaan voort"
+        },
+        "autonomy": {
+          "report": "Slegs verslag",
+          "propose": "Stel 'n oplossing voor vir goedkeuring"
         },
         "needsPlugin": "Benodig {{plugin}}",
         "offBadge": "Af",
@@ -210,5 +220,9 @@
       "label": "Wys altyd knoppies",
       "description": "Hou die toets, uitvoer en vee uit-knoppies onder elke outomatisering sigbaar. Skakel af om dit slegs by hover te wys."
     }
+  },
+  "plugin": {
+    "name": "Outomatiserings",
+    "description": "Voer stappe uit op jou gasheer volgens 'n skedule of wanneer iets gebeur."
   }
 }

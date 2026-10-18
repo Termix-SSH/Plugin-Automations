@@ -87,6 +87,7 @@
           "docker": "Juhi konteinerit",
           "tunnel": "Juhi tunnelit",
           "wol": "Ärata host",
+          "ai_task": "Küsi AI-lt",
           "wait": "Oota",
           "set_var": "Määra muutuja",
           "if": "Kui / muidu",
@@ -117,6 +118,10 @@
           "channels": "Saada ka",
           "title": "Pealkiri",
           "message": "Sõnum",
+          "aiTitlePlaceholder": "Automatsiooni nimi ja host",
+          "runbook": "Juhend",
+          "runbookPlaceholder": "nt. Tuvasta, mis täidab ketta. Vaata Dockeri pilte, süsteemilogisid ja pakkide vahemälu ning ütle, mida on ohutu puhastada.",
+          "autonomy": "Mida AI tohib teha",
           "snippet": "Koodilõik",
           "seconds": "Sekundit",
           "conditionLeftPlaceholder": "Kontrollitav väärtus",
@@ -125,6 +130,7 @@
           "variableValue": "Väärtus",
           "elevated": "Käivita sudo-ga",
           "onError": "Kui see ebaõnnestub",
+          "timeout": "Aegumine (sekundites)",
           "allowPrivateNetwork": "Luba kohaliku võrgu aadressid",
           "allowPrivateNetworkHint": "Vajalik oma LAN-is asuva isehostitava teenuse jaoks. Vaikimisi väljas, et vältida päringuid sisemistele aadressidele.",
           "interface": "Liides"
@@ -132,6 +138,10 @@
         "onError": {
           "stop": "Peata käivitamine",
           "continue": "Jätka"
+        },
+        "autonomy": {
+          "report": "Ainult aruanne",
+          "propose": "Ettepanek paranduseks kinnitamiseks"
         },
         "needsPlugin": "Nõuab {{plugin}}",
         "offBadge": "Väljas",
@@ -210,5 +220,9 @@
       "label": "Näita nuppe alati",
       "description": "Hoia iga automatiseerimise all olevad testimise, käivitamise ja kustutamise nupud nähtaval. Lülita välja, et näidata neid ainult hiirekursori kohal hõljutamisel."
     }
+  },
+  "plugin": {
+    "name": "Automatsioonid",
+    "description": "Käivita samme oma hostidel ajakava alusel või kui midagi juhtub."
   }
 }

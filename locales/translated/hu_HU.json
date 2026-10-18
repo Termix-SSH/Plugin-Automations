@@ -87,6 +87,7 @@
           "docker": "Konténer kezelése",
           "tunnel": "Alagút kezelése",
           "wol": "Host ébresztése",
+          "ai_task": "AI lekérdezés",
           "wait": "Várakozás",
           "set_var": "Változó beállítása",
           "if": "Ha / egyébként",
@@ -117,6 +118,10 @@
           "channels": "Küldés ide is",
           "title": "Cím",
           "message": "Üzenet",
+          "aiTitlePlaceholder": "Az automatizálás neve és a host",
+          "runbook": "Futtatási kézikönyv",
+          "runbookPlaceholder": "pl. Mi tölti meg a lemezt? Vizsgálja meg a Docker-képeket, a naplófájlokat és a csomaggyűjtőket, és jelezze, mit lehet biztonságosan törölni.",
+          "autonomy": "Mit tehet az AI",
           "snippet": "Snippet",
           "seconds": "Másodperc",
           "conditionLeftPlaceholder": "Ellenőrzendő érték",
@@ -125,6 +130,7 @@
           "variableValue": "Érték",
           "elevated": "Futtatás sudo-val",
           "onError": "Ha ez sikertelen",
+          "timeout": "Időtartam (másodperc)",
           "allowPrivateNetwork": "Helyi hálózati címek engedélyezése",
           "allowPrivateNetworkHint": "Szükséges egy saját LAN-on futó szolgáltatáshoz. Alapértelmezetten ki van kapcsolva a belső címek felé irányuló kérések megakadályozása érdekében.",
           "interface": "Felület"
@@ -132,6 +138,10 @@
         "onError": {
           "stop": "Futtatás megállítása",
           "continue": "Folytatás"
+        },
+        "autonomy": {
+          "report": "Csak jelentés",
+          "propose": "Javasljon javítást jóváhagyásra"
         },
         "needsPlugin": "Szükséges: {{plugin}}",
         "offBadge": "Ki",
@@ -210,5 +220,9 @@
       "label": "Gombok mindig láthatóak",
       "description": "Tartsa láthatóan a teszt, futtatás és törlés gombokat minden automatizálás alatt. Kapcsolja ki, ha csak rámutatáskor szeretné megjeleníteni őket."
     }
+  },
+  "plugin": {
+    "name": "Automatizálások",
+    "description": "Futtass lépéseket a hosztjaidon időzítve vagy események bekövetkeztekor."
   }
 }

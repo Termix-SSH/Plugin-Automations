@@ -12,7 +12,7 @@ import {
   SelectValue,
 } from "@termix-ssh/plugin-sdk/ui";
 import { ChevronDown, ChevronUp, Trash2 } from "lucide-react";
-import type { Step, StepType } from "../../types";
+import { DEFAULT_STEP_TIMEOUT_MS, type Step, type StepType } from "../../types";
 import { HostSelectorField } from "./HostSelectorField";
 import {
   missingStepProvider,
@@ -27,6 +27,7 @@ const STEP_TYPES: StepType[] = [
   "docker",
   "tunnel",
   "wol",
+  "ai_task",
   "wait",
   "set_var",
   "if",
@@ -408,6 +409,61 @@ export function StepBlock({
           </Field>
         )}
 
+        {step.type === "ai_task" && (
+          <>
+            <Field label={t(`${base}.fields.title`)}>
+              <Input
+                className="h-8 rounded-none border-border"
+                placeholder={t(`${base}.fields.aiTitlePlaceholder`)}
+                value={step.title ?? ""}
+                onChange={(e) =>
+                  patch({ title: e.target.value } as Partial<Step>)
+                }
+              />
+            </Field>
+            <Field label={t(`${base}.fields.runbook`)}>
+              <Textarea
+                className="rounded-none border-border min-h-24"
+                placeholder={t(`${base}.fields.runbookPlaceholder`)}
+                value={step.runbook ?? ""}
+                onChange={(e) =>
+                  patch({ runbook: e.target.value } as Partial<Step>)
+                }
+              />
+            </Field>
+            <Field label={t(`${base}.fields.autonomy`)}>
+              <Select
+                value={step.autonomy ?? "report"}
+                onValueChange={(value) =>
+                  patch({ autonomy: value } as Partial<Step>)
+                }
+              >
+                <SelectTrigger
+                  size="sm"
+                  className="min-w-0 w-full rounded-none border-border"
+                >
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="report">
+                    {t(`${base}.autonomy.report`)}
+                  </SelectItem>
+                  <SelectItem value="propose">
+                    {t(`${base}.autonomy.propose`)}
+                  </SelectItem>
+                </SelectContent>
+              </Select>
+            </Field>
+            <HostSelectorField
+              value={step.hostSelector}
+              options={options}
+              onChange={(hostSelector) =>
+                patch({ hostSelector } as Partial<Step>)
+              }
+            />
+          </>
+        )}
+
         {step.type === "wait" && (
           <Field label={t(`${base}.fields.seconds`)}>
             <Input
@@ -493,6 +549,27 @@ export function StepBlock({
               depth + 1,
             )}
           </div>
+        )}
+
+        {(step.type === "run_command" ||
+          step.type === "run_snippet" ||
+          step.type === "http") && (
+          <Field label={t(`${base}.fields.timeout`)}>
+            <Input
+              type="number"
+              min={1}
+              className="h-8 w-32 rounded-none border-border"
+              placeholder={String(DEFAULT_STEP_TIMEOUT_MS / 1000)}
+              value={step.timeoutMs ? step.timeoutMs / 1000 : ""}
+              onChange={(e) => {
+                const seconds = Number(e.target.value);
+                patch({
+                  timeoutMs:
+                    seconds > 0 ? Math.round(seconds * 1000) : undefined,
+                } as Partial<Step>);
+              }}
+            />
+          </Field>
         )}
 
         {step.type !== "stop" && (
@@ -582,6 +659,11 @@ function changeStepType(step: Step, type: StepType): Step {
     case "tunnel":
       next.action = "connect";
       next.tunnelName = "";
+      break;
+    case "ai_task":
+      next.runbook = "";
+      next.autonomy = "report";
+      next.hostSelector = { kind: "trigger" };
       break;
     case "wait":
       next.seconds = 30;

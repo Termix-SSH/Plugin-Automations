@@ -87,6 +87,7 @@
           "docker": "Upravljaj kontejnerom",
           "tunnel": "Upravljaj tunelom",
           "wol": "Pokreni host",
+          "ai_task": "Pitaj AI",
           "wait": "Čekaj",
           "set_var": "Postavi varijablu",
           "if": "Ako / inače",
@@ -117,6 +118,10 @@
           "channels": "Također pošalji na",
           "title": "Naslov",
           "message": "Poruka",
+          "aiTitlePlaceholder": "Naziv automatizacije i host",
+          "runbook": "Priručnik za postupke",
+          "runbookPlaceholder": "npr. Pronađi što puni disk. Pogledaj Docker slike, dnevnike sustava i predmemorije paketa, te reci što je sigurno za čišćenje.",
+          "autonomy": "Što AI smije raditi",
           "snippet": "Isječak",
           "seconds": "Sekunde",
           "conditionLeftPlaceholder": "Vrijednost za provjeru",
@@ -125,6 +130,7 @@
           "variableValue": "Vrijednost",
           "elevated": "Pokreni s sudo",
           "onError": "Ako ovo ne uspije",
+          "timeout": "Vrijeme čekanja (sekunde)",
           "allowPrivateNetwork": "Dopusti adrese lokalne mreže",
           "allowPrivateNetworkHint": "Potrebno za uslugu na vašem LAN-u. Isključeno prema zadanim postavkama kako bi se spriječile zahtjeve za interne adrese.",
           "interface": "Sučelje"
@@ -132,6 +138,10 @@
         "onError": {
           "stop": "Zaustavi izvršenje",
           "continue": "Nastavi"
+        },
+        "autonomy": {
+          "report": "Samo izvještaj",
+          "propose": "Predloži popravak na odobrenje"
         },
         "needsPlugin": "Potreban je {{plugin}}",
         "offBadge": "Isključeno",
@@ -211,5 +221,9 @@
       "label": "Uvijek prikaži gumbe",
       "description": "Držite gumbe za testiranje, pokretanje i brisanje ispod svake automatizacije vidljivima. Isključite da bi se prikazivali samo pri prelasku mišem."
     }
+  },
+  "plugin": {
+    "name": "Automatizacije",
+    "description": "Pokreći korake na svojim hostovima prema rasporedu ili kada se nešto dogodi."
   }
 }

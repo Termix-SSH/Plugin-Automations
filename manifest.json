@@ -1,7 +1,7 @@
 {
   "id": "automations",
   "name": "Automations",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Run steps on your hosts on a schedule or when something happens.",
   "author": {
     "name": "Termix"
@@ -77,6 +77,11 @@
     },
     {
       "service": "wake-on-lan.send",
+      "versionRange": "^1.0.0",
+      "optional": true
+    },
+    {
+      "service": "ai.tasks",
       "versionRange": "^1.0.0",
       "optional": true
     }

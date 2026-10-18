@@ -87,6 +87,7 @@
           "docker": "Ovládať kontajner",
           "tunnel": "Ovládať tunel",
           "wol": "Prebudiť hostiteľa",
+          "ai_task": "Opýtať sa AI",
           "wait": "Čakať",
           "set_var": "Nastaviť premennú",
           "if": "Ak / inak",
@@ -117,6 +118,10 @@
           "channels": "Tiež poslať do",
           "title": "Názov",
           "message": "Správa",
+          "aiTitlePlaceholder": "Názov automatizácie a hostiteľ",
+          "runbook": "Príručka",
+          "runbookPlaceholder": "napr. Zistiť, čo zapĺňa disk. Pozrieť sa na Docker obrazy, systémové denníky a vyrovnávacie pamäte balíkov a uviesť, čo je bezpečné vymazať.",
+          "autonomy": "Čo môže AI robiť",
           "snippet": "Úryvok",
           "seconds": "Sekundy",
           "conditionLeftPlaceholder": "Hodnota na overenie",
@@ -125,6 +130,7 @@
           "variableValue": "Hodnota",
           "elevated": "Spustiť s sudo",
           "onError": "Ak to zlyhá",
+          "timeout": "Časový limit (sekundy)",
           "allowPrivateNetwork": "Povoliť adresy lokálnej siete",
           "allowPrivateNetworkHint": "Potrebné pre vlastnú službu vo vašej LAN. Predvolene vypnuté, aby sa zabránilo požiadavkám na interné adresy.",
           "interface": "Rozhranie"
@@ -132,6 +138,10 @@
         "onError": {
           "stop": "Zastaviť spustenie",
           "continue": "Pokračovať"
+        },
+        "autonomy": {
+          "report": "Iba report",
+          "propose": "Navrhnúť opravu na schválenie"
         },
         "needsPlugin": "Vyžaduje {{plugin}}",
         "offBadge": "Vypnuté",
@@ -212,5 +222,9 @@
       "label": "Vždy zobrazovať tlačidlá",
       "description": "Udržujte tlačidlá na testovanie, spúšťanie a odstraňovanie pod každou automatizáciou viditeľné. Vypnutím sa zobrazia iba pri najetí myšou."
     }
+  },
+  "plugin": {
+    "name": "Automatizácie",
+    "description": "Spúšťajte kroky na vašich hostiteľoch podľa harmonogramu alebo pri výskyte udalosti."
   }
 }

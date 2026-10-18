@@ -59,6 +59,10 @@ function requiredProviders(
         case "wol":
           needed.add("wake-on-lan");
           break;
+        case "ai_task":
+          needed.add("ai");
+          selector(step.hostSelector);
+          break;
         case "if":
           walk(step.then);
           walk(step.else);

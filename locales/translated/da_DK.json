@@ -87,6 +87,7 @@
           "docker": "Styr en container",
           "tunnel": "Styr en tunnel",
           "wol": "Væk en host",
+          "ai_task": "Spørg AI",
           "wait": "Vent",
           "set_var": "Sæt en variabel",
           "if": "Hvis / ellers",
@@ -117,6 +118,10 @@
           "channels": "Send også til",
           "title": "Titel",
           "message": "Besked",
+          "aiTitlePlaceholder": "Automatiseringens navn og vært",
+          "runbook": "Runbook",
+          "runbookPlaceholder": "f.eks. Find ud af, hvad der fylder disken. Kig på Docker-billeder, journallogfiler og pakke-caches, og sig, hvad der er sikkert at rydde op.",
+          "autonomy": "Hvad AI må gøre",
           "snippet": "Snippet",
           "seconds": "Sekunder",
           "conditionLeftPlaceholder": "Værdi at tjekke",
@@ -125,6 +130,7 @@
           "variableValue": "Værdi",
           "elevated": "Kør med sudo",
           "onError": "Hvis dette mislykkes",
+          "timeout": "Timeout (sekunder)",
           "allowPrivateNetwork": "Tillad lokale netværksadresser",
           "allowPrivateNetworkHint": "Påkrævet for en selvhostet tjeneste på dit LAN. Slået fra som standard for at forhindre anmodninger til interne adresser.",
           "interface": "Interface"
@@ -132,6 +138,10 @@
         "onError": {
           "stop": "Stop kørslen",
           "continue": "Fortsæt"
+        },
+        "autonomy": {
+          "report": "Kun rapportér",
+          "propose": "Foreslå en løsning til godkendelse"
         },
         "needsPlugin": "Kræver {{plugin}}",
         "offBadge": "Fra",
@@ -210,5 +220,9 @@
       "label": "Vis altid knapper",
       "description": "Hold knapperne Test, Kør og Slet under hver automatisering synlige. Slå fra for kun at vise dem ved musens påhæng."
     }
+  },
+  "plugin": {
+    "name": "Automatiseringer",
+    "description": "Kør trin på dine værter efter en tidsplan eller når der sker noget."
   }
 }

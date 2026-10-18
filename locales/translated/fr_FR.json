@@ -87,6 +87,7 @@
           "docker": "Contrôler un conteneur",
           "tunnel": "Contrôler un tunnel",
           "wol": "Réveiller un hôte",
+          "ai_task": "Demander à l'IA",
           "wait": "Attendre",
           "set_var": "Définir une variable",
           "if": "Si / sinon",
@@ -117,6 +118,10 @@
           "channels": "Envoyer également à",
           "title": "Titre",
           "message": "Message",
+          "aiTitlePlaceholder": "Le nom de l'automatisation et l'hôte",
+          "runbook": "Runbook",
+          "runbookPlaceholder": "par ex. Découvrez ce qui remplit le disque. Examinez les images Docker, les journaux système et les caches de paquets, et indiquez ce qu'il est sûr de nettoyer.",
+          "autonomy": "Ce que l'IA est autorisée à faire",
           "snippet": "Extrait",
           "seconds": "Secondes",
           "conditionLeftPlaceholder": "Valeur à vérifier",
@@ -125,6 +130,7 @@
           "variableValue": "Valeur",
           "elevated": "Exécuter avec sudo",
           "onError": "En cas d'échec",
+          "timeout": "Délai d'attente (secondes)",
           "allowPrivateNetwork": "Autoriser les adresses du réseau local",
           "allowPrivateNetworkHint": "Nécessaire pour un service auto-hébergé sur votre LAN. Désactivé par défaut pour empêcher les requêtes vers des adresses internes.",
           "interface": "Interface"
@@ -132,6 +138,10 @@
         "onError": {
           "stop": "Arrêter l'exécution",
           "continue": "Continuer"
+        },
+        "autonomy": {
+          "report": "Rapport uniquement",
+          "propose": "Proposer une correction pour approbation"
         },
         "needsPlugin": "Nécessite {{plugin}}",
         "offBadge": "Désactivé",
@@ -211,5 +221,9 @@
       "label": "Toujours afficher les boutons",
       "description": "Garder les boutons de test, d'exécution et de suppression visibles sous chaque automatisation. Désactivez pour les afficher uniquement au survol."
     }
+  },
+  "plugin": {
+    "name": "Automatisations",
+    "description": "Exécutez des étapes sur vos hôtes selon un planning ou lorsqu'un événement se produit."
   }
 }

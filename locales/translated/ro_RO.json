@@ -87,6 +87,7 @@
           "docker": "Controlează un container",
           "tunnel": "Controlează un tunel",
           "wol": "Trezește un host",
+          "ai_task": "Întreabă AI",
           "wait": "Așteaptă",
           "set_var": "Setează o variabilă",
           "if": "Dacă / altfel",
@@ -117,6 +118,10 @@
           "channels": "Trimite și către",
           "title": "Titlu",
           "message": "Mesaj",
+          "aiTitlePlaceholder": "Numele automatizării și gazda",
+          "runbook": "Manual de proceduri",
+          "runbookPlaceholder": "de ex., Află ce ocupă spațiu pe disc. Verifică imaginile Docker, jurnalele sistemului și cache-ul pachetelor, și indică ce se poate șterge în siguranță.",
+          "autonomy": "Ce poate face IA",
           "snippet": "Snippet",
           "seconds": "Secunde",
           "conditionLeftPlaceholder": "Valoare de verificat",
@@ -125,6 +130,7 @@
           "variableValue": "Valoare",
           "elevated": "Execută cu sudo",
           "onError": "Dacă eșuează",
+          "timeout": "Timp de așteptare (secunde)",
           "allowPrivateNetwork": "Permite adresele de rețea locală",
           "allowPrivateNetworkHint": "Necesar pentru un serviciu self-hosted pe LAN-ul tău. Dezactivat implicit pentru a preveni cererile către adrese interne.",
           "interface": "Interfață"
@@ -132,6 +138,10 @@
         "onError": {
           "stop": "Oprește execuția",
           "continue": "Continuă"
+        },
+        "autonomy": {
+          "report": "Doar raport",
+          "propose": "Propune o remediere pentru aprobare"
         },
         "needsPlugin": "Necesită {{plugin}}",
         "offBadge": "Oprit",
@@ -211,5 +221,9 @@
       "label": "Afișează mereu butoanele",
       "description": "Păstrează vizibile butoanele de testare, executare și ștergere sub fiecare automatizare. Dezactivează pentru a le afișa doar la trecerea cu mouse-ul."
     }
+  },
+  "plugin": {
+    "name": "Automatizări",
+    "description": "Execută pași pe gazdele tale la intervale programate sau când se întâmplă ceva."
   }
 }
