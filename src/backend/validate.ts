@@ -196,3 +196,17 @@ function validateSteps(steps: Step[], seen: Set<string>): string | null {
   }
   return null;
 }
+
+/** A run shorter than this can't do much; longer than six hours is a stuck run. */
+export const MIN_RUN_SECONDS = 30;
+export const MAX_RUN_SECONDS = 21_600;
+
+/** Why `value` is not a run limit, or null when it is one or is left out. */
+export function runSecondsError(value: unknown): string | null {
+  if (value === undefined) return null;
+  return Number.isInteger(value) &&
+    (value as number) >= MIN_RUN_SECONDS &&
+    (value as number) <= MAX_RUN_SECONDS
+    ? null
+    : `maxRunSeconds must be a whole number from ${MIN_RUN_SECONDS} to ${MAX_RUN_SECONDS}`;
+}

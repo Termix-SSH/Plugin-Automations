@@ -9,7 +9,7 @@ import type { AutomationEngine } from "./engine.js";
 import type { AutomationRepository } from "./repository.js";
 import { missingPlugins, parseDefinition } from "./requirements.js";
 import { syncSchedule } from "./routes.js";
-import { validateDefinition } from "./validate.js";
+import { runSecondsError, validateDefinition } from "./validate.js";
 
 export interface AutomationSummary {
   id: number;
@@ -56,9 +56,6 @@ export interface AutomationsAccessV1 {
 }
 
 const CONCURRENCY_POLICIES: ConcurrencyPolicy[] = ["skip", "queue", "allow"];
-/** A run shorter than this can't do much; longer than six hours is a stuck run. */
-const MIN_RUN_SECONDS = 30;
-const MAX_RUN_SECONDS = 21_600;
 
 export function createAutomationsService(
   ctx: PluginContext,
@@ -129,18 +126,8 @@ export function createAutomationsService(
       ) {
         throw new Error("concurrencyPolicy must be skip, queue or allow");
       }
-      if (
-        input.maxRunSeconds !== undefined &&
-        !(
-          Number.isInteger(input.maxRunSeconds) &&
-          input.maxRunSeconds >= MIN_RUN_SECONDS &&
-          input.maxRunSeconds <= MAX_RUN_SECONDS
-        )
-      ) {
-        throw new Error(
-          `maxRunSeconds must be a whole number from ${MIN_RUN_SECONDS} to ${MAX_RUN_SECONDS}`,
-        );
-      }
+      const runLimit = runSecondsError(input.maxRunSeconds);
+      if (runLimit) throw new Error(runLimit);
       const created = await repository.create({
         userId,
         name,

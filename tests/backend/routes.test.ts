@@ -56,6 +56,47 @@ describe("automation routes", () => {
     ).toEqual({ n: 0 });
   });
 
+  it("sets and changes the run limit, within bounds", async () => {
+    // It could only be set through the service, so an automation's limit
+    // could never be raised once a run needed longer.
+    server = await startServer();
+    const created = await server.request("POST", "/", {
+      body: {
+        name: "Patrol",
+        definition: definition({ kind: "schedule", cron: "0 9 * * *" }),
+        maxRunSeconds: 1800,
+      },
+    });
+    expect(created.status).toBe(201);
+    expect(created.body.max_run_seconds).toBe(1800);
+    const id = created.body.id;
+
+    const raised = await server.request("PUT", `/${id}`, {
+      body: { maxRunSeconds: 3600 },
+    });
+    expect(raised.status).toBe(200);
+    expect(raised.body.max_run_seconds).toBe(3600);
+
+    for (const bad of [10, 99_999, 60.5, "3600"]) {
+      const refused = await server.request("PUT", `/${id}`, {
+        body: { maxRunSeconds: bad },
+      });
+      expect(refused.status).toBe(400);
+      expect(refused.body.error).toMatch(/maxRunSeconds/);
+    }
+    expect(
+      (
+        await server.request("POST", "/", {
+          body: {
+            name: "Bad",
+            definition: definition({ kind: "schedule", cron: "0 9 * * *" }),
+            maxRunSeconds: 5,
+          },
+        })
+      ).status,
+    ).toBe(400);
+  });
+
   it("never shows one user's automations to another", async () => {
     server = await startServer();
     const created = await server.request("POST", "/", {

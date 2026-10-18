@@ -7,7 +7,11 @@ import type { Deps } from "./deps.js";
 import type { AutomationEngine } from "./engine.js";
 import type { AutomationRepository, AutomationRow } from "./repository.js";
 import { missingPlugins, parseDefinition } from "./requirements.js";
-import { isNonEmptyString, validateDefinition } from "./validate.js";
+import {
+  isNonEmptyString,
+  runSecondsError,
+  validateDefinition,
+} from "./validate.js";
 
 export interface RouteDeps {
   ctx: PluginContext;
@@ -381,12 +385,20 @@ export function registerRoutes(
     ctx.rbac.require("create") as never,
     async (req: Request, res: Response) => {
       const userId = actor();
-      const { name, description, enabled, definition, concurrencyPolicy } =
-        req.body ?? {};
+      const {
+        name,
+        description,
+        enabled,
+        definition,
+        concurrencyPolicy,
+        maxRunSeconds,
+      } = req.body ?? {};
 
       if (!isNonEmptyString(name)) {
         return res.status(400).json({ error: "Name is required" });
       }
+      const runLimit = runSecondsError(maxRunSeconds);
+      if (runLimit) return res.status(400).json({ error: runLimit });
       const validated = validateDefinition(definition);
       if (!validated.ok || !validated.definition) {
         return res.status(400).json({ error: validated.error });
@@ -410,6 +422,7 @@ export function registerRoutes(
           enabled: enabled !== false,
           definition: JSON.stringify(validated.definition),
           concurrencyPolicy,
+          maxRunSeconds,
           channels: Array.isArray(req.body?.channels) ? req.body.channels : [],
         });
         await syncSchedule(repository, created.id, validated.definition);
@@ -472,6 +485,11 @@ export function registerRoutes(
           update.enabled = !!req.body.enabled;
         if (req.body?.concurrencyPolicy !== undefined) {
           update.concurrencyPolicy = req.body.concurrencyPolicy;
+        }
+        if (req.body?.maxRunSeconds !== undefined) {
+          const runLimit = runSecondsError(req.body.maxRunSeconds);
+          if (runLimit) return res.status(400).json({ error: runLimit });
+          update.maxRunSeconds = req.body.maxRunSeconds;
         }
         if (Array.isArray(req.body?.channels)) {
           update.channels = req.body.channels;
