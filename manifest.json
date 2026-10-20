@@ -1,7 +1,7 @@
 {
   "id": "automations",
   "name": "Automations",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Run steps on your hosts on a schedule or when something happens.",
   "author": {
     "name": "Termix"

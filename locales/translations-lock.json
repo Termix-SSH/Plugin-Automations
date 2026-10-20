@@ -65,6 +65,7 @@
   "newUi.sidebar.automations.stepTypes.docker": "bf5a7b524261",
   "newUi.sidebar.automations.stepTypes.tunnel": "f86309c5ca72",
   "newUi.sidebar.automations.stepTypes.wol": "7452c0fddfa9",
+  "newUi.sidebar.automations.stepTypes.ai_task": "8dbaeb8edb74",
   "newUi.sidebar.automations.stepTypes.wait": "34dbd5c4c8a6",
   "newUi.sidebar.automations.stepTypes.set_var": "b1a5376628ab",
   "newUi.sidebar.automations.stepTypes.if": "455f63760beb",
@@ -91,6 +92,9 @@
   "newUi.sidebar.automations.fields.channels": "402d1d43a564",
   "newUi.sidebar.automations.fields.title": "768e0c1c6957",
   "newUi.sidebar.automations.fields.message": "68f4145fee7d",
+  "newUi.sidebar.automations.fields.aiTitlePlaceholder": "72a28edeb87f",
+  "newUi.sidebar.automations.fields.runbook": "fda8fb7d6a93",
+  "newUi.sidebar.automations.fields.runbookPlaceholder": "058029685288",
   "newUi.sidebar.automations.fields.autonomy": "68867319ce34",
   "newUi.sidebar.automations.fields.snippet": "657d1e134c33",
   "newUi.sidebar.automations.fields.seconds": "5fb1db527825",
@@ -162,5 +166,6 @@
   "common.delete": "f6fdbe48dc54",
   "settings.alwaysShowActions.label": "1cb1dc18de91",
   "settings.alwaysShowActions.description": "54c9925c08cd",
-  "plugin.name": "82542d6d0a0a"
+  "plugin.name": "82542d6d0a0a",
+  "plugin.description": "a8f1942e52cc"
 }
