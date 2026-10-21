@@ -216,6 +216,12 @@
     "delete": "Slet"
   },
   "settings": {
+    "host": {
+      "enable": {
+        "label": "Aktivér vedligeholdelse",
+        "description": "Vis vedligeholdelsesmodus for denne vært."
+      }
+    },
     "alwaysShowActions": {
       "label": "Vis altid knapper",
       "description": "Hold knapperne Test, Kør og Slet under hver automatisering synlige. Slå fra for kun at vise dem ved musens påhæng."

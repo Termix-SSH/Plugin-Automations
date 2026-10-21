@@ -217,6 +217,12 @@
     "delete": "Șterge"
   },
   "settings": {
+    "host": {
+      "enable": {
+        "label": "Activează modul de întreținere",
+        "description": "Afișează modul de întreținere pentru acest gazdă."
+      }
+    },
     "alwaysShowActions": {
       "label": "Afișează mereu butoanele",
       "description": "Păstrează vizibile butoanele de testare, executare și ștergere sub fiecare automatizare. Dezactivează pentru a le afișa doar la trecerea cu mouse-ul."

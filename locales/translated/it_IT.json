@@ -217,6 +217,12 @@
     "delete": "Elimina"
   },
   "settings": {
+    "host": {
+      "enable": {
+        "label": "Abilita manutenzione",
+        "description": "Mostra la modalità di manutenzione per questo host."
+      }
+    },
     "alwaysShowActions": {
       "label": "Mostra sempre i pulsanti",
       "description": "Mantieni visibili i pulsanti di test, esecuzione ed eliminazione sotto ogni automazione. Disattiva per mostrarli solo al passaggio del mouse."

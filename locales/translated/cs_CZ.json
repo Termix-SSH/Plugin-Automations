@@ -218,6 +218,12 @@
     "delete": "Smazat"
   },
   "settings": {
+    "host": {
+      "enable": {
+        "label": "Povolit režim údržby",
+        "description": "Zobrazit režim údržby pro tohoto hostitele."
+      }
+    },
     "alwaysShowActions": {
       "label": "Vždy zobrazovat tlačítka",
       "description": "Nechejte tlačítka test, spustit a smazat pod každou automatizací viditelná. Vypněte, pokud je chcete zobrazovat pouze při najetí myší."

@@ -216,6 +216,12 @@
     "delete": "Vee uit"
   },
   "settings": {
+    "host": {
+      "enable": {
+        "label": "Aktiveer onderhoudsmodus",
+        "description": "Wys onderhoudsmodus vir hierdie gasheer."
+      }
+    },
     "alwaysShowActions": {
       "label": "Wys altyd knoppies",
       "description": "Hou die toets, uitvoer en vee uit-knoppies onder elke outomatisering sigbaar. Skakel af om dit slegs by hover te wys."

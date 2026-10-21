@@ -215,6 +215,12 @@
     "delete": "Padam"
   },
   "settings": {
+    "host": {
+      "enable": {
+        "label": "Dayakan penyelenggaraan",
+        "description": "Paparkan mod penyelenggaraan untuk hos ini."
+      }
+    },
     "alwaysShowActions": {
       "label": "Sentiasa tunjukkan butang",
       "description": "Kekalkan butang uji, jalankan dan padam di bawah setiap automasi kelihatan. Matikan untuk menunjukkannya hanya semasa kursor berada di atasnya."

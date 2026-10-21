@@ -1,7 +1,7 @@
 {
   "id": "automations",
   "name": "Automations",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Run steps on your hosts on a schedule or when something happens.",
   "author": {
     "name": "Termix"
@@ -142,6 +142,14 @@
     ],
     "uses": ["alerts.openChannels"],
     "settings": {
+      "host": {
+        "editorGroup": "ssh",
+        "enableKey": "enableMaintenance",
+        "enableLabelKey": "settings.host.enable.label",
+        "enableDescriptionKey": "settings.host.enable.description",
+        "enableDefault": false,
+        "fields": []
+      },
       "user": [
         {
           "key": "alwaysShowActions",

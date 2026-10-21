@@ -216,6 +216,12 @@
     "delete": "Sil"
   },
   "settings": {
+    "host": {
+      "enable": {
+        "label": "Bakım modunu etkinleştir",
+        "description": "Bu sunucu için bakım modunu göster."
+      }
+    },
     "alwaysShowActions": {
       "label": "Düğmeleri her zaman göster",
       "description": "Her otomasyonun altındaki test, çalıştır ve sil düğmelerini görünür tutun. Yalnızca üzerine gelindiğinde göstermek için kapatın."

@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.1.0
+
+### Added
+
+- A per host Enable maintenance switch in the host editor, off by default
+
+### Changed
+
+- The Maintenance button only shows on hosts that have the switch on
+
 ## 1.0.3
 
 ### Fixed

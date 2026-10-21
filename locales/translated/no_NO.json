@@ -216,6 +216,12 @@
     "delete": "Slett"
   },
   "settings": {
+    "host": {
+      "enable": {
+        "label": "Aktiver vedlikehold",
+        "description": "Vis vedlikeholdsmodus for denne verten."
+      }
+    },
     "alwaysShowActions": {
       "label": "Vis alltid knapper",
       "description": "Hold knappene for test, kjøring og sletting synlige under hver automatisering. Slå av for å vise dem kun ved hover."

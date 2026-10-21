@@ -218,6 +218,12 @@
     "delete": "Odstrániť"
   },
   "settings": {
+    "host": {
+      "enable": {
+        "label": "Povoliť údržbu",
+        "description": "Zobraziť režim údržby pre tento hostiteľ."
+      }
+    },
     "alwaysShowActions": {
       "label": "Vždy zobrazovať tlačidlá",
       "description": "Udržujte tlačidlá na testovanie, spúšťanie a odstraňovanie pod každou automatizáciou viditeľné. Vypnutím sa zobrazia iba pri najetí myšou."

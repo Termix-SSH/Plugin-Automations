@@ -218,6 +218,12 @@
     "delete": "Šalinti"
   },
   "settings": {
+    "host": {
+      "enable": {
+        "label": "Įjungti priežiūrą",
+        "description": "Rodyti priežiūros režimą šiam serveriui."
+      }
+    },
     "alwaysShowActions": {
       "label": "Visada rodyti mygtukus",
       "description": "Palikti testavimo, vykdymo ir šalinimo mygtukus po kiekviena automatizacija matomus. Išjunkite, kad jie būtų rodomi tik užvedus pelę."

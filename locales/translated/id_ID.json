@@ -215,6 +215,12 @@
     "delete": "Hapus"
   },
   "settings": {
+    "host": {
+      "enable": {
+        "label": "Aktifkan mode pemeliharaan",
+        "description": "Tampilkan mode pemeliharaan untuk host ini."
+      }
+    },
     "alwaysShowActions": {
       "label": "Selalu tampilkan tombol",
       "description": "Jaga tombol uji, jalankan, dan hapus di bawah setiap otomatisasi tetap terlihat. Matikan untuk menampilkannya hanya saat kursor diarahkan."

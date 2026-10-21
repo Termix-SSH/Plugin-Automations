@@ -218,6 +218,12 @@
     "delete": "Izbriši"
   },
   "settings": {
+    "host": {
+      "enable": {
+        "label": "Omogoči vzdrževanje",
+        "description": "Prikaži način vzdrževanja za tega gostitelja."
+      }
+    },
     "alwaysShowActions": {
       "label": "Vedno prikaži gumbe",
       "description": "Gumba za preizkus, zagon in brisanje pod vsako avtomatizacijo naj bodo vedno vidni. Če to izklopite, se bodo prikazali le ob drsenju miške."

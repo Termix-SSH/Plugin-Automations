@@ -216,6 +216,12 @@
     "delete": "Verwijderen"
   },
   "settings": {
+    "host": {
+      "enable": {
+        "label": "Onderhoud inschakelen",
+        "description": "Onderhoudsmodus voor deze host weergeven."
+      }
+    },
     "alwaysShowActions": {
       "label": "Knoppen altijd tonen",
       "description": "Houd de knoppen voor testen, uitvoeren en verwijderen onder elke automatisering zichtbaar. Zet dit uit om ze alleen bij hover te tonen."

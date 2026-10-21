@@ -164,6 +164,8 @@
   "ui.sidebar.automations.options.failing": "b6d73a4542a0",
   "ui.sidebar.automations.options.recovered": "26cf9476bd02",
   "common.delete": "f6fdbe48dc54",
+  "settings.host.enable.label": "5d905bbdc11f",
+  "settings.host.enable.description": "b4cda43c8a48",
   "settings.alwaysShowActions.label": "1cb1dc18de91",
   "settings.alwaysShowActions.description": "54c9925c08cd",
   "plugin.name": "82542d6d0a0a",

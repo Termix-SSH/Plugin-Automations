@@ -216,6 +216,12 @@
     "delete": "Ta bort"
   },
   "settings": {
+    "host": {
+      "enable": {
+        "label": "Aktivera underhållsläge",
+        "description": "Visa underhållsläge för denna värd."
+      }
+    },
     "alwaysShowActions": {
       "label": "Visa alltid knappar",
       "description": "Behåll knapparna för test, kör och ta bort under varje automatisering synliga. Stäng av för att endast visa dem vid hovring."

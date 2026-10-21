@@ -217,6 +217,12 @@
     "delete": "Supprimer"
   },
   "settings": {
+    "host": {
+      "enable": {
+        "label": "Activer la maintenance",
+        "description": "Afficher le mode maintenance pour cet hôte."
+      }
+    },
     "alwaysShowActions": {
       "label": "Toujours afficher les boutons",
       "description": "Garder les boutons de test, d'exécution et de suppression visibles sous chaque automatisation. Désactivez pour les afficher uniquement au survol."

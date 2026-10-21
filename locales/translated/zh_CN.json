@@ -215,6 +215,12 @@
     "delete": "删除"
   },
   "settings": {
+    "host": {
+      "enable": {
+        "label": "启用维护模式",
+        "description": "为此主机显示维护模式。"
+      }
+    },
     "alwaysShowActions": {
       "label": "始终显示按钮",
       "description": "保持每个自动化下方的测试、运行和删除按钮可见。关闭后，仅在悬停时显示它们。"

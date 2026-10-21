@@ -215,6 +215,12 @@
     "delete": "刪除"
   },
   "settings": {
+    "host": {
+      "enable": {
+        "label": "啟用維護模式",
+        "description": "為此主機顯示維護模式。"
+      }
+    },
     "alwaysShowActions": {
       "label": "始終顯示按鈕",
       "description": "保持每個自動化下方的測試、執行和刪除按鈕可見。關閉後，僅在滑鼠懸停時顯示。"

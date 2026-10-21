@@ -216,6 +216,12 @@
     "delete": "Törlés"
   },
   "settings": {
+    "host": {
+      "enable": {
+        "label": "Karbantartás engedélyezése",
+        "description": "Karbantartási mód megjelenítése ehhez a hoszthoz."
+      }
+    },
     "alwaysShowActions": {
       "label": "Gombok mindig láthatóak",
       "description": "Tartsa láthatóan a teszt, futtatás és törlés gombokat minden automatizálás alatt. Kapcsolja ki, ha csak rámutatáskor szeretné megjeleníteni őket."

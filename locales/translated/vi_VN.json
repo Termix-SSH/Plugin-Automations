@@ -215,6 +215,12 @@
     "delete": "Xóa"
   },
   "settings": {
+    "host": {
+      "enable": {
+        "label": "Bật chế độ bảo trì",
+        "description": "Hiển thị chế độ bảo trì cho máy chủ này."
+      }
+    },
     "alwaysShowActions": {
       "label": "Luôn hiển thị nút",
       "description": "Giữ các nút kiểm tra, chạy và xóa dưới mỗi tự động hóa luôn hiển thị. Tắt để chỉ hiển thị chúng khi di chuột qua."

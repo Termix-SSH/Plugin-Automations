@@ -217,6 +217,12 @@
     "delete": "Izbriši"
   },
   "settings": {
+    "host": {
+      "enable": {
+        "label": "Omogući održavanje",
+        "description": "Prikaži način održavanja za ovaj host."
+      }
+    },
     "alwaysShowActions": {
       "label": "Uvijek prikaži gumbe",
       "description": "Držite gumbe za testiranje, pokretanje i brisanje ispod svake automatizacije vidljivima. Isključite da bi se prikazivali samo pri prelasku mišem."

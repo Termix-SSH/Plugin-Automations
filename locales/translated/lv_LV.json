@@ -217,6 +217,12 @@
     "delete": "Dzēst"
   },
   "settings": {
+    "host": {
+      "enable": {
+        "label": "Iespējot apkopi",
+        "description": "Rādīt šim resursam apkopes režīmu."
+      }
+    },
     "alwaysShowActions": {
       "label": "Vienmēr rādīt pogas",
       "description": "Turiet testēšanas, izpildes un dzēšanas pogas zem katras automatizācijas redzamas. Izslēdziet, lai tās rādītu tikai, novietojot peli virs tām."

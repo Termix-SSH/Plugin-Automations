@@ -216,6 +216,12 @@
     "delete": "Kustuta"
   },
   "settings": {
+    "host": {
+      "enable": {
+        "label": "Luba hooldusrežiim",
+        "description": "Kuva selle hosti jaoks hooldusrežiim."
+      }
+    },
     "alwaysShowActions": {
       "label": "Näita nuppe alati",
       "description": "Hoia iga automatiseerimise all olevad testimise, käivitamise ja kustutamise nupud nähtaval. Lülita välja, et näidata neid ainult hiirekursori kohal hõljutamisel."

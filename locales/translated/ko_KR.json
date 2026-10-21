@@ -215,6 +215,12 @@
     "delete": "삭제"
   },
   "settings": {
+    "host": {
+      "enable": {
+        "label": "유지보수 활성화",
+        "description": "이 호스트에 대해 유지보수 모드를 표시합니다."
+      }
+    },
     "alwaysShowActions": {
       "label": "항상 버튼 표시",
       "description": "각 자동화 아래의 테스트, 실행 및 삭제 버튼을 항상 표시합니다. 끄면 마우스를 올렸을 때만 표시됩니다."

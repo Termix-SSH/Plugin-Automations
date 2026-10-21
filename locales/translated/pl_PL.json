@@ -218,6 +218,12 @@
     "delete": "Usuń"
   },
   "settings": {
+    "host": {
+      "enable": {
+        "label": "Włącz tryb konserwacji",
+        "description": "Wyświetl tryb konserwacji dla tego hosta."
+      }
+    },
     "alwaysShowActions": {
       "label": "Zawsze pokazuj przyciski",
       "description": "Utrzymuj przyciski testu, uruchomienia i usuwania widoczne pod każdą automatyzacją. Wyłącz, aby pokazywać je tylko po najechaniu kursorem."

@@ -12,6 +12,13 @@ import { HostMaintenance, MaintenanceBadge } from "./HostMaintenance";
 
 const VIEW_ID = "automations";
 
+function maintenanceEnabled(host: object | null | undefined): boolean {
+  const all = (host as { pluginSettings?: unknown } | null | undefined)
+    ?.pluginSettings as
+    Record<string, Record<string, unknown> | undefined> | undefined;
+  return all?.[VIEW_ID]?.enableMaintenance === true;
+}
+
 function Panel({ active }: PanelProps) {
   return (
     <div className="flex-1 min-h-0 overflow-y-auto">
@@ -45,7 +52,7 @@ export function activate(app: TermixApp): void {
     kind: "open",
     tabType: "host_maintenance",
     tray: false,
-    when: (host) => Number(host.id) > 0,
+    when: (host) => Number(host.id) > 0 && maintenanceEnabled(host),
   });
   app.registerHostBadge({
     id: "maintenance",

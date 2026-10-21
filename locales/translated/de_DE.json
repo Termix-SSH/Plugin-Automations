@@ -216,6 +216,12 @@
     "delete": "Löschen"
   },
   "settings": {
+    "host": {
+      "enable": {
+        "label": "Wartungsmodus aktivieren",
+        "description": "Wartungsmodus für diesen Host anzeigen."
+      }
+    },
     "alwaysShowActions": {
       "label": "Buttons immer anzeigen",
       "description": "Halten Sie die Buttons zum Testen, Ausführen und Löschen unter jeder Automatisierung sichtbar. Deaktivieren, um sie nur beim Hover anzuzeigen."

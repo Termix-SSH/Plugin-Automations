@@ -217,6 +217,12 @@
     "delete": "Excluir"
   },
   "settings": {
+    "host": {
+      "enable": {
+        "label": "Ativar manutenção",
+        "description": "Exibir o modo de manutenção para este host."
+      }
+    },
     "alwaysShowActions": {
       "label": "Sempre mostrar botões",
       "description": "Mantenha os botões de teste, execução e exclusão visíveis abaixo de cada automação. Desative para mostrá-los apenas ao passar o mouse."

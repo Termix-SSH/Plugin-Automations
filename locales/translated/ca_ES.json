@@ -217,6 +217,12 @@
     "delete": "Eliminar"
   },
   "settings": {
+    "host": {
+      "enable": {
+        "label": "Activa el manteniment",
+        "description": "Mostra el mode de manteniment per a aquest host."
+      }
+    },
     "alwaysShowActions": {
       "label": "Mostrar sempre els botons",
       "description": "Manté visibles els botons de prova, execució i eliminació sota cada automatització. Desactiveu-lo per mostrar-los només en passar el cursor per sobre."

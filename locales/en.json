@@ -216,6 +216,12 @@
     "delete": "Delete"
   },
   "settings": {
+    "host": {
+      "enable": {
+        "label": "Enable maintenance",
+        "description": "Show maintenance mode for this host."
+      }
+    },
     "alwaysShowActions": {
       "label": "Always show buttons",
       "description": "Keep the test, run and delete buttons under each automation visible. Turn off to show them only on hover."

@@ -216,6 +216,12 @@
     "delete": "Poista"
   },
   "settings": {
+    "host": {
+      "enable": {
+        "label": "Ota ylläpito käyttöön",
+        "description": "Näytä ylläpitotila tälle isäntäpalvelimelle."
+      }
+    },
     "alwaysShowActions": {
       "label": "Näytä painikkeet aina",
       "description": "Pidä testaus-, suoritus- ja poistopainikkeet näkyvissä jokaisen automaation alla. Kytke pois päältä, jos haluat näyttää ne vain hiiren vierityksen aikana."

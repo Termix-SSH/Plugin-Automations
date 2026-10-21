@@ -215,6 +215,12 @@
     "delete": "削除"
   },
   "settings": {
+    "host": {
+      "enable": {
+        "label": "メンテナンスを有効にする",
+        "description": "このホストにメンテナンスモードを表示します。"
+      }
+    },
     "alwaysShowActions": {
       "label": "ボタンを常に表示",
       "description": "各オートメーションの下のテスト、実行、削除ボタンを常に表示します。オフにすると、ホバー時のみ表示されます。"
