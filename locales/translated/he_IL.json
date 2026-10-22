@@ -221,15 +221,58 @@
       "enable": {
         "label": "הפעל מצב תחזוקה",
         "description": "הצג מצב תחזוקה עבור מארח זה."
+      },
+      "showPanel": {
+        "label": "לוח ליד הטרמינל",
+        "description": "הצגת לוח אוטומציות ליד הטרמינל של SSH עבור מארח זה."
       }
     },
     "alwaysShowActions": {
       "label": "הצג תמיד כפתורים",
       "description": "שמור על הכפתורים לבדיקה, הרצה ומחיקה מתחת לכל אוטומציה גלויים. כבה כדי להציג אותם רק בעת ריחוף."
+    },
+    "companionAutoOpen": {
+      "label": "פתיחת לוח האוטומציות עם טרמינל",
+      "description": "הצגת לוח האוטומציות כאשר טרמינל נפתח על מארח שיש לו."
+    },
+    "companionSide": {
+      "label": "צד לוח האוטומציות",
+      "description": "איפה הלוח ממוקם ליד הטרמינל.",
+      "right": "ימין",
+      "left": "שמאל",
+      "bottom": "מטה"
+    },
+    "companionSize": {
+      "label": "גודל לוח האוטומציות",
+      "description": "רוחב, או גובה בתחתית, בפיקסלים."
+    },
+    "companionEdgeButton": {
+      "label": "כפתור שפה של לוח האוטומציות",
+      "description": "הצגת כפתור קטן על שפת הטרמינל לפתיחת הלוח."
     }
   },
   "plugin": {
     "name": "אוטומציות",
     "description": "הפעל שלבים על המארחים שלך לפי לוח זמנים או כאשר מתרחש אירוע."
+  },
+  "companion": {
+    "toggle": "לוח אוטומציות",
+    "openTab": "פתיחת לשונית האוטומציות"
+  },
+  "card": {
+    "upcoming": "אוטומציות קרובות",
+    "recentRuns": "הרצות אוטומציה",
+    "noUpcoming": "אין אוטומציות מתוזמנות",
+    "noHostAutomations": "אין אוטומציות שמשתמשות במארח זה",
+    "noMaintenance": "אין תחזוקה כרגע",
+    "inMinutes_one": "בעוד {{count}} דקה",
+    "inMinutes_two": "בעוד {{count}} דקות",
+    "inMinutes_other": "בעוד {{count}} דקות",
+    "inHours_one": "בעוד {{count}} שעה",
+    "inHours_two": "בעוד {{count}} שעות",
+    "inHours_other": "בעוד {{count}} שעות",
+    "inDays_one": "בעוד {{count}} יום",
+    "inDays_two": "בעוד {{count}} ימים",
+    "inDays_other": "בעוד {{count}} ימים"
   }
 }

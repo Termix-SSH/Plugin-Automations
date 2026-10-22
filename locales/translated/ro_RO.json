@@ -221,15 +221,58 @@
       "enable": {
         "label": "Activează modul de întreținere",
         "description": "Afișează modul de întreținere pentru acest gazdă."
+      },
+      "showPanel": {
+        "label": "Panou lângă terminal",
+        "description": "Afișează un panou de automatizări lângă terminalul SSH al acestui gazdă."
       }
     },
     "alwaysShowActions": {
       "label": "Afișează mereu butoanele",
       "description": "Păstrează vizibile butoanele de testare, executare și ștergere sub fiecare automatizare. Dezactivează pentru a le afișa doar la trecerea cu mouse-ul."
+    },
+    "companionAutoOpen": {
+      "label": "Deschide panoul de automatizări împreună cu un terminal",
+      "description": "Afișează panoul de automatizări când se deschide un terminal pe o gazdă care are acest panou configurat."
+    },
+    "companionSide": {
+      "label": "Poziția panoului de automatizări",
+      "description": "Unde se află panoul în raport cu terminalul.",
+      "right": "Dreapta",
+      "left": "Stânga",
+      "bottom": "Jos"
+    },
+    "companionSize": {
+      "label": "Dimensiunea panoului de automatizări",
+      "description": "Lățime, sau înălțime în partea de jos, în pixeli."
+    },
+    "companionEdgeButton": {
+      "label": "Buton de margine pentru panoul de automatizări",
+      "description": "Afișează un buton mic pe marginea terminalului pentru a deschide panoul."
     }
   },
   "plugin": {
     "name": "Automatizări",
     "description": "Execută pași pe gazdele tale la intervale programate sau când se întâmplă ceva."
+  },
+  "companion": {
+    "toggle": "Panoul de automatizări",
+    "openTab": "Deschide fila Automatizări"
+  },
+  "card": {
+    "upcoming": "Automatizări viitoare",
+    "recentRuns": "Execuții de automatizări",
+    "noUpcoming": "Nicio automatizare programată",
+    "noHostAutomations": "Nicio automatizare nu folosește acest gazdă",
+    "noMaintenance": "Nicio mentenanță în acest moment",
+    "inMinutes_one": "în {{count}} minut",
+    "inMinutes_few": "în {{count}} minute",
+    "inMinutes_other": "în {{count}} minute",
+    "inHours_one": "în {{count}} oră",
+    "inHours_few": "în {{count}} ore",
+    "inHours_other": "în {{count}} ore",
+    "inDays_one": "în {{count}} zi",
+    "inDays_few": "în {{count}} zile",
+    "inDays_other": "în {{count}} zile"
   }
 }

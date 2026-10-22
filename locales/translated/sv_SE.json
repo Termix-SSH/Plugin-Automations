@@ -220,15 +220,55 @@
       "enable": {
         "label": "Aktivera underhållsläge",
         "description": "Visa underhållsläge för denna värd."
+      },
+      "showPanel": {
+        "label": "Panel bredvid terminalen",
+        "description": "Erbjud en automatiseringspanel bredvid SSH-terminalen för denna värd."
       }
     },
     "alwaysShowActions": {
       "label": "Visa alltid knappar",
       "description": "Behåll knapparna för test, kör och ta bort under varje automatisering synliga. Stäng av för att endast visa dem vid hovring."
+    },
+    "companionAutoOpen": {
+      "label": "Öppna automatiseringspanelen med en terminal",
+      "description": "Visa automatiseringspanelen när en terminal öppnas på en värd som har den."
+    },
+    "companionSide": {
+      "label": "Placering för automatiseringspanelen",
+      "description": "Var panelen placeras i förhållande till terminalen.",
+      "right": "Höger",
+      "left": "Vänster",
+      "bottom": "Botten"
+    },
+    "companionSize": {
+      "label": "Storlek på automatiseringspanelen",
+      "description": "Bredd, eller höjd vid botten, i pixlar."
+    },
+    "companionEdgeButton": {
+      "label": "Knapp för automatiseringspanelen vid kanten",
+      "description": "Visa en liten knapp vid terminalens kant för att öppna panelen."
     }
   },
   "plugin": {
     "name": "Automatiseringar",
     "description": "Kör steg på dina värdar enligt schema eller när något händer."
+  },
+  "companion": {
+    "toggle": "Automatiseringspanel",
+    "openTab": "Öppna fliken Automatisering"
+  },
+  "card": {
+    "upcoming": "Kommande automatiseringar",
+    "recentRuns": "Utförda automatiseringar",
+    "noUpcoming": "Inga schemalagda automatiseringar",
+    "noHostAutomations": "Inga automatiseringar använder denna värd",
+    "noMaintenance": "Ingen underhåll just nu",
+    "inMinutes_one": "om {{count}} minut",
+    "inMinutes_other": "om {{count}} minuter",
+    "inHours_one": "om {{count}} timme",
+    "inHours_other": "om {{count}} timmar",
+    "inDays_one": "om {{count}} dag",
+    "inDays_other": "om {{count}} dagar"
   }
 }

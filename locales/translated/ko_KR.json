@@ -219,15 +219,52 @@
       "enable": {
         "label": "유지보수 활성화",
         "description": "이 호스트에 대해 유지보수 모드를 표시합니다."
+      },
+      "showPanel": {
+        "label": "터미널 옆 패널",
+        "description": "이 호스트의 SSH 터미널 옆에 자동화 패널을 제공합니다."
       }
     },
     "alwaysShowActions": {
       "label": "항상 버튼 표시",
       "description": "각 자동화 아래의 테스트, 실행 및 삭제 버튼을 항상 표시합니다. 끄면 마우스를 올렸을 때만 표시됩니다."
+    },
+    "companionAutoOpen": {
+      "label": "터미널과 함께 자동화 패널 열기",
+      "description": "자동화 기능이 있는 호스트에서 터미널이 열릴 때 자동화 패널을 표시합니다."
+    },
+    "companionSide": {
+      "label": "자동화 패널 위치",
+      "description": "터미널 옆에 패널이 표시되는 위치입니다.",
+      "right": "오른쪽",
+      "left": "왼쪽",
+      "bottom": "아래쪽"
+    },
+    "companionSize": {
+      "label": "자동화 패널 크기",
+      "description": "픽셀 단위의 너비 또는 아래쪽 높이입니다."
+    },
+    "companionEdgeButton": {
+      "label": "자동화 패널 가장자리 버튼",
+      "description": "패널을 열기 위해 터미널 가장자리에 작은 버튼을 표시합니다."
     }
   },
   "plugin": {
     "name": "자동화",
     "description": "호스트에서 일정 시간 또는 특정 이벤트 발생 시 단계를 실행합니다."
+  },
+  "companion": {
+    "toggle": "자동화 패널",
+    "openTab": "자동화 탭 열기"
+  },
+  "card": {
+    "upcoming": "예정된 자동화",
+    "recentRuns": "자동화 실행 기록",
+    "noUpcoming": "예약된 자동화가 없습니다",
+    "noHostAutomations": "이 호스트를 사용하는 자동화가 없습니다",
+    "noMaintenance": "현재 유지보수 작업이 없습니다",
+    "inMinutes_other": "{{count}}분 후",
+    "inHours_other": "{{count}}시간 후",
+    "inDays_other": "{{count}}일 후"
   }
 }

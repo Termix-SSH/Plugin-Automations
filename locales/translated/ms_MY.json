@@ -219,15 +219,52 @@
       "enable": {
         "label": "Dayakan penyelenggaraan",
         "description": "Paparkan mod penyelenggaraan untuk hos ini."
+      },
+      "showPanel": {
+        "label": "Panel di sebelah terminal",
+        "description": "Tawarkan panel automasi di sebelah terminal SSH hos ini."
       }
     },
     "alwaysShowActions": {
       "label": "Sentiasa tunjukkan butang",
       "description": "Kekalkan butang uji, jalankan dan padam di bawah setiap automasi kelihatan. Matikan untuk menunjukkannya hanya semasa kursor berada di atasnya."
+    },
+    "companionAutoOpen": {
+      "label": "Buka panel automasi dengan terminal",
+      "description": "Paparkan panel automasi apabila terminal dibuka pada hos yang memilikinya."
+    },
+    "companionSide": {
+      "label": "Bahagian panel automasi",
+      "description": "Di mana panel diletakkan bersebelahan dengan terminal.",
+      "right": "Kanan",
+      "left": "Kiri",
+      "bottom": "Bawah"
+    },
+    "companionSize": {
+      "label": "Saiz panel automasi",
+      "description": "Lebar, atau tinggi di bahagian bawah, dalam piksel."
+    },
+    "companionEdgeButton": {
+      "label": "Butang tepi panel Automasi",
+      "description": "Paparkan butang kecil di tepi terminal untuk membuka panel."
     }
   },
   "plugin": {
     "name": "Automasi",
     "description": "Jalankan langkah pada hos anda mengikut jadual atau apabila sesuatu berlaku."
+  },
+  "companion": {
+    "toggle": "Panel Automasi",
+    "openTab": "Buka tab Automasi"
+  },
+  "card": {
+    "upcoming": "Automasi akan datang",
+    "recentRuns": "Pelaksanaan automasi",
+    "noUpcoming": "Tiada automasi dijadualkan",
+    "noHostAutomations": "Tiada automasi menggunakan hos ini",
+    "noMaintenance": "Tiada penyelenggaraan buat masa ini",
+    "inMinutes_other": "dalam {{count}} minit",
+    "inHours_other": "dalam {{count}} jam",
+    "inDays_other": "dalam {{count}} hari"
   }
 }

@@ -222,15 +222,61 @@
       "enable": {
         "label": "Omogoči vzdrževanje",
         "description": "Prikaži način vzdrževanja za tega gostitelja."
+      },
+      "showPanel": {
+        "label": "Plošča ob terminalu",
+        "description": "Ponudi ploščo za avtomatizacijo ob SSH terminalu tega gostitelja."
       }
     },
     "alwaysShowActions": {
       "label": "Vedno prikaži gumbe",
       "description": "Gumba za preizkus, zagon in brisanje pod vsako avtomatizacijo naj bodo vedno vidni. Če to izklopite, se bodo prikazali le ob drsenju miške."
+    },
+    "companionAutoOpen": {
+      "label": "Odpri ploščo za avtomatizacijo s terminalom",
+      "description": "Prikaži ploščo za avtomatizacijo, ko se terminal odpre na gostitelju, ki jo ima."
+    },
+    "companionSide": {
+      "label": "Stran plošče za avtomatizacijo",
+      "description": "Kje se plošča nahaja ob terminalu.",
+      "right": "Desno",
+      "left": "Levo",
+      "bottom": "Spodaj"
+    },
+    "companionSize": {
+      "label": "Velikost plošče za avtomatizacijo",
+      "description": "Širina ali višina, če je spodaj, v pixelih."
+    },
+    "companionEdgeButton": {
+      "label": "Gumb na robu plošče za avtomatizacijo",
+      "description": "Prikaži majhen gumb na robu terminala za odpiranje plošče."
     }
   },
   "plugin": {
     "name": "Avtomatizacije",
     "description": "Izvajanje korakov na gostiteljih po urniku ali ob določenem dogodku."
+  },
+  "companion": {
+    "toggle": "Plošča za avtomatizacijo",
+    "openTab": "Odpri zavihek Avtomatizacije"
+  },
+  "card": {
+    "upcoming": "Naslednje avtomatizacije",
+    "recentRuns": "Začetki avtomatizacij",
+    "noUpcoming": "Ni načrtovanih avtomatizacij",
+    "noHostAutomations": "Ta gostitelj ni uporabljen v nobeni avtomatizaciji",
+    "noMaintenance": "Trenutno ni vzdrževanja",
+    "inMinutes_one": "čez {{count}} minuto",
+    "inMinutes_two": "čez {{count}} minuti",
+    "inMinutes_few": "čez {{count}} minute",
+    "inMinutes_other": "čez {{count}} minut",
+    "inHours_one": "čez {{count}} uro",
+    "inHours_two": "čez {{count}} uri",
+    "inHours_few": "čez {{count}} ure",
+    "inHours_other": "čez {{count}} ur",
+    "inDays_one": "čez {{count}} dan",
+    "inDays_two": "čez {{count}} dni",
+    "inDays_few": "čez {{count}} dni",
+    "inDays_other": "čez {{count}} dni"
   }
 }

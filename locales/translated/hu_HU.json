@@ -220,15 +220,55 @@
       "enable": {
         "label": "Karbantartás engedélyezése",
         "description": "Karbantartási mód megjelenítése ehhez a hoszthoz."
+      },
+      "showPanel": {
+        "label": "Panel a terminál mellett",
+        "description": "Automatizálási panel megjelenítése a gazdagép SSH terminálja mellett."
       }
     },
     "alwaysShowActions": {
       "label": "Gombok mindig láthatóak",
       "description": "Tartsa láthatóan a teszt, futtatás és törlés gombokat minden automatizálás alatt. Kapcsolja ki, ha csak rámutatáskor szeretné megjeleníteni őket."
+    },
+    "companionAutoOpen": {
+      "label": "Automatizálási panel megnyitása terminállal együtt",
+      "description": "Az automatizálási panel megjelenítése, amikor egy olyan gazdagépen nyílik meg terminál, amelyik támogatja."
+    },
+    "companionSide": {
+      "label": "Automatizálási panel oldala",
+      "description": "Ahol a panel helyezkedik el a terminál mellett.",
+      "right": "Jobb",
+      "left": "Bal",
+      "bottom": "Alsó"
+    },
+    "companionSize": {
+      "label": "Automatizálási panel mérete",
+      "description": "Szélesség, vagy az alsó elhelyezés esetén magasság, pixelben."
+    },
+    "companionEdgeButton": {
+      "label": "Automatizálási panel szélgombja",
+      "description": "Egy kis gomb megjelenítése a terminál szélén a panel megnyitásához."
     }
   },
   "plugin": {
     "name": "Automatizálások",
     "description": "Futtass lépéseket a hosztjaidon időzítve vagy események bekövetkeztekor."
+  },
+  "companion": {
+    "toggle": "Automatizálási panel",
+    "openTab": "Automatizálások fül megnyitása"
+  },
+  "card": {
+    "upcoming": "Közelgő automatizálások",
+    "recentRuns": "Automatizálások futtatásai",
+    "noUpcoming": "Nincsenek ütemezett automatizálások",
+    "noHostAutomations": "Ezt a gazdagépet nem használja egyetlen automatizálás sem",
+    "noMaintenance": "Jelenleg nincs karbantartás",
+    "inMinutes_one": "{{count}} perc múlva",
+    "inMinutes_other": "{{count}} perc múlva",
+    "inHours_one": "{{count}} óra múlva",
+    "inHours_other": "{{count}} óra múlva",
+    "inDays_one": "{{count}} nap múlva",
+    "inDays_other": "{{count}} nap múlva"
   }
 }

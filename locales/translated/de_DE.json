@@ -220,15 +220,55 @@
       "enable": {
         "label": "Wartungsmodus aktivieren",
         "description": "Wartungsmodus für diesen Host anzeigen."
+      },
+      "showPanel": {
+        "label": "Panel neben dem Terminal",
+        "description": "Ein Automatisierungs-Panel neben dem SSH-Terminal dieses Hosts anzeigen."
       }
     },
     "alwaysShowActions": {
       "label": "Buttons immer anzeigen",
       "description": "Halten Sie die Buttons zum Testen, Ausführen und Löschen unter jeder Automatisierung sichtbar. Deaktivieren, um sie nur beim Hover anzuzeigen."
+    },
+    "companionAutoOpen": {
+      "label": "Automatisierungs-Panel mit Terminal öffnen",
+      "description": "Das Automatisierungs-Panel anzeigen, wenn ein Terminal auf einem Host geöffnet wird, der eines hat."
+    },
+    "companionSide": {
+      "label": "Position des Automatisierungs-Panels",
+      "description": "Wo das Panel neben dem Terminal platziert wird.",
+      "right": "Rechts",
+      "left": "Links",
+      "bottom": "Unten"
+    },
+    "companionSize": {
+      "label": "Größe des Automatisierungs-Panels",
+      "description": "Breite oder Höhe (wenn unten) in Pixeln."
+    },
+    "companionEdgeButton": {
+      "label": "Kantenschaltfläche für Automatisierungs-Panel",
+      "description": "Eine kleine Schaltfläche am Terminalrand anzeigen, um das Panel zu öffnen."
     }
   },
   "plugin": {
     "name": "Automatisierungen",
     "description": "Führe Schritte auf deinen Hosts nach Zeitplan oder bei bestimmten Ereignissen aus."
+  },
+  "companion": {
+    "toggle": "Automatisierungs-Panel",
+    "openTab": "Tab 'Automatisierungen' öffnen"
+  },
+  "card": {
+    "upcoming": "Bevorstehende Automatisierungen",
+    "recentRuns": "Automatisierungsläufe",
+    "noUpcoming": "Keine geplanten Automatisierungen",
+    "noHostAutomations": "Keine Automatisierungen verwenden diesen Host",
+    "noMaintenance": "Derzeit keine Wartung",
+    "inMinutes_one": "in {{count}} Minute",
+    "inMinutes_other": "in {{count}} Minuten",
+    "inHours_one": "in {{count}} Stunde",
+    "inHours_other": "in {{count}} Stunden",
+    "inDays_one": "in {{count}} Tag",
+    "inDays_other": "in {{count}} Tagen"
   }
 }

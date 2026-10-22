@@ -219,15 +219,52 @@
       "enable": {
         "label": "Bật chế độ bảo trì",
         "description": "Hiển thị chế độ bảo trì cho máy chủ này."
+      },
+      "showPanel": {
+        "label": "Bảng bên cạnh terminal",
+        "description": "Hiển thị bảng tự động hóa bên cạnh terminal SSH của máy chủ này."
       }
     },
     "alwaysShowActions": {
       "label": "Luôn hiển thị nút",
       "description": "Giữ các nút kiểm tra, chạy và xóa dưới mỗi tự động hóa luôn hiển thị. Tắt để chỉ hiển thị chúng khi di chuột qua."
+    },
+    "companionAutoOpen": {
+      "label": "Mở bảng tự động hóa cùng với terminal",
+      "description": "Hiển thị bảng tự động hóa khi mở terminal trên máy chủ có tính năng này."
+    },
+    "companionSide": {
+      "label": "Vị trí bảng tự động hóa",
+      "description": "Vị trí của bảng so với terminal.",
+      "right": "Phải",
+      "left": "Trái",
+      "bottom": "Dưới"
+    },
+    "companionSize": {
+      "label": "Kích thước bảng tự động hóa",
+      "description": "Chiều rộng, hoặc chiều cao nếu ở dưới, tính bằng pixel."
+    },
+    "companionEdgeButton": {
+      "label": "Nút mép bảng tự động hóa",
+      "description": "Hiển thị một nút nhỏ ở mép terminal để mở bảng."
     }
   },
   "plugin": {
     "name": "Tự động hóa",
     "description": "Chạy các bước trên máy chủ của bạn theo lịch trình hoặc khi có sự kiện xảy ra."
+  },
+  "companion": {
+    "toggle": "Bảng tự động hóa",
+    "openTab": "Mở tab Tự động hóa"
+  },
+  "card": {
+    "upcoming": "Tự động hóa sắp diễn ra",
+    "recentRuns": "Lịch sử chạy tự động hóa",
+    "noUpcoming": "Không có tự động hóa nào được lên lịch",
+    "noHostAutomations": "Không có tự động hóa nào sử dụng máy chủ này",
+    "noMaintenance": "Hiện không có bảo trì nào",
+    "inMinutes_other": "trong {{count}} phút",
+    "inHours_other": "trong {{count}} giờ",
+    "inDays_other": "trong {{count}} ngày"
   }
 }

@@ -220,15 +220,55 @@
       "enable": {
         "label": "Bakım modunu etkinleştir",
         "description": "Bu sunucu için bakım modunu göster."
+      },
+      "showPanel": {
+        "label": "Terminalin yanında panel",
+        "description": "Bu ana bilgisayarın SSH terminalinin yanında bir otomasyonlar paneli sun."
       }
     },
     "alwaysShowActions": {
       "label": "Düğmeleri her zaman göster",
       "description": "Her otomasyonun altındaki test, çalıştır ve sil düğmelerini görünür tutun. Yalnızca üzerine gelindiğinde göstermek için kapatın."
+    },
+    "companionAutoOpen": {
+      "label": "Terminal ile otomasyonlar panelini aç",
+      "description": "Otomasyonlar paneline sahip bir ana bilgisayarda terminal açıldığında paneli göster."
+    },
+    "companionSide": {
+      "label": "Otomasyonlar paneli konumu",
+      "description": "Panelin terminalin yanında nerede duracağı.",
+      "right": "Sağ",
+      "left": "Sol",
+      "bottom": "Alt"
+    },
+    "companionSize": {
+      "label": "Otomasyonlar paneli boyutu",
+      "description": "Genişlik veya altta yükseklik (piksel cinsinden)."
+    },
+    "companionEdgeButton": {
+      "label": "Otomasyonlar paneli kenar düğmesi",
+      "description": "Paneli açmak için terminal kenarında küçük bir düğme göster."
     }
   },
   "plugin": {
     "name": "Otomasyonlar",
     "description": "Ana bilgisayarlarınızda adımları bir zamanlamaya göre veya belirli bir olay gerçekleştiğinde çalıştırın."
+  },
+  "companion": {
+    "toggle": "Otomasyonlar paneli",
+    "openTab": "Otomasyonlar sekmesini aç"
+  },
+  "card": {
+    "upcoming": "Yaklaşan otomasyonlar",
+    "recentRuns": "Otomasyon çalıştırmaları",
+    "noUpcoming": "Zamanlanmış otomasyon yok",
+    "noHostAutomations": "Bu ana bilgisayarı kullanan otomasyon yok",
+    "noMaintenance": "Şu anda bakım yok",
+    "inMinutes_one": "{{count}} dakika içinde",
+    "inMinutes_other": "{{count}} dakika içinde",
+    "inHours_one": "{{count}} saat içinde",
+    "inHours_other": "{{count}} saat içinde",
+    "inDays_one": "{{count}} gün içinde",
+    "inDays_other": "{{count}} gün içinde"
   }
 }

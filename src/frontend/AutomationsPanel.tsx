@@ -90,7 +90,7 @@ const RUN_BADGE: Record<
 
 type Translate = (key: string, options?: Record<string, unknown>) => string;
 
-function timeAgo(iso: string | null, t: Translate): string {
+export function timeAgo(iso: string | null, t: Translate): string {
   if (!iso) return "";
   const ms = Date.now() - new Date(iso).getTime();
   if (!Number.isFinite(ms)) return "";

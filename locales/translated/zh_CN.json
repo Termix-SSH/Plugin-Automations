@@ -219,15 +219,52 @@
       "enable": {
         "label": "启用维护模式",
         "description": "为此主机显示维护模式。"
+      },
+      "showPanel": {
+        "label": "终端旁边的面板",
+        "description": "在此主机的 SSH 终端旁提供自动化面板。"
       }
     },
     "alwaysShowActions": {
       "label": "始终显示按钮",
       "description": "保持每个自动化下方的测试、运行和删除按钮可见。关闭后，仅在悬停时显示它们。"
+    },
+    "companionAutoOpen": {
+      "label": "随终端打开自动化面板",
+      "description": "当在拥有该面板的主机上打开终端时，显示自动化面板。"
+    },
+    "companionSide": {
+      "label": "自动化面板位置",
+      "description": "面板相对于终端的位置。",
+      "right": "右侧",
+      "left": "左侧",
+      "bottom": "底部"
+    },
+    "companionSize": {
+      "label": "自动化面板大小",
+      "description": "宽度，或位于底部时的高度，单位为像素。"
+    },
+    "companionEdgeButton": {
+      "label": "自动化面板边缘按钮",
+      "description": "在终端边缘显示一个小按钮以打开面板。"
     }
   },
   "plugin": {
     "name": "自动化",
     "description": "按计划或在事件发生时在主机上执行步骤。"
+  },
+  "companion": {
+    "toggle": "自动化面板",
+    "openTab": "打开自动化标签页"
+  },
+  "card": {
+    "upcoming": "即将运行的自动化",
+    "recentRuns": "自动化运行记录",
+    "noUpcoming": "没有计划中的自动化",
+    "noHostAutomations": "没有自动化使用此主机",
+    "noMaintenance": "当前没有维护任务",
+    "inMinutes_other": "{{count}} 分钟后",
+    "inHours_other": "{{count}} 小时后",
+    "inDays_other": "{{count}} 天后"
   }
 }

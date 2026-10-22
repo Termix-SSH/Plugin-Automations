@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.2.0
+
+### Added
+
+- Automations panel beside an SSH terminal: the host's maintenance state, the automations that use the host with Run now, and their latest runs
+- Upcoming automations dashboard card: scheduled automations in the order they run next
+- Automation runs dashboard card: the latest runs and how they went
+
 ## 1.1.0
 
 ### Added

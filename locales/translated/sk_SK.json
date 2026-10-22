@@ -222,15 +222,61 @@
       "enable": {
         "label": "Povoliť údržbu",
         "description": "Zobraziť režim údržby pre tento hostiteľ."
+      },
+      "showPanel": {
+        "label": "Panel vedľa terminálu",
+        "description": "Umožní panel automatizácií vedľa SSH terminálu tohto hostiteľa."
       }
     },
     "alwaysShowActions": {
       "label": "Vždy zobrazovať tlačidlá",
       "description": "Udržujte tlačidlá na testovanie, spúšťanie a odstraňovanie pod každou automatizáciou viditeľné. Vypnutím sa zobrazia iba pri najetí myšou."
+    },
+    "companionAutoOpen": {
+      "label": "Otvoriť panel automatizácií s terminálom",
+      "description": "Zobraziť panel automatizácií pri otvorení terminálu na hostiteľovi, ktorý ho má."
+    },
+    "companionSide": {
+      "label": "Poloha panela automatizácií",
+      "description": "Kde sa panel nachádza vedľa terminálu.",
+      "right": "Vpravo",
+      "left": "Vľavo",
+      "bottom": "Dole"
+    },
+    "companionSize": {
+      "label": "Veľkosť panela automatizácií",
+      "description": "Šírka alebo výška (ak je dole) v pixeloch."
+    },
+    "companionEdgeButton": {
+      "label": "Tlačidlo na okraji panela automatizácií",
+      "description": "Zobraziť malé tlačidlo na okraji terminálu na otvorenie panela."
     }
   },
   "plugin": {
     "name": "Automatizácie",
     "description": "Spúšťajte kroky na vašich hostiteľoch podľa harmonogramu alebo pri výskyte udalosti."
+  },
+  "companion": {
+    "toggle": "Panel automatizácií",
+    "openTab": "Otvoriť kartu Automatizácie"
+  },
+  "card": {
+    "upcoming": "Nadchádzajúce automatizácie",
+    "recentRuns": "Spustenia automatizácií",
+    "noUpcoming": "Žiadne naplánované automatizácie",
+    "noHostAutomations": "Žiadna automatizácia nepoužíva tohto hostiteľa",
+    "noMaintenance": "Práve žiadna údržba",
+    "inMinutes_one": "za {{count}} minútu",
+    "inMinutes_few": "za {{count}} minúty",
+    "inMinutes_many": "za {{count}} minút",
+    "inMinutes_other": "za {{count}} minút",
+    "inHours_one": "za {{count}} hodinu",
+    "inHours_few": "za {{count}} hodiny",
+    "inHours_many": "za {{count}} hodín",
+    "inHours_other": "za {{count}} hodín",
+    "inDays_one": "za {{count}} deň",
+    "inDays_few": "za {{count}} dni",
+    "inDays_many": "za {{count}} dní",
+    "inDays_other": "za {{count}} dní"
   }
 }

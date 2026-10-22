@@ -222,15 +222,61 @@
       "enable": {
         "label": "Įjungti priežiūrą",
         "description": "Rodyti priežiūros režimą šiam serveriui."
+      },
+      "showPanel": {
+        "label": "Skydelis šalia terminalo",
+        "description": "Rodyti automatizavimo skydelį šalia šio serverio SSH terminalo."
       }
     },
     "alwaysShowActions": {
       "label": "Visada rodyti mygtukus",
       "description": "Palikti testavimo, vykdymo ir šalinimo mygtukus po kiekviena automatizacija matomus. Išjunkite, kad jie būtų rodomi tik užvedus pelę."
+    },
+    "companionAutoOpen": {
+      "label": "Atidaryti automatizavimo skydelį kartu su terminalu",
+      "description": "Rodyti automatizavimo skydelį, kai atidaromas terminalas serveryje, kuriame jis yra."
+    },
+    "companionSide": {
+      "label": "Automatizavimo skydelio padėtis",
+      "description": "Kur skydelis yra šalia terminalo.",
+      "right": "Dešinėje",
+      "left": "Kairėje",
+      "bottom": "Apačioje"
+    },
+    "companionSize": {
+      "label": "Automatizavimo skydelio dydis",
+      "description": "Plotis arba apačioje – aukštis, pikseliais."
+    },
+    "companionEdgeButton": {
+      "label": "Automatizavimo skydelio mygtukas krašte",
+      "description": "Rodyti mažą mygtuką terminalo krašte, skirtą skydeliui atidaryti."
     }
   },
   "plugin": {
     "name": "Automatizavimai",
     "description": "Vykdykite veiksmus savo serveriuose pagal grafiką arba įvykus tam tikram įvykiui."
+  },
+  "companion": {
+    "toggle": "Automatizavimo skydelis",
+    "openTab": "Atidaryti automatizavimo skirtuką"
+  },
+  "card": {
+    "upcoming": "Artėjančios automatizacijos",
+    "recentRuns": "Automatizacijų vykdymai",
+    "noUpcoming": "Nėra suplanuotų automatizacijų",
+    "noHostAutomations": "Šio hosto nėra naudojama jokių automatizacijų",
+    "noMaintenance": "Šiuo metu nėra techninės priežiūros",
+    "inMinutes_one": "po {{count}} minutės",
+    "inMinutes_few": "po {{count}} minučių",
+    "inMinutes_many": "po {{count}} minučių",
+    "inMinutes_other": "po {{count}} minučių",
+    "inHours_one": "po {{count}} valandos",
+    "inHours_few": "po {{count}} valandų",
+    "inHours_many": "po {{count}} valandų",
+    "inHours_other": "po {{count}} valandų",
+    "inDays_one": "po {{count}} dienos",
+    "inDays_few": "po {{count}} dienų",
+    "inDays_many": "po {{count}} dienų",
+    "inDays_other": "po {{count}} dienų"
   }
 }

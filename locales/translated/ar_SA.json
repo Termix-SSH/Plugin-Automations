@@ -224,15 +224,67 @@
       "enable": {
         "label": "تفعيل الصيانة",
         "description": "إظهار وضع الصيانة لهذا المضيف."
+      },
+      "showPanel": {
+        "label": "لوحة بجانب الطرفية",
+        "description": "عرض لوحة الأتمتة بجانب طرفية SSH الخاصة بهذا المضيف."
       }
     },
     "alwaysShowActions": {
       "label": "إظهار الأزرار دائماً",
       "description": "إبقاء أزرار الاختبار والتشغيل والحذف تحت كل أتمتة مرئية. عطّلها لإظهارها فقط عند التمرير فوقها."
+    },
+    "companionAutoOpen": {
+      "label": "فتح لوحة الأتمتة مع الطرفية",
+      "description": "عرض لوحة الأتمتة عند فتح طرفية على مضيف يحتوي عليها."
+    },
+    "companionSide": {
+      "label": "موقع لوحة الأتمتة",
+      "description": "المكان الذي تظهر فيه اللوحة بجانب الطرفية.",
+      "right": "يمين",
+      "left": "يسار",
+      "bottom": "أسفل"
+    },
+    "companionSize": {
+      "label": "حجم لوحة الأتمتة",
+      "description": "العرض، أو الارتفاع عند الوضع السفلي، بالبكسل."
+    },
+    "companionEdgeButton": {
+      "label": "زر الحافة للوحة الأتمتة",
+      "description": "عرض زر صغير على حافة الطرفية لفتح اللوحة."
     }
   },
   "plugin": {
     "name": "الأتمتات",
     "description": "نفذ خطوات على مضيفيك حسب جدول زمني أو عند حدوث حدث معين."
+  },
+  "companion": {
+    "toggle": "لوحة الأتمتة",
+    "openTab": "فتح علامة تبويب الأتمتة"
+  },
+  "card": {
+    "upcoming": "الأتمتات القادمة",
+    "recentRuns": "تشغيلات الأتمتة",
+    "noUpcoming": "لا توجد أتمتات مجدولة",
+    "noHostAutomations": "لا تستخدم أي أتمتة هذا المضيف",
+    "noMaintenance": "لا يوجد صيانة حالياً",
+    "inMinutes_zero": "في {{count}} دقائق",
+    "inMinutes_one": "في دقيقة واحدة",
+    "inMinutes_two": "في دقيقتين",
+    "inMinutes_few": "في {{count}} دقائق",
+    "inMinutes_many": "في {{count}} دقيقة",
+    "inMinutes_other": "في {{count}} دقائق",
+    "inHours_zero": "في {{count}} ساعات",
+    "inHours_one": "في ساعة واحدة",
+    "inHours_two": "في ساعتين",
+    "inHours_few": "في {{count}} ساعات",
+    "inHours_many": "في {{count}} ساعة",
+    "inHours_other": "في {{count}} ساعات",
+    "inDays_zero": "في {{count}} أيام",
+    "inDays_one": "في يوم واحد",
+    "inDays_two": "في يومين",
+    "inDays_few": "في {{count}} أيام",
+    "inDays_many": "في {{count}} يوماً",
+    "inDays_other": "في {{count}} أيام"
   }
 }

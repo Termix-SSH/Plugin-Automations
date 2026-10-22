@@ -220,15 +220,55 @@
       "enable": {
         "label": "Aktivér vedligeholdelse",
         "description": "Vis vedligeholdelsesmodus for denne vært."
+      },
+      "showPanel": {
+        "label": "Panel ved siden af terminalen",
+        "description": "Vis et automatiseringspanel ved siden af SSH-terminalen for denne vært."
       }
     },
     "alwaysShowActions": {
       "label": "Vis altid knapper",
       "description": "Hold knapperne Test, Kør og Slet under hver automatisering synlige. Slå fra for kun at vise dem ved musens påhæng."
+    },
+    "companionAutoOpen": {
+      "label": "Åbn automatiseringspanelet sammen med en terminal",
+      "description": "Vis automatiseringspanelet, når en terminal åbnes på en vært, der har det."
+    },
+    "companionSide": {
+      "label": "Placering af automatiseringspanelet",
+      "description": "Hvor panelet sidder i forhold til terminalen.",
+      "right": "Højre",
+      "left": "Venstre",
+      "bottom": "Nederst"
+    },
+    "companionSize": {
+      "label": "Størrelse på automatiseringspanelet",
+      "description": "Bredde, eller højde hvis det er nederst, i pixels."
+    },
+    "companionEdgeButton": {
+      "label": "Knap til automatiseringspanelet i kanten",
+      "description": "Vis en lille knap i terminalens kant for at åbne panelet."
     }
   },
   "plugin": {
     "name": "Automatiseringer",
     "description": "Kør trin på dine værter efter en tidsplan eller når der sker noget."
+  },
+  "companion": {
+    "toggle": "Automatiseringspanel",
+    "openTab": "Åbn fanen Automatisering"
+  },
+  "card": {
+    "upcoming": "Kommende automatiseringer",
+    "recentRuns": "Kørsler af automatiseringer",
+    "noUpcoming": "Ingen planlagte automatiseringer",
+    "noHostAutomations": "Ingen automatiseringer bruger denne vært",
+    "noMaintenance": "Intet vedligeholdelse lige nu",
+    "inMinutes_one": "om {{count}} minut",
+    "inMinutes_other": "om {{count}} minutter",
+    "inHours_one": "om {{count}} time",
+    "inHours_other": "om {{count}} timer",
+    "inDays_one": "om {{count}} dag",
+    "inDays_other": "om {{count}} dage"
   }
 }

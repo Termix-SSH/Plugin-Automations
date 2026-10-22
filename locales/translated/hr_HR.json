@@ -221,15 +221,58 @@
       "enable": {
         "label": "Omogući održavanje",
         "description": "Prikaži način održavanja za ovaj host."
+      },
+      "showPanel": {
+        "label": "Panel uz terminal",
+        "description": "Prikaži panel za automatizacije uz SSH terminal ovog hosta."
       }
     },
     "alwaysShowActions": {
       "label": "Uvijek prikaži gumbe",
       "description": "Držite gumbe za testiranje, pokretanje i brisanje ispod svake automatizacije vidljivima. Isključite da bi se prikazivali samo pri prelasku mišem."
+    },
+    "companionAutoOpen": {
+      "label": "Otvori panel za automatizacije uz terminal",
+      "description": "Prikaži panel za automatizacije kada se terminal otvori na hostu koji ga ima."
+    },
+    "companionSide": {
+      "label": "Položaj panela za automatizacije",
+      "description": "Gdje se panel nalazi uz terminal.",
+      "right": "Desno",
+      "left": "Lijevo",
+      "bottom": "Dolje"
+    },
+    "companionSize": {
+      "label": "Veličina panela za automatizacije",
+      "description": "Širina, ili visina ako je na dnu, u pikselima."
+    },
+    "companionEdgeButton": {
+      "label": "Gumb na rubu za panel automatizacija",
+      "description": "Prikaži mali gumb na rubu terminala za otvaranje panela."
     }
   },
   "plugin": {
     "name": "Automatizacije",
     "description": "Pokreći korake na svojim hostovima prema rasporedu ili kada se nešto dogodi."
+  },
+  "companion": {
+    "toggle": "Panel za automatizacije",
+    "openTab": "Otvori karticu Automatizacije"
+  },
+  "card": {
+    "upcoming": "Nadolazeće automatizacije",
+    "recentRuns": "Izvršavanja automatizacija",
+    "noUpcoming": "Nema zakazanih automatizacija",
+    "noHostAutomations": "Nijedna automatizacija ne koristi ovaj host",
+    "noMaintenance": "Trenutno nema održavanja",
+    "inMinutes_one": "za {{count}} minutu",
+    "inMinutes_few": "za {{count}} minute",
+    "inMinutes_other": "za {{count}} minuta",
+    "inHours_one": "za {{count}} sat",
+    "inHours_few": "za {{count}} sata",
+    "inHours_other": "za {{count}} sati",
+    "inDays_one": "za {{count}} dan",
+    "inDays_few": "za {{count}} dana",
+    "inDays_other": "za {{count}} dana"
   }
 }

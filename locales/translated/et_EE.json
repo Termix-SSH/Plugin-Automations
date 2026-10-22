@@ -220,15 +220,55 @@
       "enable": {
         "label": "Luba hooldusrežiim",
         "description": "Kuva selle hosti jaoks hooldusrežiim."
+      },
+      "showPanel": {
+        "label": "Paneel terminali kõrval",
+        "description": "Kuvab selle hosti SSH terminali kõrval automatiseerimiste paneeli."
       }
     },
     "alwaysShowActions": {
       "label": "Näita nuppe alati",
       "description": "Hoia iga automatiseerimise all olevad testimise, käivitamise ja kustutamise nupud nähtaval. Lülita välja, et näidata neid ainult hiirekursori kohal hõljutamisel."
+    },
+    "companionAutoOpen": {
+      "label": "Ava automatiseerimiste paneel koos terminaliga",
+      "description": "Kuva automatiseerimiste paneel, kui terminal avatakse hostil, millel see on olemas."
+    },
+    "companionSide": {
+      "label": "Automatiseerimiste paneeli asukoht",
+      "description": "Kus paneel terminali kõrval asub.",
+      "right": "Parem",
+      "left": "Vasak",
+      "bottom": "Alumine"
+    },
+    "companionSize": {
+      "label": "Automatiseerimiste paneeli suurus",
+      "description": "Laius või alumisel asukohal kõrgus pikslites."
+    },
+    "companionEdgeButton": {
+      "label": "Automatiseerimiste paneeli servanupp",
+      "description": "Kuva terminali serval väike nupp paneeli avamiseks."
     }
   },
   "plugin": {
     "name": "Automatsioonid",
     "description": "Käivita samme oma hostidel ajakava alusel või kui midagi juhtub."
+  },
+  "companion": {
+    "toggle": "Automatiseerimiste paneel",
+    "openTab": "Ava Automatiseerimiste vaheleht"
+  },
+  "card": {
+    "upcoming": "Tulevad automatiseerimised",
+    "recentRuns": "Automatiseerimiste käivitused",
+    "noUpcoming": "Ajastatud automatiseerimisi pole",
+    "noHostAutomations": "Ükski automatiseerimine ei kasuta seda hosti",
+    "noMaintenance": "Hooldustööd ei ole hetkel planeeritud",
+    "inMinutes_one": "{{count}} minuti pärast",
+    "inMinutes_other": "{{count}} minuti pärast",
+    "inHours_one": "{{count}} tunni pärast",
+    "inHours_other": "{{count}} tunni pärast",
+    "inDays_one": "{{count}} päeva pärast",
+    "inDays_other": "{{count}} päeva pärast"
   }
 }

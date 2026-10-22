@@ -219,15 +219,52 @@
       "enable": {
         "label": "メンテナンスを有効にする",
         "description": "このホストにメンテナンスモードを表示します。"
+      },
+      "showPanel": {
+        "label": "ターミナル横のパネル",
+        "description": "このホストの SSH ターミナルの隣に自動化パネルを表示します。"
       }
     },
     "alwaysShowActions": {
       "label": "ボタンを常に表示",
       "description": "各オートメーションの下のテスト、実行、削除ボタンを常に表示します。オフにすると、ホバー時のみ表示されます。"
+    },
+    "companionAutoOpen": {
+      "label": "ターミナルと同時に自動化パネルを開く",
+      "description": "自動化パネルが設定されたホストでターミナルを開いたとき、自動的にパネルを表示します。"
+    },
+    "companionSide": {
+      "label": "自動化パネルの表示位置",
+      "description": "ターミナルの隣にパネルを表示する位置です。",
+      "right": "右",
+      "left": "左",
+      "bottom": "下"
+    },
+    "companionSize": {
+      "label": "自動化パネルのサイズ",
+      "description": "幅、または下部表示時の高さをピクセル単位で指定します。"
+    },
+    "companionEdgeButton": {
+      "label": "自動化パネルのエッジボタン",
+      "description": "パネルを開くための小さなボタンをターミナルの端に表示します。"
     }
   },
   "plugin": {
     "name": "自動化",
     "description": "スケジュール設定や特定のイベント発生時に、ホストでステップを実行します。"
+  },
+  "companion": {
+    "toggle": "自動化パネル",
+    "openTab": "自動化タブを開く"
+  },
+  "card": {
+    "upcoming": "予定されている自動化",
+    "recentRuns": "自動化の実行履歴",
+    "noUpcoming": "スケジュールされた自動化はありません",
+    "noHostAutomations": "このホストを使用する自動化はありません",
+    "noMaintenance": "現在メンテナンスはありません",
+    "inMinutes_other": "{{count}}分後",
+    "inHours_other": "{{count}}時間後",
+    "inDays_other": "{{count}}日後"
   }
 }

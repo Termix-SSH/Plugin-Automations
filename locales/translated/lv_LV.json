@@ -221,15 +221,58 @@
       "enable": {
         "label": "Iespējot apkopi",
         "description": "Rādīt šim resursam apkopes režīmu."
+      },
+      "showPanel": {
+        "label": "Panelis blakus terminālim",
+        "description": "Piedāvā automatizācijas paneli blakus šī hosta SSH terminālim."
       }
     },
     "alwaysShowActions": {
       "label": "Vienmēr rādīt pogas",
       "description": "Turiet testēšanas, izpildes un dzēšanas pogas zem katras automatizācijas redzamas. Izslēdziet, lai tās rādītu tikai, novietojot peli virs tām."
+    },
+    "companionAutoOpen": {
+      "label": "Atvērt automatizācijas paneli kopā ar termināli",
+      "description": "Rādīt automatizācijas paneli, kad terminālis atveras uz hosta, kam tas ir pieejams."
+    },
+    "companionSide": {
+      "label": "Automatizācijas panela puse",
+      "description": "Kur panelis atrodas blakus terminālim.",
+      "right": "Labajā pusē",
+      "left": "Kreisajā pusē",
+      "bottom": "Apakšā"
+    },
+    "companionSize": {
+      "label": "Automatizācijas panela izmērs",
+      "description": "Platums vai augstums apakšā pikseļos."
+    },
+    "companionEdgeButton": {
+      "label": "Automatizāciju panela malas poga",
+      "description": "Rāda mazu pogu termināļa malā, lai atvērtu paneli."
     }
   },
   "plugin": {
     "name": "Automatizācijas",
     "description": "Izpildiet darbības savos serveros pēc grafika vai notikuma iestāšanās."
+  },
+  "companion": {
+    "toggle": "Automatizāciju panels",
+    "openTab": "Atvērt Automatizāciju cilni"
+  },
+  "card": {
+    "upcoming": "Gaidāmās automatizācijas",
+    "recentRuns": "Automatizāciju izpildes",
+    "noUpcoming": "Nav ierakstītu automatizāciju",
+    "noHostAutomations": "Šo resursdatoru neizmanto neviena automatizācija",
+    "noMaintenance": "Pašlaik nav tehniskās apkopes",
+    "inMinutes_zero": "pēc {{count}} minūtēm",
+    "inMinutes_one": "pēc {{count}} minūtes",
+    "inMinutes_other": "pēc {{count}} minūtēm",
+    "inHours_zero": "pēc {{count}} stundām",
+    "inHours_one": "pēc {{count}} stundas",
+    "inHours_other": "pēc {{count}} stundām",
+    "inDays_zero": "pēc {{count}} dienām",
+    "inDays_one": "pēc {{count}} dienas",
+    "inDays_other": "pēc {{count}} dienām"
   }
 }

@@ -221,15 +221,58 @@
       "enable": {
         "label": "Abilita manutenzione",
         "description": "Mostra la modalità di manutenzione per questo host."
+      },
+      "showPanel": {
+        "label": "Pannello accanto al terminale",
+        "description": "Mostra un pannello di automazioni accanto al terminale SSH di questo host."
       }
     },
     "alwaysShowActions": {
       "label": "Mostra sempre i pulsanti",
       "description": "Mantieni visibili i pulsanti di test, esecuzione ed eliminazione sotto ogni automazione. Disattiva per mostrarli solo al passaggio del mouse."
+    },
+    "companionAutoOpen": {
+      "label": "Apri il pannello di automazioni con un terminale",
+      "description": "Mostra il pannello di automazioni quando si apre un terminale su un host che lo supporta."
+    },
+    "companionSide": {
+      "label": "Posizione del pannello di automazioni",
+      "description": "Dove posizionare il pannello rispetto al terminale.",
+      "right": "Destra",
+      "left": "Sinistra",
+      "bottom": "In basso"
+    },
+    "companionSize": {
+      "label": "Dimensioni del pannello di automazioni",
+      "description": "Larghezza, o altezza se in basso, in pixel."
+    },
+    "companionEdgeButton": {
+      "label": "Pulsante laterale del pannello di automazioni",
+      "description": "Mostra un piccolo pulsante sul bordo del terminale per aprire il pannello."
     }
   },
   "plugin": {
     "name": "Automazioni",
     "description": "Esegui passaggi sui tuoi host secondo una pianificazione o quando si verifica un evento."
+  },
+  "companion": {
+    "toggle": "Pannello di automazioni",
+    "openTab": "Apri la scheda Automazioni"
+  },
+  "card": {
+    "upcoming": "Automazioni imminenti",
+    "recentRuns": "Esecuzioni di automazioni",
+    "noUpcoming": "Nessuna automazione pianificata",
+    "noHostAutomations": "Nessuna automazione utilizza questo host",
+    "noMaintenance": "Nessuna manutenzione in corso",
+    "inMinutes_one": "tra {{count}} minuto",
+    "inMinutes_many": "tra {{count}} minuti",
+    "inMinutes_other": "tra {{count}} minuti",
+    "inHours_one": "tra {{count}} ora",
+    "inHours_many": "tra {{count}} ore",
+    "inHours_other": "tra {{count}} ore",
+    "inDays_one": "tra {{count}} giorno",
+    "inDays_many": "tra {{count}} giorni",
+    "inDays_other": "tra {{count}} giorni"
   }
 }

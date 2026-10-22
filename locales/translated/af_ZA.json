@@ -220,15 +220,55 @@
       "enable": {
         "label": "Aktiveer onderhoudsmodus",
         "description": "Wys onderhoudsmodus vir hierdie gasheer."
+      },
+      "showPanel": {
+        "label": "Paneel langs die terminaal",
+        "description": "Bied 'n outomatiseringspaneel langs hierdie gasheer se SSH-terminaal."
       }
     },
     "alwaysShowActions": {
       "label": "Wys altyd knoppies",
       "description": "Hou die toets, uitvoer en vee uit-knoppies onder elke outomatisering sigbaar. Skakel af om dit slegs by hover te wys."
+    },
+    "companionAutoOpen": {
+      "label": "Maak die outomatiseringspaneel oop met 'n terminaal",
+      "description": "Wys die outomatiseringspaneel wanneer 'n terminaal oopmaak op 'n gasheer wat dit het."
+    },
+    "companionSide": {
+      "label": "Otomatiseringspaneel se kant",
+      "description": "Waar die paneel langs die terminaal sit.",
+      "right": "Regs",
+      "left": "Links",
+      "bottom": "Onder"
+    },
+    "companionSize": {
+      "label": "Otomatiseringspaneel se grootte",
+      "description": "Wyde, of hoogte onderaan, in pixels."
+    },
+    "companionEdgeButton": {
+      "label": "Otomatiseringspaneel se randknoppie",
+      "description": "Wys 'n klein knoppie op die terminaal se rand om die paneel oop te maak."
     }
   },
   "plugin": {
     "name": "Outomatiserings",
     "description": "Voer stappe uit op jou gasheer volgens 'n skedule of wanneer iets gebeur."
+  },
+  "companion": {
+    "toggle": "Otomatiseringspaneel",
+    "openTab": "Maak die Outomatiserings-oortjie oop"
+  },
+  "card": {
+    "upcoming": "Aankomende outomatiserings",
+    "recentRuns": "Otomatiseringsuitvoerings",
+    "noUpcoming": "Geen geskeduleerde outomatiserings nie",
+    "noHostAutomations": "Geen outomatiserings gebruik hierdie gasheer nie",
+    "noMaintenance": "Geen onderhoud tans nie",
+    "inMinutes_one": "in {{count}} minuut",
+    "inMinutes_other": "in {{count}} minute",
+    "inHours_one": "in {{count}} uur",
+    "inHours_other": "in {{count}} ure",
+    "inDays_one": "in {{count}} dag",
+    "inDays_other": "in {{count}} dae"
   }
 }

@@ -222,15 +222,61 @@
       "enable": {
         "label": "Włącz tryb konserwacji",
         "description": "Wyświetl tryb konserwacji dla tego hosta."
+      },
+      "showPanel": {
+        "label": "Panel obok terminala",
+        "description": "Wyświetl panel automatyzacji obok terminala SSH tego hosta."
       }
     },
     "alwaysShowActions": {
       "label": "Zawsze pokazuj przyciski",
       "description": "Utrzymuj przyciski testu, uruchomienia i usuwania widoczne pod każdą automatyzacją. Wyłącz, aby pokazywać je tylko po najechaniu kursorem."
+    },
+    "companionAutoOpen": {
+      "label": "Otwieraj panel automatyzacji razem z terminalem",
+      "description": "Wyświetlaj panel automatyzacji przy otwieraniu terminala na hoście, który go obsługuje."
+    },
+    "companionSide": {
+      "label": "Położenie panelu automatyzacji",
+      "description": "Gdzie panel znajduje się względem terminala.",
+      "right": "Prawa",
+      "left": "Lewa",
+      "bottom": "Dolna"
+    },
+    "companionSize": {
+      "label": "Rozmiar panelu automatyzacji",
+      "description": "Szerokość lub wysokość u dołu, w pikselach."
+    },
+    "companionEdgeButton": {
+      "label": "Przycisk krawędziowy panelu automatyzacji",
+      "description": "Wyświetl mały przycisk na krawędzi terminala, aby otworzyć panel."
     }
   },
   "plugin": {
     "name": "Automatyzacje",
     "description": "Uruchamiaj kroki na swoich hostach według harmonogramu lub w odpowiedzi na zdarzenia."
+  },
+  "companion": {
+    "toggle": "Panel automatyzacji",
+    "openTab": "Otwórz kartę Automatyzacje"
+  },
+  "card": {
+    "upcoming": "Nadchodzące automatyzacje",
+    "recentRuns": "Wykonania automatyzacji",
+    "noUpcoming": "Brak zaplanowanych automatyzacji",
+    "noHostAutomations": "Żadna automatyzacja nie używa tego hosta",
+    "noMaintenance": "Brak prac konserwacyjnych w tej chwili",
+    "inMinutes_one": "za {{count}} minutę",
+    "inMinutes_few": "za {{count}} minuty",
+    "inMinutes_many": "za {{count}} minut",
+    "inMinutes_other": "za {{count}} minut",
+    "inHours_one": "za {{count}} godzinę",
+    "inHours_few": "za {{count}} godziny",
+    "inHours_many": "za {{count}} godzin",
+    "inHours_other": "za {{count}} godzin",
+    "inDays_one": "za {{count}} dzień",
+    "inDays_few": "za {{count}} dni",
+    "inDays_many": "za {{count}} dni",
+    "inDays_other": "za {{count}} dni"
   }
 }

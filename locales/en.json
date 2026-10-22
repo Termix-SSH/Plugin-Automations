@@ -220,15 +220,55 @@
       "enable": {
         "label": "Enable maintenance",
         "description": "Show maintenance mode for this host."
+      },
+      "showPanel": {
+        "label": "Panel beside the terminal",
+        "description": "Offer a automations panel next to this host's SSH terminal."
       }
     },
     "alwaysShowActions": {
       "label": "Always show buttons",
       "description": "Keep the test, run and delete buttons under each automation visible. Turn off to show them only on hover."
+    },
+    "companionAutoOpen": {
+      "label": "Open the automations panel with a terminal",
+      "description": "Show the automations panel when a terminal opens on a host that has it."
+    },
+    "companionSide": {
+      "label": "Automations panel side",
+      "description": "Where the panel sits next to the terminal.",
+      "right": "Right",
+      "left": "Left",
+      "bottom": "Bottom"
+    },
+    "companionSize": {
+      "label": "Automations panel size",
+      "description": "Width, or height at the bottom, in pixels."
+    },
+    "companionEdgeButton": {
+      "label": "Automations panel edge button",
+      "description": "Show a small button on the terminal edge to open the panel."
     }
   },
   "plugin": {
     "name": "Automations",
     "description": "Run steps on your hosts on a schedule or when something happens."
+  },
+  "companion": {
+    "toggle": "Automations panel",
+    "openTab": "Open the Automations tab"
+  },
+  "card": {
+    "upcoming": "Upcoming automations",
+    "recentRuns": "Automation runs",
+    "noUpcoming": "No scheduled automations",
+    "noHostAutomations": "No automations use this host",
+    "noMaintenance": "No maintenance right now",
+    "inMinutes_one": "in {{count}} minute",
+    "inMinutes_other": "in {{count}} minutes",
+    "inHours_one": "in {{count}} hour",
+    "inHours_other": "in {{count}} hours",
+    "inDays_one": "in {{count}} day",
+    "inDays_other": "in {{count}} days"
   }
 }

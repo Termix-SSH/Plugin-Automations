@@ -221,15 +221,58 @@
       "enable": {
         "label": "Activa el manteniment",
         "description": "Mostra el mode de manteniment per a aquest host."
+      },
+      "showPanel": {
+        "label": "Panell al costat del terminal",
+        "description": "Mostra un panell d'automatitzacions al costat del terminal SSH d'aquest amfitrió."
       }
     },
     "alwaysShowActions": {
       "label": "Mostrar sempre els botons",
       "description": "Manté visibles els botons de prova, execució i eliminació sota cada automatització. Desactiveu-lo per mostrar-los només en passar el cursor per sobre."
+    },
+    "companionAutoOpen": {
+      "label": "Obre el panell d'automatitzacions amb un terminal",
+      "description": "Mostra el panell d'automatitzacions quan s'obre un terminal en un amfitrió que en tingui."
+    },
+    "companionSide": {
+      "label": "Posició del panell d'automatitzacions",
+      "description": "On es troba el panell al costat del terminal.",
+      "right": "Dreta",
+      "left": "Esquerra",
+      "bottom": "Inferior"
+    },
+    "companionSize": {
+      "label": "Mida del panell d'automatitzacions",
+      "description": "Amplada, o alçada si és a la part inferior, en píxels."
+    },
+    "companionEdgeButton": {
+      "label": "Botó del panell d'automatitzacions al marge",
+      "description": "Mostra un botó petit al marge del terminal per obrir el panell."
     }
   },
   "plugin": {
     "name": "Automatitzacions",
     "description": "Executa passos als teus amfitrions segons un horari o quan es produeixi un esdeveniment."
+  },
+  "companion": {
+    "toggle": "Panell d'automatitzacions",
+    "openTab": "Obre la pestanya d'Automatitzacions"
+  },
+  "card": {
+    "upcoming": "Automatitzacions properes",
+    "recentRuns": "Execucions d'automatitzacions",
+    "noUpcoming": "Cap automatització programada",
+    "noHostAutomations": "Cap automatització utilitza aquest amfitrió",
+    "noMaintenance": "Cap manteniment ara mateix",
+    "inMinutes_one": "d'aquí {{count}} minut",
+    "inMinutes_many": "d'aquí {{count}} minuts",
+    "inMinutes_other": "d'aquí {{count}} minuts",
+    "inHours_one": "d'aquí {{count}} hora",
+    "inHours_many": "d'aquí {{count}} hores",
+    "inHours_other": "d'aquí {{count}} hores",
+    "inDays_one": "d'aquí {{count}} dia",
+    "inDays_many": "d'aquí {{count}} dies",
+    "inDays_other": "d'aquí {{count}} dies"
   }
 }

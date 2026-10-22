@@ -1,7 +1,7 @@
 {
   "id": "automations",
   "name": "Automations",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Run steps on your hosts on a schedule or when something happens.",
   "author": {
     "name": "Termix"
@@ -18,7 +18,8 @@
     "Conditions, waits and variables for more complex flows",
     "Run on one host, a fleet or every host",
     "Test runs and a history of every run",
-    "Maintenance windows that pause automations while you work on a host"
+    "Maintenance windows that pause automations while you work on a host",
+    "An automations panel beside any SSH terminal, plus upcoming and recent run dashboard cards"
   ],
   "engine": {
     "termix": ">=26.10.0",
@@ -148,7 +149,15 @@
         "enableLabelKey": "settings.host.enable.label",
         "enableDescriptionKey": "settings.host.enable.description",
         "enableDefault": false,
-        "fields": []
+        "fields": [
+          {
+            "key": "showPanel",
+            "type": "boolean",
+            "labelKey": "settings.host.showPanel.label",
+            "descriptionKey": "settings.host.showPanel.description",
+            "default": true
+          }
+        ]
       },
       "user": [
         {
@@ -157,9 +166,65 @@
           "labelKey": "settings.alwaysShowActions.label",
           "descriptionKey": "settings.alwaysShowActions.description",
           "default": false
+        },
+        {
+          "key": "companionAutoOpen",
+          "type": "boolean",
+          "labelKey": "settings.companionAutoOpen.label",
+          "descriptionKey": "settings.companionAutoOpen.description",
+          "default": false
+        },
+        {
+          "key": "companionSide",
+          "type": "select",
+          "labelKey": "settings.companionSide.label",
+          "descriptionKey": "settings.companionSide.description",
+          "default": "right",
+          "options": [
+            {
+              "value": "right",
+              "labelKey": "settings.companionSide.right"
+            },
+            {
+              "value": "left",
+              "labelKey": "settings.companionSide.left"
+            },
+            {
+              "value": "bottom",
+              "labelKey": "settings.companionSide.bottom"
+            }
+          ]
+        },
+        {
+          "key": "companionSize",
+          "type": "number",
+          "labelKey": "settings.companionSize.label",
+          "descriptionKey": "settings.companionSize.description",
+          "min": 240,
+          "max": 900,
+          "default": 320
+        },
+        {
+          "key": "companionEdgeButton",
+          "type": "boolean",
+          "labelKey": "settings.companionEdgeButton.label",
+          "descriptionKey": "settings.companionEdgeButton.description",
+          "default": true
         }
       ]
-    }
+    },
+    "dashboardCards": [
+      {
+        "id": "automations-upcoming",
+        "titleKey": "card.upcoming",
+        "icon": "CalendarClock"
+      },
+      {
+        "id": "automations-runs",
+        "titleKey": "card.recentRuns",
+        "icon": "History"
+      }
+    ]
   },
   "locales": "locales",
   "platforms": ["linux", "win32", "darwin"],

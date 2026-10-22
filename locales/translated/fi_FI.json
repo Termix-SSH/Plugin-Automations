@@ -220,15 +220,55 @@
       "enable": {
         "label": "Ota ylläpito käyttöön",
         "description": "Näytä ylläpitotila tälle isäntäpalvelimelle."
+      },
+      "showPanel": {
+        "label": "Paneeli terminaalin vieressä",
+        "description": "Näytä automaatiopaneeli tämän isäntäterminaalin vieressä."
       }
     },
     "alwaysShowActions": {
       "label": "Näytä painikkeet aina",
       "description": "Pidä testaus-, suoritus- ja poistopainikkeet näkyvissä jokaisen automaation alla. Kytke pois päältä, jos haluat näyttää ne vain hiiren vierityksen aikana."
+    },
+    "companionAutoOpen": {
+      "label": "Avaa automaatiopaneeli terminaalin kanssa",
+      "description": "Näytä automaatiopaneeli, kun terminaali avautuu isännällä, jossa se on käytössä."
+    },
+    "companionSide": {
+      "label": "Automaatiopaneelin sijainti",
+      "description": "Missä paneeli sijaitsee terminaalin vieressä.",
+      "right": "Oikealla",
+      "left": "Vasemmalla",
+      "bottom": "Alareunassa"
+    },
+    "companionSize": {
+      "label": "Automaatiopaneelin koko",
+      "description": "Leveys tai alareunan korkeus pikseleinä."
+    },
+    "companionEdgeButton": {
+      "label": "Automaatiopaneelin reuna-painike",
+      "description": "Näytä pieni painike terminaalin reunassa paneelin avaamiseksi."
     }
   },
   "plugin": {
     "name": "Automaatiot",
     "description": "Suorita vaiheita isännissäsi aikataulun mukaan tai kun jotakin tapahtuu."
+  },
+  "companion": {
+    "toggle": "Automaatiopaneeli",
+    "openTab": "Avaa Automaatiot-välilehti"
+  },
+  "card": {
+    "upcoming": "Tulevat automaatiot",
+    "recentRuns": "Automaatioiden suoritukset",
+    "noUpcoming": "Ei aikataulutettuja automaatioita",
+    "noHostAutomations": "Tätä isäntää ei käytetä automaatioissa",
+    "noMaintenance": "Ei ylläpitoa juuri nyt",
+    "inMinutes_one": "{{count}} minuutin kuluttua",
+    "inMinutes_other": "{{count}} minuutin kuluttua",
+    "inHours_one": "{{count}} tunnin kuluttua",
+    "inHours_other": "{{count}} tunnin kuluttua",
+    "inDays_one": "{{count}} päivän kuluttua",
+    "inDays_other": "{{count}} päivän kuluttua"
   }
 }

@@ -219,15 +219,52 @@
       "enable": {
         "label": "Aktifkan mode pemeliharaan",
         "description": "Tampilkan mode pemeliharaan untuk host ini."
+      },
+      "showPanel": {
+        "label": "Panel di samping terminal",
+        "description": "Tampilkan panel otomatisasi di sebelah terminal SSH host ini."
       }
     },
     "alwaysShowActions": {
       "label": "Selalu tampilkan tombol",
       "description": "Jaga tombol uji, jalankan, dan hapus di bawah setiap otomatisasi tetap terlihat. Matikan untuk menampilkannya hanya saat kursor diarahkan."
+    },
+    "companionAutoOpen": {
+      "label": "Buka panel otomatisasi bersama terminal",
+      "description": "Tampilkan panel otomatisasi saat terminal terbuka pada host yang memilikinya."
+    },
+    "companionSide": {
+      "label": "Posisi panel otomatisasi",
+      "description": "Di mana panel berada di samping terminal.",
+      "right": "Kanan",
+      "left": "Kiri",
+      "bottom": "Bawah"
+    },
+    "companionSize": {
+      "label": "Ukuran panel otomatisasi",
+      "description": "Lebar, atau tinggi jika di bawah, dalam piksel."
+    },
+    "companionEdgeButton": {
+      "label": "Tombol tepi panel otomatisasi",
+      "description": "Tampilkan tombol kecil di tepi terminal untuk membuka panel."
     }
   },
   "plugin": {
     "name": "Otomasi",
     "description": "Jalankan langkah-langkah pada host Anda secara terjadwal atau ketika suatu peristiwa terjadi."
+  },
+  "companion": {
+    "toggle": "Panel otomatisasi",
+    "openTab": "Buka tab Otomatisasi"
+  },
+  "card": {
+    "upcoming": "Otomatisasi mendatang",
+    "recentRuns": "Eksekusi otomatisasi",
+    "noUpcoming": "Tidak ada otomatisasi terjadwal",
+    "noHostAutomations": "Tidak ada otomatisasi yang menggunakan host ini",
+    "noMaintenance": "Tidak ada pemeliharaan saat ini",
+    "inMinutes_other": "dalam {{count}} menit",
+    "inHours_other": "dalam {{count}} jam",
+    "inDays_other": "dalam {{count}} hari"
   }
 }

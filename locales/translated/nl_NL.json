@@ -220,15 +220,55 @@
       "enable": {
         "label": "Onderhoud inschakelen",
         "description": "Onderhoudsmodus voor deze host weergeven."
+      },
+      "showPanel": {
+        "label": "Paneel naast de terminal",
+        "description": "Een automatiseringspaneel tonen naast de SSH-terminal van deze host."
       }
     },
     "alwaysShowActions": {
       "label": "Knoppen altijd tonen",
       "description": "Houd de knoppen voor testen, uitvoeren en verwijderen onder elke automatisering zichtbaar. Zet dit uit om ze alleen bij hover te tonen."
+    },
+    "companionAutoOpen": {
+      "label": "Automatiseringspaneel openen met een terminal",
+      "description": "Het automatiseringspaneel tonen wanneer een terminal opent op een host die dit heeft."
+    },
+    "companionSide": {
+      "label": "Positie automatiseringspaneel",
+      "description": "Waar het paneel naast de terminal staat.",
+      "right": "Rechts",
+      "left": "Links",
+      "bottom": "Onder"
+    },
+    "companionSize": {
+      "label": "Grootte automatiseringspaneel",
+      "description": "Breedte, of hoogte onderaan, in pixels."
+    },
+    "companionEdgeButton": {
+      "label": "Knop aan de rand voor automatiseringspaneel",
+      "description": "Een kleine knop tonen aan de rand van de terminal om het paneel te openen."
     }
   },
   "plugin": {
     "name": "Automatiseringen",
     "description": "Voer stappen uit op je hosts volgens een schema of wanneer er iets gebeurt."
+  },
+  "companion": {
+    "toggle": "Automatiseringspaneel",
+    "openTab": "Tabblad Automatiseringen openen"
+  },
+  "card": {
+    "upcoming": "Aankomende automatiseringen",
+    "recentRuns": "Uitvoeringen automatiseringen",
+    "noUpcoming": "Geen geplande automatiseringen",
+    "noHostAutomations": "Geen automatiseringen gebruiken deze host",
+    "noMaintenance": "Momenteel geen onderhoud",
+    "inMinutes_one": "over {{count}} minuut",
+    "inMinutes_other": "over {{count}} minuten",
+    "inHours_one": "over {{count}} uur",
+    "inHours_other": "over {{count}} uur",
+    "inDays_one": "over {{count}} dag",
+    "inDays_other": "over {{count}} dagen"
   }
 }

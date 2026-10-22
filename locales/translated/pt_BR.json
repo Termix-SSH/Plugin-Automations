@@ -221,15 +221,58 @@
       "enable": {
         "label": "Ativar manutenção",
         "description": "Exibir o modo de manutenção para este host."
+      },
+      "showPanel": {
+        "label": "Painel ao lado do terminal",
+        "description": "Exibir um painel de automações ao lado do terminal SSH deste host."
       }
     },
     "alwaysShowActions": {
       "label": "Sempre mostrar botões",
       "description": "Mantenha os botões de teste, execução e exclusão visíveis abaixo de cada automação. Desative para mostrá-los apenas ao passar o mouse."
+    },
+    "companionAutoOpen": {
+      "label": "Abrir o painel de automações com um terminal",
+      "description": "Exibir o painel de automações quando um terminal for aberto em um host que o possui."
+    },
+    "companionSide": {
+      "label": "Lado do painel de automações",
+      "description": "Onde o painel fica ao lado do terminal.",
+      "right": "Direita",
+      "left": "Esquerda",
+      "bottom": "Inferior"
+    },
+    "companionSize": {
+      "label": "Tamanho do painel de automações",
+      "description": "Largura, ou altura na parte inferior, em pixels."
+    },
+    "companionEdgeButton": {
+      "label": "Botão lateral do painel de automações",
+      "description": "Exibir um pequeno botão na borda do terminal para abrir o painel."
     }
   },
   "plugin": {
     "name": "Automações",
     "description": "Execute etapas nos seus hosts em um agendamento ou quando algo acontecer."
+  },
+  "companion": {
+    "toggle": "Painel de automações",
+    "openTab": "Abrir a guia de automações"
+  },
+  "card": {
+    "upcoming": "Automações próximas",
+    "recentRuns": "Execuções de automação",
+    "noUpcoming": "Nenhuma automação agendada",
+    "noHostAutomations": "Nenhuma automação usa este host",
+    "noMaintenance": "Nenhuma manutenção no momento",
+    "inMinutes_one": "em {{count}} minuto",
+    "inMinutes_many": "em {{count}} minutos",
+    "inMinutes_other": "em {{count}} minutos",
+    "inHours_one": "em {{count}} hora",
+    "inHours_many": "em {{count}} horas",
+    "inHours_other": "em {{count}} horas",
+    "inDays_one": "em {{count}} dia",
+    "inDays_many": "em {{count}} dias",
+    "inDays_other": "em {{count}} dias"
   }
 }

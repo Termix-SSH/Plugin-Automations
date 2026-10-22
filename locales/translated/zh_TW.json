@@ -219,15 +219,52 @@
       "enable": {
         "label": "啟用維護模式",
         "description": "為此主機顯示維護模式。"
+      },
+      "showPanel": {
+        "label": "終端機旁的面板",
+        "description": "在此主機的 SSH 終端機旁提供自動化面板。"
       }
     },
     "alwaysShowActions": {
       "label": "始終顯示按鈕",
       "description": "保持每個自動化下方的測試、執行和刪除按鈕可見。關閉後，僅在滑鼠懸停時顯示。"
+    },
+    "companionAutoOpen": {
+      "label": "開啟終端機時自動開啟自動化面板",
+      "description": "當開啟具有此功能的主機終端機時，顯示自動化面板。"
+    },
+    "companionSide": {
+      "label": "自動化面板位置",
+      "description": "面板相對於終端機的位置。",
+      "right": "右側",
+      "left": "左側",
+      "bottom": "底部"
+    },
+    "companionSize": {
+      "label": "自動化面板大小",
+      "description": "寬度，或位於底部時的高度，單位為像素。"
+    },
+    "companionEdgeButton": {
+      "label": "自動化面板邊緣按鈕",
+      "description": "在終端機邊緣顯示小按鈕以開啟面板。"
     }
   },
   "plugin": {
     "name": "自動化",
     "description": "依排程或在事件發生時在主機上執行步驟。"
+  },
+  "companion": {
+    "toggle": "自動化面板",
+    "openTab": "開啟自動化分頁"
+  },
+  "card": {
+    "upcoming": "即將到來的自動化",
+    "recentRuns": "自動化執行記錄",
+    "noUpcoming": "沒有排定的自動化",
+    "noHostAutomations": "沒有自動化使用此主機",
+    "noMaintenance": "目前沒有維護工作",
+    "inMinutes_other": "{{count}} 分鐘後",
+    "inHours_other": "{{count}} 小時後",
+    "inDays_other": "{{count}} 天後"
   }
 }
