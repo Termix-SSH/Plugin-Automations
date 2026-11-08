@@ -77,7 +77,8 @@
           "schedule": "On a schedule",
           "docker_event": "Container event",
           "internal_event": "Termix event",
-          "webhook": "Incoming webhook"
+          "webhook": "Incoming webhook",
+          "operation_event": "An event happens"
         },
         "stepTypes": {
           "notify": "Send an alert",
@@ -92,7 +93,8 @@
           "set_var": "Set a variable",
           "if": "If / otherwise",
           "run_automation": "Run another automation",
-          "stop": "Stop"
+          "stop": "Stop",
+          "operation": "Run an action"
         },
         "statuses": {
           "running": "Running",
@@ -133,7 +135,13 @@
           "timeout": "Timeout (seconds)",
           "allowPrivateNetwork": "Allow local network addresses",
           "allowPrivateNetworkHint": "Needed for a self-hosted service on your LAN. Off by default to prevent requests to internal addresses.",
-          "interface": "Interface"
+          "interface": "Interface",
+          "action": "Action",
+          "pickAction": "Pick an action",
+          "actionMissing": "This action is not available. Its plugin may be off.",
+          "actionTarget": "Target on each host",
+          "event": "Event",
+          "pickEvent": "Pick an event"
         },
         "onError": {
           "stop": "Stop the run",
@@ -155,7 +163,11 @@
         "search": "Search automations",
         "noMatches": "No automations match your search",
         "settingsTitle": "Automation settings",
-        "settingsDisplayTitle": "Display"
+        "settingsDisplayTitle": "Display",
+        "events": {
+          "operation.failed": "Any action failed",
+          "operation.succeeded": "Any action finished"
+        }
       }
     }
   },
@@ -269,6 +281,19 @@
     "inHours_one": "in {{count}} hour",
     "inHours_other": "in {{count}} hours",
     "inDays_one": "in {{count}} day",
-    "inDays_other": "in {{count}} days"
+    "inDays_other": "in {{count}} days",
+    "noRuns": "No runs yet"
+  },
+  "operations": {
+    "list": {
+      "title": "List automations"
+    },
+    "run": {
+      "title": "Run an automation"
+    },
+    "automation": "Automation",
+    "failed": {
+      "title": "Failed automation runs"
+    }
   }
 }

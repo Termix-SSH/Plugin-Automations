@@ -14,6 +14,7 @@ const TRIGGER_KINDS = new Set([
   "schedule",
   "docker_event",
   "internal_event",
+  "operation_event",
   "webhook",
 ]);
 
@@ -25,6 +26,7 @@ const STEP_TYPES = new Set([
   "docker",
   "tunnel",
   "wol",
+  "operation",
   "ai_task",
   "wait",
   "set_var",
@@ -105,6 +107,21 @@ export function validateDefinition(value: unknown): {
     }
   }
 
+  if (trigger.kind === "operation_event") {
+    if (
+      !isNonEmptyString(trigger.event) ||
+      !/^(\*|[a-z0-9][a-z0-9-]*\.(\*|[a-z0-9][a-z0-9-]*))$/.test(trigger.event)
+    ) {
+      return { ok: false, error: "Event triggers need an event id" };
+    }
+    if (
+      trigger.hostSelector !== undefined &&
+      !isValidHostSelector(trigger.hostSelector)
+    ) {
+      return { ok: false, error: "Event trigger hosts are not valid" };
+    }
+  }
+
   if (trigger.kind === "schedule") {
     const hasInterval =
       typeof trigger.intervalSeconds === "number" &&
@@ -179,6 +196,26 @@ function validateSteps(steps: Step[], seen: Set<string>): string | null {
       }
       if (!isValidHostSelector(step.hostSelector)) {
         return "Ask AI steps need hosts to act on";
+      }
+    }
+    if (step.type === "operation") {
+      if (
+        !isNonEmptyString(step.actionId) ||
+        !/^[a-z0-9][a-z0-9-]*\.[a-z0-9][a-z0-9-]*$/.test(step.actionId)
+      ) {
+        return "Action steps need an action";
+      }
+      if (
+        step.hostSelector !== undefined &&
+        !isValidHostSelector(step.hostSelector)
+      ) {
+        return "Action step hosts are not valid";
+      }
+      if (
+        step.input !== undefined &&
+        (typeof step.input !== "object" || Array.isArray(step.input))
+      ) {
+        return "Action step input must be an object";
       }
     }
     if (step.type === "wait" && typeof step.seconds !== "number") {

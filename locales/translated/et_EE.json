@@ -77,7 +77,8 @@
           "schedule": "Ajakava järgi",
           "docker_event": "Konteineri sündmus",
           "internal_event": "Termixi sündmus",
-          "webhook": "Sissetulev webhook"
+          "webhook": "Sissetulev webhook",
+          "operation_event": "Sündimus toimub"
         },
         "stepTypes": {
           "notify": "Saada hoiatus",
@@ -92,7 +93,8 @@
           "set_var": "Määra muutuja",
           "if": "Kui / muidu",
           "run_automation": "Käivita teine automatiseerimine",
-          "stop": "Peata"
+          "stop": "Peata",
+          "operation": "Käivita tegevus"
         },
         "statuses": {
           "running": "Töötamine",
@@ -133,7 +135,13 @@
           "timeout": "Aegumine (sekundites)",
           "allowPrivateNetwork": "Luba kohaliku võrgu aadressid",
           "allowPrivateNetworkHint": "Vajalik oma LAN-is asuva isehostitava teenuse jaoks. Vaikimisi väljas, et vältida päringuid sisemistele aadressidele.",
-          "interface": "Liides"
+          "interface": "Liides",
+          "action": "Tegevus",
+          "pickAction": "Vali tegevus",
+          "actionMissing": "See tegevus ei ole saadaval. Selle lisamoodul võib olla väljalülitatud.",
+          "actionTarget": "Sihtmärk igal peremasinul",
+          "event": "Sündimus",
+          "pickEvent": "Vali sündimus"
         },
         "onError": {
           "stop": "Peata käivitamine",
@@ -155,7 +163,13 @@
         "search": "Otsi automatiseerimisi",
         "noMatches": "Ükski automatiseerimine ei vasta otsingule",
         "settingsTitle": "Automatiseerimise seaded",
-        "settingsDisplayTitle": "Kuvamine"
+        "settingsDisplayTitle": "Kuvamine",
+        "events": {
+          "operation": {
+            "failed": "Mõni tegevus ebaõnnestus",
+            "succeeded": "Mõni tegevus lõpetati"
+          }
+        }
       }
     }
   },
@@ -269,6 +283,19 @@
     "inHours_one": "{{count}} tunni pärast",
     "inHours_other": "{{count}} tunni pärast",
     "inDays_one": "{{count}} päeva pärast",
-    "inDays_other": "{{count}} päeva pärast"
+    "inDays_other": "{{count}} päeva pärast",
+    "noRuns": "Käivitusi veel ei ole"
+  },
+  "operations": {
+    "list": {
+      "title": "Automatiseerimiste loend"
+    },
+    "run": {
+      "title": "Käivita automatiseerimine"
+    },
+    "automation": "Automatiseerimine",
+    "failed": {
+      "title": "Ebaõnnestunud automatiseerimiste käivitused"
+    }
   }
 }

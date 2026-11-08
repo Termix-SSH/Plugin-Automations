@@ -77,7 +77,8 @@
           "schedule": "依排程",
           "docker_event": "容器事件",
           "internal_event": "Termix 事件",
-          "webhook": "傳入 Webhook"
+          "webhook": "傳入 Webhook",
+          "operation_event": "發生事件"
         },
         "stepTypes": {
           "notify": "發送警示",
@@ -92,7 +93,8 @@
           "set_var": "設定變數",
           "if": "條件判斷",
           "run_automation": "執行其他自動化",
-          "stop": "停止"
+          "stop": "停止",
+          "operation": "執行動作"
         },
         "statuses": {
           "running": "執行中",
@@ -133,7 +135,13 @@
           "timeout": "逾時（秒）",
           "allowPrivateNetwork": "允許本地網路位址",
           "allowPrivateNetworkHint": "若要在您的區域網路（LAN）上存取自架服務，需要開啟此選項。預設關閉以防止請求內部位址。",
-          "interface": "介面"
+          "interface": "介面",
+          "action": "動作",
+          "pickAction": "選擇動作",
+          "actionMissing": "此動作不可用。其外掛可能已關閉。",
+          "actionTarget": "每個主機上的目標",
+          "event": "事件",
+          "pickEvent": "選擇事件"
         },
         "onError": {
           "stop": "停止執行",
@@ -155,7 +163,13 @@
         "search": "搜尋自動化",
         "noMatches": "沒有符合搜尋條件的自動化",
         "settingsTitle": "自動化設定",
-        "settingsDisplayTitle": "顯示"
+        "settingsDisplayTitle": "顯示",
+        "events": {
+          "operation": {
+            "failed": "任何動作失敗",
+            "succeeded": "任何動作完成"
+          }
+        }
       }
     }
   },
@@ -265,6 +279,19 @@
     "noMaintenance": "目前沒有維護工作",
     "inMinutes_other": "{{count}} 分鐘後",
     "inHours_other": "{{count}} 小時後",
-    "inDays_other": "{{count}} 天後"
+    "inDays_other": "{{count}} 天後",
+    "noRuns": "尚無執行記錄"
+  },
+  "operations": {
+    "list": {
+      "title": "列出自動化"
+    },
+    "run": {
+      "title": "執行自動化"
+    },
+    "automation": "自動化",
+    "failed": {
+      "title": "失敗的自動化執行"
+    }
   }
 }

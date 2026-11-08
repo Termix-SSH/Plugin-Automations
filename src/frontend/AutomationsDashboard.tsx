@@ -5,7 +5,7 @@ import {
   useSyncExternalStore,
   type ReactNode,
 } from "react";
-import { ExternalLink, Play, Wrench } from "lucide-react";
+import { ExternalLink, Play, Wrench, Workflow } from "lucide-react";
 import { toast } from "sonner";
 import {
   usePermission,
@@ -22,8 +22,16 @@ import {
   ListRow,
   ListRowAction,
   PanelList,
+  WidgetTitle,
+  LoadingState,
 } from "@termix-ssh/plugin-sdk/ui";
 import { computeNextDueAt } from "../backend/cron";
+import {
+  GRID_SIZE,
+  type RunsWidgetConfig,
+  type WidgetComponentProps,
+  type WidgetDefinition,
+} from "./homepage";
 import type { RunStatus } from "../types";
 import {
   useAutomationsApi,
@@ -180,7 +188,7 @@ export function UpcomingRunsCard({ isVisible, shell }: DashboardCardProps) {
   const { rows, failed, run } = useAutomationData(isVisible && canView, 1);
   if (!canView) return <Message>{t("maintenance.denied")}</Message>;
   if (failed) return <Message>{failed}</Message>;
-  if (!rows) return <Message>{t("maintenance.loading")}</Message>;
+  if (!rows) return <LoadingState label={t("maintenance.loading")} />;
   const upcoming = rows
     .map((row) => ({ row, next: nextRunOf(row) }))
     .filter(
@@ -230,7 +238,7 @@ export function RecentRunsCard({ isVisible, shell }: DashboardCardProps) {
   const { runs, rows, failed } = useAutomationData(isVisible && canView, 20);
   if (!canView) return <Message>{t("maintenance.denied")}</Message>;
   if (failed) return <Message>{failed}</Message>;
-  if (!rows) return <Message>{t("maintenance.loading")}</Message>;
+  if (!rows) return <LoadingState label={t("maintenance.loading")} />;
   return (
     <PanelList
       empty={
@@ -247,6 +255,41 @@ export function RecentRunsCard({ isVisible, shell }: DashboardCardProps) {
     </PanelList>
   );
 }
+
+function RunsWidget({ widget }: WidgetComponentProps<RunsWidgetConfig>) {
+  const { t } = useTranslation();
+  const canView = usePermission("view");
+  const { runs, rows, failed } = useAutomationData(canView, 10);
+  return (
+    <div className="flex h-full w-full flex-col overflow-hidden">
+      <WidgetTitle title={widget.title} icon={<Workflow size={11} />} />
+      {!canView ? (
+        <Message>{t("maintenance.denied")}</Message>
+      ) : failed ? (
+        <Message>{failed}</Message>
+      ) : !rows ? (
+        <LoadingState label={t("maintenance.loading")} />
+      ) : (
+        <PanelList empty={<Message>{t("card.noRuns")}</Message>}>
+          <RunRows runs={runs} t={t} />
+        </PanelList>
+      )}
+    </div>
+  );
+}
+
+/** Registered by the plugin while it runs. */
+export const runsWidget: WidgetDefinition<RunsWidgetConfig> = {
+  id: "automations_runs_widget",
+  name: "Automation runs",
+  description: "The latest automation runs and which ones failed",
+  category: "monitoring",
+  icon: <Workflow size={14} />,
+  defaultConfig: {},
+  defaultSize: { w: GRID_SIZE * 10, h: GRID_SIZE * 8 },
+  minSize: { w: GRID_SIZE * 6, h: GRID_SIZE * 5 },
+  components: { view: RunsWidget },
+};
 
 /** Starting state of the panel, from the user's settings. */
 export function useAutomationsCompanionDefaults(): CompanionDefaults {
@@ -320,12 +363,13 @@ export function AutomationsCompanion({
       {failed ? (
         <p className="p-2 text-xs text-destructive">{failed}</p>
       ) : !rows ? (
-        <p className="p-2 text-xs text-muted-foreground">
-          {t("maintenance.loading")}
-        </p>
+        <LoadingState label={t("maintenance.loading")} />
       ) : (
         <>
-          <PanelList empty={<Message>{t("card.noHostAutomations")}</Message>}>
+          <PanelList
+            className="flex-none overflow-visible"
+            empty={<Message>{t("card.noHostAutomations")}</Message>}
+          >
             {mine.map((row, index) => {
               const next = nextRunOf(row);
               return (
@@ -363,7 +407,7 @@ export function AutomationsCompanion({
               <span className="px-1 pt-1 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
                 {t("newUi.sidebar.automations.tabRuns")}
               </span>
-              <PanelList>
+              <PanelList className="flex-none overflow-visible">
                 <RunRows runs={mineRuns} t={t} />
               </PanelList>
             </>

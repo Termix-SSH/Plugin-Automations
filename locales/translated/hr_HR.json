@@ -77,7 +77,8 @@
           "schedule": "Prema rasporedu",
           "docker_event": "Događaj kontejnera",
           "internal_event": "Termix događaj",
-          "webhook": "Dolazni webhook"
+          "webhook": "Dolazni webhook",
+          "operation_event": "Dogodila se radnja"
         },
         "stepTypes": {
           "notify": "Pošalji upozorenje",
@@ -92,7 +93,8 @@
           "set_var": "Postavi varijablu",
           "if": "Ako / inače",
           "run_automation": "Pokreni drugu automatizaciju",
-          "stop": "Zaustavi"
+          "stop": "Zaustavi",
+          "operation": "Izvrši radnju"
         },
         "statuses": {
           "running": "Pokreće se",
@@ -133,7 +135,13 @@
           "timeout": "Vrijeme čekanja (sekunde)",
           "allowPrivateNetwork": "Dopusti adrese lokalne mreže",
           "allowPrivateNetworkHint": "Potrebno za uslugu na vašem LAN-u. Isključeno prema zadanim postavkama kako bi se spriječile zahtjeve za interne adrese.",
-          "interface": "Sučelje"
+          "interface": "Sučelje",
+          "action": "Radnja",
+          "pickAction": "Odaberi radnju",
+          "actionMissing": "Ova radnja nije dostupna. Njezin dodatak je možda isključen.",
+          "actionTarget": "Cilj na svakom hostu",
+          "event": "Događaj",
+          "pickEvent": "Odaberi događaj"
         },
         "onError": {
           "stop": "Zaustavi izvršenje",
@@ -155,7 +163,13 @@
         "search": "Pretraži automatizacije",
         "noMatches": "Nema automatizacija koje odgovaraju vašoj pretrazi",
         "settingsTitle": "Postavke automatizacije",
-        "settingsDisplayTitle": "Prikaz"
+        "settingsDisplayTitle": "Prikaz",
+        "events": {
+          "operation": {
+            "failed": "Bilo koja radnja je neuspješna",
+            "succeeded": "Bilo koja radnja je završena"
+          }
+        }
       }
     }
   },
@@ -273,6 +287,19 @@
     "inHours_other": "za {{count}} sati",
     "inDays_one": "za {{count}} dan",
     "inDays_few": "za {{count}} dana",
-    "inDays_other": "za {{count}} dana"
+    "inDays_other": "za {{count}} dana",
+    "noRuns": "Još nema izvršenja"
+  },
+  "operations": {
+    "list": {
+      "title": "Popis automatizacija"
+    },
+    "run": {
+      "title": "Izvrši automatizaciju"
+    },
+    "automation": "Automatizacija",
+    "failed": {
+      "title": "Neuspješna izvršenja automatizacija"
+    }
   }
 }

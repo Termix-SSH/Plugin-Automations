@@ -77,7 +77,8 @@
           "schedule": "Mengikut jadual",
           "docker_event": "Peristiwa kontena",
           "internal_event": "Peristiwa Termix",
-          "webhook": "Webhook masuk"
+          "webhook": "Webhook masuk",
+          "operation_event": "Sebuah peristiwa berlaku"
         },
         "stepTypes": {
           "notify": "Hantar amaran",
@@ -92,7 +93,8 @@
           "set_var": "Tetapkan pembolehubah",
           "if": "Jika / sebaliknya",
           "run_automation": "Jalankan automasi lain",
-          "stop": "Henti"
+          "stop": "Henti",
+          "operation": "Jalankan tindakan"
         },
         "statuses": {
           "running": "Sedang berjalan",
@@ -133,7 +135,13 @@
           "timeout": "Had masa (saat)",
           "allowPrivateNetwork": "Benarkan alamat rangkaian tempatan",
           "allowPrivateNetworkHint": "Diperlukan untuk perkhidmatan hos sendiri di LAN anda. Dimatikan secara lalai untuk menghalang permintaan ke alamat dalaman.",
-          "interface": "Antara muka"
+          "interface": "Antara muka",
+          "action": "Tindakan",
+          "pickAction": "Pilih tindakan",
+          "actionMissing": "Tindakan ini tidak tersedia. Pluginnya mungkin dimatikan.",
+          "actionTarget": "Sasaran pada setiap hos",
+          "event": "Peristiwa",
+          "pickEvent": "Pilih peristiwa"
         },
         "onError": {
           "stop": "Hentikan pelaksanaan",
@@ -155,7 +163,13 @@
         "search": "Cari automasi",
         "noMatches": "Tiada automasi sepadan dengan carian anda",
         "settingsTitle": "Tetapan automasi",
-        "settingsDisplayTitle": "Paparan"
+        "settingsDisplayTitle": "Paparan",
+        "events": {
+          "operation": {
+            "failed": "Mana-mana tindakan gagal",
+            "succeeded": "Mana-mana tindakan selesai"
+          }
+        }
       }
     }
   },
@@ -265,6 +279,19 @@
     "noMaintenance": "Tiada penyelenggaraan buat masa ini",
     "inMinutes_other": "dalam {{count}} minit",
     "inHours_other": "dalam {{count}} jam",
-    "inDays_other": "dalam {{count}} hari"
+    "inDays_other": "dalam {{count}} hari",
+    "noRuns": "Belum ada pelaksanaan"
+  },
+  "operations": {
+    "list": {
+      "title": "Senaraikan automasi"
+    },
+    "run": {
+      "title": "Jalankan automasi"
+    },
+    "automation": "Automasi",
+    "failed": {
+      "title": "Pelaksanaan automasi yang gagal"
+    }
   }
 }

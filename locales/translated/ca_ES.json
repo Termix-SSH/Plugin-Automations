@@ -77,7 +77,8 @@
           "schedule": "Segons un horari",
           "docker_event": "Esdeveniment del contenidor",
           "internal_event": "Esdeveniment de Termix",
-          "webhook": "Webhook entrant"
+          "webhook": "Webhook entrant",
+          "operation_event": "Es produeix un esdeveniment"
         },
         "stepTypes": {
           "notify": "Enviar una alerta",
@@ -92,7 +93,8 @@
           "set_var": "Establir una variable",
           "if": "Si / altrament",
           "run_automation": "Executar una altra automatització",
-          "stop": "Aturar"
+          "stop": "Aturar",
+          "operation": "Executa una acció"
         },
         "statuses": {
           "running": "S'està executant",
@@ -133,7 +135,13 @@
           "timeout": "Temps d'espera (segons)",
           "allowPrivateNetwork": "Permetre adreces de xarxa local",
           "allowPrivateNetworkHint": "Necessari per a un servei allotjat al vostre LAN. Desactivat per defecte per evitar sol·licituds a adreces internes.",
-          "interface": "Interfície"
+          "interface": "Interfície",
+          "action": "Acció",
+          "pickAction": "Tria una acció",
+          "actionMissing": "Aquesta acció no està disponible. Potser el complement està desactivat.",
+          "actionTarget": "Objectiu en cada amfitrió",
+          "event": "Esdeveniment",
+          "pickEvent": "Tria un esdeveniment"
         },
         "onError": {
           "stop": "Aturar l'execució",
@@ -155,7 +163,13 @@
         "search": "Cercar automatitzacions",
         "noMatches": "Cap automatització coincideix amb la vostra cerca",
         "settingsTitle": "Configuració d'automatització",
-        "settingsDisplayTitle": "Visualització"
+        "settingsDisplayTitle": "Visualització",
+        "events": {
+          "operation": {
+            "failed": "Qualsevol acció ha fallat",
+            "succeeded": "Qualsevol acció s'ha completat"
+          }
+        }
       }
     }
   },
@@ -273,6 +287,19 @@
     "inHours_other": "d'aquí {{count}} hores",
     "inDays_one": "d'aquí {{count}} dia",
     "inDays_many": "d'aquí {{count}} dies",
-    "inDays_other": "d'aquí {{count}} dies"
+    "inDays_other": "d'aquí {{count}} dies",
+    "noRuns": "Encara no hi ha execucions"
+  },
+  "operations": {
+    "list": {
+      "title": "Llista d'automatitzacions"
+    },
+    "run": {
+      "title": "Executa una automatització"
+    },
+    "automation": "Automatització",
+    "failed": {
+      "title": "Execucions d'automatització fallides"
+    }
   }
 }

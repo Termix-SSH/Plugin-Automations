@@ -77,7 +77,8 @@
           "schedule": "ตามตารางเวลา",
           "docker_event": "เหตุการณ์คอนเทนเนอร์",
           "internal_event": "เหตุการณ์ของ Termix",
-          "webhook": "Webhook เข้ามา"
+          "webhook": "Webhook เข้ามา",
+          "operation_event": "เกิดเหตุการณ์"
         },
         "stepTypes": {
           "notify": "ส่งการแจ้งเตือน",
@@ -92,7 +93,8 @@
           "set_var": "ตั้งค่าตัวแปร",
           "if": "เงื่อนไข / อื่นๆ",
           "run_automation": "เรียกใช้ Automation อื่น",
-          "stop": "หยุด"
+          "stop": "หยุด",
+          "operation": "ดำเนินการ"
         },
         "statuses": {
           "running": "กำลังทำงาน",
@@ -133,7 +135,13 @@
           "timeout": "หมดเวลา (วินาที)",
           "allowPrivateNetwork": "อนุญาตที่อยู่เครือข่ายภายใน",
           "allowPrivateNetworkHint": "จำเป็นสำหรับบริการ Self-hosted ใน LAN ของคุณ ปิดโดยค่าเริ่มต้นเพื่อป้องกันคำขอไปยังที่อยู่ภายใน",
-          "interface": "อินเทอร์เฟซ"
+          "interface": "อินเทอร์เฟซ",
+          "action": "การดำเนินการ",
+          "pickAction": "เลือกการดำเนินการ",
+          "actionMissing": "การดำเนินการนี้ไม่พร้อมใช้งาน ปลั๊กอินอาจถูกปิดอยู่",
+          "actionTarget": "เป้าหมายในแต่ละโฮสต์",
+          "event": "เหตุการณ์",
+          "pickEvent": "เลือกเหตุการณ์"
         },
         "onError": {
           "stop": "หยุดการทำงาน",
@@ -155,7 +163,13 @@
         "search": "ค้นหา Automation",
         "noMatches": "ไม่พบ Automation ที่ตรงกับคำค้นหา",
         "settingsTitle": "การตั้งค่า Automation",
-        "settingsDisplayTitle": "การแสดงผล"
+        "settingsDisplayTitle": "การแสดงผล",
+        "events": {
+          "operation": {
+            "failed": "การดำเนินการใดๆ ล้มเหลว",
+            "succeeded": "การดำเนินการใดๆ เสร็จสิ้น"
+          }
+        }
       }
     }
   },
@@ -265,6 +279,19 @@
     "noMaintenance": "ไม่มีการบำรุงรักษาในขณะนี้",
     "inMinutes_other": "ในอีก {{count}} นาที",
     "inHours_other": "ในอีก {{count}} ชั่วโมง",
-    "inDays_other": "ในอีก {{count}} วัน"
+    "inDays_other": "ในอีก {{count}} วัน",
+    "noRuns": "ยังไม่มีประวัติการรัน"
+  },
+  "operations": {
+    "list": {
+      "title": "รายการอัตโนมัติ"
+    },
+    "run": {
+      "title": "รันอัตโนมัติ"
+    },
+    "automation": "อัตโนมัติ",
+    "failed": {
+      "title": "การรันอัตโนมัติที่ล้มเหลว"
+    }
   }
 }

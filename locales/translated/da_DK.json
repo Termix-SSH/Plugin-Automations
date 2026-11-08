@@ -77,7 +77,8 @@
           "schedule": "Ifølge tidsplan",
           "docker_event": "Beholderhændelse",
           "internal_event": "Termix-hændelse",
-          "webhook": "Indkommende webhook"
+          "webhook": "Indkommende webhook",
+          "operation_event": "En hændelse opstår"
         },
         "stepTypes": {
           "notify": "Send en advarsel",
@@ -92,7 +93,8 @@
           "set_var": "Sæt en variabel",
           "if": "Hvis / ellers",
           "run_automation": "Kør en anden automation",
-          "stop": "Stop"
+          "stop": "Stop",
+          "operation": "Kør en handling"
         },
         "statuses": {
           "running": "Kører",
@@ -133,7 +135,13 @@
           "timeout": "Timeout (sekunder)",
           "allowPrivateNetwork": "Tillad lokale netværksadresser",
           "allowPrivateNetworkHint": "Påkrævet for en selvhostet tjeneste på dit LAN. Slået fra som standard for at forhindre anmodninger til interne adresser.",
-          "interface": "Interface"
+          "interface": "Interface",
+          "action": "Handling",
+          "pickAction": "Vælg en handling",
+          "actionMissing": "Denne handling er ikke tilgængelig. Dens plugin er muligvis deaktiveret.",
+          "actionTarget": "Mål på hver vært",
+          "event": "Hændelse",
+          "pickEvent": "Vælg en hændelse"
         },
         "onError": {
           "stop": "Stop kørslen",
@@ -155,7 +163,13 @@
         "search": "Søg i automationer",
         "noMatches": "Ingen automationer matcher din søgning",
         "settingsTitle": "Automation-indstillinger",
-        "settingsDisplayTitle": "Visning"
+        "settingsDisplayTitle": "Visning",
+        "events": {
+          "operation": {
+            "failed": "En handling mislykkedes",
+            "succeeded": "En handling blev afsluttet"
+          }
+        }
       }
     }
   },
@@ -269,6 +283,19 @@
     "inHours_one": "om {{count}} time",
     "inHours_other": "om {{count}} timer",
     "inDays_one": "om {{count}} dag",
-    "inDays_other": "om {{count}} dage"
+    "inDays_other": "om {{count}} dage",
+    "noRuns": "Ingen kørsler endnu"
+  },
+  "operations": {
+    "list": {
+      "title": "Liste over automatiseringer"
+    },
+    "run": {
+      "title": "Kør en automatisering"
+    },
+    "automation": "Automatisering",
+    "failed": {
+      "title": "Mislykkede automatiseringskørsler"
+    }
   }
 }

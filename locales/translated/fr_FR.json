@@ -77,7 +77,8 @@
           "schedule": "Selon un planning",
           "docker_event": "Événement de conteneur",
           "internal_event": "Événement Termix",
-          "webhook": "Webhook entrant"
+          "webhook": "Webhook entrant",
+          "operation_event": "Un événement se produit"
         },
         "stepTypes": {
           "notify": "Envoyer une alerte",
@@ -92,7 +93,8 @@
           "set_var": "Définir une variable",
           "if": "Si / sinon",
           "run_automation": "Exécuter une autre automatisation",
-          "stop": "Arrêter"
+          "stop": "Arrêter",
+          "operation": "Exécuter une action"
         },
         "statuses": {
           "running": "En cours",
@@ -133,7 +135,13 @@
           "timeout": "Délai d'attente (secondes)",
           "allowPrivateNetwork": "Autoriser les adresses du réseau local",
           "allowPrivateNetworkHint": "Nécessaire pour un service auto-hébergé sur votre LAN. Désactivé par défaut pour empêcher les requêtes vers des adresses internes.",
-          "interface": "Interface"
+          "interface": "Interface",
+          "action": "Action",
+          "pickAction": "Choisir une action",
+          "actionMissing": "Cette action n'est pas disponible. Son plugin est peut-être désactivé.",
+          "actionTarget": "Cible sur chaque hôte",
+          "event": "Événement",
+          "pickEvent": "Choisir un événement"
         },
         "onError": {
           "stop": "Arrêter l'exécution",
@@ -155,7 +163,13 @@
         "search": "Rechercher des automatisations",
         "noMatches": "Aucune automatisation ne correspond à votre recherche",
         "settingsTitle": "Paramètres d'automatisation",
-        "settingsDisplayTitle": "Affichage"
+        "settingsDisplayTitle": "Affichage",
+        "events": {
+          "operation": {
+            "failed": "Échec d'une action",
+            "succeeded": "Fin d'une action"
+          }
+        }
       }
     }
   },
@@ -273,6 +287,19 @@
     "inHours_other": "dans {{count}} heures",
     "inDays_one": "dans {{count}} jour",
     "inDays_many": "dans {{count}} jours",
-    "inDays_other": "dans {{count}} jours"
+    "inDays_other": "dans {{count}} jours",
+    "noRuns": "Aucune exécution pour le moment"
+  },
+  "operations": {
+    "list": {
+      "title": "Lister les automatisations"
+    },
+    "run": {
+      "title": "Exécuter une automatisation"
+    },
+    "automation": "Automatisation",
+    "failed": {
+      "title": "Exécutions d'automatisations échouées"
+    }
   }
 }

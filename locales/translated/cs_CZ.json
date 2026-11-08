@@ -77,7 +77,8 @@
           "schedule": "Podle plánu",
           "docker_event": "Událost kontejneru",
           "internal_event": "Událost Termix",
-          "webhook": "Příchozí webhook"
+          "webhook": "Příchozí webhook",
+          "operation_event": "Dojde k události"
         },
         "stepTypes": {
           "notify": "Poslat upozornění",
@@ -92,7 +93,8 @@
           "set_var": "Nastavit proměnnou",
           "if": "Pokud / jinak",
           "run_automation": "Spustit jinou automatizaci",
-          "stop": "Zastavit"
+          "stop": "Zastavit",
+          "operation": "Spustit akci"
         },
         "statuses": {
           "running": "Běží",
@@ -133,7 +135,13 @@
           "timeout": "Časový limit (sekundy)",
           "allowPrivateNetwork": "Povolit adresy místní sítě",
           "allowPrivateNetworkHint": "Potřebné pro vlastní službu ve vaší LAN. Výchozí je vypnuto, aby se předešlo požadavkům na interní adresy.",
-          "interface": "Rozhraní"
+          "interface": "Rozhraní",
+          "action": "Akce",
+          "pickAction": "Vyberte akci",
+          "actionMissing": "Tato akce není k dispozici. Příslušný plugin může být vypnutý.",
+          "actionTarget": "Cíl na každém hostiteli",
+          "event": "Událost",
+          "pickEvent": "Vyberte událost"
         },
         "onError": {
           "stop": "Zastavit běh",
@@ -155,7 +163,13 @@
         "search": "Hledat automatizace",
         "noMatches": "Žádná automatizace neodpovídá vašemu hledání",
         "settingsTitle": "Nastavení automatizací",
-        "settingsDisplayTitle": "Zobrazení"
+        "settingsDisplayTitle": "Zobrazení",
+        "events": {
+          "operation": {
+            "failed": "Jakákoli akce selhala",
+            "succeeded": "Jakákoli akce byla dokončena"
+          }
+        }
       }
     }
   },
@@ -277,6 +291,19 @@
     "inDays_one": "za {{count}} den",
     "inDays_few": "za {{count}} dny",
     "inDays_many": "za {{count}} dní",
-    "inDays_other": "za {{count}} dní"
+    "inDays_other": "za {{count}} dní",
+    "noRuns": "Zatím žádné spuštění"
+  },
+  "operations": {
+    "list": {
+      "title": "Seznam automatizací"
+    },
+    "run": {
+      "title": "Spustit automatizaci"
+    },
+    "automation": "Automatizace",
+    "failed": {
+      "title": "Nepovedená spuštění automatizací"
+    }
   }
 }

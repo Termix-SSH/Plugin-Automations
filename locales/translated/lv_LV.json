@@ -77,7 +77,8 @@
           "schedule": "Pēc grafika",
           "docker_event": "Konteinera notikums",
           "internal_event": "Termix notikums",
-          "webhook": "Ienākošais webhook"
+          "webhook": "Ienākošais webhook",
+          "operation_event": "Notikums notiek"
         },
         "stepTypes": {
           "notify": "Nosūtīt brīdinājumu",
@@ -92,7 +93,8 @@
           "set_var": "Iestatīt mainīgo",
           "if": "Ja / citādi",
           "run_automation": "Palaist citu automatizāciju",
-          "stop": "Apturēt"
+          "stop": "Apturēt",
+          "operation": "Izpildīt darbību"
         },
         "statuses": {
           "running": "Notiek izpilde",
@@ -133,7 +135,13 @@
           "timeout": "Laika limits (sekundes)",
           "allowPrivateNetwork": "Atļaut lokālā tīkla adreses",
           "allowPrivateNetworkHint": "Nepieciešams pašhostētai pakalpojumu jūsu LAN. Noklusējuma režīmā izslēgts, lai novērstu pieprasījumus iekšējām adresēm.",
-          "interface": "Saskarne"
+          "interface": "Saskarne",
+          "action": "Darbība",
+          "pickAction": "Izvēlieties darbību",
+          "actionMissing": "Šī darbība nav pieejama. Tās spraudnis var būt izslēgts.",
+          "actionTarget": "Mērķis katrā serverī",
+          "event": "Notikums",
+          "pickEvent": "Izvēlieties notikumu"
         },
         "onError": {
           "stop": "Apturēt izpildi",
@@ -155,7 +163,13 @@
         "search": "Meklēt automatizācijas",
         "noMatches": "Nav automatizāciju, kas atbilstu jūsu meklējumam",
         "settingsTitle": "Automatizācijas iestatījumi",
-        "settingsDisplayTitle": "Attēlojums"
+        "settingsDisplayTitle": "Attēlojums",
+        "events": {
+          "operation": {
+            "failed": "Jebkura darbība neizdevās",
+            "succeeded": "Jebkura darbība pabeigta"
+          }
+        }
       }
     }
   },
@@ -273,6 +287,19 @@
     "inHours_other": "pēc {{count}} stundām",
     "inDays_zero": "pēc {{count}} dienām",
     "inDays_one": "pēc {{count}} dienas",
-    "inDays_other": "pēc {{count}} dienām"
+    "inDays_other": "pēc {{count}} dienām",
+    "noRuns": "Vēl nav izpildījumu"
+  },
+  "operations": {
+    "list": {
+      "title": "Automatizāciju saraksts"
+    },
+    "run": {
+      "title": "Izpildīt automatizāciju"
+    },
+    "automation": "Automatizācija",
+    "failed": {
+      "title": "Neizdevušies automatizāciju izpildījumi"
+    }
   }
 }

@@ -77,7 +77,8 @@
           "schedule": "על פי לוח זמנים",
           "docker_event": "אירוע מיכל",
           "internal_event": "אירוע Termix",
-          "webhook": "Webhook נכנס"
+          "webhook": "Webhook נכנס",
+          "operation_event": "אירוע מתרחש"
         },
         "stepTypes": {
           "notify": "שליחת התראה",
@@ -92,7 +93,8 @@
           "set_var": "הגדרת משתנה",
           "if": "אם / אחרת",
           "run_automation": "הפעלת אוטומציה אחרת",
-          "stop": "עצירה"
+          "stop": "עצירה",
+          "operation": "הפעל פעולה"
         },
         "statuses": {
           "running": "מפעיל",
@@ -133,7 +135,13 @@
           "timeout": "פסק זמן (שניות)",
           "allowPrivateNetwork": "אפשר כתובות רשת מקומית",
           "allowPrivateNetworkHint": "נדרש לשירות מארח עצמי ברשת המקומית שלך. כבוי כברירת מחדל כדי למנוע בקשות לכתובות פנימיות.",
-          "interface": "ממשק"
+          "interface": "ממשק",
+          "action": "פעולה",
+          "pickAction": "בחר פעולה",
+          "actionMissing": "פעולה זו אינה זמינה. ייתכן שהתוסף שלה כבוי.",
+          "actionTarget": "יעד בכל מארח",
+          "event": "אירוע",
+          "pickEvent": "בחר אירוע"
         },
         "onError": {
           "stop": "עצור את ההפעלה",
@@ -155,7 +163,13 @@
         "search": "חיפוש אוטומציות",
         "noMatches": "אין אוטומציות התואמות את החיפוש שלך",
         "settingsTitle": "הגדרות אוטומציה",
-        "settingsDisplayTitle": "תצוגה"
+        "settingsDisplayTitle": "תצוגה",
+        "events": {
+          "operation": {
+            "failed": "כל פעולה נכשלה",
+            "succeeded": "כל פעולה הסתיימה"
+          }
+        }
       }
     }
   },
@@ -273,6 +287,19 @@
     "inHours_other": "בעוד {{count}} שעות",
     "inDays_one": "בעוד {{count}} יום",
     "inDays_two": "בעוד {{count}} ימים",
-    "inDays_other": "בעוד {{count}} ימים"
+    "inDays_other": "בעוד {{count}} ימים",
+    "noRuns": "עדיין לא היו הפעלות"
+  },
+  "operations": {
+    "list": {
+      "title": "רשימת אוטומציות"
+    },
+    "run": {
+      "title": "הפעל אוטומציה"
+    },
+    "automation": "אוטומציה",
+    "failed": {
+      "title": "הפעלות אוטומציה שנכשלו"
+    }
   }
 }

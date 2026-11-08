@@ -77,7 +77,8 @@
           "schedule": "Aikataulun mukaan",
           "docker_event": "Säiliön tapahtuma",
           "internal_event": "Termix-tapahtuma",
-          "webhook": "Saapuva webhook"
+          "webhook": "Saapuva webhook",
+          "operation_event": "Tapahtuma tapahtuu"
         },
         "stepTypes": {
           "notify": "Lähetä hälytys",
@@ -92,7 +93,8 @@
           "set_var": "Aseta muuttuja",
           "if": "Jos / muuten",
           "run_automation": "Suorita toinen automaatio",
-          "stop": "Pysäytä"
+          "stop": "Pysäytä",
+          "operation": "Suorita toiminto"
         },
         "statuses": {
           "running": "Käynnissä",
@@ -133,7 +135,13 @@
           "timeout": "Aikakatkaisu (sekuntia)",
           "allowPrivateNetwork": "Salli paikallisen verkon osoitteet",
           "allowPrivateNetworkHint": "Tarvitaan itse isännöidylle palvelulle LAN-verkossasi. Oletuksena pois päältä sisäisten osoitteiden pyyntöjen estämiseksi.",
-          "interface": "Liitäntä"
+          "interface": "Liitäntä",
+          "action": "Toiminto",
+          "pickAction": "Valitse toiminto",
+          "actionMissing": "Tämä toiminto ei ole käytettävissä. Sen lisäosa saattaa olla pois päältä.",
+          "actionTarget": "Kohde jokaisella isäntäpalvelimella",
+          "event": "Tapahtuma",
+          "pickEvent": "Valitse tapahtuma"
         },
         "onError": {
           "stop": "Pysäytä suoritus",
@@ -155,7 +163,13 @@
         "search": "Hae automaatioita",
         "noMatches": "Ei automaatioita, jotka vastaavat hakua",
         "settingsTitle": "Automaatioasetukset",
-        "settingsDisplayTitle": "Näyttö"
+        "settingsDisplayTitle": "Näyttö",
+        "events": {
+          "operation": {
+            "failed": "Mikä tahansa toiminto epäonnistui",
+            "succeeded": "Mikä tahansa toiminto valmistui"
+          }
+        }
       }
     }
   },
@@ -269,6 +283,19 @@
     "inHours_one": "{{count}} tunnin kuluttua",
     "inHours_other": "{{count}} tunnin kuluttua",
     "inDays_one": "{{count}} päivän kuluttua",
-    "inDays_other": "{{count}} päivän kuluttua"
+    "inDays_other": "{{count}} päivän kuluttua",
+    "noRuns": "Suorituksia ei vielä"
+  },
+  "operations": {
+    "list": {
+      "title": "Automaatioiden lista"
+    },
+    "run": {
+      "title": "Suorita automaatio"
+    },
+    "automation": "Automaatio",
+    "failed": {
+      "title": "Epäonnistuneet automaatioiden suoritukset"
+    }
   }
 }

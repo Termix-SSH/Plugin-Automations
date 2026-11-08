@@ -77,7 +77,8 @@
           "schedule": "按计划",
           "docker_event": "容器事件",
           "internal_event": "Termix 事件",
-          "webhook": "传入 Webhook"
+          "webhook": "传入 Webhook",
+          "operation_event": "发生事件"
         },
         "stepTypes": {
           "notify": "发送告警",
@@ -92,7 +93,8 @@
           "set_var": "设置变量",
           "if": "条件判断",
           "run_automation": "运行其他自动化",
-          "stop": "停止"
+          "stop": "停止",
+          "operation": "执行操作"
         },
         "statuses": {
           "running": "运行中",
@@ -133,7 +135,13 @@
           "timeout": "超时（秒）",
           "allowPrivateNetwork": "允许本地网络地址",
           "allowPrivateNetworkHint": "用于访问局域网上的自托管服务。默认关闭以防止请求内部地址。",
-          "interface": "接口"
+          "interface": "接口",
+          "action": "操作",
+          "pickAction": "选择操作",
+          "actionMissing": "此操作不可用。其插件可能已关闭。",
+          "actionTarget": "每台主机上的目标",
+          "event": "事件",
+          "pickEvent": "选择事件"
         },
         "onError": {
           "stop": "停止运行",
@@ -155,7 +163,13 @@
         "search": "搜索自动化",
         "noMatches": "没有匹配的自动化",
         "settingsTitle": "自动化设置",
-        "settingsDisplayTitle": "显示"
+        "settingsDisplayTitle": "显示",
+        "events": {
+          "operation": {
+            "failed": "任何操作失败",
+            "succeeded": "任何操作完成"
+          }
+        }
       }
     }
   },
@@ -265,6 +279,19 @@
     "noMaintenance": "当前没有维护任务",
     "inMinutes_other": "{{count}} 分钟后",
     "inHours_other": "{{count}} 小时后",
-    "inDays_other": "{{count}} 天后"
+    "inDays_other": "{{count}} 天后",
+    "noRuns": "暂无运行记录"
+  },
+  "operations": {
+    "list": {
+      "title": "列出自动化任务"
+    },
+    "run": {
+      "title": "运行自动化任务"
+    },
+    "automation": "自动化任务",
+    "failed": {
+      "title": "失败的自动化任务运行"
+    }
   }
 }

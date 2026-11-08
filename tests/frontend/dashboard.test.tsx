@@ -117,4 +117,23 @@ describe("automations dashboard and panel", () => {
     rendered.renderDashboardCard("automations-runs");
     expect(await screen.findByText("Failed")).toBeTruthy();
   });
+
+  it("adds a homepage widget with the latest runs", async () => {
+    rendered = await renderWithApp(plugin, {
+      manifest,
+      locales,
+      api: api(),
+      permissions: ["automations.view"],
+    });
+    expect(rendered.registered.extensions("homepage.widgets")).toEqual([
+      "automations_runs_widget",
+    ]);
+    rendered.renderExtension(
+      "homepage.widgets",
+      "automations_runs_widget",
+      "view",
+      { widget: { title: null }, config: {} },
+    );
+    expect(await screen.findByText("Failed")).toBeTruthy();
+  });
 });

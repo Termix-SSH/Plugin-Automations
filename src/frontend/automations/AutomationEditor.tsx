@@ -107,7 +107,7 @@ export function AutomationEditor({
         <Button
           variant="outline"
           size="sm"
-          className="rounded-none w-full border-border"
+          className="w-full border-border"
           onClick={() =>
             onStepsChange([
               ...steps,
@@ -125,11 +125,11 @@ export function AutomationEditor({
   return (
     <div className="space-y-4">
       <div className="space-y-1">
-        <Label className="text-xs text-muted-foreground">
+        <Label className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
           {t(`${base}.nameLabel`)}
         </Label>
         <Input
-          className="h-8 rounded-none"
+          className="h-8"
           placeholder={t(`${base}.namePlaceholder`)}
           value={draft.name}
           onChange={(e) => onChange({ ...draft, name: e.target.value })}
@@ -145,7 +145,7 @@ export function AutomationEditor({
       </label>
 
       <div className="space-y-1">
-        <Label className="text-xs text-muted-foreground">
+        <Label className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
           {t(`${base}.concurrencyLabel`)}
         </Label>
         <Select
@@ -157,10 +157,7 @@ export function AutomationEditor({
             })
           }
         >
-          <SelectTrigger
-            size="sm"
-            className="w-full rounded-none border-border"
-          >
+          <SelectTrigger size="sm" className="w-full border-border">
             <SelectValue />
           </SelectTrigger>
           <SelectContent>
@@ -222,7 +219,7 @@ export function AutomationEditor({
           />
 
           <div className="space-y-2">
-            <Label className="text-xs text-muted-foreground">
+            <Label className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
               {t(`${base}.steps`)}
             </Label>
             {draft.definition.steps.length === 0 && (
@@ -236,7 +233,7 @@ export function AutomationEditor({
       ) : (
         <div className="space-y-2">
           <textarea
-            className="w-full min-h-64 bg-background border border-border p-2 font-mono text-xs"
+            className="w-full min-h-64 bg-popover border border-border p-2 font-mono text-xs"
             value={jsonText}
             onChange={(e) => {
               setJsonText(e.target.value);

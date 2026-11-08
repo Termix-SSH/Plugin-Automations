@@ -31,7 +31,7 @@ export function HostSelectorField({
 
   return (
     <div className="space-y-1">
-      <Label className="text-xs text-muted-foreground">
+      <Label className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
         {t(`${base}.fields.host`)}
       </Label>
       <div className="flex gap-2">
@@ -41,10 +41,7 @@ export function HostSelectorField({
             onChange(defaultFor(next as HostSelector["kind"]))
           }
         >
-          <SelectTrigger
-            size="sm"
-            className="min-w-0 flex-1 rounded-none border-border"
-          >
+          <SelectTrigger size="sm" className="min-w-0 flex-1 border-border">
             <SelectValue />
           </SelectTrigger>
           <SelectContent>
@@ -74,10 +71,7 @@ export function HostSelectorField({
               onChange({ kind: "host", hostId: Number(next) })
             }
           >
-            <SelectTrigger
-              size="sm"
-              className="min-w-0 flex-1 rounded-none border-border"
-            >
+            <SelectTrigger size="sm" className="min-w-0 flex-1 border-border">
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
@@ -101,10 +95,7 @@ export function HostSelectorField({
               onChange({ kind: "fleet", fleetId: Number(next) })
             }
           >
-            <SelectTrigger
-              size="sm"
-              className="min-w-0 flex-1 rounded-none border-border"
-            >
+            <SelectTrigger size="sm" className="min-w-0 flex-1 border-border">
               <SelectValue />
             </SelectTrigger>
             <SelectContent>

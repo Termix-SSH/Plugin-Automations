@@ -77,7 +77,8 @@
           "schedule": "По распореду",
           "docker_event": "Догађај контејнера",
           "internal_event": "Termix догађај",
-          "webhook": "Долазни webhook"
+          "webhook": "Долазни webhook",
+          "operation_event": "Догађај се догодио"
         },
         "stepTypes": {
           "notify": "Пошаљи алерт",
@@ -92,7 +93,8 @@
           "set_var": "Подеси променљиву",
           "if": "Ако / иначе",
           "run_automation": "Покрени другу аутоматизацију",
-          "stop": "Заустави"
+          "stop": "Заустави",
+          "operation": "Изврши радњу"
         },
         "statuses": {
           "running": "У току",
@@ -133,7 +135,13 @@
           "timeout": "Време чекања (секунде)",
           "allowPrivateNetwork": "Дозволи локалне мрежне адресе",
           "allowPrivateNetworkHint": "Потребно за самостално хостовану услугу на вашој LAN мрежи. Искључено по подразумеваном како би се спречиле захтеве ка интерним адресама.",
-          "interface": "Интерфејс"
+          "interface": "Интерфејс",
+          "action": "Радња",
+          "pickAction": "Изаберите радњу",
+          "actionMissing": "Ова радња није доступна. Њен додатак је можда искључен.",
+          "actionTarget": "Циљ на сваком хосту",
+          "event": "Догађај",
+          "pickEvent": "Изаберите догађај"
         },
         "onError": {
           "stop": "Заустави извршење",
@@ -155,7 +163,13 @@
         "search": "Претражи аутоматизације",
         "noMatches": "Нема аутоматизација које одговарају вашој претрази",
         "settingsTitle": "Подешавања аутоматизације",
-        "settingsDisplayTitle": "Приказ"
+        "settingsDisplayTitle": "Приказ",
+        "events": {
+          "operation": {
+            "failed": "Било која радња је неуспешна",
+            "succeeded": "Било која радња је завршена"
+          }
+        }
       }
     }
   },
@@ -273,6 +287,19 @@
     "inHours_other": "за {{count}} сати",
     "inDays_one": "за {{count}} дан",
     "inDays_few": "за {{count}} дана",
-    "inDays_other": "за {{count}} дана"
+    "inDays_other": "за {{count}} дана",
+    "noRuns": "Још нема извршења"
+  },
+  "operations": {
+    "list": {
+      "title": "Листа аутоматизација"
+    },
+    "run": {
+      "title": "Изврши аутоматизацију"
+    },
+    "automation": "Аутоматизација",
+    "failed": {
+      "title": "Неуспешна извршења аутоматизације"
+    }
   }
 }

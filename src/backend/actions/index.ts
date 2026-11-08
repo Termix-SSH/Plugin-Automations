@@ -69,6 +69,8 @@ export async function executeStep(
       return runTunnel(step, context, runtime);
     case "wol":
       return runWol(step, context, runtime);
+    case "operation":
+      return runOperationStep(step, context, runtime);
     case "ai_task":
       return runAiTask(step, context, runtime);
     case "wait":
@@ -351,6 +353,64 @@ async function runWol(
   } catch (error) {
     return fail(errorText(error));
   }
+}
+
+/** One declared action, on each target host or once on the server. */
+async function runOperationStep(
+  step: Extract<Step, { type: "operation" }>,
+  context: StepExecutionContext,
+  runtime: StepRuntime,
+): Promise<StepResult> {
+  const operations = runtime.ctx.operations;
+  if (typeof operations?.invoke !== "function") {
+    return fail("This Termix version has no actions");
+  }
+  const input: Record<string, unknown> = {};
+  for (const [key, value] of Object.entries(step.input ?? {})) {
+    input[key] =
+      typeof value === "string"
+        ? renderTemplate(value, context.template)
+        : value;
+  }
+  const resourceKey = step.resourceKey
+    ? renderTemplate(step.resourceKey, context.template)
+    : undefined;
+
+  const invoke = async (hostId?: number) => {
+    const outcome = await operations.invoke(step.actionId, {
+      hostId,
+      resourceKey,
+      input,
+      dryRun: context.dryRun,
+      confirmed: true,
+      via: "automation",
+    });
+    if (outcome.status === "success") {
+      const data =
+        outcome.data === undefined ? "" : `\n${JSON.stringify(outcome.data)}`;
+      return { output: `${outcome.summary ?? "Done"}${data}` };
+    }
+    if (outcome.status === "pending_approval") {
+      return { output: "", error: "Waiting for approval in Operations" };
+    }
+    return { output: "", error: outcome.error ?? outcome.status };
+  };
+
+  if (!step.hostSelector) {
+    try {
+      const result = await invoke();
+      return result.error ? fail(result.error) : ok(result.output);
+    } catch (error) {
+      return fail(errorText(error));
+    }
+  }
+  return runOnTargets(step.hostSelector, context, runtime, async (target) => {
+    try {
+      return await invoke(target.id);
+    } catch (error) {
+      return { output: "", error: errorText(error) };
+    }
+  });
 }
 
 async function runWait(

@@ -77,7 +77,8 @@
           "schedule": "Zamanlamaya göre",
           "docker_event": "Konteyner olayı",
           "internal_event": "Termix olayı",
-          "webhook": "Gelen webhook"
+          "webhook": "Gelen webhook",
+          "operation_event": "Bir olay gerçekleşti"
         },
         "stepTypes": {
           "notify": "Uyarı gönder",
@@ -92,7 +93,8 @@
           "set_var": "Bir değişken ayarla",
           "if": "Eğer / aksi halde",
           "run_automation": "Başka bir otomasyonu çalıştır",
-          "stop": "Durdur"
+          "stop": "Durdur",
+          "operation": "Bir eylem çalıştır"
         },
         "statuses": {
           "running": "Çalışıyor",
@@ -133,7 +135,13 @@
           "timeout": "Zaman aşımı (saniye)",
           "allowPrivateNetwork": "Yerel ağ adreslerine izin ver",
           "allowPrivateNetworkHint": "Yerel ağınızda barındırılan bir hizmet için gereklidir. İç adreslere istek gönderilmesini önlemek için varsayılan olarak kapalıdır.",
-          "interface": "Arayüz"
+          "interface": "Arayüz",
+          "action": "Eylem",
+          "pickAction": "Bir eylem seçin",
+          "actionMissing": "Bu eylem mevcut değil. Eklentisi kapalı olabilir.",
+          "actionTarget": "Her ana makinedeki hedef",
+          "event": "Olay",
+          "pickEvent": "Bir olay seçin"
         },
         "onError": {
           "stop": "Çalışmayı durdur",
@@ -155,7 +163,13 @@
         "search": "Otomasyonları ara",
         "noMatches": "Aramanızla eşleşen otomasyon bulunamadı",
         "settingsTitle": "Otomasyon ayarları",
-        "settingsDisplayTitle": "Görünüm"
+        "settingsDisplayTitle": "Görünüm",
+        "events": {
+          "operation": {
+            "failed": "Herhangi bir eylem başarısız oldu",
+            "succeeded": "Herhangi bir eylem tamamlandı"
+          }
+        }
       }
     }
   },
@@ -269,6 +283,19 @@
     "inHours_one": "{{count}} saat içinde",
     "inHours_other": "{{count}} saat içinde",
     "inDays_one": "{{count}} gün içinde",
-    "inDays_other": "{{count}} gün içinde"
+    "inDays_other": "{{count}} gün içinde",
+    "noRuns": "Henüz çalıştırma yok"
+  },
+  "operations": {
+    "list": {
+      "title": "Otomasyonları listele"
+    },
+    "run": {
+      "title": "Bir otomasyon çalıştır"
+    },
+    "automation": "Otomasyon",
+    "failed": {
+      "title": "Başarısız otomasyon çalıştırmaları"
+    }
   }
 }

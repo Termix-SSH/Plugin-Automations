@@ -77,7 +77,8 @@
           "schedule": "Theo lịch trình",
           "docker_event": "Sự kiện container",
           "internal_event": "Sự kiện Termix",
-          "webhook": "Webhook đến"
+          "webhook": "Webhook đến",
+          "operation_event": "Một sự kiện xảy ra"
         },
         "stepTypes": {
           "notify": "Gửi cảnh báo",
@@ -92,7 +93,8 @@
           "set_var": "Đặt một biến",
           "if": "Nếu / ngược lại",
           "run_automation": "Chạy một automation khác",
-          "stop": "Dừng"
+          "stop": "Dừng",
+          "operation": "Thực thi một hành động"
         },
         "statuses": {
           "running": "Đang chạy",
@@ -133,7 +135,13 @@
           "timeout": "Thời gian chờ (giây)",
           "allowPrivateNetwork": "Cho phép địa chỉ mạng nội bộ",
           "allowPrivateNetworkHint": "Cần thiết cho dịch vụ tự lưu trữ trên mạng LAN của bạn. Tắt mặc định để ngăn các yêu cầu đến địa chỉ nội bộ.",
-          "interface": "Giao diện"
+          "interface": "Giao diện",
+          "action": "Hành động",
+          "pickAction": "Chọn một hành động",
+          "actionMissing": "Hành động này không khả dụng. Plugin của nó có thể đang tắt.",
+          "actionTarget": "Mục tiêu trên mỗi host",
+          "event": "Sự kiện",
+          "pickEvent": "Chọn một sự kiện"
         },
         "onError": {
           "stop": "Dừng quá trình chạy",
@@ -155,7 +163,13 @@
         "search": "Tìm kiếm automations",
         "noMatches": "Không có automation nào khớp với tìm kiếm của bạn",
         "settingsTitle": "Cài đặt automation",
-        "settingsDisplayTitle": "Hiển thị"
+        "settingsDisplayTitle": "Hiển thị",
+        "events": {
+          "operation": {
+            "failed": "Bất kỳ hành động nào thất bại",
+            "succeeded": "Bất kỳ hành động nào hoàn tất"
+          }
+        }
       }
     }
   },
@@ -265,6 +279,19 @@
     "noMaintenance": "Hiện không có bảo trì nào",
     "inMinutes_other": "trong {{count}} phút",
     "inHours_other": "trong {{count}} giờ",
-    "inDays_other": "trong {{count}} ngày"
+    "inDays_other": "trong {{count}} ngày",
+    "noRuns": "Chưa có lần chạy nào"
+  },
+  "operations": {
+    "list": {
+      "title": "Danh sách tự động hóa"
+    },
+    "run": {
+      "title": "Chạy một quy trình tự động"
+    },
+    "automation": "Tự động hóa",
+    "failed": {
+      "title": "Các lần chạy tự động hóa thất bại"
+    }
   }
 }

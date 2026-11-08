@@ -77,7 +77,8 @@
           "schedule": "Pagal grafiką",
           "docker_event": "Konteinerio įvykis",
           "internal_event": "Termix įvykis",
-          "webhook": "Gaunamas webhook"
+          "webhook": "Gaunamas webhook",
+          "operation_event": "Įvyksta įvykis"
         },
         "stepTypes": {
           "notify": "Siųsti įspėjimą",
@@ -92,7 +93,8 @@
           "set_var": "Nustatyti kintamąjį",
           "if": "Jei / kitaip",
           "run_automation": "Paleisti kitą automatizaciją",
-          "stop": "Sustabdyti"
+          "stop": "Sustabdyti",
+          "operation": "Vykdyti veiksmą"
         },
         "statuses": {
           "running": "Vykdoma",
@@ -133,7 +135,13 @@
           "timeout": "Laiko limitas (sekundės)",
           "allowPrivateNetwork": "Leisti vietinio tinklo adresus",
           "allowPrivateNetworkHint": "Reikia savarankiškai valdomai paslaugai jūsų LAN tinkle. Numatyta išjungta, kad būtų išvengta užklausų į vidinius adresus.",
-          "interface": "Sąsaja"
+          "interface": "Sąsaja",
+          "action": "Veiksmas",
+          "pickAction": "Pasirinkti veiksmą",
+          "actionMissing": "Šis veiksmas nepasiekiamas. Galbūt jo priedas išjungtas.",
+          "actionTarget": "Tikslas kiekviename serveryje",
+          "event": "Įvykis",
+          "pickEvent": "Pasirinkti įvykį"
         },
         "onError": {
           "stop": "Sustabdyti vykdymą",
@@ -155,7 +163,13 @@
         "search": "Ieškoti automatizacijų",
         "noMatches": "Jokių automatizacijų neatitinka jūsų paieškos",
         "settingsTitle": "Automatizacijų nustatymai",
-        "settingsDisplayTitle": "Rodinys"
+        "settingsDisplayTitle": "Rodinys",
+        "events": {
+          "operation": {
+            "failed": "Bet kuris veiksmas nepavyko",
+            "succeeded": "Bet kuris veiksmas baigtas"
+          }
+        }
       }
     }
   },
@@ -277,6 +291,19 @@
     "inDays_one": "po {{count}} dienos",
     "inDays_few": "po {{count}} dienų",
     "inDays_many": "po {{count}} dienų",
-    "inDays_other": "po {{count}} dienų"
+    "inDays_other": "po {{count}} dienų",
+    "noRuns": "Dar nėra vykdymų"
+  },
+  "operations": {
+    "list": {
+      "title": "Automatizacijų sąrašas"
+    },
+    "run": {
+      "title": "Vykdyti automatizaciją"
+    },
+    "automation": "Automatizacija",
+    "failed": {
+      "title": "Nepavykę automatizacijų vykdymai"
+    }
   }
 }

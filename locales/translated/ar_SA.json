@@ -77,7 +77,8 @@
           "schedule": "حسب جدول زمني",
           "docker_event": "حدث حاوية",
           "internal_event": "حدث Termix",
-          "webhook": "Webhook وارد"
+          "webhook": "Webhook وارد",
+          "operation_event": "حدث وقوع حدث"
         },
         "stepTypes": {
           "notify": "إرسال تنبيه",
@@ -92,7 +93,8 @@
           "set_var": "تعيين متغير",
           "if": "إذا / وإلا",
           "run_automation": "تشغيل أتمتة أخرى",
-          "stop": "إيقاف"
+          "stop": "إيقاف",
+          "operation": "تنفيذ إجراء"
         },
         "statuses": {
           "running": "جارٍ التشغيل",
@@ -133,7 +135,13 @@
           "timeout": "مهلة الوقت (بالثواني)",
           "allowPrivateNetwork": "السماح بعناوين الشبكة المحلية",
           "allowPrivateNetworkHint": "مطلوب لخدمة مستضافة ذاتياً على شبكتك المحلية. معطّل افتراضياً لمنع الطلبات إلى العناوين الداخلية.",
-          "interface": "الواجهة"
+          "interface": "الواجهة",
+          "action": "الإجراء",
+          "pickAction": "اختر إجراءً",
+          "actionMissing": "هذا الإجراء غير متاح. قد يكون الإضافة المكملة معطلة.",
+          "actionTarget": "الهدف على كل مضيف",
+          "event": "الحدث",
+          "pickEvent": "اختر حدثًا"
         },
         "onError": {
           "stop": "إيقاف التشغيل",
@@ -155,7 +163,13 @@
         "search": "البحث في الأتمتات",
         "noMatches": "لا توجد أتمتات تطابق بحثك",
         "settingsTitle": "إعدادات الأتمتة",
-        "settingsDisplayTitle": "العرض"
+        "settingsDisplayTitle": "العرض",
+        "events": {
+          "operation": {
+            "failed": "فشل أي إجراء",
+            "succeeded": "انتهى أي إجراء"
+          }
+        }
       }
     }
   },
@@ -285,6 +299,19 @@
     "inDays_two": "في يومين",
     "inDays_few": "في {{count}} أيام",
     "inDays_many": "في {{count}} يوماً",
-    "inDays_other": "في {{count}} أيام"
+    "inDays_other": "في {{count}} أيام",
+    "noRuns": "لا توجد عمليات تشغيل بعد"
+  },
+  "operations": {
+    "list": {
+      "title": "قائمة الأتمتة"
+    },
+    "run": {
+      "title": "تشغيل أتمتة"
+    },
+    "automation": "الأتمتة",
+    "failed": {
+      "title": "عمليات تشغيل الأتمتة الفاشلة"
+    }
   }
 }

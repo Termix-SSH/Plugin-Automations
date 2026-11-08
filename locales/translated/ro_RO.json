@@ -77,7 +77,8 @@
           "schedule": "Conform unui program",
           "docker_event": "Eveniment container",
           "internal_event": "Eveniment Termix",
-          "webhook": "Webhook primit"
+          "webhook": "Webhook primit",
+          "operation_event": "Se produce un eveniment"
         },
         "stepTypes": {
           "notify": "Trimite o alertă",
@@ -92,7 +93,8 @@
           "set_var": "Setează o variabilă",
           "if": "Dacă / altfel",
           "run_automation": "Execută o altă automatizare",
-          "stop": "Oprește"
+          "stop": "Oprește",
+          "operation": "Execută o acțiune"
         },
         "statuses": {
           "running": "În execuție",
@@ -133,7 +135,13 @@
           "timeout": "Timp de așteptare (secunde)",
           "allowPrivateNetwork": "Permite adresele de rețea locală",
           "allowPrivateNetworkHint": "Necesar pentru un serviciu self-hosted pe LAN-ul tău. Dezactivat implicit pentru a preveni cererile către adrese interne.",
-          "interface": "Interfață"
+          "interface": "Interfață",
+          "action": "Acțiune",
+          "pickAction": "Alege o acțiune",
+          "actionMissing": "Această acțiune nu este disponibilă. Este posibil ca plugin-ul său să fie dezactivat.",
+          "actionTarget": "Țintă pe fiecare gazdă",
+          "event": "Eveniment",
+          "pickEvent": "Alege un eveniment"
         },
         "onError": {
           "stop": "Oprește execuția",
@@ -155,7 +163,13 @@
         "search": "Caută automatizări",
         "noMatches": "Nicio automatizare nu corespunde căutării",
         "settingsTitle": "Setări automatizări",
-        "settingsDisplayTitle": "Afișare"
+        "settingsDisplayTitle": "Afișare",
+        "events": {
+          "operation": {
+            "failed": "Orice acțiune a eșuat",
+            "succeeded": "Orice acțiune s-a încheiat"
+          }
+        }
       }
     }
   },
@@ -273,6 +287,19 @@
     "inHours_other": "în {{count}} ore",
     "inDays_one": "în {{count}} zi",
     "inDays_few": "în {{count}} zile",
-    "inDays_other": "în {{count}} zile"
+    "inDays_other": "în {{count}} zile",
+    "noRuns": "Încă nu există execuții"
+  },
+  "operations": {
+    "list": {
+      "title": "Listează automatizările"
+    },
+    "run": {
+      "title": "Execută o automatizare"
+    },
+    "automation": "Automatizare",
+    "failed": {
+      "title": "Execuții eșuate ale automatizărilor"
+    }
   }
 }

@@ -77,7 +77,8 @@
           "schedule": "Po urniku",
           "docker_event": "Dogodek v kontejnerju",
           "internal_event": "Dogodek v Termixu",
-          "webhook": "Dohodni webhook"
+          "webhook": "Dohodni webhook",
+          "operation_event": "Dogodek se zgodi"
         },
         "stepTypes": {
           "notify": "Pošlji opozorilo",
@@ -92,7 +93,8 @@
           "set_var": "Nastavi spremenljivko",
           "if": "Če / drugače",
           "run_automation": "Zaženi drugo avtomatizacijo",
-          "stop": "Ustavi"
+          "stop": "Ustavi",
+          "operation": "Izvedi dejanje"
         },
         "statuses": {
           "running": "V teku",
@@ -133,7 +135,13 @@
           "timeout": "Časovna omejitev (sekunde)",
           "allowPrivateNetwork": "Dovoli naslove lokalnega omrežja",
           "allowPrivateNetworkHint": "Potrebno za samostojno gostovano storitev v vašem LAN. Privzeto izklopljeno, da se preprečijo zahteve do notranjih naslovov.",
-          "interface": "Vmesnik"
+          "interface": "Vmesnik",
+          "action": "Dejanje",
+          "pickAction": "Izberite dejanje",
+          "actionMissing": "To dejanje ni na voljo. Vtičnik je morda izklopljen.",
+          "actionTarget": "Cilj na vsakem gostitelju",
+          "event": "Dogodek",
+          "pickEvent": "Izberite dogodek"
         },
         "onError": {
           "stop": "Ustavi izvajanje",
@@ -155,7 +163,13 @@
         "search": "Išči avtomatizacije",
         "noMatches": "Ni avtomatizacij, ki bi ustrezale vašemu iskanju",
         "settingsTitle": "Nastavitve avtomatizacije",
-        "settingsDisplayTitle": "Prikaz"
+        "settingsDisplayTitle": "Prikaz",
+        "events": {
+          "operation": {
+            "failed": "Katero koli dejanje je spodletelo",
+            "succeeded": "Katero koli dejanje je končano"
+          }
+        }
       }
     }
   },
@@ -277,6 +291,19 @@
     "inDays_one": "čez {{count}} dan",
     "inDays_two": "čez {{count}} dni",
     "inDays_few": "čez {{count}} dni",
-    "inDays_other": "čez {{count}} dni"
+    "inDays_other": "čez {{count}} dni",
+    "noRuns": "Še ni izvedb"
+  },
+  "operations": {
+    "list": {
+      "title": "Seznam avtomatizacij"
+    },
+    "run": {
+      "title": "Izvedi avtomatizacijo"
+    },
+    "automation": "Avtomatizacija",
+    "failed": {
+      "title": "Spodletele izvedbe avtomatizacij"
+    }
   }
 }

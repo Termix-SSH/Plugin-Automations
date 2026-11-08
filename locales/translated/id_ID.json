@@ -77,7 +77,8 @@
           "schedule": "Berdasarkan jadwal",
           "docker_event": "Peristiwa kontainer",
           "internal_event": "Peristiwa Termix",
-          "webhook": "Webhook masuk"
+          "webhook": "Webhook masuk",
+          "operation_event": "Terjadi peristiwa"
         },
         "stepTypes": {
           "notify": "Kirim peringatan",
@@ -92,7 +93,8 @@
           "set_var": "Atur variabel",
           "if": "Jika / lainnya",
           "run_automation": "Jalankan otomatisasi lain",
-          "stop": "Berhenti"
+          "stop": "Berhenti",
+          "operation": "Jalankan tindakan"
         },
         "statuses": {
           "running": "Sedang berjalan",
@@ -133,7 +135,13 @@
           "timeout": "Batas waktu (detik)",
           "allowPrivateNetwork": "Izinkan alamat jaringan lokal",
           "allowPrivateNetworkHint": "Diperlukan untuk layanan self-hosted di LAN Anda. Nonaktif secara default untuk mencegah permintaan ke alamat internal.",
-          "interface": "Antarmuka"
+          "interface": "Antarmuka",
+          "action": "Tindakan",
+          "pickAction": "Pilih tindakan",
+          "actionMissing": "Tindakan ini tidak tersedia. Plugin-nya mungkin dinonaktifkan.",
+          "actionTarget": "Target di setiap host",
+          "event": "Peristiwa",
+          "pickEvent": "Pilih peristiwa"
         },
         "onError": {
           "stop": "Hentikan eksekusi",
@@ -155,7 +163,13 @@
         "search": "Cari otomatisasi",
         "noMatches": "Tidak ada otomatisasi yang cocok dengan pencarian Anda",
         "settingsTitle": "Pengaturan otomatisasi",
-        "settingsDisplayTitle": "Tampilan"
+        "settingsDisplayTitle": "Tampilan",
+        "events": {
+          "operation": {
+            "failed": "Setiap tindakan gagal",
+            "succeeded": "Setiap tindakan selesai"
+          }
+        }
       }
     }
   },
@@ -265,6 +279,19 @@
     "noMaintenance": "Tidak ada pemeliharaan saat ini",
     "inMinutes_other": "dalam {{count}} menit",
     "inHours_other": "dalam {{count}} jam",
-    "inDays_other": "dalam {{count}} hari"
+    "inDays_other": "dalam {{count}} hari",
+    "noRuns": "Belum ada eksekusi"
+  },
+  "operations": {
+    "list": {
+      "title": "Daftar otomatisasi"
+    },
+    "run": {
+      "title": "Jalankan otomatisasi"
+    },
+    "automation": "Otomatisasi",
+    "failed": {
+      "title": "Eksekusi otomatisasi yang gagal"
+    }
   }
 }

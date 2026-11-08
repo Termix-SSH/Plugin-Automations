@@ -77,7 +77,8 @@
           "schedule": "Ütemezés szerint",
           "docker_event": "Konténeresemény",
           "internal_event": "Termix esemény",
-          "webhook": "Bejövő webhook"
+          "webhook": "Bejövő webhook",
+          "operation_event": "Egy esemény történik"
         },
         "stepTypes": {
           "notify": "Riasztás küldése",
@@ -92,7 +93,8 @@
           "set_var": "Változó beállítása",
           "if": "Ha / egyébként",
           "run_automation": "Másik automatizálás futtatása",
-          "stop": "Megállítás"
+          "stop": "Megállítás",
+          "operation": "Művelet futtatása"
         },
         "statuses": {
           "running": "Fut",
@@ -133,7 +135,13 @@
           "timeout": "Időtartam (másodperc)",
           "allowPrivateNetwork": "Helyi hálózati címek engedélyezése",
           "allowPrivateNetworkHint": "Szükséges egy saját LAN-on futó szolgáltatáshoz. Alapértelmezetten ki van kapcsolva a belső címek felé irányuló kérések megakadályozása érdekében.",
-          "interface": "Felület"
+          "interface": "Felület",
+          "action": "Művelet",
+          "pickAction": "Válasszon egy műveletet",
+          "actionMissing": "Ez a művelet nem elérhető. Lehet, hogy a bővítmény ki van kapcsolva.",
+          "actionTarget": "Cél minden hoszton",
+          "event": "Esemény",
+          "pickEvent": "Válasszon egy eseményt"
         },
         "onError": {
           "stop": "Futtatás megállítása",
@@ -155,7 +163,13 @@
         "search": "Automatizálások keresése",
         "noMatches": "Nincs találat a keresésre",
         "settingsTitle": "Automatizálás beállításai",
-        "settingsDisplayTitle": "Megjelenítés"
+        "settingsDisplayTitle": "Megjelenítés",
+        "events": {
+          "operation": {
+            "failed": "Bármely művelet sikertelen",
+            "succeeded": "Bármely művelet befejeződött"
+          }
+        }
       }
     }
   },
@@ -269,6 +283,19 @@
     "inHours_one": "{{count}} óra múlva",
     "inHours_other": "{{count}} óra múlva",
     "inDays_one": "{{count}} nap múlva",
-    "inDays_other": "{{count}} nap múlva"
+    "inDays_other": "{{count}} nap múlva",
+    "noRuns": "Még nincsenek futtatások"
+  },
+  "operations": {
+    "list": {
+      "title": "Automatizálások listázása"
+    },
+    "run": {
+      "title": "Automatizálás futtatása"
+    },
+    "automation": "Automatizálás",
+    "failed": {
+      "title": "Sikertelen automatizálás-futtatások"
+    }
   }
 }

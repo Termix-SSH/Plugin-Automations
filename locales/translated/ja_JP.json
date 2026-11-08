@@ -77,7 +77,8 @@
           "schedule": "スケジュール通り",
           "docker_event": "コンテナイベント",
           "internal_event": "Termix イベント",
-          "webhook": "インカミング Webhook"
+          "webhook": "インカミング Webhook",
+          "operation_event": "イベントが発生した"
         },
         "stepTypes": {
           "notify": "アラートを送信",
@@ -92,7 +93,8 @@
           "set_var": "変数を設定する",
           "if": "条件分岐",
           "run_automation": "別の自動化を実行する",
-          "stop": "停止する"
+          "stop": "停止する",
+          "operation": "アクションを実行"
         },
         "statuses": {
           "running": "実行中",
@@ -133,7 +135,13 @@
           "timeout": "タイムアウト（秒）",
           "allowPrivateNetwork": "ローカルネットワークアドレスを許可する",
           "allowPrivateNetworkHint": "LAN 上のセルフホストサービスに必要です。内部アドレスへのリクエストを防ぐため、デフォルトでは無効です。",
-          "interface": "インターフェース"
+          "interface": "インターフェース",
+          "action": "アクション",
+          "pickAction": "アクションを選択",
+          "actionMissing": "このアクションは利用できません。プラグインが無効になっている可能性があります。",
+          "actionTarget": "各ホストのターゲット",
+          "event": "イベント",
+          "pickEvent": "イベントを選択"
         },
         "onError": {
           "stop": "実行を停止する",
@@ -155,7 +163,13 @@
         "search": "自動化を検索",
         "noMatches": "検索条件に一致する自動化はありません",
         "settingsTitle": "自動化の設定",
-        "settingsDisplayTitle": "表示"
+        "settingsDisplayTitle": "表示",
+        "events": {
+          "operation": {
+            "failed": "アクションが失敗した",
+            "succeeded": "アクションが完了した"
+          }
+        }
       }
     }
   },
@@ -265,6 +279,19 @@
     "noMaintenance": "現在メンテナンスはありません",
     "inMinutes_other": "{{count}}分後",
     "inHours_other": "{{count}}時間後",
-    "inDays_other": "{{count}}日後"
+    "inDays_other": "{{count}}日後",
+    "noRuns": "まだ実行履歴がありません"
+  },
+  "operations": {
+    "list": {
+      "title": "オートメーションの一覧"
+    },
+    "run": {
+      "title": "オートメーションを実行"
+    },
+    "automation": "オートメーション",
+    "failed": {
+      "title": "失敗したオートメーションの実行"
+    }
   }
 }

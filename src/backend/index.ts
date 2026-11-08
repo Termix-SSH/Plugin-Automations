@@ -9,6 +9,8 @@ import { registerRoutes } from "./routes.js";
 import { createScheduler, STARTUP_DELAY_MS, TICK_MS } from "./scheduler.js";
 import { createAutomationsService } from "./service.js";
 import { createTriggers } from "./triggers.js";
+import { watchOperationEvents } from "./operation-events.js";
+import { registerOperations } from "./operations.js";
 import { createMaintenanceRepository } from "./maintenance-repository.js";
 import { createMaintenanceService } from "./maintenance-service.js";
 import { registerMaintenanceRoutes } from "./maintenance-routes.js";
@@ -45,6 +47,14 @@ export async function activate(ctx: PluginContext) {
     maintenance.isMaintaining,
   );
   triggers.subscribe(ctx.events);
+  watchOperationEvents(
+    ctx,
+    repository,
+    engine,
+    maintenance.isMaintaining,
+    deps,
+  );
+  registerOperations(ctx, repository, engine);
 
   const viewers = createHeadlessViewers(ctx, deps, () =>
     triggers.watchedHosts("metric_threshold"),

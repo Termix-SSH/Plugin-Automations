@@ -1,7 +1,7 @@
 {
   "id": "automations",
   "name": "Automations",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Run steps on your hosts on a schedule or when something happens.",
   "author": {
     "name": "Termix"
@@ -22,8 +22,8 @@
     "An automations panel beside any SSH terminal, plus upcoming and recent run dashboard cards"
   ],
   "engine": {
-    "termix": ">=26.10.0",
-    "api": "^1.2"
+    "termix": ">=26.11.1-0",
+    "api": "^1.15"
   },
   "capabilities": [
     "hosts:read",
@@ -37,7 +37,9 @@
     "network:serve",
     "settings:read-core",
     "ui:surface",
-    "users:impersonate"
+    "users:impersonate",
+    "operations:invoke",
+    "operations:provide"
   ],
   "optionalDependencies": {
     "fleets": "^1.0.0",
@@ -141,7 +143,7 @@
         "defaultRoles": ["user"]
       }
     ],
-    "uses": ["alerts.openChannels"],
+    "uses": ["homepage.widgets", "alerts.openChannels"],
     "settings": {
       "host": {
         "editorGroup": "ssh",
@@ -224,7 +226,66 @@
         "titleKey": "card.recentRuns",
         "icon": "History"
       }
-    ]
+    ],
+    "operations": {
+      "invokes": ["*"],
+      "actions": [
+        {
+          "id": "automations.list",
+          "titleKey": "operations.list.title",
+          "scope": "server",
+          "risk": "read",
+          "permission": "view",
+          "surfaces": {
+            "assistant": true,
+            "mcp": true,
+            "palette": false
+          }
+        },
+        {
+          "id": "automations.run",
+          "titleKey": "operations.run.title",
+          "icon": "Workflow",
+          "scope": "server",
+          "risk": "change",
+          "permission": "run",
+          "dryRun": "native",
+          "timeoutMs": 3600000,
+          "inputs": [
+            {
+              "key": "automation",
+              "type": "select",
+              "labelKey": "operations.automation",
+              "required": true,
+              "optionsFrom": "automations.list"
+            }
+          ]
+        },
+        {
+          "id": "automations.failed-runs",
+          "titleKey": "operations.failed.title",
+          "icon": "TriangleAlert",
+          "scope": "server",
+          "risk": "read",
+          "permission": "view",
+          "surfaces": {
+            "assistant": true,
+            "mcp": true,
+            "palette": false
+          }
+        }
+      ],
+      "signals": [
+        {
+          "id": "automations.failed",
+          "titleKey": "operations.failed.title",
+          "read": "automations.failed-runs",
+          "scope": "server",
+          "kind": "count",
+          "refreshSec": 300
+        }
+      ]
+    }
   },
   "locales": "locales",
   "platforms": ["linux", "win32", "darwin"],

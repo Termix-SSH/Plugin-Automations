@@ -77,7 +77,8 @@
           "schedule": "일정 기반",
           "docker_event": "컨테이너 이벤트",
           "internal_event": "Termix 이벤트",
-          "webhook": "수신 웹훅"
+          "webhook": "수신 웹훅",
+          "operation_event": "이벤트가 발생함"
         },
         "stepTypes": {
           "notify": "알림 전송",
@@ -92,7 +93,8 @@
           "set_var": "변수 설정",
           "if": "조건 분기",
           "run_automation": "다른 자동화 실행",
-          "stop": "중지"
+          "stop": "중지",
+          "operation": "작업 실행"
         },
         "statuses": {
           "running": "실행 중",
@@ -133,7 +135,13 @@
           "timeout": "시간 초과 (초)",
           "allowPrivateNetwork": "로컬 네트워크 주소 허용",
           "allowPrivateNetworkHint": "LAN의 자체 호스팅 서비스에 필요합니다. 내부 주소로의 요청을 방지하기 위해 기본값은 꺼져 있습니다.",
-          "interface": "인터페이스"
+          "interface": "인터페이스",
+          "action": "작업",
+          "pickAction": "작업 선택",
+          "actionMissing": "이 작업은 사용할 수 없습니다. 플러그인이 비활성화되었을 수 있습니다.",
+          "actionTarget": "각 호스트의 대상",
+          "event": "이벤트",
+          "pickEvent": "이벤트 선택"
         },
         "onError": {
           "stop": "실행 중지",
@@ -155,7 +163,13 @@
         "search": "자동화 검색",
         "noMatches": "검색어와 일치하는 자동화가 없습니다",
         "settingsTitle": "자동화 설정",
-        "settingsDisplayTitle": "표시"
+        "settingsDisplayTitle": "표시",
+        "events": {
+          "operation": {
+            "failed": "작업 실패",
+            "succeeded": "작업 완료"
+          }
+        }
       }
     }
   },
@@ -265,6 +279,19 @@
     "noMaintenance": "현재 유지보수 작업이 없습니다",
     "inMinutes_other": "{{count}}분 후",
     "inHours_other": "{{count}}시간 후",
-    "inDays_other": "{{count}}일 후"
+    "inDays_other": "{{count}}일 후",
+    "noRuns": "아직 실행 기록이 없습니다"
+  },
+  "operations": {
+    "list": {
+      "title": "자동화 목록"
+    },
+    "run": {
+      "title": "자동화 실행"
+    },
+    "automation": "자동화",
+    "failed": {
+      "title": "실패한 자동화 실행"
+    }
   }
 }

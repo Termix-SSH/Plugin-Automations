@@ -77,7 +77,8 @@
           "schedule": "Op schema",
           "docker_event": "Containergebeurtenis",
           "internal_event": "Termix-gebeurtenis",
-          "webhook": "Inkomende webhook"
+          "webhook": "Inkomende webhook",
+          "operation_event": "Er gebeurt een gebeurtenis"
         },
         "stepTypes": {
           "notify": "Melding versturen",
@@ -92,7 +93,8 @@
           "set_var": "Variabele instellen",
           "if": "Als / anders",
           "run_automation": "Andere automatisering uitvoeren",
-          "stop": "Stoppen"
+          "stop": "Stoppen",
+          "operation": "Voer een actie uit"
         },
         "statuses": {
           "running": "Bezig",
@@ -133,7 +135,13 @@
           "timeout": "Time-out (seconden)",
           "allowPrivateNetwork": "Lokaal netwerktoestemming",
           "allowPrivateNetworkHint": "Vereist voor een zelfgehoste service op uw LAN. Standaard uitgeschakeld om verzoeken naar interne adressen te voorkomen.",
-          "interface": "Interface"
+          "interface": "Interface",
+          "action": "Actie",
+          "pickAction": "Kies een actie",
+          "actionMissing": "Deze actie is niet beschikbaar. De plugin is mogelijk uitgeschakeld.",
+          "actionTarget": "Doel op elke host",
+          "event": "Gebeurtenis",
+          "pickEvent": "Kies een gebeurtenis"
         },
         "onError": {
           "stop": "Uitvoering stoppen",
@@ -155,7 +163,13 @@
         "search": "Automatiseringen zoeken",
         "noMatches": "Geen automatiseringen gevonden die overeenkomen met uw zoekopdracht",
         "settingsTitle": "Automatiseringsinstellingen",
-        "settingsDisplayTitle": "Weergave"
+        "settingsDisplayTitle": "Weergave",
+        "events": {
+          "operation": {
+            "failed": "Elke actie is mislukt",
+            "succeeded": "Elke actie is voltooid"
+          }
+        }
       }
     }
   },
@@ -269,6 +283,19 @@
     "inHours_one": "over {{count}} uur",
     "inHours_other": "over {{count}} uur",
     "inDays_one": "over {{count}} dag",
-    "inDays_other": "over {{count}} dagen"
+    "inDays_other": "over {{count}} dagen",
+    "noRuns": "Nog geen uitvoeringen"
+  },
+  "operations": {
+    "list": {
+      "title": "Automatiseringen weergeven"
+    },
+    "run": {
+      "title": "Voer een automatisering uit"
+    },
+    "automation": "Automatisering",
+    "failed": {
+      "title": "Mislukte automatiseringsuitvoeringen"
+    }
   }
 }

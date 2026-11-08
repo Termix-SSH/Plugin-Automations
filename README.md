@@ -32,6 +32,10 @@ Read the [docs](https://docs.termix.site/plugins/automations) to set it up and u
 - Run on one host, a fleet or every host
 - Test runs and a history of every run
 - Maintenance windows that pause automations while you work on a host
+- Action steps that run anything a plugin offers, on the trigger host, picked hosts or a fleet
+- An event trigger that starts when a plugin reports an event or an action fails
+- Run an automation from the command palette, the CLI, the phone app or another automation
+- A failed runs status tile and a homepage widget with the latest runs
 
 <br />
 

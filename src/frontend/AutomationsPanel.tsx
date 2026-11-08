@@ -10,7 +10,6 @@ import {
   Copy,
   ExternalLink,
   FlaskConical,
-  Loader2,
   Play,
   SlidersHorizontal,
   Trash2,
@@ -32,6 +31,8 @@ import {
   type ListRowTone,
   getBasePath,
   useConfirm,
+  LoadingState,
+  TOOLBAR_FIT,
 } from "@termix-ssh/plugin-sdk/ui";
 import {
   useAutomationsApi,
@@ -397,7 +398,9 @@ export function AutomationsPanel({ active = true }: { active?: boolean }) {
 
       {tab === "automations" && (
         <>
-          <div className="flex shrink-0 flex-col gap-2 border-b border-border px-3 py-2">
+          <div
+            className={`flex shrink-0 flex-col gap-2 border-b border-border px-3 py-2 ${TOOLBAR_FIT}`}
+          >
             <PanelSearch
               value={query}
               onChange={setQuery}
@@ -413,9 +416,7 @@ export function AutomationsPanel({ active = true }: { active?: boolean }) {
           <PanelList
             empty={
               loading && automations.length === 0 ? (
-                <div className="flex justify-center p-4">
-                  <Loader2 size={16} className="animate-spin" />
-                </div>
+                <LoadingState />
               ) : (
                 <EmptyState
                   icon={Workflow}

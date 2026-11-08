@@ -77,7 +77,8 @@
           "schedule": "সময়সূচী অনুযায়ী",
           "docker_event": "কন্টেইনার ইভেন্ট",
           "internal_event": "Termix ইভেন্ট",
-          "webhook": "ইনকামিং ওয়েবহুক"
+          "webhook": "ইনকামিং ওয়েবহুক",
+          "operation_event": "একটি ঘটনা ঘটে"
         },
         "stepTypes": {
           "notify": "একটি অ্যালার্ট পাঠান",
@@ -92,7 +93,8 @@
           "set_var": "একটি ভেরিয়েবল সেট করুন",
           "if": "যদি / অন্যথায়",
           "run_automation": "আরেকটি অটোমেশন চালান",
-          "stop": "থামুন"
+          "stop": "থামুন",
+          "operation": "একটি অ্যাকশন চালান"
         },
         "statuses": {
           "running": "চলছে",
@@ -133,7 +135,13 @@
           "timeout": "টাইমআউট (সেকেন্ড)",
           "allowPrivateNetwork": "স্থানীয় নেটওয়ার্ক ঠিকানা অনুমতি দিন",
           "allowPrivateNetworkHint": "আপনার LAN-এ একটি সেলফ-হোস্টেড সার্ভিসের জন্য প্রয়োজন। অভ্যন্তরীণ ঠিকানায় অনুরোধ রোধ করতে ডিফল্টভাবে বন্ধ থাকে।",
-          "interface": "ইন্টারফেস"
+          "interface": "ইন্টারফেস",
+          "action": "অ্যাকশন",
+          "pickAction": "একটি অ্যাকশন নির্বাচন করুন",
+          "actionMissing": "এই অ্যাকশনটি উপলব্ধ নেই। এর প্লাগইন বন্ধ থাকতে পারে।",
+          "actionTarget": "প্রতিটি হোস্টে লক্ষ্য",
+          "event": "ঘটনা",
+          "pickEvent": "একটি ঘটনা নির্বাচন করুন"
         },
         "onError": {
           "stop": "চালানো থামান",
@@ -155,7 +163,13 @@
         "search": "অটোমেশন খুঁজুন",
         "noMatches": "আপনার অনুসন্ধানের সাথে কোনো অটোমেশন মিলছে না",
         "settingsTitle": "অটোমেশন সেটিংস",
-        "settingsDisplayTitle": "ডিসপ্লে"
+        "settingsDisplayTitle": "ডিসপ্লে",
+        "events": {
+          "operation": {
+            "failed": "যেকোনো অ্যাকশন ব্যর্থ হয়েছে",
+            "succeeded": "যেকোনো অ্যাকশন সম্পন্ন হয়েছে"
+          }
+        }
       }
     }
   },
@@ -269,6 +283,19 @@
     "inHours_one": "{{count}} ঘণ্টা পরে",
     "inHours_other": "{{count}} ঘণ্টা পরে",
     "inDays_one": "{{count}} দিন পরে",
-    "inDays_other": "{{count}} দিন পরে"
+    "inDays_other": "{{count}} দিন পরে",
+    "noRuns": "এখনো কোনো রান নেই"
+  },
+  "operations": {
+    "list": {
+      "title": "অটোমেশন তালিকা"
+    },
+    "run": {
+      "title": "একটি অটোমেশন চালান"
+    },
+    "automation": "অটোমেশন",
+    "failed": {
+      "title": "ব্যর্থ অটোমেশন রান"
+    }
   }
 }

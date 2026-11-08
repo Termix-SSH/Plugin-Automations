@@ -108,6 +108,14 @@ export type Trigger =
       cooldownMinutes: number;
     }
   | {
+      /** A declared event, such as firewall.turned-off or operation.failed. */
+      kind: "operation_event";
+      /** An event id, "<pluginId>.*" or "*". */
+      event: string;
+      hostSelector?: HostSelector;
+      cooldownMinutes: number;
+    }
+  | {
       kind: "webhook";
       /** Only the hash is persisted. The raw token is shown once on creation. */
       tokenHash: string;
@@ -177,6 +185,17 @@ export type Step =
       tunnelName: string;
     })
   | (StepBase & { type: "wol"; hostId: number })
+  | (StepBase & {
+      /** Any action a plugin declares, run through Termix's checks. */
+      type: "operation";
+      actionId: string;
+      /** Left out for an action on the server rather than on hosts. */
+      hostSelector?: HostSelector;
+      /** The item on each host, such as a container name. A template. */
+      resourceKey?: string;
+      /** Input values. Strings are templates. */
+      input?: Record<string, string | number | boolean>;
+    })
   | (StepBase & {
       type: "ai_task";
       /** Plain-language instructions for the AI, rendered as a template. */
@@ -290,6 +309,7 @@ const SIDE_EFFECTING_STEP_TYPES: readonly StepType[] = [
   "docker",
   "tunnel",
   "wol",
+  "operation",
 ];
 
 function isSideEffectingStep(type: StepType): boolean {

@@ -77,7 +77,8 @@
           "schedule": "एक शेड्यूल पर",
           "docker_event": "कंटेनर घटना",
           "internal_event": "Termix घटना",
-          "webhook": "आने वाला वेबहुक"
+          "webhook": "आने वाला वेबहुक",
+          "operation_event": "कोई घटना घटती है"
         },
         "stepTypes": {
           "notify": "अलर्ट भेजें",
@@ -92,7 +93,8 @@
           "set_var": "चर सेट करें",
           "if": "यदि / अन्यथा",
           "run_automation": "दूसरी स्वचालन चलाएं",
-          "stop": "रोकें"
+          "stop": "रोकें",
+          "operation": "एक क्रिया चलाएं"
         },
         "statuses": {
           "running": "चल रहा है",
@@ -133,7 +135,13 @@
           "timeout": "समय सीमा (सेकंड)",
           "allowPrivateNetwork": "स्थानीय नेटवर्क पते की अनुमति दें",
           "allowPrivateNetworkHint": "आपके LAN पर सेल्फ-होस्टेड सेवा के लिए आवश्यक है। आंतरिक पतों पर अनुरोधों को रोकने के लिए डिफ़ॉल्ट रूप से बंद है।",
-          "interface": "इंटरफ़ेस"
+          "interface": "इंटरफ़ेस",
+          "action": "क्रिया",
+          "pickAction": "एक क्रिया चुनें",
+          "actionMissing": "यह क्रिया उपलब्ध नहीं है। इसका प्लगइन बंद हो सकता है।",
+          "actionTarget": "प्रत्येक होस्ट पर लक्ष्य",
+          "event": "घटना",
+          "pickEvent": "एक घटना चुनें"
         },
         "onError": {
           "stop": "रन रोकें",
@@ -155,7 +163,13 @@
         "search": "स्वचालन खोजें",
         "noMatches": "कोई स्वचालन आपकी खोज से मेल नहीं खाता",
         "settingsTitle": "स्वचालन सेटिंग्स",
-        "settingsDisplayTitle": "प्रदर्शन"
+        "settingsDisplayTitle": "प्रदर्शन",
+        "events": {
+          "operation": {
+            "failed": "कोई भी क्रिया विफल रही",
+            "succeeded": "कोई भी क्रिया पूरी हुई"
+          }
+        }
       }
     }
   },
@@ -269,6 +283,19 @@
     "inHours_one": "{{count}} घंटे में",
     "inHours_other": "{{count}} घंटों में",
     "inDays_one": "{{count}} दिन में",
-    "inDays_other": "{{count}} दिनों में"
+    "inDays_other": "{{count}} दिनों में",
+    "noRuns": "अभी तक कोई चालन नहीं"
+  },
+  "operations": {
+    "list": {
+      "title": "स्वचालन सूची"
+    },
+    "run": {
+      "title": "एक स्वचालन चलाएं"
+    },
+    "automation": "स्वचालन",
+    "failed": {
+      "title": "विफल स्वचालन चालन"
+    }
   }
 }

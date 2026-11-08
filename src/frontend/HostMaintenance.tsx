@@ -4,6 +4,7 @@ import {
   useSyncExternalStore,
   type FormEvent,
 } from "react";
+import { Wrench } from "lucide-react";
 import {
   usePermission,
   useTranslation,
@@ -16,6 +17,10 @@ import {
   Input,
   Label,
   Segmented,
+  PanelShell,
+  TileStack,
+  LoadingState,
+  GroupHeading,
 } from "@termix-ssh/plugin-sdk/ui";
 import type { MaintenanceStore } from "./maintenance-store";
 import type { Recurrence } from "../maintenance";
@@ -127,224 +132,231 @@ function MaintenanceEditor({
     });
   }
   return (
-    <div className="mx-auto w-full max-w-3xl space-y-4 overflow-auto p-3">
-      <div>
-        <h2 className="text-lg font-semibold">{t("maintenance.title")}</h2>
-        <p className="text-sm font-medium">{host.name || host.ip}</p>
-        <p className="text-sm text-muted-foreground">
+    <PanelShell
+      icon={<Wrench className="size-4" />}
+      title={t("maintenance.title")}
+      status={host.name || host.ip}
+    >
+      <TileStack>
+        <p className="px-3 py-2.5 text-xs text-muted-foreground">
           {t("maintenance.description")}
         </p>
-      </div>
-      {store.error() && (
-        <p role="alert" className="text-sm text-destructive">
-          {t(store.error())}
-        </p>
-      )}
-      {!store.loaded() && <p>{t("maintenance.loading")}</p>}
-      {error && (
-        <p role="alert" className="text-sm text-destructive">
-          {error}
-        </p>
-      )}
-      {state?.active && (
-        <section className="space-y-3 border border-border bg-card p-3 text-xs">
-          <Badge>{t("maintenance.active")}</Badge>
-          <p className="break-words">{state.active.reasons.join("; ")}</p>
-          <p>
-            {t("maintenance.estimated")}:{" "}
-            {new Date(state.active.estimatedEnd).toLocaleString()}
+        {store.error() && (
+          <p role="alert" className="px-3 py-2 text-xs text-destructive">
+            {t(store.error())}
           </p>
-          <p className="text-sm text-muted-foreground">
-            {t("maintenance.noAutoEnd")}
+        )}
+        {!store.loaded() && (
+          <LoadingState compact label={t("maintenance.loading")} />
+        )}
+        {error && (
+          <p role="alert" className="px-3 py-2 text-xs text-destructive">
+            {error}
           </p>
-          {canEdit &&
-            (ending ? (
-              <div className="space-y-2">
-                <p>{t("maintenance.endConfirm")}</p>
+        )}
+        {state?.active && (
+          <section className="space-y-3 bg-warning/5 px-3 py-3 text-xs">
+            <Badge>{t("maintenance.active")}</Badge>
+            <p className="break-words">{state.active.reasons.join("; ")}</p>
+            <p>
+              {t("maintenance.estimated")}:{" "}
+              {new Date(state.active.estimatedEnd).toLocaleString()}
+            </p>
+            <p className="text-sm text-muted-foreground">
+              {t("maintenance.noAutoEnd")}
+            </p>
+            {canEdit &&
+              (ending ? (
+                <div className="space-y-2">
+                  <p>{t("maintenance.endConfirm")}</p>
+                  <Button
+                    variant="outline"
+                    disabled={busy || !store.loaded() || !!store.error()}
+                    onClick={() => void mutate({ action: "end" })}
+                    className="border-accent-brand/40 text-accent-brand hover:bg-accent-brand/10 hover:text-accent-brand dark:border-accent-brand/40 dark:bg-transparent dark:hover:bg-accent-brand/10"
+                  >
+                    {t("maintenance.confirmEnd")}
+                  </Button>{" "}
+                  <Button variant="outline" onClick={() => setEnding(false)}>
+                    {t("maintenance.cancel")}
+                  </Button>
+                </div>
+              ) : (
                 <Button
                   variant="outline"
                   disabled={busy || !store.loaded() || !!store.error()}
-                  onClick={() => void mutate({ action: "end" })}
-                  className="border-accent-brand/40 text-accent-brand hover:bg-accent-brand/10 hover:text-accent-brand dark:border-accent-brand/40 dark:bg-transparent dark:hover:bg-accent-brand/10"
+                  onClick={() => setEnding(true)}
                 >
-                  {t("maintenance.confirmEnd")}
-                </Button>{" "}
-                <Button variant="outline" onClick={() => setEnding(false)}>
-                  {t("maintenance.cancel")}
+                  {t("maintenance.end")}
                 </Button>
-              </div>
-            ) : (
-              <Button
-                variant="outline"
-                disabled={busy || !store.loaded() || !!store.error()}
-                onClick={() => setEnding(true)}
-              >
-                {t("maintenance.end")}
-              </Button>
-            ))}
-        </section>
-      )}
-      {state?.owned === false && (
-        <p className="text-sm text-muted-foreground">
-          {t("maintenance.sharedReadOnly")}
-        </p>
-      )}
-      {canEdit && (
-        <form
-          onSubmit={submit}
-          className="space-y-4 border border-border bg-card p-3"
-        >
-          <div className="space-y-2">
-            <Label id="maintenance-mode">{t("maintenance.action")}</Label>
-            <Segmented<typeof mode>
-              value={mode}
-              onChange={setMode}
-              className="w-full [&>button]:flex-1"
-              options={[
-                { value: "start", label: t("maintenance.startNow") },
-                { value: "schedule", label: t("maintenance.schedule") },
-              ]}
-            />
-          </div>
-          <div className="space-y-2">
-            <Label htmlFor="maintenance-reason">
-              {t("maintenance.reason")}
-            </Label>
-            <Input
-              id="maintenance-reason"
-              required
-              maxLength={200}
-              value={reason}
-              onChange={(event) => setReason(event.target.value)}
-            />
-          </div>
-          {mode === "schedule" && (
-            <div className="grid gap-4 sm:grid-cols-2">
-              <div className="space-y-2">
-                <Label htmlFor="maintenance-start">
-                  {t("maintenance.startUtc")}
-                </Label>
-                <Input
-                  id="maintenance-start"
-                  type="datetime-local"
-                  required
-                  value={start}
-                  onChange={(event) => setStart(event.target.value)}
-                />
-              </div>
-              <div className="space-y-2">
-                <Label id="maintenance-repeat">{t("maintenance.repeat")}</Label>
-                <Segmented<Recurrence>
-                  value={recurrence}
-                  onChange={setRecurrence}
-                  className="w-full [&>button]:flex-1"
-                  options={(["once", "weekly", "monthly"] as const).map(
-                    (value) => ({
-                      value,
-                      label: t(`maintenance.${value}`),
-                    }),
-                  )}
-                />
-              </div>
-              <p className="text-sm text-muted-foreground sm:col-span-2">
-                {t("maintenance.utcHelp")}
-              </p>
-            </div>
-          )}
-          <div className="grid gap-4 sm:grid-cols-2">
-            <div className="space-y-2">
-              <Label htmlFor="maintenance-duration">
-                {t("maintenance.duration")}
-              </Label>
-              <Input
-                id="maintenance-duration"
-                type="number"
-                min={1}
-                max={10080}
-                required
-                value={duration}
-                onChange={(event) => setDuration(Number(event.target.value))}
-              />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="maintenance-grace">
-                {t("maintenance.grace")}
-              </Label>
-              <Input
-                id="maintenance-grace"
-                type="number"
-                min={0}
-                max={1440}
-                required
-                value={grace}
-                onChange={(event) => setGrace(Number(event.target.value))}
-              />
-            </div>
-          </div>
-          <label className="flex cursor-pointer items-center gap-2 text-xs">
-            <Checkbox
-              checked={notify}
-              onCheckedChange={(checked) => setNotify(checked === true)}
-            />
-            {t("maintenance.notify")}
-          </label>
-          <Button
-            type="submit"
-            variant="outline"
-            className="border-accent-brand/40 px-6 text-accent-brand hover:bg-accent-brand/10 hover:text-accent-brand"
-            disabled={
-              busy ||
-              !store.loaded() ||
-              !!store.error() ||
-              (mode === "start" && !!state?.active)
-            }
-          >
-            {t(
-              mode === "start"
-                ? "maintenance.startNow"
-                : "maintenance.addSchedule",
-            )}
-          </Button>
-        </form>
-      )}
-      <section className="space-y-3">
-        <h3 className="font-medium">{t("maintenance.schedules")}</h3>
-        {!state?.plans.length && (
-          <p className="text-sm text-muted-foreground">
-            {t("maintenance.noSchedules")}
+              ))}
+          </section>
+        )}
+        {state?.owned === false && (
+          <p className="px-3 py-2 text-xs text-muted-foreground">
+            {t("maintenance.sharedReadOnly")}
           </p>
         )}
-        {state?.plans.map((plan) => (
-          <div
-            key={plan.id}
-            className="flex flex-wrap items-center justify-between gap-3 border p-3"
-          >
-            <div className="min-w-0 space-y-1">
-              <p className="break-words">{plan.reason}</p>
-              <p className="flex flex-wrap gap-x-3 text-sm text-muted-foreground">
-                <span>{t(`maintenance.${plan.recurrence}`)}</span>
-                <span>
-                  {plan.nextStart
-                    ? `${plan.nextStart.replace("T", " ").slice(0, 16)} UTC`
-                    : t("maintenance.completed")}
-                </span>
-                <span>
-                  {t("maintenance.minutes", { count: plan.durationMinutes })}
-                </span>
-              </p>
+        {canEdit && (
+          <form onSubmit={submit} className="space-y-4 px-3 py-3">
+            <div className="space-y-2">
+              <Label id="maintenance-mode">{t("maintenance.action")}</Label>
+              <Segmented<typeof mode>
+                value={mode}
+                onChange={setMode}
+
+                options={[
+                  { value: "start", label: t("maintenance.startNow") },
+                  { value: "schedule", label: t("maintenance.schedule") },
+                ]}
+              />
             </div>
-            {canEdit && (
-              <Button
-                variant="outline"
-                disabled={busy || !store.loaded() || !!store.error()}
-                onClick={() => void mutate({ action: "remove", id: plan.id })}
-              >
-                {t("maintenance.remove")}
-              </Button>
+            <div className="space-y-2">
+              <Label htmlFor="maintenance-reason">
+                {t("maintenance.reason")}
+              </Label>
+              <Input
+                id="maintenance-reason"
+                required
+                maxLength={200}
+                value={reason}
+                onChange={(event) => setReason(event.target.value)}
+              />
+            </div>
+            {mode === "schedule" && (
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div className="space-y-2">
+                  <Label htmlFor="maintenance-start">
+                    {t("maintenance.startUtc")}
+                  </Label>
+                  <Input
+                    id="maintenance-start"
+                    type="datetime-local"
+                    required
+                    value={start}
+                    onChange={(event) => setStart(event.target.value)}
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label id="maintenance-repeat">
+                    {t("maintenance.repeat")}
+                  </Label>
+                  <Segmented<Recurrence>
+                    value={recurrence}
+                    onChange={setRecurrence}
+
+                    options={(["once", "weekly", "monthly"] as const).map(
+                      (value) => ({
+                        value,
+                        label: t(`maintenance.${value}`),
+                      }),
+                    )}
+                  />
+                </div>
+                <p className="text-sm text-muted-foreground sm:col-span-2">
+                  {t("maintenance.utcHelp")}
+                </p>
+              </div>
             )}
-          </div>
-        ))}
-      </section>
-    </div>
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div className="space-y-2">
+                <Label htmlFor="maintenance-duration">
+                  {t("maintenance.duration")}
+                </Label>
+                <Input
+                  id="maintenance-duration"
+                  type="number"
+                  min={1}
+                  max={10080}
+                  required
+                  value={duration}
+                  onChange={(event) => setDuration(Number(event.target.value))}
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="maintenance-grace">
+                  {t("maintenance.grace")}
+                </Label>
+                <Input
+                  id="maintenance-grace"
+                  type="number"
+                  min={0}
+                  max={1440}
+                  required
+                  value={grace}
+                  onChange={(event) => setGrace(Number(event.target.value))}
+                />
+              </div>
+            </div>
+            <label className="flex cursor-pointer items-center gap-2 text-xs">
+              <Checkbox
+                checked={notify}
+                onCheckedChange={(checked) => setNotify(checked === true)}
+              />
+              {t("maintenance.notify")}
+            </label>
+            <Button
+              type="submit"
+              variant="outline"
+              className="border-accent-brand/40 px-6 text-accent-brand hover:bg-accent-brand/10 hover:text-accent-brand"
+              disabled={
+                busy ||
+                !store.loaded() ||
+                !!store.error() ||
+                (mode === "start" && !!state?.active)
+              }
+            >
+              {t(
+                mode === "start"
+                  ? "maintenance.startNow"
+                  : "maintenance.addSchedule",
+              )}
+            </Button>
+          </form>
+        )}
+        <section className="flex flex-col">
+          <GroupHeading
+            title={t("maintenance.schedules")}
+            count={state?.plans.length}
+            className="px-3 pb-1.5 pt-3"
+          />
+          {!state?.plans.length && (
+            <p className="px-3 pb-3 text-xs text-muted-foreground">
+              {t("maintenance.noSchedules")}
+            </p>
+          )}
+          {state?.plans.map((plan) => (
+            <div
+              key={plan.id}
+              className="flex flex-wrap items-center justify-between gap-3 border-t border-border px-3 py-2.5 text-xs"
+            >
+              <div className="min-w-0 space-y-1">
+                <p className="break-words">{plan.reason}</p>
+                <p className="flex flex-wrap gap-x-3 text-muted-foreground">
+                  <span>{t(`maintenance.${plan.recurrence}`)}</span>
+                  <span>
+                    {plan.nextStart
+                      ? `${plan.nextStart.replace("T", " ").slice(0, 16)} UTC`
+                      : t("maintenance.completed")}
+                  </span>
+                  <span>
+                    {t("maintenance.minutes", { count: plan.durationMinutes })}
+                  </span>
+                </p>
+              </div>
+              {canEdit && (
+                <Button
+                  variant="outline"
+                  disabled={busy || !store.loaded() || !!store.error()}
+                  onClick={() => void mutate({ action: "remove", id: plan.id })}
+                >
+                  {t("maintenance.remove")}
+                </Button>
+              )}
+            </div>
+          ))}
+        </section>
+      </TileStack>
+    </PanelShell>
   );
 }

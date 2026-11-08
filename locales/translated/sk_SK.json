@@ -77,7 +77,8 @@
           "schedule": "Podľa rozvrhu",
           "docker_event": "Udalosť kontajnera",
           "internal_event": "Udalosť Termix",
-          "webhook": "Prichádzajúci webhook"
+          "webhook": "Prichádzajúci webhook",
+          "operation_event": "Dojde k udalosti"
         },
         "stepTypes": {
           "notify": "Poslať upozornenie",
@@ -92,7 +93,8 @@
           "set_var": "Nastaviť premennú",
           "if": "Ak / inak",
           "run_automation": "Spustiť inú automatizáciu",
-          "stop": "Zastaviť"
+          "stop": "Zastaviť",
+          "operation": "Spustiť akciu"
         },
         "statuses": {
           "running": "Beží",
@@ -133,7 +135,13 @@
           "timeout": "Časový limit (sekundy)",
           "allowPrivateNetwork": "Povoliť adresy lokálnej siete",
           "allowPrivateNetworkHint": "Potrebné pre vlastnú službu vo vašej LAN. Predvolene vypnuté, aby sa zabránilo požiadavkám na interné adresy.",
-          "interface": "Rozhranie"
+          "interface": "Rozhranie",
+          "action": "Akcia",
+          "pickAction": "Vybrať akciu",
+          "actionMissing": "Táto akcia nie je dostupná. Jej plugin môže byť vypnutý.",
+          "actionTarget": "Cieľ na každom hostiteľovi",
+          "event": "Udalosť",
+          "pickEvent": "Vybrať udalosť"
         },
         "onError": {
           "stop": "Zastaviť spustenie",
@@ -155,7 +163,13 @@
         "search": "Hľadať automatizácie",
         "noMatches": "Žiadne automatizácie nevyhovujú vášmu vyhľadávaniu",
         "settingsTitle": "Nastavenia automatizácie",
-        "settingsDisplayTitle": "Zobrazenie"
+        "settingsDisplayTitle": "Zobrazenie",
+        "events": {
+          "operation": {
+            "failed": "Zlyhala ľubovoľná akcia",
+            "succeeded": "Dokončila sa ľubovoľná akcia"
+          }
+        }
       }
     }
   },
@@ -277,6 +291,19 @@
     "inDays_one": "za {{count}} deň",
     "inDays_few": "za {{count}} dni",
     "inDays_many": "za {{count}} dní",
-    "inDays_other": "za {{count}} dní"
+    "inDays_other": "za {{count}} dní",
+    "noRuns": "Zatiaľ žiadne spustenia"
+  },
+  "operations": {
+    "list": {
+      "title": "Zoznam automatizácií"
+    },
+    "run": {
+      "title": "Spustiť automatizáciu"
+    },
+    "automation": "Automatizácia",
+    "failed": {
+      "title": "Zlyhané spustenia automatizácií"
+    }
   }
 }
