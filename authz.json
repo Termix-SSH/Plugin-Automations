@@ -1,0 +1,132 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Termix-SSH/Termix/main/scripts/authz/authz.schema.json",
+  "seed": [
+    {
+      "as": "owner",
+      "method": "POST",
+      "path": "/plugin-api/automations",
+      "body": {
+        "name": "authz-own-automation",
+        "definition": {
+          "version": 1,
+          "trigger": {
+            "kind": "schedule",
+            "intervalSeconds": 86400
+          },
+          "steps": [
+            {
+              "id": "v",
+              "type": "set_var",
+              "name": "done",
+              "value": "yes"
+            }
+          ]
+        },
+        "enabled": false
+      },
+      "capture": {
+        "automations.item": "id"
+      }
+    }
+  ],
+  "routes": {
+    "GET /plugin-api/automations": {
+      "access": "user",
+      "permission": "automations.view"
+    },
+    "POST /plugin-api/automations": {
+      "access": "user",
+      "permission": "automations.create"
+    },
+    "DELETE /plugin-api/automations/:id": {
+      "access": "user",
+      "permission": "automations.delete",
+      "resource": {
+        "kind": "own",
+        "fixture": "automations.item"
+      },
+      "params": {
+        "id": "automations.item"
+      },
+      "destructive": true
+    },
+    "GET /plugin-api/automations/:id": {
+      "access": "user",
+      "permission": "automations.view",
+      "resource": {
+        "kind": "own",
+        "fixture": "automations.item"
+      },
+      "params": {
+        "id": "automations.item"
+      }
+    },
+    "PUT /plugin-api/automations/:id": {
+      "access": "user",
+      "permission": "automations.edit",
+      "resource": {
+        "kind": "own",
+        "fixture": "automations.item"
+      },
+      "params": {
+        "id": "automations.item"
+      }
+    },
+    "POST /plugin-api/automations/:id/run": {
+      "access": "user",
+      "permission": "automations.run",
+      "resource": {
+        "kind": "own",
+        "fixture": "automations.item"
+      },
+      "params": {
+        "id": "automations.item"
+      },
+      "destructive": true
+    },
+    "GET /plugin-api/automations/editor-options": {
+      "access": "user",
+      "permission": "automations.view"
+    },
+    "GET /plugin-api/automations/maintenance": {
+      "access": "user",
+      "permission": "automations.view"
+    },
+    "GET /plugin-api/automations/maintenance/:hostId": {
+      "access": "user",
+      "permission": "automations.view",
+      "resource": {
+        "kind": "host",
+        "min": "connect"
+      }
+    },
+    "POST /plugin-api/automations/maintenance/:hostId": {
+      "access": "user",
+      "permission": "automations.edit",
+      "resource": {
+        "kind": "host",
+        "min": "connect"
+      }
+    },
+    "GET /plugin-api/automations/runs/:runId/steps": {
+      "access": "user",
+      "permission": "automations.view",
+      "resource": {
+        "kind": "own",
+        "fixture": "automations.runs"
+      },
+      "params": {
+        "runId": "=authz-none"
+      },
+      "allowed": "any",
+      "note": "No runs in the test data (needs a finished automation run); only session, permission and unknown id refusals are checked"
+    },
+    "GET /plugin-api/automations/runs/history": {
+      "access": "user",
+      "permission": "automations.view"
+    },
+    "POST /plugin-api/automations/webhook/:token": {
+      "access": "public"
+    }
+  }
+}
