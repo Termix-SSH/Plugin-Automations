@@ -82,7 +82,7 @@ export async function activate(ctx: PluginContext) {
     isMaintaining: maintenance.isMaintaining,
   });
   ctx.schedule.after(STARTUP_DELAY_MS, () => scheduler.tick());
-  ctx.schedule.every(TICK_MS, () => scheduler.tick());
+  ctx.schedule.every(TICK_MS, () => scheduler.tick(), { id: "tick" });
 
   const router = ctx.http.router<Router>({ public: ["/webhook/:token"] });
   registerMaintenanceRoutes(router, ctx, maintenance);

@@ -1,7 +1,7 @@
 {
   "id": "automations",
   "name": "Automations",
-  "version": "1.2.1",
+  "version": "1.3.0",
   "description": "Run steps on your hosts on a schedule or when something happens.",
   "author": {
     "name": "Termix"
@@ -22,8 +22,8 @@
     "An automations panel beside any SSH terminal, plus upcoming and recent run dashboard cards"
   ],
   "engine": {
-    "termix": ">=26.11.1-0",
-    "api": "^1.15"
+    "termix": ">=26.11.2-0",
+    "api": "^2.0.0"
   },
   "capabilities": [
     "hosts:read",
@@ -47,6 +47,24 @@
     "docker": "^1.0.0",
     "host-metrics": "^1.0.0",
     "wake-on-lan": "^1.0.0"
+  },
+  "sandbox": {
+    "schedules": [
+      {
+        "id": "tick",
+        "every": 15000
+      }
+    ],
+    "events": [
+      "user.data_wiped",
+      "plugin.host-metrics.snapshot",
+      "plugin.host-metrics.health-check",
+      "host.status",
+      "internal.event",
+      "host.login",
+      "plugin.tunnels.tunnel_disconnected",
+      "plugin.automations.automation_failed"
+    ]
   },
   "requires": [
     {

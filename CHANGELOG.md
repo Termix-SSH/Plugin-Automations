@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.3.0
+
+### Changed
+
+- Runs in its own process on Termix 26.11.2 and later, with no access to the server beyond what Termix allows it
+- Hosts in a maintenance window show a dot on their row instead of a badge
+
 ## 1.2.1
 
 ### Added

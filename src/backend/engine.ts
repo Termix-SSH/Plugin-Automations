@@ -124,7 +124,7 @@ export class AutomationEngine {
 
     // A trigger or step whose plugin is off skips the whole run with the
     // reason on record, rather than running half of it.
-    const missing = missingPlugins(definition, this.deps);
+    const missing = await missingPlugins(definition, this.deps);
     if (missing.length > 0) {
       const reason = `Needs the ${missing.join(", ")} plugin${missing.length > 1 ? "s" : ""}`;
       this.ctx.log.info(

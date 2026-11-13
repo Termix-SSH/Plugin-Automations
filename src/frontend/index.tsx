@@ -10,7 +10,7 @@ import { AutomationsPanel } from "./AutomationsPanel";
 import { createAutomationsApi } from "./automations-api";
 
 import { createMaintenanceStore } from "./maintenance-store";
-import { HostMaintenance, MaintenanceBadge } from "./HostMaintenance";
+import { HostMaintenance, useMaintenanceDot } from "./HostMaintenance";
 import {
   AutomationsCompanion,
   RecentRunsCard,
@@ -84,9 +84,7 @@ export function activate(app: TermixApp): void {
   app.registerHostBadge({
     id: "maintenance",
     when: (host) => Number(host.id) > 0,
-    component: ({ host }) => (
-      <MaintenanceBadge host={host} store={maintenance} />
-    ),
+    useDot: (host) => useMaintenanceDot(host, maintenance),
   });
   app.registerRailItem({
     id: VIEW_ID,

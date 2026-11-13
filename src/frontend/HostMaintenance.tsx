@@ -8,6 +8,7 @@ import { Wrench } from "lucide-react";
 import {
   usePermission,
   useTranslation,
+  type HostDot,
   type PluginHostRecord,
 } from "@termix-ssh/plugin-sdk/frontend";
 import {
@@ -25,39 +26,24 @@ import {
 import type { MaintenanceStore } from "./maintenance-store";
 import type { Recurrence } from "../maintenance";
 
-export function MaintenanceBadge({
-  host,
-  store,
-}: {
-  host: PluginHostRecord;
-  store: MaintenanceStore;
-}) {
+/** The host row dot while a maintenance window is active. */
+export function useMaintenanceDot(
+  host: PluginHostRecord,
+  store: MaintenanceStore,
+): HostDot | null {
   const allowed = usePermission("view");
   const { t } = useTranslation();
-  return allowed ? (
-    <VisibleBadge host={host} store={store} title={t("maintenance.title")} />
-  ) : null;
-}
-function VisibleBadge({
-  host,
-  store,
-  title,
-}: {
-  host: PluginHostRecord;
-  store: MaintenanceStore;
-  title: string;
-}) {
   const states = useSyncExternalStore(store.subscribe, store.snapshot);
-  const active = states[Number(host.id)]?.active;
+  const active = allowed ? states[Number(host.id)]?.active : undefined;
   if (!active) return null;
-  return (
-    <Badge
-      variant="outline"
-      title={`${active.reasons.join("; ")}\n${new Date(active.estimatedEnd).toLocaleString()}`}
-    >
-      {title}
-    </Badge>
-  );
+  return {
+    tone: "warn",
+    label: [
+      t("maintenance.title"),
+      ...active.reasons,
+      new Date(active.estimatedEnd).toLocaleString(),
+    ].join(" | "),
+  };
 }
 
 export function HostMaintenance({
