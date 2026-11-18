@@ -40,6 +40,7 @@ describe("automations activate", () => {
         before: (sqlite) => sqlite.exec(NOTIFICATION_CHANNELS_DDL),
       });
       const mock = createMockCtx({
+        sandbox: true,
         pluginId: manifest.id,
         manifest,
         capabilities: manifest.capabilities.filter((c) => c !== capability),
@@ -56,6 +57,7 @@ describe("automations activate", () => {
   it("cannot notify without notify:send", async () => {
     server = await startServer();
     const withoutNotify = createMockCtx({
+      sandbox: true,
       pluginId: manifest.id,
       manifest,
       capabilities: manifest.capabilities.filter((c) => c !== "notify:send"),

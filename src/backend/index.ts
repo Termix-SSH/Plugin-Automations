@@ -14,17 +14,19 @@ import { registerOperations } from "./operations.js";
 import { createMaintenanceRepository } from "./maintenance-repository.js";
 import { createMaintenanceService } from "./maintenance-service.js";
 import { registerMaintenanceRoutes } from "./maintenance-routes.js";
+import { keepAwake } from "./keep-awake.js";
 
 export type { AutomationsAccessV1, AutomationSummary } from "./service.js";
 
 export async function activate(ctx: PluginContext) {
+  const maintenanceRepository = await createMaintenanceRepository(ctx.db);
   const repository = await createAutomationRepository(ctx.db, async () => {
     const channels = await ctx.notify.channels();
     return channels.map((channel) => channel.id);
   });
   const maintenance = createMaintenanceService(
     ctx,
-    await createMaintenanceRepository(ctx.db),
+    maintenanceRepository,
     async (userId, hostId) => {
       for (const state of await repository.listOpenBreaches()) {
         if (Number(state.stateKey.split(":")[0]) !== hostId) continue;
@@ -82,7 +84,19 @@ export async function activate(ctx: PluginContext) {
     isMaintaining: maintenance.isMaintaining,
   });
   ctx.schedule.after(STARTUP_DELAY_MS, () => scheduler.tick());
-  ctx.schedule.every(TICK_MS, () => scheduler.tick());
+  keepAwake(ctx, "tick", true);
+  ctx.schedule.every(
+    TICK_MS,
+    async () => {
+      await scheduler.tick();
+      // With no automation on and no maintenance window, nothing is due.
+      const busy =
+        (await repository.listAllEnabled()).length > 0 ||
+        (await maintenanceRepository.list()).length > 0;
+      keepAwake(ctx, "tick", busy);
+    },
+    { id: "tick" },
+  );
 
   const router = ctx.http.router<Router>({ public: ["/webhook/:token"] });
   registerMaintenanceRoutes(router, ctx, maintenance);

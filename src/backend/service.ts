@@ -4,7 +4,7 @@ import type {
   ConcurrencyPolicy,
   RunStatus,
 } from "../types.js";
-import type { Deps } from "./deps.js";
+import { providerSnapshot, type Deps, type RunningCheck } from "./deps.js";
 import type { AutomationEngine } from "./engine.js";
 import type { AutomationRepository } from "./repository.js";
 import { missingPlugins, parseDefinition } from "./requirements.js";
@@ -68,8 +68,9 @@ export function createAutomationsService(
     if (!userId) throw new Error(`automations.access.${method} needs an actor`);
     return userId;
   };
-  const summarize = (
+  const summarize = async (
     row: Awaited<ReturnType<AutomationRepository["list"]>>[number],
+    running: RunningCheck = deps,
   ) => {
     const definition = parseDefinition(row.definition);
     if (definition?.trigger?.kind === "webhook") {
@@ -84,7 +85,7 @@ export function createAutomationsService(
         triggerKind: definition?.trigger?.kind ?? null,
         lastRunAt: row.last_run_at,
         lastRunStatus: row.last_run_status,
-        missingPlugins: missingPlugins(definition, deps),
+        missingPlugins: await missingPlugins(definition, running),
       },
       definition,
     };
@@ -93,13 +94,16 @@ export function createAutomationsService(
   return {
     list: async () => {
       const rows = await repository.list(actor("list"));
-      return rows.map((row) => summarize(row).summary);
+      const running = await providerSnapshot(deps);
+      return Promise.all(
+        rows.map(async (row) => (await summarize(row, running)).summary),
+      );
     },
 
     get: async (id) => {
       const row = await repository.findForUser(id, actor("get"));
       if (!row) return null;
-      const { summary, definition } = summarize(row);
+      const { summary, definition } = await summarize(row);
       return { ...summary, definition };
     },
 

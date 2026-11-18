@@ -3,7 +3,7 @@ import type { Request, Response, Router } from "express";
 import type { PluginContext } from "@termix-ssh/plugin-sdk/backend";
 import type { AutomationDefinition } from "../types.js";
 import { computeNextDueAt } from "./cron.js";
-import type { Deps } from "./deps.js";
+import { providerSnapshot, type Deps, type RunningCheck } from "./deps.js";
 import type { AutomationEngine } from "./engine.js";
 import type { AutomationRepository, AutomationRow } from "./repository.js";
 import { missingPlugins, parseDefinition } from "./requirements.js";
@@ -40,7 +40,7 @@ function timingSafeEqual(a: string, b: string): boolean {
  * The wire shape of an automation: the definition parsed, the webhook token
  * hash blanked, and the plugins it needs that are not running.
  */
-function serializeAutomation(row: AutomationRow, deps: Deps) {
+async function serializeAutomation(row: AutomationRow, deps: RunningCheck) {
   let definition: AutomationDefinition | null = parseDefinition(row.definition);
   if (definition?.trigger?.kind === "webhook") {
     definition = {
@@ -51,7 +51,7 @@ function serializeAutomation(row: AutomationRow, deps: Deps) {
   return {
     ...row,
     definition,
-    missingPlugins: missingPlugins(definition, deps),
+    missingPlugins: await missingPlugins(definition, deps),
   };
 }
 
@@ -175,7 +175,12 @@ export function registerRoutes(
     async (_req: Request, res: Response) => {
       try {
         const rows = await repository.list(actor());
-        res.json(rows.map((row) => serializeAutomation(row, deps)));
+        const running = await providerSnapshot(deps);
+        res.json(
+          await Promise.all(
+            rows.map((row) => serializeAutomation(row, running)),
+          ),
+        );
       } catch (error) {
         fail(res, "Failed to list automations", error);
       }
@@ -208,8 +213,11 @@ export function registerRoutes(
           return fallback;
         }
       };
-      const snippets = deps.snippets();
-      const fleets = deps.fleets();
+      const [snippets, fleets, providers] = await Promise.all([
+        deps.snippets(),
+        deps.fleets(),
+        deps.providers(),
+      ]);
 
       const [hosts, snippetList, fleetList, channels] = await Promise.all([
         settle(() => ctx.hosts.list(), []),
@@ -237,7 +245,7 @@ export function registerRoutes(
           id: channel.id,
           name: channel.name,
         })),
-        providers: deps.providers(),
+        providers,
       });
     },
   );
@@ -348,7 +356,7 @@ export function registerRoutes(
         const row = await repository.findForUser(id, actor());
         if (!row)
           return res.status(404).json({ error: "Automation not found" });
-        res.json(serializeAutomation(row, deps));
+        res.json(await serializeAutomation(row, deps));
       } catch (error) {
         fail(res, "Failed to fetch automation", error);
       }
@@ -427,9 +435,10 @@ export function registerRoutes(
         });
         await syncSchedule(repository, created.id, validated.definition);
         await audit("create_automation", created.id, created.name);
-        res
-          .status(201)
-          .json({ ...serializeAutomation(created, deps), webhookToken });
+        res.status(201).json({
+          ...(await serializeAutomation(created, deps)),
+          webhookToken,
+        });
       } catch (error) {
         fail(res, "Failed to create automation", error);
       }
@@ -527,7 +536,7 @@ export function registerRoutes(
           await syncSchedule(repository, id, parsedDefinition);
         }
         await audit("update_automation", id, updated.name);
-        res.json(serializeAutomation(updated, deps));
+        res.json(await serializeAutomation(updated, deps));
       } catch (error) {
         fail(res, "Failed to update automation", error);
       }

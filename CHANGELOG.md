@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.3.0
+
+### Changed
+
+- The automations panel puts search and the add button on one row on Termix 26.11.2 and later
+- Runs in its own process on Termix 26.11.2 and later, with no access to the server beyond what Termix allows it
+- Hosts in a maintenance window show a dot on their row instead of a badge
+- Its process stops when it has nothing to watch or run, and Termix starts it again when there is work, which saves memory on Termix 26.11.2 and later
+- The settings button in the Automations panel opens the Automations page in Settings
+
 ## 1.2.1
 
 ### Added

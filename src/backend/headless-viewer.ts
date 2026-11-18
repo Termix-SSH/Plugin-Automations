@@ -34,7 +34,7 @@ export function createHeadlessViewers(
 
   async function release(hostId: number, entry: Registered): Promise<void> {
     registered.delete(hostId);
-    const unregister = deps.viewers().unregister;
+    const unregister = (await deps.viewers()).unregister;
     if (typeof unregister !== "function") return;
     try {
       await ctx.asUser(entry.userId, () =>
@@ -48,7 +48,7 @@ export function createHeadlessViewers(
   return {
     /** Brings the viewers in line with what the automations watch. */
     async reconcile(): Promise<{ added: number; removed: number }> {
-      const viewers = deps.viewers();
+      const viewers = await deps.viewers();
       if (typeof viewers.register !== "function") {
         // host-metrics is off: its viewers went with it.
         registered.clear();

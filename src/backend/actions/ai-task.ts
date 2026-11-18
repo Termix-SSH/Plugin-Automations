@@ -23,7 +23,7 @@ export async function runAiTask(
   context: StepExecutionContext,
   runtime: StepRuntime,
 ): Promise<StepResult> {
-  const run = runtime.deps.aiTasks().run;
+  const run = (await runtime.deps.aiTasks()).run;
   if (typeof run !== "function") {
     return fail("The AI plugin is not available");
   }

@@ -40,7 +40,7 @@ export function watchOperationEvents(
 
   // A fleet trigger only fires for its members, read as the owner.
   const inFleet = async (userId: string, fleetId: number, hostId: number) => {
-    const fleets = deps?.fleets();
+    const fleets = await deps?.fleets();
     if (typeof fleets?.members !== "function") return false;
     try {
       const members = await ctx.asUser(userId, () => fleets.members!(fleetId));

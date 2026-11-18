@@ -64,7 +64,7 @@ export function createDockerWatcher(
         if (watch.subscribedAt && now - watch.subscribedAt < RESUBSCRIBE_MS) {
           continue;
         }
-        const subscribe = deps.dockerEvents().subscribe;
+        const subscribe = (await deps.dockerEvents()).subscribe;
         if (typeof subscribe !== "function") {
           watch.subscribedAt = 0;
           continue;

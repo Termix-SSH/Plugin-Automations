@@ -16,7 +16,6 @@ import {
   Workflow,
 } from "lucide-react";
 import {
-  AddButton,
   Button,
   EmptyState,
   Facts,
@@ -26,14 +25,13 @@ import {
   ListRow,
   ListRowAction,
   PanelList,
-  PanelSearch,
   TabStrip,
   type ListRowTone,
   getBasePath,
   useConfirm,
   LoadingState,
-  TOOLBAR_FIT,
 } from "@termix-ssh/plugin-sdk/ui";
+import { Toolbar } from "./panel-toolbar";
 import {
   useAutomationsApi,
   type AutomationRow,
@@ -52,7 +50,7 @@ import {
 } from "./automations/editor-types";
 import { docsUrl } from "./docs";
 import {
-  AutomationSettings,
+  useOpenSettingsPage,
   readAutomationSettings,
   rowActionProps,
 } from "./AutomationSettings";
@@ -113,7 +111,7 @@ export function AutomationsPanel({ active = true }: { active?: boolean }) {
   const base = "newUi.sidebar.automations";
 
   const [tab, setTab] = useState<PanelTab>("automations");
-  const [settingsOpen, setSettingsOpen] = useState(false);
+  const openSettingsPage = useOpenSettingsPage();
   const settings = useSettings("user");
   const { alwaysShowActions } = readAutomationSettings(settings.values);
   const [automations, setAutomations] = useState<AutomationRow[]>([]);
@@ -342,12 +340,6 @@ export function AutomationsPanel({ active = true }: { active?: boolean }) {
   return (
     <div className="flex flex-col h-full min-h-0">
       {editorView}
-      {settingsOpen && (
-        <AutomationSettings
-          settings={settings}
-          onBack={() => setSettingsOpen(false)}
-        />
-      )}
       <div className="shrink-0 border-b border-border px-1">
         <TabStrip
           tabs={[
@@ -376,7 +368,7 @@ export function AutomationsPanel({ active = true }: { active?: boolean }) {
                 size="icon-xs"
                 title={t(`${base}.settingsTitle`)}
                 aria-label={t(`${base}.settingsTitle`)}
-                onClick={() => setSettingsOpen(true)}
+                onClick={() => openSettingsPage()}
               >
                 <SlidersHorizontal />
               </Button>
@@ -398,21 +390,13 @@ export function AutomationsPanel({ active = true }: { active?: boolean }) {
 
       {tab === "automations" && (
         <>
-          <div
-            className={`flex shrink-0 flex-col gap-2 border-b border-border px-3 py-2 ${TOOLBAR_FIT}`}
-          >
-            <PanelSearch
-              value={query}
-              onChange={setQuery}
-              placeholder={t(`${base}.search`)}
-              fill
-            />
-            <AddButton
-              label={t(`${base}.createAutomation`)}
-              onClick={openCreate}
-              className="w-full"
-            />
-          </div>
+          <Toolbar
+            search={query}
+            onSearchChange={setQuery}
+            searchPlaceholder={t(`${base}.search`)}
+            onAdd={openCreate}
+            addLabel={t(`${base}.createAutomation`)}
+          />
           <PanelList
             empty={
               loading && automations.length === 0 ? (

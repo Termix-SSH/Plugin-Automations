@@ -228,7 +228,7 @@ async function runSnippet(
   context: StepExecutionContext,
   runtime: StepRuntime,
 ): Promise<StepResult> {
-  const snippets = runtime.deps.snippets();
+  const snippets = await runtime.deps.snippets();
   const getSnippet = snippets.get;
   const resolveCommand = snippets.resolveCommand;
   if (
@@ -284,7 +284,7 @@ async function runDocker(
 ): Promise<StepResult> {
   const container = renderTemplate(step.container, context.template);
   if (!container) return fail("Container name is required");
-  const action = runtime.deps.docker().action;
+  const action = (await runtime.deps.docker()).action;
   if (typeof action !== "function") {
     return fail("The docker plugin is not available");
   }
@@ -313,7 +313,7 @@ async function runTunnel(
   const name = renderTemplate(step.tunnelName, context.template);
   if (context.dryRun) return ok(`Would ${step.action} tunnel ${name}`);
 
-  const tunnels = runtime.deps.tunnels();
+  const tunnels = await runtime.deps.tunnels();
   const act = step.action === "connect" ? tunnels.start : tunnels.stop;
   if (typeof act !== "function") {
     return fail("The tunnels plugin is not available");
@@ -341,7 +341,7 @@ async function runWol(
   if (!host) return fail("Host not found or not accessible");
   const name = host.name || host.ip;
 
-  const wake = runtime.deps.wakeOnLan().wake;
+  const wake = (await runtime.deps.wakeOnLan()).wake;
   if (typeof wake !== "function") {
     return fail("The wake-on-lan plugin is not available");
   }

@@ -129,24 +129,34 @@ export function pluginOf(key: ProviderKey): string {
 export type Deps = ReturnType<typeof createDeps>;
 
 export function createDeps(services: PluginServices) {
-  function handle<T extends object>(name: string): Partial<T> {
+  // Awaited: providers may answer from their own process.
+  async function handle<T extends object>(name: string): Promise<Partial<T>> {
     try {
-      return services.get<T>(name) as Partial<T>;
+      return (await services.get<T>(name)) as Partial<T>;
     } catch {
       return {};
     }
   }
 
+  async function running(key: ProviderKey): Promise<boolean> {
+    try {
+      return (await services.providers(PROVIDERS[key])).length > 0;
+    } catch {
+      return false;
+    }
+  }
+
   return {
+    /** Whether a provider is running now. */
+    available: running,
     /** Which providers are running now. */
-    available(key: ProviderKey): boolean {
-      return services.providers(PROVIDERS[key]).length > 0;
-    },
-    providers(): Record<ProviderKey, boolean> {
+    async providers(): Promise<Record<ProviderKey, boolean>> {
+      const keys = Object.keys(PROVIDERS) as ProviderKey[];
+      const states = await Promise.all(keys.map(running));
       const result = {} as Record<ProviderKey, boolean>;
-      for (const key of Object.keys(PROVIDERS) as ProviderKey[]) {
-        result[key] = services.providers(PROVIDERS[key]).length > 0;
-      }
+      keys.forEach((key, i) => {
+        result[key] = states[i];
+      });
       return result;
     },
     snippets: () => handle<SnippetsAccessV1>(PROVIDERS.snippets),
@@ -158,4 +168,17 @@ export function createDeps(services: PluginServices) {
     wakeOnLan: () => handle<WakeOnLanV1>(PROVIDERS["wake-on-lan"]),
     aiTasks: () => handle<AiTasksV1>(PROVIDERS.ai),
   };
+}
+
+/** Answers whether a provider is running, now or from a snapshot. */
+export interface RunningCheck {
+  available: (key: ProviderKey) => boolean | Promise<boolean>;
+}
+
+/** One providers lookup, read many times (a list of automations). */
+export async function providerSnapshot(
+  deps: Pick<Deps, "providers">,
+): Promise<{ available: (key: ProviderKey) => boolean }> {
+  const running = await deps.providers();
+  return { available: (key) => running[key] };
 }

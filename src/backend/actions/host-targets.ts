@@ -58,7 +58,7 @@ async function selectorHostIds(
     case "trigger":
       return context.triggerHostId ? [context.triggerHostId] : [];
     case "fleet": {
-      const fleets = runtime.deps.fleets();
+      const fleets = await runtime.deps.fleets();
       if (typeof fleets.members !== "function") return [];
       try {
         const members = await fleets.members(selector.fleetId);

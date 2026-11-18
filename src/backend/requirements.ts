@@ -1,5 +1,5 @@
 import type { AutomationDefinition, HostSelector, Step } from "../types.js";
-import { pluginOf, type Deps, type ProviderKey } from "./deps.js";
+import { pluginOf, type ProviderKey, type RunningCheck } from "./deps.js";
 
 /**
  * The providers a definition cannot run without. A trigger or step whose
@@ -78,13 +78,13 @@ function requiredProviders(
 }
 
 /** Plugin ids the definition needs that are not running, deduplicated. */
-export function missingPlugins(
+export async function missingPlugins(
   definition: AutomationDefinition | null | undefined,
-  deps: Pick<Deps, "available">,
-): string[] {
-  const missing = requiredProviders(definition)
-    .filter((key) => !deps.available(key))
-    .map(pluginOf);
+  deps: RunningCheck,
+): Promise<string[]> {
+  const keys = requiredProviders(definition);
+  const up = await Promise.all(keys.map((key) => deps.available(key)));
+  const missing = keys.filter((_, i) => !up[i]).map(pluginOf);
   return [...new Set(missing)];
 }
 

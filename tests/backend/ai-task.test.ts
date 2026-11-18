@@ -134,22 +134,23 @@ describe("ai_task validation", () => {
 });
 
 describe("ai_task requirements", () => {
-  it("needs the ai plugin, and fleets for a fleet selector", () => {
+  it("needs the ai plugin, and fleets for a fleet selector", async () => {
     const definition = {
       version: 1,
       trigger: { kind: "webhook" as const, tokenHash: "x" },
       steps: [aiStep({ hostSelector: { kind: "fleet", fleetId: 3 } })],
     };
-    expect(missingPlugins(definition, { available: () => false })).toEqual([
-      "ai",
-      "fleets",
-    ]);
-    expect(missingPlugins(definition, { available: () => true })).toEqual([]);
+    expect(
+      await missingPlugins(definition, { available: () => false }),
+    ).toEqual(["ai", "fleets"]);
+    expect(await missingPlugins(definition, { available: () => true })).toEqual(
+      [],
+    );
   });
 
-  it("reports the provider in the providers map", () => {
-    expect(setup(null).deps.providers().ai).toBe(false);
-    expect(setup(async () => result()).deps.providers().ai).toBe(true);
+  it("reports the provider in the providers map", async () => {
+    expect((await setup(null).deps.providers()).ai).toBe(false);
+    expect((await setup(async () => result()).deps.providers()).ai).toBe(true);
   });
 });
 
