@@ -78,7 +78,8 @@
           "docker_event": "Dogodek v kontejnerju",
           "internal_event": "Dogodek v Termixu",
           "webhook": "Dohodni webhook",
-          "operation_event": "Dogodek se zgodi"
+          "operation_event": "Dogodek se zgodi",
+          "alert": "Prijavljen je opozorilni dogodek"
         },
         "stepTypes": {
           "notify": "Pošlji opozorilo",
@@ -141,7 +142,15 @@
           "actionMissing": "To dejanje ni na voljo. Vtičnik je morda izklopljen.",
           "actionTarget": "Cilj na vsakem gostitelju",
           "event": "Dogodek",
-          "pickEvent": "Izberite dogodek"
+          "pickEvent": "Izberite dogodek",
+          "alertCategory": "Kategorija opozorila",
+          "alertCategoryHint": "Na primer uptime.down. Za vsa opozorila Uptime uporabite uptime.* ali * za vsa opozorila.",
+          "alertSeverity": "Vsaj",
+          "alertSeverityAny": "Poljubna resnost",
+          "alertSeverityWarning": "Opozorilo",
+          "alertSeverityCritical": "Kritično",
+          "alertTitle": "Naslov vsebuje",
+          "alertTitlePlaceholder": "Neobvezno, na primer nginx"
         },
         "onError": {
           "stop": "Ustavi izvajanje",
@@ -169,7 +178,8 @@
             "failed": "Katero koli dejanje je spodletelo",
             "succeeded": "Katero koli dejanje je končano"
           }
-        }
+        },
+        "alertTriggerHint": "Izvede se, ko vtičnik Opozorila prejme opozorilo, na primer ko nadzornik Uptime zazna izpad. Koraki lahko delujejo na gostitelju, ki je predmet opozorila."
       }
     }
   },

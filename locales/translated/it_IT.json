@@ -78,7 +78,8 @@
           "docker_event": "Evento container",
           "internal_event": "Evento Termix",
           "webhook": "Webhook in arrivo",
-          "operation_event": "Si verifica un evento"
+          "operation_event": "Si verifica un evento",
+          "alert": "Arriva un avviso"
         },
         "stepTypes": {
           "notify": "Invia un avviso",
@@ -141,7 +142,15 @@
           "actionMissing": "Questa azione non è disponibile. Il relativo plugin potrebbe essere disabilitato.",
           "actionTarget": "Destinazione su ogni host",
           "event": "Evento",
-          "pickEvent": "Scegli un evento"
+          "pickEvent": "Scegli un evento",
+          "alertCategory": "Categoria avviso",
+          "alertCategoryHint": "Ad esempio uptime.down. Usa uptime.* per tutti gli avvisi Uptime o * per tutti gli avvisi.",
+          "alertSeverity": "Almeno",
+          "alertSeverityAny": "Qualsiasi gravità",
+          "alertSeverityWarning": "Avvertenza",
+          "alertSeverityCritical": "Critico",
+          "alertTitle": "Il titolo contiene",
+          "alertTitlePlaceholder": "Opzionale, ad esempio nginx"
         },
         "onError": {
           "stop": "Ferma l'esecuzione",
@@ -169,7 +178,8 @@
             "failed": "Qualsiasi azione è fallita",
             "succeeded": "Qualsiasi azione è terminata"
           }
-        }
+        },
+        "alertTriggerHint": "Viene eseguito quando il plugin Avvisi riceve un avviso per te, ad esempio quando un monitor Uptime si disconnette. I passaggi possono operare sull'host a cui si riferisce l'avviso."
       }
     }
   },

@@ -11,6 +11,7 @@ import {
 import type { Trigger, TriggerKind } from "../../types";
 import { HostSelectorField } from "./HostSelectorField";
 import { OperationEventFields } from "./OperationFields";
+import { AlertTriggerFields } from "./AlertTriggerFields";
 import {
   missingTriggerProvider,
   type AutomationEditorOptions,
@@ -23,6 +24,7 @@ const TRIGGER_KINDS: TriggerKind[] = [
   "schedule",
   "docker_event",
   "operation_event",
+  "alert",
   "webhook",
 ];
 
@@ -370,6 +372,14 @@ export function TriggerCard({
         />
       )}
 
+      {trigger.kind === "alert" && (
+        <AlertTriggerFields
+          trigger={trigger}
+          options={options}
+          onChange={onChange}
+        />
+      )}
+
       {trigger.kind === "webhook" && (
         <p className="text-xs text-muted-foreground">
           {t(`${base}.webhookTokenDescription`)}
@@ -433,6 +443,12 @@ export function defaultTrigger(kind: TriggerKind): Trigger {
       return {
         kind: "operation_event",
         event: "operation.failed",
+        cooldownMinutes: 15,
+      };
+    case "alert":
+      return {
+        kind: "alert",
+        category: "uptime.down",
         cooldownMinutes: 15,
       };
     case "webhook":

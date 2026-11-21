@@ -78,7 +78,8 @@
           "docker_event": "Evento de contêiner",
           "internal_event": "Evento do Termix",
           "webhook": "Webhook recebido",
-          "operation_event": "Um evento ocorre"
+          "operation_event": "Um evento ocorre",
+          "alert": "Um alerta chega"
         },
         "stepTypes": {
           "notify": "Enviar um alerta",
@@ -141,7 +142,15 @@
           "actionMissing": "Esta ação não está disponível. Seu plugin pode estar desativado.",
           "actionTarget": "Alvo em cada host",
           "event": "Evento",
-          "pickEvent": "Escolha um evento"
+          "pickEvent": "Escolha um evento",
+          "alertCategory": "Categoria do alerta",
+          "alertCategoryHint": "Como uptime.down. Use uptime.* para todos os alertas de Uptime ou * para todos os alertas.",
+          "alertSeverity": "Pelo menos",
+          "alertSeverityAny": "Qualquer severidade",
+          "alertSeverityWarning": "Aviso",
+          "alertSeverityCritical": "Crítico",
+          "alertTitle": "Título contém",
+          "alertTitlePlaceholder": "Opcional, como nginx"
         },
         "onError": {
           "stop": "Parar a execução",
@@ -169,7 +178,8 @@
             "failed": "Qualquer ação falhou",
             "succeeded": "Qualquer ação foi concluída"
           }
-        }
+        },
+        "alertTriggerHint": "Executa quando o plugin de Alertas recebe um alerta para você, como um monitor de Uptime caindo. As etapas podem atuar no host sobre o qual o alerta trata."
       }
     }
   },

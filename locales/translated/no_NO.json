@@ -78,7 +78,8 @@
           "docker_event": "Beholderhendelse",
           "internal_event": "Termix-hendelse",
           "webhook": "Innkommende webhook",
-          "operation_event": "En hendelse skjer"
+          "operation_event": "En hendelse skjer",
+          "alert": "En varsling kommer inn"
         },
         "stepTypes": {
           "notify": "Send et varsel",
@@ -141,7 +142,15 @@
           "actionMissing": "Denne handlingen er ikke tilgjengelig. Tillegget kan være deaktivert.",
           "actionTarget": "Mål på hver vert",
           "event": "Hendelse",
-          "pickEvent": "Velg en hendelse"
+          "pickEvent": "Velg en hendelse",
+          "alertCategory": "Varslingskategori",
+          "alertCategoryHint": "For eksempel uptime.down. Bruk uptime.* for alle Uptime-varsler eller * for alle varsler.",
+          "alertSeverity": "Minst",
+          "alertSeverityAny": "Uansett alvorlighetsgrad",
+          "alertSeverityWarning": "Advarsel",
+          "alertSeverityCritical": "Kritisk",
+          "alertTitle": "Tittel inneholder",
+          "alertTitlePlaceholder": "Valgfritt, for eksempel nginx"
         },
         "onError": {
           "stop": "Stopp kjøringen",
@@ -169,7 +178,8 @@
             "failed": "En handling mislyktes",
             "succeeded": "En handling ble fullført"
           }
-        }
+        },
+        "alertTriggerHint": "Kjøres når Varsler-tillegget mottar en varsling for deg, for eksempel når en Uptime-overvåker går ned. Trinn kan utføres på verten varslingen gjelder."
       }
     }
   },

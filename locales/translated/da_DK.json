@@ -78,7 +78,8 @@
           "docker_event": "Beholderhændelse",
           "internal_event": "Termix-hændelse",
           "webhook": "Indkommende webhook",
-          "operation_event": "En hændelse opstår"
+          "operation_event": "En hændelse opstår",
+          "alert": "En alarm modtages"
         },
         "stepTypes": {
           "notify": "Send en advarsel",
@@ -141,7 +142,15 @@
           "actionMissing": "Denne handling er ikke tilgængelig. Dens plugin er muligvis deaktiveret.",
           "actionTarget": "Mål på hver vært",
           "event": "Hændelse",
-          "pickEvent": "Vælg en hændelse"
+          "pickEvent": "Vælg en hændelse",
+          "alertCategory": "Alarmkategori",
+          "alertCategoryHint": "F.eks. uptime.down. Brug uptime.* til alle Uptime-alarm eller * til alle alarm.",
+          "alertSeverity": "Mindst",
+          "alertSeverityAny": "Enhver alvorlighedsgrad",
+          "alertSeverityWarning": "Advarsel",
+          "alertSeverityCritical": "Kritisk",
+          "alertTitle": "Titel indeholder",
+          "alertTitlePlaceholder": "Valgfrit, f.eks. nginx"
         },
         "onError": {
           "stop": "Stop kørslen",
@@ -169,7 +178,8 @@
             "failed": "En handling mislykkedes",
             "succeeded": "En handling blev afsluttet"
           }
-        }
+        },
+        "alertTriggerHint": "Kører, når Plugins-alarmen modtager en alarm til dig, f.eks. når en Uptime-overvågning går ned. Trin kan arbejde på den vært, alarmen handler om."
       }
     }
   },

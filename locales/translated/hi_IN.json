@@ -78,7 +78,8 @@
           "docker_event": "कंटेनर घटना",
           "internal_event": "Termix घटना",
           "webhook": "आने वाला वेबहुक",
-          "operation_event": "कोई घटना घटती है"
+          "operation_event": "कोई घटना घटती है",
+          "alert": "एक अलर्ट आता है"
         },
         "stepTypes": {
           "notify": "अलर्ट भेजें",
@@ -141,7 +142,15 @@
           "actionMissing": "यह क्रिया उपलब्ध नहीं है। इसका प्लगइन बंद हो सकता है।",
           "actionTarget": "प्रत्येक होस्ट पर लक्ष्य",
           "event": "घटना",
-          "pickEvent": "एक घटना चुनें"
+          "pickEvent": "एक घटना चुनें",
+          "alertCategory": "अलर्ट श्रेणी",
+          "alertCategoryHint": "जैसे uptime.down। हर Uptime अलर्ट के लिए uptime.* या सभी अलर्टों के लिए * का उपयोग करें।",
+          "alertSeverity": "कम से कम",
+          "alertSeverityAny": "कोई भी गंभीरता",
+          "alertSeverityWarning": "चेतावनी",
+          "alertSeverityCritical": "गंभीर",
+          "alertTitle": "शीर्षक में शामिल है",
+          "alertTitlePlaceholder": "वैकल्पिक, जैसे nginx"
         },
         "onError": {
           "stop": "रन रोकें",
@@ -169,7 +178,8 @@
             "failed": "कोई भी क्रिया विफल रही",
             "succeeded": "कोई भी क्रिया पूरी हुई"
           }
-        }
+        },
+        "alertTriggerHint": "जब अलर्ट प्लगइन आपके लिए एक अलर्ट प्राप्त करता है, तो यह चलता है, जैसे कि एक Uptime मॉनिटर बंद होना। स्टेप्स उस होस्ट पर काम कर सकते हैं जिसके बारे में अलर्ट है।"
       }
     }
   },

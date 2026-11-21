@@ -78,7 +78,8 @@
           "docker_event": "Događaj kontejnera",
           "internal_event": "Termix događaj",
           "webhook": "Dolazni webhook",
-          "operation_event": "Dogodila se radnja"
+          "operation_event": "Dogodila se radnja",
+          "alert": "Stiže upozorenje"
         },
         "stepTypes": {
           "notify": "Pošalji upozorenje",
@@ -141,7 +142,15 @@
           "actionMissing": "Ova radnja nije dostupna. Njezin dodatak je možda isključen.",
           "actionTarget": "Cilj na svakom hostu",
           "event": "Događaj",
-          "pickEvent": "Odaberi događaj"
+          "pickEvent": "Odaberi događaj",
+          "alertCategory": "Kategorija upozorenja",
+          "alertCategoryHint": "Na primjer uptime.down. Koristite uptime.* za sva upozorenja o dostupnosti ili * za sva upozorenja.",
+          "alertSeverity": "Minimalno",
+          "alertSeverityAny": "Bilo koja težina",
+          "alertSeverityWarning": "Upozorenje",
+          "alertSeverityCritical": "Kritično",
+          "alertTitle": "Naslov sadrži",
+          "alertTitlePlaceholder": "Opcionalno, na primjer nginx"
         },
         "onError": {
           "stop": "Zaustavi izvršenje",
@@ -169,7 +178,8 @@
             "failed": "Bilo koja radnja je neuspješna",
             "succeeded": "Bilo koja radnja je završena"
           }
-        }
+        },
+        "alertTriggerHint": "Pokreće se kada plugin za upozorenja primi upozorenje za vas, na primjer kada monitor dostupnosti zabilježi pad. Koraci mogu raditi na hostu o kojem upozorenje govori."
       }
     }
   },

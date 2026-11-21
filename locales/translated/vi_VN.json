@@ -78,7 +78,8 @@
           "docker_event": "Sự kiện container",
           "internal_event": "Sự kiện Termix",
           "webhook": "Webhook đến",
-          "operation_event": "Một sự kiện xảy ra"
+          "operation_event": "Một sự kiện xảy ra",
+          "alert": "Có cảnh báo mới"
         },
         "stepTypes": {
           "notify": "Gửi cảnh báo",
@@ -141,7 +142,15 @@
           "actionMissing": "Hành động này không khả dụng. Plugin của nó có thể đang tắt.",
           "actionTarget": "Mục tiêu trên mỗi host",
           "event": "Sự kiện",
-          "pickEvent": "Chọn một sự kiện"
+          "pickEvent": "Chọn một sự kiện",
+          "alertCategory": "Danh mục cảnh báo",
+          "alertCategoryHint": "Ví dụ: uptime.down. Dùng uptime.* cho mọi cảnh báo Uptime hoặc * cho tất cả cảnh báo.",
+          "alertSeverity": "Ít nhất",
+          "alertSeverityAny": "Mọi mức độ nghiêm trọng",
+          "alertSeverityWarning": "Cảnh báo",
+          "alertSeverityCritical": "Nghiêm trọng",
+          "alertTitle": "Tiêu đề chứa",
+          "alertTitlePlaceholder": "Tùy chọn, ví dụ: nginx"
         },
         "onError": {
           "stop": "Dừng quá trình chạy",
@@ -169,7 +178,8 @@
             "failed": "Bất kỳ hành động nào thất bại",
             "succeeded": "Bất kỳ hành động nào hoàn tất"
           }
-        }
+        },
+        "alertTriggerHint": "Chạy khi plugin Alerts nhận được cảnh báo cho bạn, chẳng hạn như máy chủ Uptime bị ngắt kết nối. Các bước có thể thao tác trên máy chủ liên quan đến cảnh báo."
       }
     }
   },

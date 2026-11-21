@@ -78,7 +78,8 @@
           "docker_event": "حدث حاوية",
           "internal_event": "حدث Termix",
           "webhook": "Webhook وارد",
-          "operation_event": "حدث وقوع حدث"
+          "operation_event": "حدث وقوع حدث",
+          "alert": "وصول تنبيه"
         },
         "stepTypes": {
           "notify": "إرسال تنبيه",
@@ -141,7 +142,15 @@
           "actionMissing": "هذا الإجراء غير متاح. قد يكون الإضافة المكملة معطلة.",
           "actionTarget": "الهدف على كل مضيف",
           "event": "الحدث",
-          "pickEvent": "اختر حدثًا"
+          "pickEvent": "اختر حدثًا",
+          "alertCategory": "فئة التنبيه",
+          "alertCategoryHint": "مثل uptime.down. استخدم uptime.* لكل تنبيهات Uptime أو * لكل التنبيهات.",
+          "alertSeverity": "على الأقل",
+          "alertSeverityAny": "أي مستوى خطورة",
+          "alertSeverityWarning": "تحذير",
+          "alertSeverityCritical": "حرج",
+          "alertTitle": "يحتوي العنوان على",
+          "alertTitlePlaceholder": "اختياري، مثل nginx"
         },
         "onError": {
           "stop": "إيقاف التشغيل",
@@ -169,7 +178,8 @@
             "failed": "فشل أي إجراء",
             "succeeded": "انتهى أي إجراء"
           }
-        }
+        },
+        "alertTriggerHint": "يتم التشغيل عند استلام إضافة التنبيهات لتنبيه لك، مثل توقف مراقب Uptime. يمكن للخطوات العمل على المضيف الذي يتعلق به التنبيه."
       }
     }
   },

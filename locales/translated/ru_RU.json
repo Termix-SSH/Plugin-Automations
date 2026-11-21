@@ -78,7 +78,8 @@
           "docker_event": "Событие контейнера",
           "internal_event": "Событие Termix",
           "webhook": "Входящий вебхук",
-          "operation_event": "Произошло событие"
+          "operation_event": "Произошло событие",
+          "alert": "Поступило оповещение"
         },
         "stepTypes": {
           "notify": "Отправить оповещение",
@@ -141,7 +142,15 @@
           "actionMissing": "Это действие недоступно. Возможно, плагин отключён.",
           "actionTarget": "Цель на каждом хосте",
           "event": "Событие",
-          "pickEvent": "Выберите событие"
+          "pickEvent": "Выберите событие",
+          "alertCategory": "Категория оповещения",
+          "alertCategoryHint": "Например, uptime.down. Используйте uptime.* для всех оповещений Uptime или * для всех оповещений.",
+          "alertSeverity": "Не ниже",
+          "alertSeverityAny": "Любая серьёзность",
+          "alertSeverityWarning": "Предупреждение",
+          "alertSeverityCritical": "Критическое",
+          "alertTitle": "Заголовок содержит",
+          "alertTitlePlaceholder": "Необязательно, например nginx"
         },
         "onError": {
           "stop": "Остановить выполнение",
@@ -169,7 +178,8 @@
             "failed": "Любое действие завершилось ошибкой",
             "succeeded": "Любое действие завершено"
           }
-        }
+        },
+        "alertTriggerHint": "Выполняется, когда плагин Alerts получает оповещение, например, когда монитор Uptime фиксирует сбой. Шаги могут выполняться на хосте, связанном с оповещением."
       }
     }
   },

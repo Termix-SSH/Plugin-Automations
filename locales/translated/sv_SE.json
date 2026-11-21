@@ -78,7 +78,8 @@
           "docker_event": "Behållarehändelse",
           "internal_event": "Termix-händelse",
           "webhook": "Inkommande webhook",
-          "operation_event": "En händelse inträffar"
+          "operation_event": "En händelse inträffar",
+          "alert": "En varning kommer in"
         },
         "stepTypes": {
           "notify": "Skicka en varning",
@@ -141,7 +142,15 @@
           "actionMissing": "Denna åtgärd är inte tillgänglig. Tillägget är kanske inaktiverat.",
           "actionTarget": "Mål på varje värd",
           "event": "Händelse",
-          "pickEvent": "Välj en händelse"
+          "pickEvent": "Välj en händelse",
+          "alertCategory": "Varningskategori",
+          "alertCategoryHint": "Till exempel uptime.down. Använd uptime.* för alla Uptime-varningar eller * för alla varningar.",
+          "alertSeverity": "Minst",
+          "alertSeverityAny": "Allvarlighetsgrad",
+          "alertSeverityWarning": "Varning",
+          "alertSeverityCritical": "Kritisk",
+          "alertTitle": "Titeln innehåller",
+          "alertTitlePlaceholder": "Valfritt, till exempel nginx"
         },
         "onError": {
           "stop": "Stoppa körningen",
@@ -169,7 +178,8 @@
             "failed": "Någon åtgärd misslyckades",
             "succeeded": "Någon åtgärd slutfördes"
           }
-        }
+        },
+        "alertTriggerHint": "Körs när tillägget Varningar tar emot en varning åt dig, till exempel när en Uptime-övervakare går ner. Stegen kan arbeta med den värd varningen gäller."
       }
     }
   },

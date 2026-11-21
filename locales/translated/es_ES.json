@@ -78,7 +78,8 @@
           "docker_event": "Evento de contenedor",
           "internal_event": "Evento de Termix",
           "webhook": "Webhook entrante",
-          "operation_event": "Se produce un evento"
+          "operation_event": "Se produce un evento",
+          "alert": "Llega una alerta"
         },
         "stepTypes": {
           "notify": "Enviar una alerta",
@@ -141,7 +142,15 @@
           "actionMissing": "Esta acción no está disponible. Es posible que su complemento esté desactivado.",
           "actionTarget": "Objetivo en cada host",
           "event": "Evento",
-          "pickEvent": "Selecciona un evento"
+          "pickEvent": "Selecciona un evento",
+          "alertCategory": "Categoría de alerta",
+          "alertCategoryHint": "Por ejemplo, uptime.down. Usa uptime.* para todas las alertas de Uptime o * para todas las alertas.",
+          "alertSeverity": "Al menos",
+          "alertSeverityAny": "Cualquier gravedad",
+          "alertSeverityWarning": "Advertencia",
+          "alertSeverityCritical": "Crítica",
+          "alertTitle": "El título contiene",
+          "alertTitlePlaceholder": "Opcional, por ejemplo nginx"
         },
         "onError": {
           "stop": "Detener la ejecución",
@@ -169,7 +178,8 @@
             "failed": "Cualquier acción fallida",
             "succeeded": "Cualquier acción finalizada"
           }
-        }
+        },
+        "alertTriggerHint": "Se ejecuta cuando el complemento de Alertas recibe una alerta para ti, como cuando un monitor de Uptime deja de funcionar. Los pasos pueden actuar sobre el host al que se refiere la alerta."
       }
     }
   },

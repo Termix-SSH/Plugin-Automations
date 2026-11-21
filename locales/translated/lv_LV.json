@@ -78,7 +78,8 @@
           "docker_event": "Konteinera notikums",
           "internal_event": "Termix notikums",
           "webhook": "Ienākošais webhook",
-          "operation_event": "Notikums notiek"
+          "operation_event": "Notikums notiek",
+          "alert": "Ienāk brīdinājums"
         },
         "stepTypes": {
           "notify": "Nosūtīt brīdinājumu",
@@ -141,7 +142,15 @@
           "actionMissing": "Šī darbība nav pieejama. Tās spraudnis var būt izslēgts.",
           "actionTarget": "Mērķis katrā serverī",
           "event": "Notikums",
-          "pickEvent": "Izvēlieties notikumu"
+          "pickEvent": "Izvēlieties notikumu",
+          "alertCategory": "Brīdinājuma kategorija",
+          "alertCategoryHint": "Piemēram, uptime.down. Izmantojiet uptime.* visiem Uptime brīdinājumiem vai * visiem brīdinājumiem.",
+          "alertSeverity": "Vismaz",
+          "alertSeverityAny": "Jebkura nopietnība",
+          "alertSeverityWarning": "Brīdinājums",
+          "alertSeverityCritical": "Kritisks",
+          "alertTitle": "Virsrakstā ir",
+          "alertTitlePlaceholder": "Neobligāti, piemēram, nginx"
         },
         "onError": {
           "stop": "Apturēt izpildi",
@@ -169,7 +178,8 @@
             "failed": "Jebkura darbība neizdevās",
             "succeeded": "Jebkura darbība pabeigta"
           }
-        }
+        },
+        "alertTriggerHint": "Izpildās, kad Alerts spraudnis saņem jums brīdinājumu, piemēram, kad Uptime monitors nedarbojas. Soli var izmantot attiecībā uz to serveri, par kuru ir brīdinājums."
       }
     }
   },

@@ -26,7 +26,7 @@ Read the [docs](https://docs.termix.site/plugins/automations) to set it up and u
 
 ## Features
 
-- Triggers for metrics, hosts going up or down, health checks, schedules, container events and webhooks
+- Triggers for metrics, hosts going up or down, health checks, schedules, container events, alerts and webhooks
 - Steps that run commands and snippets, control containers and tunnels, wake hosts, call URLs and send alerts
 - Conditions, waits and variables for more complex flows
 - Run on one host, a fleet or every host

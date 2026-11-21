@@ -78,7 +78,8 @@
           "docker_event": "Konteyner olayı",
           "internal_event": "Termix olayı",
           "webhook": "Gelen webhook",
-          "operation_event": "Bir olay gerçekleşti"
+          "operation_event": "Bir olay gerçekleşti",
+          "alert": "Bir uyarı gelir"
         },
         "stepTypes": {
           "notify": "Uyarı gönder",
@@ -141,7 +142,15 @@
           "actionMissing": "Bu eylem mevcut değil. Eklentisi kapalı olabilir.",
           "actionTarget": "Her ana makinedeki hedef",
           "event": "Olay",
-          "pickEvent": "Bir olay seçin"
+          "pickEvent": "Bir olay seçin",
+          "alertCategory": "Uyarı kategorisi",
+          "alertCategoryHint": "uptime.down gibi. Her Uptime uyarısı için uptime.* veya tüm uyarılar için * kullanın.",
+          "alertSeverity": "En az",
+          "alertSeverityAny": "Herhangi bir önem derecesi",
+          "alertSeverityWarning": "Uyarı",
+          "alertSeverityCritical": "Kritik",
+          "alertTitle": "Başlık şunu içeriyor",
+          "alertTitlePlaceholder": "İsteğe bağlı, nginx gibi"
         },
         "onError": {
           "stop": "Çalışmayı durdur",
@@ -169,7 +178,8 @@
             "failed": "Herhangi bir eylem başarısız oldu",
             "succeeded": "Herhangi bir eylem tamamlandı"
           }
-        }
+        },
+        "alertTriggerHint": "Uptime izleyicisinin devre dışı kalması gibi, Uyarılar eklentisi sizin için bir uyarı aldığında çalışır. Adımlar, uyarının ilgili olduğu sunucu üzerinde işlem yapabilir."
       }
     }
   },

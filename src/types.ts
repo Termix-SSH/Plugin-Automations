@@ -116,12 +116,31 @@ export type Trigger =
       cooldownMinutes: number;
     }
   | {
+      /** An alert came in through the Alerts plugin. */
+      kind: "alert";
+      /** Alert category, like "uptime.down", "<pluginId>.*" or "*". */
+      category: string;
+      minSeverity?: AlertSeverity;
+      /** Only alerts whose title has this text, ignoring case. */
+      titleContains?: string;
+      hostSelector?: HostSelector;
+      cooldownMinutes: number;
+    }
+  | {
       kind: "webhook";
       /** Only the hash is persisted. The raw token is shown once on creation. */
       tokenHash: string;
     };
 
 export type TriggerKind = Trigger["kind"];
+
+export const ALERT_SEVERITIES = [
+  "info",
+  "success",
+  "warning",
+  "critical",
+] as const;
+export type AlertSeverity = (typeof ALERT_SEVERITIES)[number];
 
 /** A comparison used by `if` steps, evaluated against the run context. */
 interface Condition {

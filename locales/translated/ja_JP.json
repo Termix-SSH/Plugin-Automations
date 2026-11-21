@@ -78,7 +78,8 @@
           "docker_event": "コンテナイベント",
           "internal_event": "Termix イベント",
           "webhook": "インカミング Webhook",
-          "operation_event": "イベントが発生した"
+          "operation_event": "イベントが発生した",
+          "alert": "アラートが届いた"
         },
         "stepTypes": {
           "notify": "アラートを送信",
@@ -141,7 +142,15 @@
           "actionMissing": "このアクションは利用できません。プラグインが無効になっている可能性があります。",
           "actionTarget": "各ホストのターゲット",
           "event": "イベント",
-          "pickEvent": "イベントを選択"
+          "pickEvent": "イベントを選択",
+          "alertCategory": "アラートカテゴリ",
+          "alertCategoryHint": "uptime.down のような形式です。すべての Uptime アラートには uptime.*、すべてのアラートには * を使用します。",
+          "alertSeverity": "少なくとも",
+          "alertSeverityAny": "すべての重大度",
+          "alertSeverityWarning": "警告",
+          "alertSeverityCritical": "重大",
+          "alertTitle": "タイトルに含まれる",
+          "alertTitlePlaceholder": "任意、例: nginx"
         },
         "onError": {
           "stop": "実行を停止する",
@@ -169,7 +178,8 @@
             "failed": "アクションが失敗した",
             "succeeded": "アクションが完了した"
           }
-        }
+        },
+        "alertTriggerHint": "Uptime モニターがダウンしたなど、Alerts プラグインがアラートを受信したときに実行されます。ステップは、アラートに関連するホストで動作できます。"
       }
     }
   },

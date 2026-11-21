@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.4.0
+
+### Added
+
+- An alert comes in: a trigger that runs when the Alerts plugin gets an alert, picked by category, severity, title and host, so an automation can restart a service when its Uptime monitor goes down (needs Alerts 1.4.0)
+
 ## 1.3.0
 
 ### Changed

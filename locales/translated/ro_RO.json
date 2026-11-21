@@ -78,7 +78,8 @@
           "docker_event": "Eveniment container",
           "internal_event": "Eveniment Termix",
           "webhook": "Webhook primit",
-          "operation_event": "Se produce un eveniment"
+          "operation_event": "Se produce un eveniment",
+          "alert": "Sosește o alertă"
         },
         "stepTypes": {
           "notify": "Trimite o alertă",
@@ -141,7 +142,15 @@
           "actionMissing": "Această acțiune nu este disponibilă. Este posibil ca plugin-ul său să fie dezactivat.",
           "actionTarget": "Țintă pe fiecare gazdă",
           "event": "Eveniment",
-          "pickEvent": "Alege un eveniment"
+          "pickEvent": "Alege un eveniment",
+          "alertCategory": "Categoria alertei",
+          "alertCategoryHint": "De exemplu uptime.down. Folosește uptime.* pentru fiecare alertă Uptime sau * pentru toate alertele.",
+          "alertSeverity": "Cel puțin",
+          "alertSeverityAny": "Orice severitate",
+          "alertSeverityWarning": "Avertisment",
+          "alertSeverityCritical": "Critic",
+          "alertTitle": "Titlul conține",
+          "alertTitlePlaceholder": "Opțional, de exemplu nginx"
         },
         "onError": {
           "stop": "Oprește execuția",
@@ -169,7 +178,8 @@
             "failed": "Orice acțiune a eșuat",
             "succeeded": "Orice acțiune s-a încheiat"
           }
-        }
+        },
+        "alertTriggerHint": "Se execută când pluginul Alerts primește o alertă pentru tine, de exemplu când un monitor Uptime se oprește. Pașii pot acționa asupra gazdei despre care este vorba în alertă."
       }
     }
   },

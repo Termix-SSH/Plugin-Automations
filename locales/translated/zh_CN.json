@@ -78,7 +78,8 @@
           "docker_event": "容器事件",
           "internal_event": "Termix 事件",
           "webhook": "传入 Webhook",
-          "operation_event": "发生事件"
+          "operation_event": "发生事件",
+          "alert": "收到警报"
         },
         "stepTypes": {
           "notify": "发送告警",
@@ -141,7 +142,15 @@
           "actionMissing": "此操作不可用。其插件可能已关闭。",
           "actionTarget": "每台主机上的目标",
           "event": "事件",
-          "pickEvent": "选择事件"
+          "pickEvent": "选择事件",
+          "alertCategory": "警报类别",
+          "alertCategoryHint": "例如 uptime.down。使用 uptime.* 匹配所有 Uptime 警报，或使用 * 匹配所有警报。",
+          "alertSeverity": "至少",
+          "alertSeverityAny": "任意严重级别",
+          "alertSeverityWarning": "警告",
+          "alertSeverityCritical": "严重",
+          "alertTitle": "标题包含",
+          "alertTitlePlaceholder": "可选，例如 nginx"
         },
         "onError": {
           "stop": "停止运行",
@@ -169,7 +178,8 @@
             "failed": "任何操作失败",
             "succeeded": "任何操作完成"
           }
-        }
+        },
+        "alertTriggerHint": "当 Alerts 插件收到警报时运行，例如 Uptime 监控显示服务宕机。步骤可以针对警报涉及的主机执行操作。"
       }
     }
   },

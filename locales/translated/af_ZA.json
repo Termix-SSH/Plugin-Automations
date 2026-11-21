@@ -78,7 +78,8 @@
           "docker_event": "Behuisinggebeurtenis",
           "internal_event": "Termix-gebeurtenis",
           "webhook": "Inkomende webhook",
-          "operation_event": "Daar vind 'n gebeurtenis plaas"
+          "operation_event": "Daar vind 'n gebeurtenis plaas",
+          "alert": "n Waarskuwing kom aan"
         },
         "stepTypes": {
           "notify": "Stuur 'n waarskuwing",
@@ -141,7 +142,15 @@
           "actionMissing": "Hierdie aksie is nie beskikbaar nie. Sy invoegtoepassing is dalk af.",
           "actionTarget": "Teiken op elke gasheer",
           "event": "Gebeurtenis",
-          "pickEvent": "Kies 'n gebeurtenis"
+          "pickEvent": "Kies 'n gebeurtenis",
+          "alertCategory": "Waarskuwingkategorie",
+          "alertCategoryHint": "Soos uptime.down. Gebruik uptime.* vir elke Uptime-waarskuwing of * vir alle waarskuwings.",
+          "alertSeverity": "Ten minste",
+          "alertSeverityAny": "Enige erns",
+          "alertSeverityWarning": "Waarskuwing",
+          "alertSeverityCritical": "Krities",
+          "alertTitle": "Titel bevat",
+          "alertTitlePlaceholder": "Opsioneel, soos nginx"
         },
         "onError": {
           "stop": "Stop die uitvoering",
@@ -169,7 +178,8 @@
             "failed": "Enige aksie het misluk",
             "succeeded": "Enige aksie is voltooi"
           }
-        }
+        },
+        "alertTriggerHint": "Voer uit wanneer die Alerts-plug-in 'n waarskuwing vir jou kry, soos 'n Uptime-monitor wat afval. Stappe kan op die gasheer werk waaroor die waarskuwing gaan."
       }
     }
   },

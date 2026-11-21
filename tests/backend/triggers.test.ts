@@ -411,6 +411,76 @@ describe("onDockerEvent", () => {
   });
 });
 
+describe("onAlert", () => {
+  const alert = (overrides: Record<string, unknown> = {}) => ({
+    userId: "user-1",
+    source: "uptime",
+    category: "uptime.down",
+    severity: "critical",
+    title: "nginx is down",
+    hostId: 7,
+    ...overrides,
+  });
+
+  it("restarts on the alerting host when its Uptime monitor goes down", async () => {
+    addAutomation({
+      kind: "alert",
+      category: "uptime.down",
+      hostSelector: { kind: "host", hostId: 7 },
+      cooldownMinutes: 0,
+    });
+    await triggers.onAlert(alert());
+    expect(run).toHaveBeenCalledWith(
+      expect.objectContaining({
+        triggerType: "alert",
+        triggerHostId: 7,
+        triggerContext: expect.objectContaining({
+          category: "uptime.down",
+          title: "nginx is down",
+        }),
+      }),
+    );
+  });
+
+  it("matches category patterns, severity and title text", async () => {
+    addAutomation({
+      kind: "alert",
+      category: "uptime.*",
+      minSeverity: "critical",
+      titleContains: "NGINX",
+      cooldownMinutes: 0,
+    });
+    await triggers.onAlert(alert({ severity: "warning" }));
+    await triggers.onAlert(alert({ title: "redis is down" }));
+    await triggers.onAlert(alert({ category: "docker.exited" }));
+    expect(run).not.toHaveBeenCalled();
+    await triggers.onAlert(alert({ category: "uptime.cert_expiring" }));
+    expect(run).toHaveBeenCalledTimes(1);
+  });
+
+  it("skips alerts about no host when hosts are picked, and other people's alerts", async () => {
+    addAutomation({
+      kind: "alert",
+      category: "*",
+      hostSelector: { kind: "hosts", hostIds: [7] },
+      cooldownMinutes: 0,
+    });
+    await triggers.onAlert(alert({ hostId: null }));
+    await triggers.onAlert(alert({ hostId: 8 }));
+    await triggers.onAlert(alert({ userId: "user-2" }));
+    expect(run).not.toHaveBeenCalled();
+  });
+
+  it("never reacts to its own alerts and waits out the cooldown", async () => {
+    addAutomation({ kind: "alert", category: "*", cooldownMinutes: 30 });
+    await triggers.onAlert(alert({ source: "automations" }));
+    expect(run).not.toHaveBeenCalled();
+    await triggers.onAlert(alert());
+    await triggers.onAlert(alert());
+    expect(run).toHaveBeenCalledTimes(1);
+  });
+});
+
 describe("watchedHosts", () => {
   it("collects hosts from metric triggers so they can be polled headlessly", async () => {
     addAutomation({

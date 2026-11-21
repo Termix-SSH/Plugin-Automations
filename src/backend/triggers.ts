@@ -53,6 +53,37 @@ export interface DockerEvent {
   event: "exited" | "started" | "unhealthy" | "restarting";
 }
 
+/** plugin.alerts.fired, sent by the Alerts plugin for each person. */
+export interface AlertEvent {
+  userId: string;
+  source: string;
+  category: string;
+  severity: string;
+  title: string;
+  hostId: number | null;
+}
+
+const SEVERITY_RANK: Record<string, number> = {
+  info: 0,
+  success: 0,
+  warning: 1,
+  critical: 2,
+};
+
+/** Whether a category pattern ("*", "uptime.*", "uptime.down") covers a category. */
+export function matchesAlertCategory(
+  pattern: string,
+  category: string,
+): boolean {
+  const trimmed = pattern.trim();
+  if (!trimmed || trimmed === "*") return true;
+  const escaped = trimmed
+    .split("*")
+    .map((part) => part.replace(/[.+?^${}()|[\]\\]/g, "\\$&"))
+    .join(".*");
+  return new RegExp(`^${escaped}$`, "i").test(category);
+}
+
 export interface InternalEvent {
   event: string;
   userId: string;
@@ -368,6 +399,59 @@ export function createTriggers(
     }
   }
 
+  async function onAlert(event: AlertEvent): Promise<void> {
+    // An automation's own alerts must not start automations again.
+    if (event.source === "automations") return;
+    const automations = await loadEnabledFor(event.userId);
+    const now = Date.now();
+    const hostId = event.hostId ?? undefined;
+
+    for (const { row, definition } of automations) {
+      const trigger = definition.trigger;
+      if (trigger?.kind !== "alert") continue;
+      if (!matchesAlertCategory(trigger.category, event.category)) continue;
+      if (
+        trigger.minSeverity &&
+        (SEVERITY_RANK[event.severity] ?? 0) <
+          (SEVERITY_RANK[trigger.minSeverity] ?? 0)
+      ) {
+        continue;
+      }
+      if (
+        trigger.titleContains?.trim() &&
+        !event.title
+          .toLowerCase()
+          .includes(trigger.titleContains.trim().toLowerCase())
+      ) {
+        continue;
+      }
+      const selector = trigger.hostSelector;
+      if (selector && selector.kind !== "all") {
+        if (hostId === undefined) continue;
+        if (!selectorCoversHost(selector, hostId)) continue;
+      }
+
+      const stateKey = `${hostId ?? "global"}:${event.category}`;
+      const state = await repository.getTriggerState(row.id, stateKey);
+      if (isCoolingDown(state?.lastFiredAt, trigger.cooldownMinutes, now))
+        continue;
+
+      await fire(
+        row,
+        stateKey,
+        "alert",
+        {
+          category: event.category,
+          severity: event.severity,
+          title: event.title,
+          source: event.source,
+          hostId,
+        },
+        hostId,
+      );
+    }
+  }
+
   /**
    * Hosts an enabled automation watches with the given trigger kind, with
    * the owning user. Fleet and "all" selectors are not expanded: collecting
@@ -424,6 +508,10 @@ export function createTriggers(
     on<MetricEvent>("plugin.host-metrics.snapshot", onMetrics);
     on<HealthEvent>("plugin.host-metrics.health-check", onHealthCheck);
     on<StatusEvent>("host.status", onStatus);
+    // Nothing arrives here while the Alerts plugin is off.
+    on<AlertEvent>("plugin.alerts.fired", (event) =>
+      event?.userId ? onAlert(event) : undefined,
+    );
     on<InternalEvent>("internal.event", (event) =>
       event?.userId ? onInternalEvent(event) : undefined,
     );
@@ -482,6 +570,7 @@ export function createTriggers(
     onHealthCheck,
     onDockerEvent,
     onInternalEvent,
+    onAlert,
     watchedHosts,
     subscribe,
   };

@@ -78,7 +78,8 @@
           "docker_event": "Container event",
           "internal_event": "Termix event",
           "webhook": "Incoming webhook",
-          "operation_event": "An event happens"
+          "operation_event": "An event happens",
+          "alert": "An alert comes in"
         },
         "stepTypes": {
           "notify": "Send an alert",
@@ -141,7 +142,15 @@
           "actionMissing": "This action is not available. Its plugin may be off.",
           "actionTarget": "Target on each host",
           "event": "Event",
-          "pickEvent": "Pick an event"
+          "pickEvent": "Pick an event",
+          "alertCategory": "Alert category",
+          "alertCategoryHint": "Like uptime.down. Use uptime.* for every Uptime alert or * for all alerts.",
+          "alertSeverity": "At least",
+          "alertSeverityAny": "Any severity",
+          "alertSeverityWarning": "Warning",
+          "alertSeverityCritical": "Critical",
+          "alertTitle": "Title contains",
+          "alertTitlePlaceholder": "Optional, like nginx"
         },
         "onError": {
           "stop": "Stop the run",
@@ -167,7 +176,8 @@
         "events": {
           "operation.failed": "Any action failed",
           "operation.succeeded": "Any action finished"
-        }
+        },
+        "alertTriggerHint": "Runs when the Alerts plugin gets an alert for you, like an Uptime monitor going down. Steps can work on the host the alert is about."
       }
     }
   },

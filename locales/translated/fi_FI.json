@@ -78,7 +78,8 @@
           "docker_event": "Säiliön tapahtuma",
           "internal_event": "Termix-tapahtuma",
           "webhook": "Saapuva webhook",
-          "operation_event": "Tapahtuma tapahtuu"
+          "operation_event": "Tapahtuma tapahtuu",
+          "alert": "Hälytys saapuu"
         },
         "stepTypes": {
           "notify": "Lähetä hälytys",
@@ -141,7 +142,15 @@
           "actionMissing": "Tämä toiminto ei ole käytettävissä. Sen lisäosa saattaa olla pois päältä.",
           "actionTarget": "Kohde jokaisella isäntäpalvelimella",
           "event": "Tapahtuma",
-          "pickEvent": "Valitse tapahtuma"
+          "pickEvent": "Valitse tapahtuma",
+          "alertCategory": "Hälytyksen kategoria",
+          "alertCategoryHint": "Kuten uptime.down. Käytä uptime.* kaikille Uptime-hälytyksille tai * kaikille hälytyksille.",
+          "alertSeverity": "Vähintään",
+          "alertSeverityAny": "Mikä tahansa vakavuusaste",
+          "alertSeverityWarning": "Varoitus",
+          "alertSeverityCritical": "Kriittinen",
+          "alertTitle": "Otsikko sisältää",
+          "alertTitlePlaceholder": "Valinnainen, kuten nginx"
         },
         "onError": {
           "stop": "Pysäytä suoritus",
@@ -169,7 +178,8 @@
             "failed": "Mikä tahansa toiminto epäonnistui",
             "succeeded": "Mikä tahansa toiminto valmistui"
           }
-        }
+        },
+        "alertTriggerHint": "Suorittaa, kun Alerts-liitännäinen saa hälytyksen, kuten kun Uptime-valvonta katkeaa. Vaiheet voivat toimia hälytyksen kohteena olevan isäntälaitteen kanssa."
       }
     }
   },

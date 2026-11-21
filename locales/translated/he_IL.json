@@ -78,7 +78,8 @@
           "docker_event": "אירוע מיכל",
           "internal_event": "אירוע Termix",
           "webhook": "Webhook נכנס",
-          "operation_event": "אירוע מתרחש"
+          "operation_event": "אירוע מתרחש",
+          "alert": "התקבלה התראה"
         },
         "stepTypes": {
           "notify": "שליחת התראה",
@@ -141,7 +142,15 @@
           "actionMissing": "פעולה זו אינה זמינה. ייתכן שהתוסף שלה כבוי.",
           "actionTarget": "יעד בכל מארח",
           "event": "אירוע",
-          "pickEvent": "בחר אירוע"
+          "pickEvent": "בחר אירוע",
+          "alertCategory": "קטגוריית התראה",
+          "alertCategoryHint": "למשל uptime.down. השתמש ב-updtime.* לכל התראות זמינות או ב-* לכל ההתראות.",
+          "alertSeverity": "לפחות",
+          "alertSeverityAny": "כל חומרה",
+          "alertSeverityWarning": "אזהרה",
+          "alertSeverityCritical": "קריטי",
+          "alertTitle": "הכותרת מכילה",
+          "alertTitlePlaceholder": "אופציונלי, למשל nginx"
         },
         "onError": {
           "stop": "עצור את ההפעלה",
@@ -169,7 +178,8 @@
             "failed": "כל פעולה נכשלה",
             "succeeded": "כל פעולה הסתיימה"
           }
-        }
+        },
+        "alertTriggerHint": "מפעיל כאשר תוסף ההתראות מקבל התראה עבורך, כמו מנתח זמינות שירד. שלבים יכולים לפעול על המארח שההתראה מתייחסת אליו."
       }
     }
   },

@@ -78,7 +78,8 @@
           "docker_event": "Peristiwa kontena",
           "internal_event": "Peristiwa Termix",
           "webhook": "Webhook masuk",
-          "operation_event": "Sebuah peristiwa berlaku"
+          "operation_event": "Sebuah peristiwa berlaku",
+          "alert": "Satu amaran masuk"
         },
         "stepTypes": {
           "notify": "Hantar amaran",
@@ -141,7 +142,15 @@
           "actionMissing": "Tindakan ini tidak tersedia. Pluginnya mungkin dimatikan.",
           "actionTarget": "Sasaran pada setiap hos",
           "event": "Peristiwa",
-          "pickEvent": "Pilih peristiwa"
+          "pickEvent": "Pilih peristiwa",
+          "alertCategory": "Kategori amaran",
+          "alertCategoryHint": "Seperti uptime.down. Gunakan uptime.* untuk setiap amaran Uptime atau * untuk semua amaran.",
+          "alertSeverity": "Sekurang-kurangnya",
+          "alertSeverityAny": "Sebarang tahap keparahan",
+          "alertSeverityWarning": "Amaran",
+          "alertSeverityCritical": "Kritikal",
+          "alertTitle": "Tajuk mengandungi",
+          "alertTitlePlaceholder": "Pilihan, seperti nginx"
         },
         "onError": {
           "stop": "Hentikan pelaksanaan",
@@ -169,7 +178,8 @@
             "failed": "Mana-mana tindakan gagal",
             "succeeded": "Mana-mana tindakan selesai"
           }
-        }
+        },
+        "alertTriggerHint": "Berjalan apabila plugin Amaran menerima amaran untuk anda, seperti pemantau Uptime yang turun. Langkah boleh bekerja pada hos yang menjadi subjek amaran."
       }
     }
   },

@@ -78,7 +78,8 @@
           "docker_event": "Konteineri sündmus",
           "internal_event": "Termixi sündmus",
           "webhook": "Sissetulev webhook",
-          "operation_event": "Sündimus toimub"
+          "operation_event": "Sündimus toimub",
+          "alert": "Hoiatus saabub"
         },
         "stepTypes": {
           "notify": "Saada hoiatus",
@@ -141,7 +142,15 @@
           "actionMissing": "See tegevus ei ole saadaval. Selle lisamoodul võib olla väljalülitatud.",
           "actionTarget": "Sihtmärk igal peremasinul",
           "event": "Sündimus",
-          "pickEvent": "Vali sündimus"
+          "pickEvent": "Vali sündimus",
+          "alertCategory": "Hoiatuse kategooria",
+          "alertCategoryHint": "Näiteks uptime.down. Kasuta uptime.* kõigi Uptime'i hoiatuste jaoks või * kõigi hoiatuste jaoks.",
+          "alertSeverity": "Vähemalt",
+          "alertSeverityAny": "Suvaline tõsidus",
+          "alertSeverityWarning": "Hoiatus",
+          "alertSeverityCritical": "Kriitiline",
+          "alertTitle": "Pealkiri sisaldab",
+          "alertTitlePlaceholder": "Valikuline, näiteks nginx"
         },
         "onError": {
           "stop": "Peata käivitamine",
@@ -169,7 +178,8 @@
             "failed": "Mõni tegevus ebaõnnestus",
             "succeeded": "Mõni tegevus lõpetati"
           }
-        }
+        },
+        "alertTriggerHint": "Käivitub, kui Hoiatuste plugin saab sinu jaoks hoiatuse, näiteks kui Uptime'i monitor lakkab töötamast. Sammud saavad töötada hoiatusega seotud hostil."
       }
     }
   },

@@ -78,7 +78,8 @@
           "docker_event": "Container-Ereignis",
           "internal_event": "Termix-Ereignis",
           "webhook": "Eingehender Webhook",
-          "operation_event": "Ein Ereignis tritt ein"
+          "operation_event": "Ein Ereignis tritt ein",
+          "alert": "Ein Alert wird empfangen"
         },
         "stepTypes": {
           "notify": "Alarm senden",
@@ -141,7 +142,15 @@
           "actionMissing": "Diese Aktion ist nicht verfügbar. Das zugehörige Plugin ist möglicherweise deaktiviert.",
           "actionTarget": "Ziel auf jedem Host",
           "event": "Ereignis",
-          "pickEvent": "Ereignis auswählen"
+          "pickEvent": "Ereignis auswählen",
+          "alertCategory": "Alert-Kategorie",
+          "alertCategoryHint": "Zum Beispiel uptime.down. Verwende uptime.* für alle Uptime-Alerts oder * für alle Alerts.",
+          "alertSeverity": "Mindestens",
+          "alertSeverityAny": "Jede Schwere",
+          "alertSeverityWarning": "Warnung",
+          "alertSeverityCritical": "Kritisch",
+          "alertTitle": "Titel enthält",
+          "alertTitlePlaceholder": "Optional, z. B. nginx"
         },
         "onError": {
           "stop": "Ausführung stoppen",
@@ -169,7 +178,8 @@
             "failed": "Eine Aktion ist fehlgeschlagen",
             "succeeded": "Eine Aktion wurde abgeschlossen"
           }
-        }
+        },
+        "alertTriggerHint": "Wird ausgeführt, wenn das Alerts-Plugin einen Alert für dich empfängt, z. B. wenn ein Uptime-Monitor ausfällt. Die Schritte können auf dem Host arbeiten, auf den sich der Alert bezieht."
       }
     }
   },

@@ -78,7 +78,8 @@
           "docker_event": "কন্টেইনার ইভেন্ট",
           "internal_event": "Termix ইভেন্ট",
           "webhook": "ইনকামিং ওয়েবহুক",
-          "operation_event": "একটি ঘটনা ঘটে"
+          "operation_event": "একটি ঘটনা ঘটে",
+          "alert": "একটি অ্যালার্ট আসে"
         },
         "stepTypes": {
           "notify": "একটি অ্যালার্ট পাঠান",
@@ -141,7 +142,15 @@
           "actionMissing": "এই অ্যাকশনটি উপলব্ধ নেই। এর প্লাগইন বন্ধ থাকতে পারে।",
           "actionTarget": "প্রতিটি হোস্টে লক্ষ্য",
           "event": "ঘটনা",
-          "pickEvent": "একটি ঘটনা নির্বাচন করুন"
+          "pickEvent": "একটি ঘটনা নির্বাচন করুন",
+          "alertCategory": "অ্যালার্ট ক্যাটাগরি",
+          "alertCategoryHint": "যেমন uptime.down। প্রতিটি Uptime অ্যালার্টের জন্য uptime.* ব্যবহার করুন অথবা সকল অ্যালার্টের জন্য * ব্যবহার করুন।",
+          "alertSeverity": "কমপক্ষে",
+          "alertSeverityAny": "যেকোনো গুরুত্ব",
+          "alertSeverityWarning": "সতর্কতা",
+          "alertSeverityCritical": "গুরুতর",
+          "alertTitle": "শিরোনামে রয়েছে",
+          "alertTitlePlaceholder": "ঐচ্ছিক, যেমন nginx"
         },
         "onError": {
           "stop": "চালানো থামান",
@@ -169,7 +178,8 @@
             "failed": "যেকোনো অ্যাকশন ব্যর্থ হয়েছে",
             "succeeded": "যেকোনো অ্যাকশন সম্পন্ন হয়েছে"
           }
-        }
+        },
+        "alertTriggerHint": "যখন Alerts প্লাগিন আপনার জন্য একটি অ্যালার্ট পায়, তখন এটি চলে, যেমন একটি Uptime মনিটর বন্ধ হয়ে যাওয়া। স্টেপগুলো সেই হোস্টের উপর কাজ করতে পারে যার সম্পর্কে অ্যালার্টটি এসেছে।"
       }
     }
   },

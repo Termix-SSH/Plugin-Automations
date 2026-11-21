@@ -78,7 +78,8 @@
           "docker_event": "Zdarzenie kontenera",
           "internal_event": "Zdarzenie Termix",
           "webhook": "Przychodzący webhook",
-          "operation_event": "Występuje zdarzenie"
+          "operation_event": "Występuje zdarzenie",
+          "alert": "Przychodzi alert"
         },
         "stepTypes": {
           "notify": "Wyślij alert",
@@ -141,7 +142,15 @@
           "actionMissing": "Ta akcja jest niedostępna. Jej wtyczka może być wyłączona.",
           "actionTarget": "Cel na każdym hoście",
           "event": "Zdarzenie",
-          "pickEvent": "Wybierz zdarzenie"
+          "pickEvent": "Wybierz zdarzenie",
+          "alertCategory": "Kategoria alertu",
+          "alertCategoryHint": "Np. uptime.down. Użyj uptime.* dla wszystkich alertów Uptime lub * dla wszystkich alertów.",
+          "alertSeverity": "Przynajmniej",
+          "alertSeverityAny": "Dowolna ważność",
+          "alertSeverityWarning": "Ostrzeżenie",
+          "alertSeverityCritical": "Krytyczny",
+          "alertTitle": "Tytuł zawiera",
+          "alertTitlePlaceholder": "Opcjonalnie, np. nginx"
         },
         "onError": {
           "stop": "Zatrzymaj wykonanie",
@@ -169,7 +178,8 @@
             "failed": "Każda akcja się nie powiodła",
             "succeeded": "Każda akcja została ukończona"
           }
-        }
+        },
+        "alertTriggerHint": "Uruchamia się, gdy wtyczka Alertów otrzyma dla Ciebie alert, np. gdy monitor Uptime wykryje awarię. Kroki mogą działać na hoście, do którego odnosi się alert."
       }
     }
   },

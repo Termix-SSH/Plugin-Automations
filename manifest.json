@@ -1,7 +1,7 @@
 {
   "id": "automations",
   "name": "Automations",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Run steps on your hosts on a schedule or when something happens.",
   "author": {
     "name": "Termix"
@@ -13,7 +13,7 @@
   "category": "Infrastructure",
   "icon": "Workflow",
   "features": [
-    "Triggers for metrics, hosts going up or down, health checks, schedules, container events and webhooks",
+    "Triggers for metrics, hosts going up or down, health checks, schedules, container events, alerts and webhooks",
     "Steps that run commands and snippets, control containers and tunnels, wake hosts, call URLs and send alerts",
     "Conditions, waits and variables for more complex flows",
     "Run on one host, a fleet or every host",
@@ -63,7 +63,8 @@
       "internal.event",
       "host.login",
       "plugin.tunnels.tunnel_disconnected",
-      "plugin.automations.automation_failed"
+      "plugin.automations.automation_failed",
+      "plugin.alerts.fired"
     ]
   },
   "requires": [

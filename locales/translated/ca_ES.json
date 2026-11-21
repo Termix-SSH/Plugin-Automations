@@ -78,7 +78,8 @@
           "docker_event": "Esdeveniment del contenidor",
           "internal_event": "Esdeveniment de Termix",
           "webhook": "Webhook entrant",
-          "operation_event": "Es produeix un esdeveniment"
+          "operation_event": "Es produeix un esdeveniment",
+          "alert": "Arriba una alerta"
         },
         "stepTypes": {
           "notify": "Enviar una alerta",
@@ -141,7 +142,15 @@
           "actionMissing": "Aquesta acció no està disponible. Potser el complement està desactivat.",
           "actionTarget": "Objectiu en cada amfitrió",
           "event": "Esdeveniment",
-          "pickEvent": "Tria un esdeveniment"
+          "pickEvent": "Tria un esdeveniment",
+          "alertCategory": "Categoria de l'alerta",
+          "alertCategoryHint": "Com uptime.down. Utilitza uptime.* per a totes les alertes d'Uptime o * per a totes les alertes.",
+          "alertSeverity": "Almenys",
+          "alertSeverityAny": "Qualsevol severitat",
+          "alertSeverityWarning": "Avís",
+          "alertSeverityCritical": "Crítica",
+          "alertTitle": "El títol conté",
+          "alertTitlePlaceholder": "Opcional, com nginx"
         },
         "onError": {
           "stop": "Aturar l'execució",
@@ -169,7 +178,8 @@
             "failed": "Qualsevol acció ha fallat",
             "succeeded": "Qualsevol acció s'ha completat"
           }
-        }
+        },
+        "alertTriggerHint": "S'executa quan el complement d'Alertes rep una alerta per a tu, com ara un monitor d'Uptime que deixa de funcionar. Els passos poden actuar sobre l'amfitrió del qual tracta l'alerta."
       }
     }
   },

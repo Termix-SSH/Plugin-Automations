@@ -78,7 +78,8 @@
           "docker_event": "เหตุการณ์คอนเทนเนอร์",
           "internal_event": "เหตุการณ์ของ Termix",
           "webhook": "Webhook เข้ามา",
-          "operation_event": "เกิดเหตุการณ์"
+          "operation_event": "เกิดเหตุการณ์",
+          "alert": "เมื่อมีการแจ้งเตือนเข้ามา"
         },
         "stepTypes": {
           "notify": "ส่งการแจ้งเตือน",
@@ -141,7 +142,15 @@
           "actionMissing": "การดำเนินการนี้ไม่พร้อมใช้งาน ปลั๊กอินอาจถูกปิดอยู่",
           "actionTarget": "เป้าหมายในแต่ละโฮสต์",
           "event": "เหตุการณ์",
-          "pickEvent": "เลือกเหตุการณ์"
+          "pickEvent": "เลือกเหตุการณ์",
+          "alertCategory": "หมวดหมู่การแจ้งเตือน",
+          "alertCategoryHint": "เช่น uptime.down ใช้ uptime.* สำหรับการแจ้งเตือน Uptime ทั้งหมด หรือ * สำหรับการแจ้งเตือนทั้งหมด",
+          "alertSeverity": "อย่างน้อย",
+          "alertSeverityAny": "ระดับความรุนแรงใดๆ",
+          "alertSeverityWarning": "คำเตือน",
+          "alertSeverityCritical": "วิกฤต",
+          "alertTitle": "หัวข้อมีคำว่า",
+          "alertTitlePlaceholder": "ไม่บังคับ เช่น nginx"
         },
         "onError": {
           "stop": "หยุดการทำงาน",
@@ -169,7 +178,8 @@
             "failed": "การดำเนินการใดๆ ล้มเหลว",
             "succeeded": "การดำเนินการใดๆ เสร็จสิ้น"
           }
-        }
+        },
+        "alertTriggerHint": "ทำงานเมื่อปลั๊กอินการแจ้งเตือนได้รับแจ้งเตือนสำหรับคุณ เช่น ตัวตรวจสอบ Uptime หยุดทำงาน ขั้นตอนสามารถทำงานบนโฮสต์ที่เกี่ยวข้องกับการแจ้งเตือนนั้นได้"
       }
     }
   },

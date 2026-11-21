@@ -4,7 +4,7 @@ import type {
   Step,
   Trigger,
 } from "../types.js";
-import { AUTOMATION_DEFINITION_VERSION } from "../types.js";
+import { ALERT_SEVERITIES, AUTOMATION_DEFINITION_VERSION } from "../types.js";
 import { isValidCron, isValidTimezone } from "./cron.js";
 
 const TRIGGER_KINDS = new Set([
@@ -15,6 +15,7 @@ const TRIGGER_KINDS = new Set([
   "docker_event",
   "internal_event",
   "operation_event",
+  "alert",
   "webhook",
 ]);
 
@@ -119,6 +120,35 @@ export function validateDefinition(value: unknown): {
       !isValidHostSelector(trigger.hostSelector)
     ) {
       return { ok: false, error: "Event trigger hosts are not valid" };
+    }
+  }
+
+  if (trigger.kind === "alert") {
+    if (
+      !isNonEmptyString(trigger.category) ||
+      trigger.category.length > 128 ||
+      !/^[a-z0-9*][a-z0-9_.*-]*$/i.test(trigger.category.trim())
+    ) {
+      return { ok: false, error: "Alert triggers need an alert category" };
+    }
+    if (
+      trigger.minSeverity !== undefined &&
+      !(ALERT_SEVERITIES as readonly string[]).includes(trigger.minSeverity)
+    ) {
+      return { ok: false, error: "Unknown alert severity" };
+    }
+    if (
+      trigger.titleContains !== undefined &&
+      (typeof trigger.titleContains !== "string" ||
+        trigger.titleContains.length > 200)
+    ) {
+      return { ok: false, error: "Alert title text is not valid" };
+    }
+    if (
+      trigger.hostSelector !== undefined &&
+      !isValidHostSelector(trigger.hostSelector)
+    ) {
+      return { ok: false, error: "Alert trigger hosts are not valid" };
     }
   }
 

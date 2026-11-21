@@ -78,7 +78,8 @@
           "docker_event": "Událost kontejneru",
           "internal_event": "Událost Termix",
           "webhook": "Příchozí webhook",
-          "operation_event": "Dojde k události"
+          "operation_event": "Dojde k události",
+          "alert": "Přijde upozornění"
         },
         "stepTypes": {
           "notify": "Poslat upozornění",
@@ -141,7 +142,15 @@
           "actionMissing": "Tato akce není k dispozici. Příslušný plugin může být vypnutý.",
           "actionTarget": "Cíl na každém hostiteli",
           "event": "Událost",
-          "pickEvent": "Vyberte událost"
+          "pickEvent": "Vyberte událost",
+          "alertCategory": "Kategorie upozornění",
+          "alertCategoryHint": "Např. uptime.down. Použijte uptime.* pro všechna upozornění Uptime nebo * pro všechna upozornění.",
+          "alertSeverity": "Minimálně",
+          "alertSeverityAny": "Jakákoliv závažnost",
+          "alertSeverityWarning": "Varování",
+          "alertSeverityCritical": "Kritické",
+          "alertTitle": "Název obsahuje",
+          "alertTitlePlaceholder": "Volitelné, např. nginx"
         },
         "onError": {
           "stop": "Zastavit běh",
@@ -169,7 +178,8 @@
             "failed": "Jakákoli akce selhala",
             "succeeded": "Jakákoli akce byla dokončena"
           }
-        }
+        },
+        "alertTriggerHint": "Spustí se, když plugin Upozornění obdrží upozornění, například když dojde k výpadku monitoru Uptime. Kroky mohou pracovat s hostitelem, ke kterému se upozornění vztahuje."
       }
     }
   },

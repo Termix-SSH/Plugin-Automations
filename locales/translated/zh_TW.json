@@ -78,7 +78,8 @@
           "docker_event": "容器事件",
           "internal_event": "Termix 事件",
           "webhook": "傳入 Webhook",
-          "operation_event": "發生事件"
+          "operation_event": "發生事件",
+          "alert": "收到警報"
         },
         "stepTypes": {
           "notify": "發送警示",
@@ -141,7 +142,15 @@
           "actionMissing": "此動作不可用。其外掛可能已關閉。",
           "actionTarget": "每個主機上的目標",
           "event": "事件",
-          "pickEvent": "選擇事件"
+          "pickEvent": "選擇事件",
+          "alertCategory": "警報類別",
+          "alertCategoryHint": "例如 uptime.down。使用 uptime.* 可匹配所有 Uptime 警報，或使用 * 匹配所有警報。",
+          "alertSeverity": "至少",
+          "alertSeverityAny": "任何嚴重程度",
+          "alertSeverityWarning": "警告",
+          "alertSeverityCritical": "嚴重",
+          "alertTitle": "標題包含",
+          "alertTitlePlaceholder": "選填，例如 nginx"
         },
         "onError": {
           "stop": "停止執行",
@@ -169,7 +178,8 @@
             "failed": "任何動作失敗",
             "succeeded": "任何動作完成"
           }
-        }
+        },
+        "alertTriggerHint": "當警報插件收到警報時執行，例如 Uptime 監控服務中斷。步驟可以針對警報所關聯的主機執行操作。"
       }
     }
   },

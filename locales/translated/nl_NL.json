@@ -78,7 +78,8 @@
           "docker_event": "Containergebeurtenis",
           "internal_event": "Termix-gebeurtenis",
           "webhook": "Inkomende webhook",
-          "operation_event": "Er gebeurt een gebeurtenis"
+          "operation_event": "Er gebeurt een gebeurtenis",
+          "alert": "Er komt een waarschuwing binnen"
         },
         "stepTypes": {
           "notify": "Melding versturen",
@@ -141,7 +142,15 @@
           "actionMissing": "Deze actie is niet beschikbaar. De plugin is mogelijk uitgeschakeld.",
           "actionTarget": "Doel op elke host",
           "event": "Gebeurtenis",
-          "pickEvent": "Kies een gebeurtenis"
+          "pickEvent": "Kies een gebeurtenis",
+          "alertCategory": "Waarschuwingscategorie",
+          "alertCategoryHint": "Bijvoorbeeld uptime.down. Gebruik uptime.* voor alle Uptime-waarschuwingen of * voor alle waarschuwingen.",
+          "alertSeverity": "Minimaal",
+          "alertSeverityAny": "Elke ernst",
+          "alertSeverityWarning": "Waarschuwing",
+          "alertSeverityCritical": "Kritiek",
+          "alertTitle": "Titel bevat",
+          "alertTitlePlaceholder": "Optioneel, bijvoorbeeld nginx"
         },
         "onError": {
           "stop": "Uitvoering stoppen",
@@ -169,7 +178,8 @@
             "failed": "Elke actie is mislukt",
             "succeeded": "Elke actie is voltooid"
           }
-        }
+        },
+        "alertTriggerHint": "Wordt uitgevoerd wanneer de Alerts-plugin een waarschuwing voor je ontvangt, zoals wanneer een Uptime-monitor offline gaat. Stappen kunnen werken op de host waar de waarschuwing over gaat."
       }
     }
   },

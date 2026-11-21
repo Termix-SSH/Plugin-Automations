@@ -78,7 +78,8 @@
           "docker_event": "Konténeresemény",
           "internal_event": "Termix esemény",
           "webhook": "Bejövő webhook",
-          "operation_event": "Egy esemény történik"
+          "operation_event": "Egy esemény történik",
+          "alert": "Értesítés érkezik"
         },
         "stepTypes": {
           "notify": "Riasztás küldése",
@@ -141,7 +142,15 @@
           "actionMissing": "Ez a művelet nem elérhető. Lehet, hogy a bővítmény ki van kapcsolva.",
           "actionTarget": "Cél minden hoszton",
           "event": "Esemény",
-          "pickEvent": "Válasszon egy eseményt"
+          "pickEvent": "Válasszon egy eseményt",
+          "alertCategory": "Értesítési kategória",
+          "alertCategoryHint": "Például uptime.down. Használja az uptime.* kifejezést minden Uptime értesítésre, vagy a * karaktert az összes értesítésre.",
+          "alertSeverity": "Legalább",
+          "alertSeverityAny": "Bármilyen súlyosság",
+          "alertSeverityWarning": "Figyelmeztetés",
+          "alertSeverityCritical": "Kritikus",
+          "alertTitle": "A cím tartalmazza",
+          "alertTitlePlaceholder": "Opcionális, például nginx"
         },
         "onError": {
           "stop": "Futtatás megállítása",
@@ -169,7 +178,8 @@
             "failed": "Bármely művelet sikertelen",
             "succeeded": "Bármely művelet befejeződött"
           }
-        }
+        },
+        "alertTriggerHint": "A lépések akkor futnak le, amikor az Alerts bővítmény értesítést kap, például amikor egy Uptime monitor leáll. A lépések az értesítésben szereplő hoston végezhetnek műveleteket."
       }
     }
   },

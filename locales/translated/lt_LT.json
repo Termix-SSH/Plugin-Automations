@@ -78,7 +78,8 @@
           "docker_event": "Konteinerio įvykis",
           "internal_event": "Termix įvykis",
           "webhook": "Gaunamas webhook",
-          "operation_event": "Įvyksta įvykis"
+          "operation_event": "Įvyksta įvykis",
+          "alert": "Gaunamas įspėjimas"
         },
         "stepTypes": {
           "notify": "Siųsti įspėjimą",
@@ -141,7 +142,15 @@
           "actionMissing": "Šis veiksmas nepasiekiamas. Galbūt jo priedas išjungtas.",
           "actionTarget": "Tikslas kiekviename serveryje",
           "event": "Įvykis",
-          "pickEvent": "Pasirinkti įvykį"
+          "pickEvent": "Pasirinkti įvykį",
+          "alertCategory": "Įspėjimo kategorija",
+          "alertCategoryHint": "Pavyzdžiui, uptime.down. Naudokite uptime.* visiems „Uptime“ įspėjimams arba * visiems įspėjimams.",
+          "alertSeverity": "Bent jau",
+          "alertSeverityAny": "Bet koks sunkumas",
+          "alertSeverityWarning": "Įspėjimas",
+          "alertSeverityCritical": "Kritinis",
+          "alertTitle": "Pavadinime yra",
+          "alertTitlePlaceholder": "Pasirenkama, pvz., nginx"
         },
         "onError": {
           "stop": "Sustabdyti vykdymą",
@@ -169,7 +178,8 @@
             "failed": "Bet kuris veiksmas nepavyko",
             "succeeded": "Bet kuris veiksmas baigtas"
           }
-        }
+        },
+        "alertTriggerHint": "Vykdoma, kai „Alerts“ priedas gauna jums įspėjimą, pvz., kai „Uptime“ stebėtojas nustoja veikti. Veiksmai gali būti taikomi įspėjimo objektui (hostui)."
       }
     }
   },

@@ -78,7 +78,8 @@
           "docker_event": "Подія контейнера",
           "internal_event": "Подія Termix",
           "webhook": "Вхідний вебхук",
-          "operation_event": "Сталося подія"
+          "operation_event": "Сталося подія",
+          "alert": "Находить сповіщення"
         },
         "stepTypes": {
           "notify": "Надіслати сповіщення",
@@ -141,7 +142,15 @@
           "actionMissing": "Ця дія недоступна. Можливо, плагін вимкнено.",
           "actionTarget": "Ціль на кожному хості",
           "event": "Подія",
-          "pickEvent": "Оберіть подію"
+          "pickEvent": "Оберіть подію",
+          "alertCategory": "Категорія сповіщення",
+          "alertCategoryHint": "Наприклад, uptime.down. Використовуйте uptime.* для всіх сповіщень Uptime або * для всіх сповіщень.",
+          "alertSeverity": "Щонайменше",
+          "alertSeverityAny": "Будь-який рівень",
+          "alertSeverityWarning": "Попередження",
+          "alertSeverityCritical": "Критичний",
+          "alertTitle": "Заголовок містить",
+          "alertTitlePlaceholder": "Необов’язково, наприклад nginx"
         },
         "onError": {
           "stop": "Зупинити виконання",
@@ -169,7 +178,8 @@
             "failed": "Будь-яка дія завершилася помилкою",
             "succeeded": "Будь-яка дія завершена"
           }
-        }
+        },
+        "alertTriggerHint": "Запускається, коли плагін Alerts отримує сповіщення, наприклад, коли монітор Uptime фіксує збої. Кроки можуть виконуватися на хості, про який йдеться у сповіщенні."
       }
     }
   },

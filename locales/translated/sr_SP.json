@@ -78,7 +78,8 @@
           "docker_event": "Догађај контејнера",
           "internal_event": "Termix догађај",
           "webhook": "Долазни webhook",
-          "operation_event": "Догађај се догодио"
+          "operation_event": "Догађај се догодио",
+          "alert": "Пријављен је алерт"
         },
         "stepTypes": {
           "notify": "Пошаљи алерт",
@@ -141,7 +142,15 @@
           "actionMissing": "Ова радња није доступна. Њен додатак је можда искључен.",
           "actionTarget": "Циљ на сваком хосту",
           "event": "Догађај",
-          "pickEvent": "Изаберите догађај"
+          "pickEvent": "Изаберите догађај",
+          "alertCategory": "Категорија алерта",
+          "alertCategoryHint": "На пример uptime.down. Користите uptime.* за све алерте Uptime или * за све алерте.",
+          "alertSeverity": "Најмање",
+          "alertSeverityAny": "Било који степен",
+          "alertSeverityWarning": "Упозорење",
+          "alertSeverityCritical": "Критично",
+          "alertTitle": "Наслов садржи",
+          "alertTitlePlaceholder": "Опционо, на пример nginx"
         },
         "onError": {
           "stop": "Заустави извршење",
@@ -169,7 +178,8 @@
             "failed": "Било која радња је неуспешна",
             "succeeded": "Било која радња је завршена"
           }
-        }
+        },
+        "alertTriggerHint": "Покреће се када додатак Alerts добије алерт за вас, на пример када Uptime монитор падне. Кораци могу радити на хосту о коме је реч у алерту."
       }
     }
   },
